@@ -27,9 +27,6 @@ public class CompradorGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	
-	//Prueba de cambio y reset
-	
 	public CompradorGUI(String usuario) {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
