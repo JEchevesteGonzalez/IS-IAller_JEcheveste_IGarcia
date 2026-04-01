@@ -337,23 +337,41 @@ public void open(){
 		return false;
 		
     }
-			
-    public void anadirFondos(String usuario, float cantidad) {
+
+    public void eliminarUsuario(String usuario) {
+		open();
+		db.getTransaction().begin();
+		Comprador user = db.find(domain.Comprador.class, usuario);
+		if (user != null) {
+			db.remove(user);
+			db.getTransaction().commit(); 
+		}
+		close();
+				
+	}
+	
+	public boolean anadirFondos(String usuario, float cantidad) {
 		open();
 		db.getTransaction().begin();
 		try {
-			Comprador comprador = db.find(Comprador.class, usuario);
+			domain.Comprador user = db.find(domain.Comprador.class, usuario);
 			
-			if (comprador != null) {
-				comprador.setSaldo(comprador.getSaldo() + cantidad);
-				db.persist(comprador);
-				db.getTransaction().commit(); 
+			if (user != null) {
+				
+				float nuevoSaldo = user.getSaldo() + cantidad;
+				user.setSaldo(nuevoSaldo);
+				db.getTransaction().commit();
+				return true;
+				
+			} else {
+				
+				return false;
 			}
-			close();
-			
 		} catch (Exception e) {
+			return false;
+		}finally {
 			close();
-		} 
+		}
 	}
     
     

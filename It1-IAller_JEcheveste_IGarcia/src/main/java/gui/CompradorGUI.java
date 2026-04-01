@@ -58,15 +58,15 @@ public class CompradorGUI extends JFrame {
 		btnVisualizarComprasAnteriores.setBounds(0, 0, 434, 124);
 		contentPane.add(btnVisualizarComprasAnteriores);
 		
-		JButton btnNewButton_1 = new JButton("Añadir Fondos: 100 €");
+		JButton btnNewButton_1 = new JButton("Agregar Fondos");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				facade.anadirFondos(usuario, 100);
-				//JFrame verSaldo = new VerSaldoGUI (usuario);
-				//verSaldo.setVisible(true);
+			public void actionPerformed(ActionEvent e) {
+				JFrame fondos = new Fondos(usuario);
+				fondos.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(0, 224, 426, 36);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnNewButton_1.setBounds(0, 200, 432, 61);
 		contentPane.add(btnNewButton_1);
 	}
 }

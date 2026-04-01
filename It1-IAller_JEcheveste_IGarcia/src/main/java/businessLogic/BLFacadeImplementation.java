@@ -130,12 +130,18 @@ public class BLFacadeImplementation  implements BLFacade {
 		return dbManager.comprarProducto(usuario, saleNumber);
 	}
 	
-	public void anadirFondos(String usuario, float cantidad) {
-		dbManager.anadirFondos(usuario, cantidad);
-	}
 	
 	public void editSale(Sale sale, String text, int numStatus, float price, Date trim, boolean hab) {
     	dbManager.editSale(sale, text, numStatus, price, trim, hab);
     }
+	
+	public void eliminarUsuario(String usuario) {
+		dbManager.eliminarUsuario(usuario);
+	}
+	
+	public boolean anadirFondos(String usuario, float cantidad) {
+		return dbManager.anadirFondos(usuario, cantidad);
+	}
+	
 }
 

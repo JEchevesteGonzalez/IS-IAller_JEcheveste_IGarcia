@@ -75,9 +75,10 @@ public interface BLFacade  {
 	
 	public boolean comprarProducto(String usuario, Sale saleNumber);
 
-
-	public void anadirFondos(String usuario, float cantidad);
-
+	public boolean anadirFondos(String usuario, float cantidad);
 
 	public void editSale(Sale sale, String text, int numStatus, float price, Date trim, boolean hab);
+
+	public void eliminarUsuario(String usuario);
+	
 }

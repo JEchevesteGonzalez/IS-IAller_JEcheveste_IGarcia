@@ -164,6 +164,16 @@ public class MainGUI extends JFrame {
 				System.exit(1);
 			}
 		});
+
+		JButton btnBorrarCuenta = new JButton("Borrar Cuenta");
+		btnBorrarCuenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame borrarGUI = new BorrarCuentaGUI();
+				borrarGUI.setVisible(true);
+			}
+		});
+		btnBorrarCuenta.setBounds(368, 50, 115, 25); 
+		jContentPane.add(btnBorrarCuenta);
 	}
 } // @jve:decl-index=0:visual-constraint="0,0"
 
