@@ -61,7 +61,7 @@ public class CompradorGUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("Agregar Fondos");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame fondos = new Fondos(usuario);
+				JFrame fondos = new FondosGUI(usuario);
 				fondos.setVisible(true);
 			}
 		});

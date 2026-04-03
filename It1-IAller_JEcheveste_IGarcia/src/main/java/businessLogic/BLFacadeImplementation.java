@@ -8,6 +8,7 @@ import javax.jws.WebService;
 
 import dataAccess.DataAccess;
 import domain.Comprador;
+import domain.Cuentas;
 import domain.Sale;
 import domain.Seller;
 import exceptions.FileNotUploadedException;
@@ -45,9 +46,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * {@inheritDoc}
 	 */
    @WebMethod
-	public Sale createSale(String title, String description,int status, float price, Date pubDate, String usuario, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
+	public Sale createSale(String title, String description,int status, float price, Date pubDate, String usuario, File file, int tVenta) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
 		dbManager.open();
-		Sale product=dbManager.createSale(title, description, status, price, pubDate, usuario, file);		
+		Sale product=dbManager.createSale(title, description, status, price, pubDate, usuario, file, tVenta);		
 		dbManager.close();
 		return product;
    };
@@ -141,6 +142,18 @@ public class BLFacadeImplementation  implements BLFacade {
 	
 	public boolean anadirFondos(String usuario, float cantidad) {
 		return dbManager.anadirFondos(usuario, cantidad);
+	}
+	
+	public boolean retirarFondos(String usuario, float cantidad) {
+		return dbManager.retirarFondos(usuario, cantidad);
+	}
+	
+	public boolean pujar(Sale sale, float ofer) {
+		return dbManager.pujar(sale, ofer);
+	}
+	
+	public void anadirCuentas(String comprIntro, String contrIntro, Cuentas cu) {
+		dbManager.anadirCuentas(comprIntro, contrIntro, cu);
 	}
 	
 }

@@ -75,11 +75,20 @@ public class CreateSaleGUI extends JFrame {
 		jLabelPrice.setBounds(new Rectangle(6, 141, 101, 20));
 		jTextFieldPrice.setBounds(new Rectangle(97, 141, 60, 20));
 
+		JComboBox<String> tipoVenta = new JComboBox<String>();
+		tipoVenta.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
+		tipoVenta.setBounds(90, 223, 114, 22);
+		
+		getContentPane().add(tipoVenta);
+		
+		JLabel lblTipoDeVenta = new JLabel("Tipo de venta");
+		lblTipoDeVenta.setBounds(6, 225, 129, 16);
+		getContentPane().add(lblTipoDeVenta);
 		
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 		jButtonCreate.setFont(new Font("Lucida Grande", Font.BOLD, 15));
 
-		jButtonCreate.setBounds(new Rectangle(100, 222, 216, 41));
+		jButtonCreate.setBounds(new Rectangle(100, 254, 216, 41));
 
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -93,8 +102,11 @@ public class CreateSaleGUI extends JFrame {
 						float price = Float.parseFloat(jTextFieldPrice.getText());
 						String s=(String)jComboBoxStatus.getSelectedItem();
 						int numStatus=status.indexOf(s);
-						facade.createSale(fieldTitle.getText(), fieldDescription.getText(), numStatus, price,  UtilDate.trim(jCalendar.getDate()), usuario, targetFile);
-						jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.ProductCreated"));
+						int tVenta = tipoVenta.getSelectedIndex();
+						facade.createSale(fieldTitle.getText(), fieldDescription.getText(), numStatus, price,  UtilDate.trim(jCalendar.getDate()), usuario, targetFile, tVenta);
+						if(tVenta==0) jLabelMsg.setText("Se ha creado la oferta");
+						else jLabelMsg.setText("Se ha creado la subasta");
+
 					
 					} catch (Exception e1) {
 
@@ -103,13 +115,13 @@ public class CreateSaleGUI extends JFrame {
 					}
 			}
 		});
-		jButtonClose.setBounds(new Rectangle(328, 228, 101, 30));
+		jButtonClose.setBounds(new Rectangle(337, 260, 101, 30));
 		jButtonClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				thisFrame.setVisible(false);			}
 		});
 
-		jLabelMsg.setBounds(new Rectangle(26, 275, 377, 20));
+		jLabelMsg.setBounds(new Rectangle(26, 290, 377, 20));
 		jLabelMsg.setForeground(Color.red);
 
 		jLabelError.setBounds(new Rectangle(16, 275, 384, 20));

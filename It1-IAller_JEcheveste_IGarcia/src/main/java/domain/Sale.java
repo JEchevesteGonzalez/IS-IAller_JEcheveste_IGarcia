@@ -2,6 +2,7 @@ package domain;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -25,10 +26,13 @@ public class Sale implements Serializable {
 	private String description;
 	private int  status;
 	private float price;
+	private int esSubasta;
+	private ArrayList<Oferta> ofertas;
 	public String getUsuarioVendedor() {
 		return usuarioVendedor;
 	}
-
+	//Hola soy una prueba
+	
 	public void setUsuarioVendedor(String usuarioVendedor) {
 		this.usuarioVendedor = usuarioVendedor;
 	}
@@ -44,7 +48,7 @@ public class Sale implements Serializable {
 		super();
 	}
 		
-	public Sale(String title, String description, int status, float price, Date pubDate, File file, Seller seller) {
+	public Sale(String title, String description, int status, float price, Date pubDate, File file, Seller seller, int tVenta) {
 		super();
 
 		this.title = title;
@@ -53,6 +57,8 @@ public class Sale implements Serializable {
 		this.price=price;
 		this.pubDate=pubDate;
 		this.habilitado=true;
+		this.esSubasta=tVenta;
+		this.ofertas = new ArrayList<Oferta>();
 		
 		if (file!=null) {
 		    this.fileName=file.getName();
@@ -238,7 +244,13 @@ public class Sale implements Serializable {
 		this.habilitado = habilitado;
 	}
 
-
+	public int getEsSubasta() {
+		return esSubasta;
+	}
+	
+	public void setEsSubasta(int esSubasta) {
+		this.esSubasta = esSubasta;
+	}
 
 
 	

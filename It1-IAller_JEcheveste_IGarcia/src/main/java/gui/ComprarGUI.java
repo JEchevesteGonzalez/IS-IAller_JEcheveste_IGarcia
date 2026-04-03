@@ -103,36 +103,56 @@ public class ComprarGUI extends JFrame {
 						textoErrores.setText("Haga una oferta válida");
 					}
 					else {
-						float ofer = Float.parseFloat(oferta.getText());
-						if(ofer>sale.getPrice()) {
-							textoErrores.setText("Haga una oferta válida: el precio ofertado o menor");
-						}
-						else if(ofer==sale.getPrice()) {
-							Comprador comprador = facade.buscarPorUser(usuario);
-							boolean exito = facade.comprarProducto(usuario, sale);
-							if(exito) {
-								JOptionPane.showMessageDialog(null, "¡Compra realizada con éxito!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-								thisFrame.setVisible(false);
-								compra.setVisible(false);
-								posCompras.setVisible(false);
+						if(sale.getEsSubasta()==0) {
+							float ofer = Float.parseFloat(oferta.getText());
+							if(ofer>sale.getPrice()) {
+								textoErrores.setText("Haga una oferta válida: el precio ofertado o menor");
 							}
-							else if (!sale.isHabilitado()){
-								textoErrores.setText("Error: producto ya vendido o pendiente de revisión.");
-							}
-							else {
-								textoErrores.setText("Error: Saldo insuficiente.");
-							}
-						}
-						else {
-							boolean exito = facade.hacerContraoferta(sale, ofer);
-							if (exito) {
-								JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta. El producto ha sido inhabilitado temporalmente.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
-								thisFrame.setVisible(false);
-								compra.setVisible(false);
-								posCompras.setVisible(false);
+							else if(ofer==sale.getPrice()) {
+								Comprador comprador = facade.buscarPorUser(usuario);
+								boolean exito = facade.comprarProducto(usuario, sale);
+								if(exito) {
+									JOptionPane.showMessageDialog(null, "¡Compra realizada con éxito!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+									thisFrame.setVisible(false);
+									compra.setVisible(false);
+									posCompras.setVisible(false);
+								}
+								else if (!sale.isHabilitado()){
+									textoErrores.setText("Error: producto ya vendido o pendiente de revisión.");
+								}
+								else {
+									textoErrores.setText("Error: Saldo insuficiente.");
+								}
 							}
 							else {
-								jLabelError.setText("Error al procesar la contraoferta.");
+								boolean exito = facade.hacerContraoferta(sale, ofer);
+								if (exito) {
+									JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta. El producto ha sido inhabilitado temporalmente.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
+									thisFrame.setVisible(false);
+									compra.setVisible(false);
+									posCompras.setVisible(false);
+								}
+								else {
+									jLabelError.setText("Error al procesar la contraoferta.");
+								}
+							}
+						}
+						else{
+							float ofer = Float.parseFloat(oferta.getText());
+							if(ofer<=sale.getPrice()) {
+								textoErrores.setText("Haga una oferta válida: el precio mayor al ofertado");
+							}
+							else {
+								boolean exito = facade.pujar(sale, ofer);
+								if (exito) {
+									JOptionPane.showMessageDialog(null, "Has pujado por "+ofer+" €.");
+									thisFrame.setVisible(false);
+									compra.setVisible(false);
+									posCompras.setVisible(false);
+								}
+								else {
+									jLabelError.setText("Error al procesar la contraoferta.");
+								}
 							}
 						}
 					}

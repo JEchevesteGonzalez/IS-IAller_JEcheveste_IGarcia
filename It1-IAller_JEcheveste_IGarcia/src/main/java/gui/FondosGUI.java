@@ -13,10 +13,11 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Fondos extends JFrame{
+public class FondosGUI extends JFrame{
 	
 	private JTextField textField;
-	public Fondos(String usuario) {
+	private JTextField rFondos;
+	public FondosGUI(String usuario) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setSize(450, 300);
 		getContentPane().setLayout(null);
@@ -24,16 +25,16 @@ public class Fondos extends JFrame{
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
 		JLabel lblNewLabel = new JLabel("Inserta la cantidad de fondos que quieras añadir:");
-		lblNewLabel.setBounds(10, 70, 249, 42);
+		lblNewLabel.setBounds(10, 70, 289, 42);
 		getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(281, 81, 86, 20);
+		textField.setBounds(297, 81, 121, 20);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Tu dinero actual es:");
-		lblNewLabel_1.setBounds(10, 45, 108, 14);
+		JLabel lblNewLabel_1 = new JLabel("Tu saldo actual es:");
+		lblNewLabel_1.setBounds(10, 45, 125, 14);
 		getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblfondosActuales = new JLabel("");
@@ -84,7 +85,7 @@ public class Fondos extends JFrame{
 				 
 			}
 		});
-		btnNewButton.setBounds(280, 112, 101, 23);
+		btnNewButton.setBounds(297, 114, 121, 23);
 		getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Atrás");
@@ -93,8 +94,52 @@ public class Fondos extends JFrame{
 				dispose();
 			}
 		});
-		btnNewButton_1.setBounds(10, 11, 89, 23);
+		btnNewButton_1.setBounds(10, 216, 89, 23);
 		getContentPane().add(btnNewButton_1);
+		
+		JLabel lblInsertaLaCantidad = new JLabel("Inserta la cantidad de fondos que quieras retirar:");
+		lblInsertaLaCantidad.setBounds(10, 161, 289, 42);
+		getContentPane().add(lblInsertaLaCantidad);
+		
+		rFondos = new JTextField();
+		rFondos.setColumns(10);
+		rFondos.setBounds(299, 172, 121, 20);
+		getContentPane().add(rFondos);
+		
+		JButton btnRetirarFondos = new JButton("Retirar Fondos");
+		btnRetirarFondos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				 try {
+				 
+					float cantidadARetirar = Float.parseFloat(textField.getText());
+					
+					if (cantidadARetirar <= 0) {
+						textoErrores.setText("Error: Introduce una cantidad mayor a 0.");
+						return;
+					}
+					
+					boolean exito = facade.retirarFondos(usuario, cantidadARetirar);
+					
+					if (exito) {
+						textField.setText("");
+						textoErrores.setForeground(Color.GREEN);
+						Comprador userActualizado = facade.buscarPorUser(usuario);
+						lblfondosActuales.setText(userActualizado.getSaldo() + " €");
+					} else {
+						textoErrores.setText("Error en la base de datos al retirar fondos.");
+					}
+					
+				} catch (NumberFormatException ex) {
+					textoErrores.setText("Error: Introduce solo números ");
+				}
+			
+				 
+			}
+		});
+		
+		btnRetirarFondos.setBounds(299, 203, 121, 23);
+		getContentPane().add(btnRetirarFondos);
 		
 		
 	}

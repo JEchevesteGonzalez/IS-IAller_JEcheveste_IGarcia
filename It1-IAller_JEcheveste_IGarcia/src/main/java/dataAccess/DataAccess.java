@@ -21,6 +21,7 @@ import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.Seller;
 import domain.Comprador;
+import domain.Cuentas;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
@@ -128,13 +129,14 @@ public class DataAccess  {
 	 * @param title of the product
 	 * @param description of the product
 	 * @param status 
+	 * @param tVenta 
 	 * @param selling price
 	 * @param category of a product
 	 * @param publicationDate
 	 * @return Product
  	 * @throws SaleAlreadyExistException if the same product already exists for the seller
 	 */
-	public Sale createSale(String title, String description, int status, float price,  Date pubDate, String usuario, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
+	public Sale createSale(String title, String description, int status, float price,  Date pubDate, String usuario, File file, int tVenta) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
 		
 
 		System.out.println(">> DataAccess: createProduct=> title= "+title+" usuario="+usuario);
@@ -155,7 +157,7 @@ public class DataAccess  {
 				throw new SaleAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SaleAlreadyExist"));
 			}
 
-			Sale sale = seller.addSale(title, description, status, price, pubDate, file);
+			Sale sale = seller.addSale(title, description, status, price, pubDate, file, tVenta);
 			//next instruction can be obviated
 
 			db.persist(seller); 
@@ -354,7 +356,7 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		try {
-			domain.Comprador user = db.find(domain.Comprador.class, usuario);
+			Comprador user = db.find(Comprador.class, usuario);
 			
 			if (user != null) {
 				
@@ -400,6 +402,54 @@ public void open(){
 		System.out.println("DataAcess closed");
 	}
 
-	
-	
+	public boolean pujar(Sale pro, float price) {
+		open();
+		db.getTransaction().begin();
+		Sale producto = db.find(Sale.class, pro.getSaleNumber());
+		if (producto != null) {
+			producto.setPrice(price);
+			db.persist(producto);
+			db.getTransaction().commit();
+			close();
+			return true;
+		}
+		return false;
+		
+	}
+
+	public boolean retirarFondos(String usuario, float cantidad) {
+		open();
+		db.getTransaction().begin();
+		try {
+			Comprador user = db.find(Comprador.class, usuario);
+			
+			if (user != null) {
+				
+				float nuevoSaldo = user.getSaldo() - cantidad;
+				if (nuevoSaldo<0) {
+					nuevoSaldo=0;
+				}
+				user.setSaldo(nuevoSaldo);
+				db.getTransaction().commit();
+				return true;
+				
+			} else {
+				
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}finally {
+			close();
+		}
+	}
+
+	public void anadirCuentas(String usuario, String contrasena, Cuentas cu) {
+		open();
+		db.getTransaction().begin();
+		Comprador user = new Comprador(usuario, contrasena);
+		user.setCuentas(cu);
+		db.getTransaction().commit();
+		close();
+	}
 }

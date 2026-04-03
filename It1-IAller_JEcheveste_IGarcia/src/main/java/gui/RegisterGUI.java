@@ -128,7 +128,7 @@ public class RegisterGUI extends JFrame {
 			                } 
 			                // Si no es Seller, obligatoriamente es Comprador. Procedemos a "ascenderlo".
 			                else {
-			                    if (!correo.isVisible() && !nombre.isVisible()) {
+			                    if (!correo.isVisible() && !nombre.isVisible() && facade.buscarPorUser(usuarioIntro).getCuentas()!=null) {
 			                        // Mostrar los campos extra para que se haga vendedor
 			                        correo.setVisible(true);
 			                        nombre.setVisible(true);
@@ -166,13 +166,14 @@ public class RegisterGUI extends JFrame {
 			                contrasena.setEnabled(false);
 			            } else {
 			                if (contrIntro.equals(new String(repContrasena.getPassword()))) {
-			                    facade.addComprador(usuarioIntro, contrIntro);
-			                    textoErrores.setText("¡Comprador registrado con éxito!");
-			                    
-			                    // Reseteamos la vista
-			                    repContrasena.setVisible(false);
-			                    usuario.setEnabled(true);
-			                    contrasena.setEnabled(true);
+			    		            JFrame verDBan = new DatosBancariosGUI(usuarioIntro, contrIntro);
+			    		            verDBan.setVisible(true);
+			                    	textoErrores.setText("¡Comprador registrado con éxito!");
+				                    
+				                    // Reseteamos la vista
+				                    repContrasena.setVisible(false);
+				                    usuario.setEnabled(true);
+				                    contrasena.setEnabled(true);
 			                } else {
 			                    textoErrores.setText("Las contraseñas no coinciden.");
 			                }

@@ -30,6 +30,8 @@ import java.util.Vector;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 @SuppressWarnings("serial")
 public class VisualizarVentasActivasGUI extends JFrame {	
@@ -90,6 +92,12 @@ public class VisualizarVentasActivasGUI extends JFrame {
 		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(4));
 		
 		scrollPane.setViewportView(table);
+		
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
+		comboBox.setBounds(113, 13, 220, 22);
+		getContentPane().add(comboBox);
 		
 		table.addMouseListener(new MouseAdapter() {
 	        @Override

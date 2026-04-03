@@ -66,6 +66,7 @@ public class Seller extends Comprador implements Serializable{
 	 * @param title of the sale
 	 * @param description of the sale
 	 * @param status 
+	 * @param tVenta 
 	 * @param selling price
 	 * @param publicationDate
 	 * @return Sale
@@ -74,9 +75,9 @@ public class Seller extends Comprador implements Serializable{
 	
 
 
-	public Sale addSale(String title, String description, int status, float price,  Date pubDate, File file)  {
+	public Sale addSale(String title, String description, int status, float price,  Date pubDate, File file, int tVenta)  {
 		
-		Sale sale=new Sale(title, description, status, price,  pubDate, file, this);
+		Sale sale=new Sale(title, description, status, price,  pubDate, file, this, tVenta);
         sales.add(sale);
         return sale;
 	}

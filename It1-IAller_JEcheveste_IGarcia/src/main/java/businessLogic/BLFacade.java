@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import domain.Comprador;
+import domain.Cuentas;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
@@ -29,13 +30,14 @@ public interface BLFacade  {
 	 * @param title of the product
 	 * @param description of the product
 	 * @param status 
+	 * @param tVenta 
 	 * @param selling price
 	 * @param category of a product
 	 * @param publicationDate
 	 * @return Sale
 	 */
    @WebMethod
-	public Sale createSale(String title, String description, int status, float price, Date pubDate, String sellerEmail, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException;
+	public Sale createSale(String title, String description, int status, float price, Date pubDate, String sellerEmail, File file, int tVenta) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException;
 	
 	
 	/**
@@ -80,5 +82,13 @@ public interface BLFacade  {
 	public void editSale(Sale sale, String text, int numStatus, float price, Date trim, boolean hab);
 
 	public void eliminarUsuario(String usuario);
+
+
+	public boolean pujar(Sale sale, float ofer);
+
+
+	public boolean retirarFondos(String usuario, float cantidadARetirar);
+
+	public void anadirCuentas(String usuarioIntro, String contrIntro, Cuentas cu);
 	
 }

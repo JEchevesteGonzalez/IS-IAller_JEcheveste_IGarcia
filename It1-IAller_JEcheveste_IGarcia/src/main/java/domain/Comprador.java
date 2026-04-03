@@ -13,17 +13,17 @@ public class Comprador {
 	@Id
 	private String usuario;
 	private String contrasena;
-	private float saldo;
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Sale> historialDeCompras;
+	private Cuentas cuentas;
 	
 	
 	public Comprador (String usuario, String contrasena){
 		this.usuario=usuario;
 		this.contrasena=contrasena;
-		this.saldo=0;
 		this.historialDeCompras= new ArrayList<Sale>();	
+		this.cuentas = null;
 	}
 
 
@@ -48,12 +48,12 @@ public class Comprador {
 
 
 	public float getSaldo() {
-		return saldo;
+		return cuentas.getSaldo();
 	}
 
 
 	public void setSaldo(float saldo) {
-		this.saldo = saldo;
+		cuentas.setSaldo(saldo);
 	}
 
 
@@ -66,6 +66,13 @@ public class Comprador {
 		this.historialDeCompras = historialDeCompras;
 	}
 	
+	public Cuentas getCuentas() {
+		return cuentas;
+	}
+	
+	public void setCuentas(Cuentas cuentas) {
+		this.cuentas = cuentas;
+	}
 	
 	
 }

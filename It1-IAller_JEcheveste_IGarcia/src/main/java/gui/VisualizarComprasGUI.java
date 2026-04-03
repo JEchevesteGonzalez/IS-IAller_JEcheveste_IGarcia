@@ -63,6 +63,7 @@ public class VisualizarComprasGUI extends JFrame {
 		
 		if (historial != null) {
 			for (Sale s : historial) {
+				
 				Vector<Object> row = new Vector<Object>();
 				row.add(s.getTitle());
 				row.add(s.getPrice());
