@@ -28,10 +28,10 @@ public class Sale implements Serializable {
 	private float price;
 	private int esSubasta;
 	private ArrayList<Oferta> ofertas;
+	
 	public String getUsuarioVendedor() {
 		return usuarioVendedor;
 	}
-	//Hola soy una prueba
 	
 	public void setUsuarioVendedor(String usuarioVendedor) {
 		this.usuarioVendedor = usuarioVendedor;

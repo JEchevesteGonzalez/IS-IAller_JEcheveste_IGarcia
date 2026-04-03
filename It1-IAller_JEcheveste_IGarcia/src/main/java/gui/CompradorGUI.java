@@ -30,7 +30,7 @@ public class CompradorGUI extends JFrame {
 	public CompradorGUI(String usuario) {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 454, 335);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -66,7 +66,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton_1.setBounds(0, 200, 432, 61);
+		btnNewButton_1.setBounds(0, 225, 434, 63);
 		contentPane.add(btnNewButton_1);
 	}
 }

@@ -2,13 +2,16 @@ package domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cuentas {
+	@Id
 	private int numeroCuenta;
 	private float saldo;
 	private String nombreBanco;
-	@Id
+	
+	@OneToOne
 	private Comprador c;
 	
 	public Cuentas(int numeroCuenta, float saldo, String nombreBanco) {

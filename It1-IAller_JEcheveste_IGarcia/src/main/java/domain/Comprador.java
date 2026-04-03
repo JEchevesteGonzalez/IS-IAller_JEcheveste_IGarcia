@@ -16,6 +16,7 @@ public class Comprador {
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Sale> historialDeCompras;
+	@OneToOne
 	private Cuentas cuentas;
 	
 	

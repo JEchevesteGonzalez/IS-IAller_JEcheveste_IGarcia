@@ -345,6 +345,7 @@ public void open(){
 		db.getTransaction().begin();
 		Comprador user = db.find(domain.Comprador.class, usuario);
 		if (user != null) {
+			db.remove(user.getCuentas());
 			db.remove(user);
 			db.getTransaction().commit(); 
 		}
@@ -448,7 +449,10 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		Comprador user = new Comprador(usuario, contrasena);
+		cu.setComprador(user);
 		user.setCuentas(cu);
+		db.persist(user);
+		db.persist(cu);
 		db.getTransaction().commit();
 		close();
 	}
