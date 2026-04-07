@@ -132,10 +132,20 @@ public class ShowSaleGUI extends JFrame {
 		getContentPane().add(statusField);
 		
 		JButton btnComprar = new JButton("Comprar");
+		if(sale.getEsSubasta()==1){
+			btnComprar.setText("Pujar");
+		}
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame comprar = new ComprarGUI(sale, usuario, thisFrame, listado);
-				comprar.setVisible(true);
+				if(sale.getEsSubasta()==1){
+					JFrame pujar = new PujarGUI(sale, usuario, thisFrame, listado);
+					pujar.setVisible(true);
+				}
+				else {
+					JFrame comprar = new ComprarGUI(sale, usuario, thisFrame, listado);
+					comprar.setVisible(true);
+				}
+
 			}
 		});
 		btnComprar.setBounds(176, 245, 89, 23);

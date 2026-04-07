@@ -30,7 +30,7 @@ public class QuerySalesGUI extends JFrame {
 	private JFrame thisFrame; 
 
 	private String[] columnNamesProducts = new String[] {
-			"titulo", "precio","fecha de publicación",
+			"Titulo", "Precio","Fecha de publicación","Tipo de venta"
 	};
 	private JTextField jTextFieldSearch;
 	
@@ -57,7 +57,7 @@ public class QuerySalesGUI extends JFrame {
 		
 		this.getContentPane().add(jButtonClose, null);
 
-		scrollPanelProducts.setBounds(new Rectangle(52, 137, 459, 150));
+		scrollPanelProducts.setBounds(new Rectangle(52, 137, 603, 150));
 
 		scrollPanelProducts.setViewportView(tableProducts);
 		tableModelProducts = new DefaultTableModel(null, columnNamesProducts);
@@ -65,14 +65,15 @@ public class QuerySalesGUI extends JFrame {
 		tableProducts.setModel(tableModelProducts);
 
 		tableModelProducts.setDataVector(null, columnNamesProducts);
-		tableModelProducts.setColumnCount(4); // another column added to allocate ride objects
+		tableModelProducts.setColumnCount(5); // another column added to allocate ride objects
 
-		tableProducts.getColumnModel().getColumn(0).setPreferredWidth(200);
-		tableProducts.getColumnModel().getColumn(1).setPreferredWidth(10);
-		tableProducts.getColumnModel().getColumn(1).setPreferredWidth(70);
+		tableProducts.getColumnModel().getColumn(0).setPreferredWidth(100);
+		tableProducts.getColumnModel().getColumn(1).setPreferredWidth(110);
+		tableProducts.getColumnModel().getColumn(2).setPreferredWidth(70);
+		tableProducts.getColumnModel().getColumn(3).setPreferredWidth(80);
 
 
-		tableProducts.getColumnModel().removeColumn(tableProducts.getColumnModel().getColumn(3)); // not shown in JTable
+		tableProducts.getColumnModel().removeColumn(tableProducts.getColumnModel().getColumn(4)); // not shown in JTable
 
 		this.getContentPane().add(scrollPanelProducts, null);
 		
@@ -85,7 +86,7 @@ public class QuerySalesGUI extends JFrame {
 		 	public void actionPerformed(ActionEvent e) {
 		 		try {
 					tableModelProducts.setDataVector(null, columnNamesProducts);
-					tableModelProducts.setColumnCount(4); // another column added to allocate product object
+					tableModelProducts.setColumnCount(5); // another column added to allocate product object
 
 					BLFacade facade = MainGUI.getBusinessLogic();
 					Date today = UtilDate.trim(new Date());
@@ -100,6 +101,13 @@ public class QuerySalesGUI extends JFrame {
 							row.add(sale.getTitle());
 							row.add(sale.getPrice());
 							row.add(new SimpleDateFormat("dd-MM-yyyy").format(sale.getPublicationDate()));
+							int tVenta = sale.getEsSubasta();
+							if(tVenta==0) {
+								row.add("Oferta");
+							}
+							else {
+								row.add("Subasta");
+							}
 							row.add(sale); // product object added in order to obtain it with tableModelProducts.getValueAt(i,2)
 							tableModelProducts.addRow(row);	
 						}
@@ -108,11 +116,12 @@ public class QuerySalesGUI extends JFrame {
 
 					e1.printStackTrace();
 				}
-				tableProducts.getColumnModel().getColumn(0).setPreferredWidth(200);
-				tableProducts.getColumnModel().getColumn(1).setPreferredWidth(10);
-				tableProducts.getColumnModel().getColumn(1).setPreferredWidth(70);
+				tableProducts.getColumnModel().getColumn(0).setPreferredWidth(100);
+				tableProducts.getColumnModel().getColumn(1).setPreferredWidth(110);
+				tableProducts.getColumnModel().getColumn(2).setPreferredWidth(70);
+				tableProducts.getColumnModel().getColumn(3).setPreferredWidth(80);
 
-				tableProducts.getColumnModel().removeColumn(tableProducts.getColumnModel().getColumn(3)); // not shown in JTable
+				tableProducts.getColumnModel().removeColumn(tableProducts.getColumnModel().getColumn(4)); // not shown in JTable
 		 		
 		 	}
 		 });
@@ -129,7 +138,7 @@ public class QuerySalesGUI extends JFrame {
 				        JTable table =(JTable) mouseEvent.getSource();
 		            	Point point = mouseEvent.getPoint();
 				        int row = table.rowAtPoint(point);
-		            	Sale s=(Sale) tableModelProducts.getValueAt(row, 3);
+		            	Sale s=(Sale) tableModelProducts.getValueAt(row, 4);
 		            	//Poner la manera de "comprar"
 			            new ShowSaleGUI(s, true, usuario, thisFrame);
 		            }

@@ -9,6 +9,7 @@ import javax.jws.WebService;
 import dataAccess.DataAccess;
 import domain.Comprador;
 import domain.Cuentas;
+import domain.Oferta;
 import domain.Sale;
 import domain.Seller;
 import exceptions.FileNotUploadedException;
@@ -123,9 +124,6 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.addComprador(usuario, contrasena);
 	}
 	
-	public boolean hacerContraoferta(Sale saleNumber, float ofer) {
-		return dbManager.hacerContraoferta(saleNumber, ofer);
-	}
 	
 	public boolean comprarProducto(String usuario, Sale saleNumber) {
 		return dbManager.comprarProducto(usuario, saleNumber);
@@ -156,5 +154,16 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.anadirCuentas(comprIntro, contrIntro, cu);
 	}
 	
+	public void crearOferta(String nUser, float precio, Sale s) {
+		dbManager.crearOferta(nUser, precio, s);
+	}
+	
+	public void devolverOfertas(Sale s) {
+		dbManager.devolverOfertas(s);
+	}
+	
+	public void aceptarOferta(Sale s, Oferta dOf) {
+		dbManager.aceptarOferta(s, dOf);
+	}
 }
 

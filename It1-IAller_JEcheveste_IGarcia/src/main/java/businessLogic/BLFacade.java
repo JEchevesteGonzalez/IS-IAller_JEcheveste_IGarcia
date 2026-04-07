@@ -6,6 +6,7 @@ import java.util.List;
 
 import domain.Comprador;
 import domain.Cuentas;
+import domain.Oferta;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
@@ -73,8 +74,6 @@ public interface BLFacade  {
 	
 	public void addComprador(String usuario, String contrasena);
 	
-	public boolean hacerContraoferta(Sale saleNumber, float ofer);
-	
 	public boolean comprarProducto(String usuario, Sale saleNumber);
 
 	public boolean anadirFondos(String usuario, float cantidad);
@@ -91,4 +90,9 @@ public interface BLFacade  {
 
 	public void anadirCuentas(String usuarioIntro, String contrIntro, Cuentas cu);
 	
+	public void crearOferta(String nUser, float precio, Sale s);
+	
+	public void devolverOfertas(Sale s);
+	
+	public void aceptarOferta(Sale s, Oferta dOf);
 }

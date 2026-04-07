@@ -16,6 +16,9 @@ public class Comprador {
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Sale> historialDeCompras;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Oferta> comprasActuales;
+
 	@OneToOne
 	private Cuentas cuentas;
 	
@@ -25,6 +28,7 @@ public class Comprador {
 		this.contrasena=contrasena;
 		this.historialDeCompras= new ArrayList<Sale>();	
 		this.cuentas = null;
+		this.comprasActuales= new ArrayList<Oferta>();
 	}
 
 
@@ -75,5 +79,12 @@ public class Comprador {
 		this.cuentas = cuentas;
 	}
 	
-	
+	public ArrayList<Oferta> getComprasActuales() {
+		return comprasActuales;
+	}
+
+
+	public void setComprasActuales(ArrayList<Oferta> comprasActuales) {
+		this.comprasActuales = comprasActuales;
+	}
 }

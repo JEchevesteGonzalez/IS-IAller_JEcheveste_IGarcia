@@ -1,15 +1,44 @@
 package domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Oferta {
-	private Sale s;
-	private Comprador c;
+	private String nUser;
+	private float precio;
 	
-	public Oferta(Sale s, Comprador c) {
+	@ManyToOne
+	private Sale s;
+	
+	public Oferta(String nUser, float precio, Sale s) {
+		this.nUser = nUser;
+		this.precio= precio;
 		this.s = s;
-		this.c = c;
+	}
+
+	public String getnUser() {
+		return nUser;
+	}
+
+	public void setnUser(String nUser) {
+		this.nUser = nUser;
+	}
+
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
+	public Sale getS() {
+		return s;
+	}
+
+	public void setS(Sale s) {
+		this.s = s;
 	}
 	
 }

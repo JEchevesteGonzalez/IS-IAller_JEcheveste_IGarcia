@@ -30,7 +30,7 @@ public class CompradorGUI extends JFrame {
 	public CompradorGUI(String usuario) {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 454, 335);
+		setBounds(100, 100, 454, 333);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -44,7 +44,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton.setBounds(0, 123, 434, 103);
+		btnNewButton.setBounds(0, 101, 434, 103);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizarComprasAnteriores = new JButton("Visualizar compras anteriores");
@@ -55,7 +55,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnVisualizarComprasAnteriores.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnVisualizarComprasAnteriores.setBounds(0, 0, 434, 124);
+		btnVisualizarComprasAnteriores.setBounds(0, 0, 434, 103);
 		contentPane.add(btnVisualizarComprasAnteriores);
 		
 		JButton btnNewButton_1 = new JButton("Agregar Fondos");
@@ -66,7 +66,17 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton_1.setBounds(0, 225, 434, 63);
+		btnNewButton_1.setBounds(0, 202, 218, 86);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnComprasActuales = new JButton("Compras Actuales");
+		btnComprasActuales.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//...
+			}
+		});
+		btnComprasActuales.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnComprasActuales.setBounds(216, 202, 218, 86);
+		contentPane.add(btnComprasActuales);
 	}
 }

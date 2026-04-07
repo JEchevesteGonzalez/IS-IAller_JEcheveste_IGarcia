@@ -28,7 +28,7 @@ public class Sale implements Serializable {
 	private float price;
 	private int esSubasta;
 	private ArrayList<Oferta> ofertas;
-	
+
 	public String getUsuarioVendedor() {
 		return usuarioVendedor;
 	}
@@ -252,6 +252,14 @@ public class Sale implements Serializable {
 		this.esSubasta = esSubasta;
 	}
 
+	
+	public ArrayList<Oferta> getOfertas() {
+		return ofertas;
+	}
+
+	public void setOfertas(ArrayList<Oferta> ofertas) {
+		this.ofertas = ofertas;
+	}
 
 	
 }

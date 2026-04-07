@@ -6,7 +6,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Cuentas {
-	@Id
 	private int numeroCuenta;
 	private float saldo;
 	private String nombreBanco;

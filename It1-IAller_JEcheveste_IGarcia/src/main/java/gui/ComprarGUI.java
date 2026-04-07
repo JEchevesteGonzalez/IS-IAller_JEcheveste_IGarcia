@@ -83,7 +83,7 @@ public class ComprarGUI extends JFrame {
 		
 		JLabel PrecioSale = new JLabel("");
 		PrecioSale.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		PrecioSale.setBounds(245, 35, 65, 40);
+		PrecioSale.setBounds(245, 35, 131, 40);
 		getContentPane().add(PrecioSale);
 		PrecioSale.setText(String.valueOf(sale.getPrice()));
 		
@@ -96,6 +96,9 @@ public class ComprarGUI extends JFrame {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
 		JButton btnComprar = new JButton("Comprar");
+		if(sale.getEsSubasta()==1){
+			btnComprar.setText("Pujar");
+		}
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -103,7 +106,6 @@ public class ComprarGUI extends JFrame {
 						textoErrores.setText("Haga una oferta válida");
 					}
 					else {
-						if(sale.getEsSubasta()==0) {
 							float ofer = Float.parseFloat(oferta.getText());
 							if(ofer>sale.getPrice()) {
 								textoErrores.setText("Haga una oferta válida: el precio ofertado o menor");
@@ -111,6 +113,9 @@ public class ComprarGUI extends JFrame {
 							else if(ofer==sale.getPrice()) {
 								Comprador comprador = facade.buscarPorUser(usuario);
 								boolean exito = facade.comprarProducto(usuario, sale);
+								if(sale.getOfertas().isEmpty()) {
+									facade.devolverOfertas(sale);
+								}
 								if(exito) {
 									JOptionPane.showMessageDialog(null, "¡Compra realizada con éxito!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 									thisFrame.setVisible(false);
@@ -125,36 +130,12 @@ public class ComprarGUI extends JFrame {
 								}
 							}
 							else {
-								boolean exito = facade.hacerContraoferta(sale, ofer);
-								if (exito) {
-									JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta. El producto ha sido inhabilitado temporalmente.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
-									thisFrame.setVisible(false);
-									compra.setVisible(false);
-									posCompras.setVisible(false);
-								}
-								else {
-									jLabelError.setText("Error al procesar la contraoferta.");
-								}
+								facade.crearOferta(usuario, ofer, sale);
+								JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta. El producto ha sido inhabilitado temporalmente.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
+								thisFrame.setVisible(false);
+								compra.setVisible(false);
+								posCompras.setVisible(false);
 							}
-						}
-						else{
-							float ofer = Float.parseFloat(oferta.getText());
-							if(ofer<=sale.getPrice()) {
-								textoErrores.setText("Haga una oferta válida: el precio mayor al ofertado");
-							}
-							else {
-								boolean exito = facade.pujar(sale, ofer);
-								if (exito) {
-									JOptionPane.showMessageDialog(null, "Has pujado por "+ofer+" €.");
-									thisFrame.setVisible(false);
-									compra.setVisible(false);
-									posCompras.setVisible(false);
-								}
-								else {
-									jLabelError.setText("Error al procesar la contraoferta.");
-								}
-							}
-						}
 					}
 				}catch(NumberFormatException ex){
 					textoErrores.setText("Error:introduce una cifra numérica");
@@ -166,7 +147,7 @@ public class ComprarGUI extends JFrame {
 		
 		JLabel label = new JLabel("€");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		label.setBounds(340, 35, 65, 40);
+		label.setBounds(388, 35, 65, 40);
 		getContentPane().add(label);
 		this.setSize(new Dimension(604, 370));
 		//this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateProductGUI.CreateProduct"));

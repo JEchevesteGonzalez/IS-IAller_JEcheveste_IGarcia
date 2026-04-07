@@ -63,6 +63,8 @@ public class EditarVentasGUI extends JFrame {
 	private JLabel jLabelError = new JLabel();
 	private JFrame thisFrame;
 	private final JButton btnNewButton_2 = new JButton("grabar Imagen"); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton btnVisualizarSubastas = new JButton("Cerrar Subasta");
+	private final JButton btnVisualizarOfertas = new JButton("Visualizar Ofertas");
 
 	public EditarVentasGUI(String usuario, Sale sale, JFrame venta, JFrame listado) {
 
@@ -71,6 +73,8 @@ public class EditarVentasGUI extends JFrame {
 		this.setSize(new Dimension(604, 370));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.CreateProduct"));
 
+		BLFacade facade = MainGUI.getBusinessLogic();
+		
 		jLabelTitle.setBounds(new Rectangle(6, 24, 92, 20));
 		
 		jLabelPrice.setBounds(new Rectangle(6, 141, 101, 20));
@@ -84,7 +88,7 @@ public class EditarVentasGUI extends JFrame {
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 		jButtonCreate.setFont(new Font("Lucida Grande", Font.BOLD, 15));
 
-		jButtonCreate.setBounds(new Rectangle(97, 246, 216, 41));
+		jButtonCreate.setBounds(new Rectangle(184, 239, 140, 48));
 
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,7 +98,6 @@ public class EditarVentasGUI extends JFrame {
 					jLabelMsg.setText(error);
 				else
 					try {
-						BLFacade facade = MainGUI.getBusinessLogic();
 						float price = Float.parseFloat(jTextFieldPrice.getText());
 						String s=(String)jComboBoxStatus.getSelectedItem();
 						int numStatus=status.indexOf(s);
@@ -131,7 +134,7 @@ public class EditarVentasGUI extends JFrame {
 		
 	
 
-		jLabelError.setBounds(new Rectangle(16, 275, 384, 20));
+		jLabelError.setBounds(new Rectangle(36, 300, 384, 20));
 		jLabelError.setForeground(Color.red);
 		
 	    status=Utils.getStatus();
@@ -241,7 +244,39 @@ public class EditarVentasGUI extends JFrame {
 		
 		JLabel precioOriginal = new JLabel();
 		precioOriginal.setBounds(26, 166, 197, 23);
-		getContentPane().add(precioOriginal);
+
+	
+		btnVisualizarSubastas.setBounds(6, 231, 166, 25);
+		if(sale.getEsSubasta()==0) {
+			btnVisualizarSubastas.setVisible(false);
+		}
+		getContentPane().add(btnVisualizarSubastas);
+		
+		
+		btnVisualizarSubastas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(sale.getOfertas().isEmpty()) {
+					facade.aceptarOferta(sale, sale.getOfertas().get(0));
+					jLabelError.setText("La subasta se cerro correctamente");
+				}
+				else {
+					jLabelError.setText("No hay puja con la que cerrar la subasta");
+				}
+			}
+		});
+		
+		btnVisualizarOfertas.setBounds(10, 262, 162, 25);
+		if(sale.getEsSubasta()==1) {
+			btnVisualizarOfertas.setVisible(false);
+		}
+		getContentPane().add(btnVisualizarOfertas);
+		
+		btnVisualizarOfertas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
 		if(!sale.isHabilitado()) {
 			precioOriginal.setText("El precio de la contraoferta es:"+sale.getPrice());
 		}

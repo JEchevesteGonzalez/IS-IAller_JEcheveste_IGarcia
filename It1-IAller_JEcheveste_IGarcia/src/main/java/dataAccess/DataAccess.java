@@ -22,6 +22,7 @@ import configuration.UtilDate;
 import domain.Seller;
 import domain.Comprador;
 import domain.Cuentas;
+import domain.Oferta;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
@@ -324,21 +325,6 @@ public void open(){
 		}
     }
     
-    public boolean hacerContraoferta(Sale pro, float price) {
-		open();
-		db.getTransaction().begin();
-		Sale producto = db.find(Sale.class, pro.getSaleNumber());
-		if (producto != null && producto.isHabilitado()) {
-			producto.setHabilitado(false);
-			producto.setPrice(price);
-			db.persist(producto);
-			db.getTransaction().commit();
-			close();
-			return true;
-		}
-		return false;
-		
-    }
 
     public void eliminarUsuario(String usuario) {
 		open();
@@ -456,4 +442,48 @@ public void open(){
 		db.getTransaction().commit();
 		close();
 	}
+	
+	public void crearOferta(String nUser, float precio, Sale s) {
+		open();
+		db.getTransaction().begin();
+		Oferta o = new Oferta(nUser, precio, s);
+		Sale sA = db.find (Sale.class,s);
+		Comprador c = buscarPorUser(nUser);
+		db.persist(o);
+		c.getComprasActuales().add(o);
+		retirarFondos(nUser, precio);
+		sA.getOfertas().add(o);
+		db.getTransaction().commit();
+		close();
+	}
+	
+	public void devolverOfertas(Sale s) {
+		open();
+		db.getTransaction().begin();
+		Sale sA = db.find (Sale.class,s);
+		for(Oferta dOf: sA.getOfertas()) {
+			Comprador c=buscarPorUser(dOf.getnUser());
+			anadirFondos(dOf.getnUser(), dOf.getPrecio());
+			c.getComprasActuales().remove(dOf);
+			sA.getOfertas().remove(dOf);
+			db.remove(dOf);
+		}
+		db.getTransaction().commit();
+		close();
+	}
+	
+	public void aceptarOferta(Sale s, Oferta dOf) {
+		open();
+		db.getTransaction().begin();
+		Sale sA = db.find(Sale.class,s);
+		Comprador c=buscarPorUser(dOf.getnUser());
+		c.getComprasActuales().remove(dOf);
+		anadirFondos(s.getSeller().getUsuario(), dOf.getPrecio());
+		sA.getOfertas().remove(dOf);
+		db.remove(dOf);
+		db.getTransaction().commit();
+		close();
+	}
+	
+	
 }
