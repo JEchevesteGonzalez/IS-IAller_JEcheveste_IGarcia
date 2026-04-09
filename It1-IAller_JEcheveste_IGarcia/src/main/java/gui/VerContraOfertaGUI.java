@@ -42,6 +42,7 @@ public class VerContraOfertaGUI extends JFrame {
 	private JTable table;
 	private String[] nombreColumnas = {"Comprador", "Precio"};
 	private DefaultTableModel tableModelProducts = new DefaultTableModel(null, nombreColumnas);
+	private Oferta PosO = null;
 
 	public boolean isCellEditable(int row, int column) {
 		return false; 
@@ -60,7 +61,11 @@ public class VerContraOfertaGUI extends JFrame {
 		getContentPane().setLayout(null);
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
+		System.out.println("//////////////");
+		System.out.println(s);
+		System.out.println(s.getOfertas());
 		ArrayList<Oferta> historial = s.getOfertas();
+		System.out.println(historial);
 		
 		tableModelProducts.setDataVector(null, nombreColumnas);
 		tableModelProducts.setColumnCount(3);
@@ -81,8 +86,9 @@ public class VerContraOfertaGUI extends JFrame {
 		for (Oferta f : historial) {
 		    modelo.addElement(f);
 		}
+		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(26, 36, 380, 204);
+		scrollPane.setBounds(12, 40, 380, 141);
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
@@ -90,6 +96,11 @@ public class VerContraOfertaGUI extends JFrame {
 		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(2));
 		
 		scrollPane.setViewportView(table);
+		
+		JLabel lblErrores = new JLabel("");
+		lblErrores.setBounds(12, 227, 368, 16);
+		getContentPane().add(lblErrores);
+		
 		
 		table.addMouseListener(new MouseAdapter() {
 	        @Override
@@ -99,11 +110,54 @@ public class VerContraOfertaGUI extends JFrame {
 	            	Point point = mouseEvent.getPoint();
 			        int row = tablaClicada.rowAtPoint(point);
 			        
-	            	Sale s=(Sale) tableModelProducts.getValueAt(row, 2);
+	            	PosO=(Oferta) tableModelProducts.getValueAt(row, 2);
 	            }
 	        }
 	 });
+		JButton btnAceptarOferta = new JButton("Aceptar oferta");
+		btnAceptarOferta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(PosO!=null) {
+					facade.aceptarOferta(s, PosO);
+					facade.devolverOfertas(s);
+				}
+				else {
+					lblErrores.setText("No se ha escogido oferta.");
+				}
+			}
+		});
+		
+		btnAceptarOferta.setBounds(12, 194, 131, 25);
+		getContentPane().add(btnAceptarOferta);
+		
+		JButton btnRechazarOferta = new JButton("Rechazar oferta");
+		btnRechazarOferta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(PosO!=null) {
+					facade.eliminarOferta(s, PosO);
+				}
+				else {
+					lblErrores.setText("No se ha escogido oferta.");
+				}
+			}
+		});
+		
+		btnRechazarOferta.setBounds(188, 194, 136, 25);
+		getContentPane().add(btnRechazarOferta);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		btnSalir.setBounds(372, 194, 93, 25);
+		getContentPane().add(btnSalir);
+		
+		JLabel lblOfertasProducto = new JLabel(s.getTitle());
+		lblOfertasProducto.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblOfertasProducto.setBounds(188, 13, 114, 25);
+		getContentPane().add(lblOfertasProducto);
 		
 	}
-	
 }

@@ -254,7 +254,7 @@ public class Sale implements Serializable {
 
 	
 	public ArrayList<Oferta> getOfertas() {
-		return ofertas;
+		return this.ofertas;
 	}
 
 	public void setOfertas(ArrayList<Oferta> ofertas) {

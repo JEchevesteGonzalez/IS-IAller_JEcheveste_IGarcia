@@ -273,7 +273,8 @@ public class EditarVentasGUI extends JFrame {
 		
 		btnVisualizarOfertas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JFrame verContraOfertaGUI = new VerContraOfertaGUI(sale);
+				verContraOfertaGUI.setVisible(true);
 			}
 		});
 		

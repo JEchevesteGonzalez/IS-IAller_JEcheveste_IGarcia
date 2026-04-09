@@ -263,7 +263,8 @@ public void open(){
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
 		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
-		vendedor.setSaldo(user.getSaldo());
+		vendedor.setCuentas(user.getCuentas());
+		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
 		db.remove(user);
 		db.persist(vendedor);
@@ -405,7 +406,6 @@ public void open(){
 	}
 
 	public boolean retirarFondos(String usuario, float cantidad) {
-		open();
 		db.getTransaction().begin();
 		try {
 			Comprador user = db.find(Comprador.class, usuario);
@@ -448,11 +448,17 @@ public void open(){
 		db.getTransaction().begin();
 		Oferta o = new Oferta(nUser, precio, s);
 		Sale sA = db.find (Sale.class,s);
-		Comprador c = buscarPorUser(nUser);
+		Comprador c = db.find(Comprador.class, nUser);
 		db.persist(o);
 		c.getComprasActuales().add(o);
-		retirarFondos(nUser, precio);
+		float nuevoSaldo = c.getSaldo() - precio;
+		if (nuevoSaldo<0) {
+			nuevoSaldo=0;
+		}
+		c.setSaldo(nuevoSaldo);
 		sA.getOfertas().add(o);
+		System.out.println(o);
+		System.out.println(sA.getOfertas());
 		db.getTransaction().commit();
 		close();
 	}
@@ -462,8 +468,9 @@ public void open(){
 		db.getTransaction().begin();
 		Sale sA = db.find (Sale.class,s);
 		for(Oferta dOf: sA.getOfertas()) {
-			Comprador c=buscarPorUser(dOf.getnUser());
-			anadirFondos(dOf.getnUser(), dOf.getPrecio());
+			Comprador c= db.find(Comprador.class, dOf.getnUser());
+			float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
+			c.setSaldo(nuevoSaldo);
 			c.getComprasActuales().remove(dOf);
 			sA.getOfertas().remove(dOf);
 			db.remove(dOf);
@@ -476,14 +483,28 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		Sale sA = db.find(Sale.class,s);
-		Comprador c=buscarPorUser(dOf.getnUser());
+		Comprador c= db.find(Comprador.class, dOf.getnUser());
 		c.getComprasActuales().remove(dOf);
-		anadirFondos(s.getSeller().getUsuario(), dOf.getPrecio());
+		float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
+		c.setSaldo(nuevoSaldo);
 		sA.getOfertas().remove(dOf);
 		db.remove(dOf);
 		db.getTransaction().commit();
 		close();
 	}
 	
+	public void eliminarOferta(Sale s, Oferta dOf) {
+		open();
+		db.getTransaction().begin();
+		Sale sA = db.find (Sale.class,s);
+		Comprador c= db.find(Comprador.class, dOf.getnUser());
+		float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
+		c.setSaldo(nuevoSaldo);
+		c.getComprasActuales().remove(dOf);
+		sA.getOfertas().remove(dOf);
+		db.remove(dOf);
+		db.getTransaction().commit();
+		close();
+	}
 	
 }

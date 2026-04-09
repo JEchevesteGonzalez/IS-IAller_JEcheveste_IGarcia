@@ -10,9 +10,9 @@ Para el comprador:
 - Rellenar datos bancarios -- Hecho
 
 Para el vendedor:
-- Aceptar oferta (La funcionalidad para que los vendedores decidan a quién le venden un producto entre las propuestas realizadas por los compradores.) 
+- Aceptar oferta (La funcionalidad para que los vendedores decidan a quién le venden un producto entre las propuestas realizadas por los compradores.) -- Hecho
 - Subastar --Hecho
-- Cerrar subasta
+- Cerrar subasta 
 - Borrar venta
 
 

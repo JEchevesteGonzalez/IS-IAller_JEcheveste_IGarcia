@@ -131,7 +131,7 @@ public class ComprarGUI extends JFrame {
 							}
 							else {
 								facade.crearOferta(usuario, ofer, sale);
-								JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta. El producto ha sido inhabilitado temporalmente.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
 								thisFrame.setVisible(false);
 								compra.setVisible(false);
 								posCompras.setVisible(false);
