@@ -17,7 +17,7 @@ public class Comprador {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Sale> historialDeCompras;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private ArrayList<Oferta> comprasActuales;
+	private ArrayList<Oferta> ofertasEnCurso;
 
 	@OneToOne
 	private Cuentas cuentas;
@@ -28,7 +28,7 @@ public class Comprador {
 		this.contrasena=contrasena;
 		this.historialDeCompras= new ArrayList<Sale>();	
 		this.cuentas = null;
-		this.comprasActuales= new ArrayList<Oferta>();
+		this.ofertasEnCurso= new ArrayList<Oferta>();
 	}
 
 
@@ -79,12 +79,12 @@ public class Comprador {
 		this.cuentas = cuentas;
 	}
 	
-	public ArrayList<Oferta> getComprasActuales() {
-		return comprasActuales;
+	public ArrayList<Oferta> getOfertasEnCurso() {
+		return ofertasEnCurso;
 	}
 
 
-	public void setComprasActuales(ArrayList<Oferta> comprasActuales) {
-		this.comprasActuales = comprasActuales;
+	public void setOfertasEnCurso(ArrayList<Oferta> ofertasEnCurso) {
+		this.ofertasEnCurso = ofertasEnCurso;
 	}
 }

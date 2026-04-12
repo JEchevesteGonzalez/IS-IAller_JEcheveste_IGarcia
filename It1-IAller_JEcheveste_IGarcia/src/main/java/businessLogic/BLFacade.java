@@ -96,5 +96,7 @@ public interface BLFacade  {
 	
 	public void aceptarOferta(Sale s, Oferta dOf);
 	
-	public void eliminarOferta(Sale s, Oferta dOf);
+	public Sale eliminarOferta(Sale s, Oferta dOf);
+	
+	public void borrarVenta(Sale s);
 }

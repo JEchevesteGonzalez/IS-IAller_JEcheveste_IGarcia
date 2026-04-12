@@ -169,6 +169,7 @@ public class RegisterGUI extends JFrame {
 			    		            JFrame verDBan = new DatosBancariosGUI(usuarioIntro, contrIntro);
 			    		            verDBan.setVisible(true);
 			                    	textoErrores.setText("¡Comprador registrado con éxito!");
+			                    	repContrasena.setText("");
 				                    
 				                    // Reseteamos la vista
 				                    repContrasena.setVisible(false);

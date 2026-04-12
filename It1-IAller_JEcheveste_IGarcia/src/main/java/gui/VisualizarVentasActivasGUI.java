@@ -49,10 +49,33 @@ public class VisualizarVentasActivasGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	private void crearTabla(List<Sale> historial, int sub) {
+		tableModelProducts.setRowCount(0);
+		if (historial != null) {
+			DefaultListModel<Sale> modelo = new DefaultListModel<>();
+			for (Sale s : historial) {
+				if(s.getEsSubasta()==sub) {
+					Vector<Object> row = new Vector<Object>();
+					row.add(s.getTitle());
+					row.add(s.getPrice());
+					row.add(s.getPublicationDate());
+					row.add(s.isHabilitado());
+					row.add(s); // Metemos el objeto Sale en la columna 4
+					
+					tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
+	
+					modelo.addElement(s);
+				}
+			}
+		}
+	}
+	
 	public VisualizarVentasActivasGUI(String usuario) {
 		thisFrame=this;
+		
 		tableModelProducts.setDataVector(null, nombreColumnas);
 		tableModelProducts.setColumnCount(5);
+		
 		this.setSize(495, 290);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
@@ -62,43 +85,35 @@ public class VisualizarVentasActivasGUI extends JFrame {
 		Seller user = (Seller) facade.buscarPorUser(usuario);
 		List<Sale> historial = user.getSales();
 		
-		tableModelProducts.setDataVector(null, nombreColumnas);
-		tableModelProducts.setColumnCount(5);
-		
-		if (historial != null) {
-			for (Sale s : historial) {
-				Vector<Object> row = new Vector<Object>();
-				row.add(s.getTitle());
-				row.add(s.getPrice());
-				row.add(s.getPublicationDate());
-				row.add(s.isHabilitado());
-				row.add(s); // Metemos el objeto Sale en la columna 4
-				
-				tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
-			}
-		}
-		
-		DefaultListModel<Sale> modelo = new DefaultListModel<>();
-
-		for (Sale s : historial) {
-		    modelo.addElement(s);
-		}
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(26, 36, 380, 204);
-		getContentPane().add(scrollPane);
-		
-		table = new JTable();
-		table.setModel(tableModelProducts);
-		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(4));
-		
-		scrollPane.setViewportView(table);
+		int sub;
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				crearTabla(historial,comboBox.getSelectedIndex());
+			}
+		});
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
 		comboBox.setBounds(113, 13, 220, 22);
 		getContentPane().add(comboBox);
 		
+		sub = comboBox.getSelectedIndex();
+		
+		crearTabla(historial,sub);
+		
+		
+		table = new JTable();
+		table.setModel(tableModelProducts);
+		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(4));
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(26, 36, 380, 204);
+		getContentPane().add(scrollPane);
+		
+		scrollPane.setViewportView(table);
+
 		table.addMouseListener(new MouseAdapter() {
 	        @Override
 	        public void mousePressed(MouseEvent mouseEvent) {

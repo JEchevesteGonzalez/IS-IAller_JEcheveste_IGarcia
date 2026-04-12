@@ -56,7 +56,7 @@ public class CreateSaleGUI extends JFrame {
 	List<String> status;
 
 
-	private JButton jButtonCreate = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.CreateProduct"));
+	private JButton jButtonCreate = new JButton("Crear Oferta");
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
@@ -76,6 +76,17 @@ public class CreateSaleGUI extends JFrame {
 		jTextFieldPrice.setBounds(new Rectangle(97, 141, 60, 20));
 
 		JComboBox<String> tipoVenta = new JComboBox<String>();
+		tipoVenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int tVenta = tipoVenta.getSelectedIndex();
+				if(tVenta==0) {
+					jButtonCreate.setText("Crear Oferta");
+				}
+				else {
+					jButtonCreate.setText("Crear Subasta");
+				}
+			}
+		});
 		tipoVenta.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
 		tipoVenta.setBounds(90, 223, 114, 22);
 		

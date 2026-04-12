@@ -1,10 +1,15 @@
 package domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Oferta {
+	@Id
+	@GeneratedValue
+	private Integer ofertaNumber;
 	private String nUser;
 	private float precio;
 	
@@ -39,6 +44,14 @@ public class Oferta {
 
 	public void setS(Sale s) {
 		this.s = s;
+	}
+	
+	public Integer getOfertaNumber() {
+		return ofertaNumber;
+	}
+
+	public void setOfertaNumber(Integer ofertaNumber) {
+		this.ofertaNumber = ofertaNumber;
 	}
 	
 }

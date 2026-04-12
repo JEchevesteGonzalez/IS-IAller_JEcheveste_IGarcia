@@ -406,6 +406,7 @@ public void open(){
 	}
 
 	public boolean retirarFondos(String usuario, float cantidad) {
+		open();
 		db.getTransaction().begin();
 		try {
 			Comprador user = db.find(Comprador.class, usuario);
@@ -446,19 +447,18 @@ public void open(){
 	public void crearOferta(String nUser, float precio, Sale s) {
 		open();
 		db.getTransaction().begin();
-		Oferta o = new Oferta(nUser, precio, s);
-		Sale sA = db.find (Sale.class,s);
+		Sale sA = db.find (Sale.class,s.getSaleNumber());
+		Oferta o = new Oferta(nUser, precio, sA);
 		Comprador c = db.find(Comprador.class, nUser);
 		db.persist(o);
-		c.getComprasActuales().add(o);
+		c.getOfertasEnCurso().add(o);
 		float nuevoSaldo = c.getSaldo() - precio;
 		if (nuevoSaldo<0) {
 			nuevoSaldo=0;
 		}
 		c.setSaldo(nuevoSaldo);
 		sA.getOfertas().add(o);
-		System.out.println(o);
-		System.out.println(sA.getOfertas());
+		o.setS(sA);
 		db.getTransaction().commit();
 		close();
 	}
@@ -466,12 +466,15 @@ public void open(){
 	public void devolverOfertas(Sale s) {
 		open();
 		db.getTransaction().begin();
-		Sale sA = db.find (Sale.class,s);
-		for(Oferta dOf: sA.getOfertas()) {
-			Comprador c= db.find(Comprador.class, dOf.getnUser());
-			float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
+		Sale sA = db.find (Sale.class,s.getSaleNumber());
+		ArrayList<Oferta> o = new ArrayList<Oferta>(sA.getOfertas());
+		Comprador c=null;
+		float nuevoSaldo= 0;
+		for(Oferta dOf: o) {
+			c= db.find(Comprador.class, dOf.getnUser());
+			nuevoSaldo = c.getSaldo() + dOf.getPrecio();
 			c.setSaldo(nuevoSaldo);
-			c.getComprasActuales().remove(dOf);
+			c.getOfertasEnCurso().remove(dOf);
 			sA.getOfertas().remove(dOf);
 			db.remove(dOf);
 		}
@@ -479,32 +482,81 @@ public void open(){
 		close();
 	}
 	
-	public void aceptarOferta(Sale s, Oferta dOf) {
+	public void aceptarOferta(Sale s, Oferta o) {
 		open();
 		db.getTransaction().begin();
-		Sale sA = db.find(Sale.class,s);
-		Comprador c= db.find(Comprador.class, dOf.getnUser());
-		c.getComprasActuales().remove(dOf);
-		float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
-		c.setSaldo(nuevoSaldo);
+		Sale sA = db.find(Sale.class,s.getSaleNumber());
+		Oferta dOf = db.find(Oferta.class, o.getOfertaNumber());
+		Seller sel= db.find(Seller.class, s.getSeller());
+		Comprador com = db.find(Comprador.class, dOf.getnUser());
+		com.getOfertasEnCurso().remove(dOf);
+		float nuevoSaldo = sel.getSaldo() + dOf.getPrecio();
+		sel.setSaldo(nuevoSaldo);
 		sA.getOfertas().remove(dOf);
+		com.getHistorialDeCompras().add(sA);
+		sel.getSales().remove(sA);
 		db.remove(dOf);
 		db.getTransaction().commit();
 		close();
 	}
 	
-	public void eliminarOferta(Sale s, Oferta dOf) {
+	public Sale eliminarOferta(Sale s, Oferta o) {
 		open();
 		db.getTransaction().begin();
-		Sale sA = db.find (Sale.class,s);
+		Sale sA = db.find (Sale.class,s.getSaleNumber());
+		Oferta dOf = db.find(Oferta.class, o.getOfertaNumber());
 		Comprador c= db.find(Comprador.class, dOf.getnUser());
 		float nuevoSaldo = c.getSaldo() + dOf.getPrecio();
 		c.setSaldo(nuevoSaldo);
-		c.getComprasActuales().remove(dOf);
+		c.getOfertasEnCurso().remove(dOf);
 		sA.getOfertas().remove(dOf);
 		db.remove(dOf);
 		db.getTransaction().commit();
 		close();
+		return(sA);
 	}
+	
+	public void borrarVenta(Sale s) {
+        open();
+        db.getTransaction().begin();
+        Sale saleEnBD = db.find(Sale.class, s.getSaleNumber());
+        if (saleEnBD != null) {
+            if (!saleEnBD.getOfertas().isEmpty()) {
+                List<Oferta> ofertasADevolver = new ArrayList<>(saleEnBD.getOfertas());
+                for(Oferta ofertaAct : ofertasADevolver) {
+                    Comprador c = db.find(Comprador.class, ofertaAct.getnUser());
+                        
+                    if (c != null) {
+                        float nuevoSaldo = c.getSaldo() + ofertaAct.getPrecio();
+                        c.setSaldo(nuevoSaldo);
+                        c.getOfertasEnCurso().remove(ofertaAct);
+                        db.persist(c);
+                    }
+                    db.remove(ofertaAct);
+                }
+                saleEnBD.getOfertas().clear(); 
+            }
+                
+            if (saleEnBD.getSeller() != null) {
+                Seller vendedor = db.find(Seller.class, saleEnBD.getSeller().getUsuario());
+                if (vendedor != null) {
+                    vendedor.getSales().remove(saleEnBD);
+                    db.persist(vendedor);
+                }
+            }
+            
+            TypedQuery<Comprador> query = db.createQuery("SELECT c FROM Comprador c WHERE ?1 MEMBER OF c.getHistorialDeCompras()",Comprador.class);    
+            query.setParameter(1, saleEnBD);
+            
+            List<Comprador> comprador = query.getResultList(); 
+            
+            Comprador cElim = db.find(Comprador.class, comprador.get(0).getUsuario());
+            cElim.getHistorialDeCompras().remove(saleEnBD);
+            
+            db.remove(saleEnBD);
+            db.getTransaction().commit();
+        } 
+        close();
+    }
 	
 }

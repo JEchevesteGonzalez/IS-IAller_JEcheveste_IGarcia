@@ -166,8 +166,13 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.aceptarOferta(s, dOf);
 	}
 
-	public void eliminarOferta(Sale s, Oferta dOf) {
-		dbManager.eliminarOferta(s, dOf);
+	public Sale eliminarOferta(Sale s, Oferta dOf) {
+		return dbManager.eliminarOferta(s, dOf);
 	}
+	
+	public void borrarVenta(Sale s) {
+		dbManager.borrarVenta(s);
+	}
+	
 }
 

@@ -27,7 +27,8 @@ public class Sale implements Serializable {
 	private int  status;
 	private float price;
 	private int esSubasta;
-	private ArrayList<Oferta> ofertas;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Oferta> ofertas = new ArrayList<Oferta>();;
 
 	public String getUsuarioVendedor() {
 		return usuarioVendedor;
@@ -58,7 +59,6 @@ public class Sale implements Serializable {
 		this.pubDate=pubDate;
 		this.habilitado=true;
 		this.esSubasta=tVenta;
-		this.ofertas = new ArrayList<Oferta>();
 		
 		if (file!=null) {
 		    this.fileName=file.getName();

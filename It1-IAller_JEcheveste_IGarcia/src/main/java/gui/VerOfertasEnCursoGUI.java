@@ -36,14 +36,15 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 @SuppressWarnings("serial")
-public class VerContraOfertaGUI extends JFrame {	
+public class VerOfertasEnCursoGUI extends JFrame {	
 
 	JFrame thisFrame;
 	private JPanel contentPane;
 	private JTable table;
-	private String[] nombreColumnas = {"Comprador", "Precio"};
+	private String[] nombreColumnas = {"Nombre de venta", "Precio ofertado"};
 	private DefaultTableModel tableModelProducts = new DefaultTableModel(null, nombreColumnas);
 	private Oferta PosO = null;
+	private Sale sale = null;
 
 	public boolean isCellEditable(int row, int column) {
 		return false; 
@@ -59,23 +60,27 @@ public class VerContraOfertaGUI extends JFrame {
 		if (historial != null) {
 			for (Oferta f : historial) {
 				Vector<Object> row = new Vector<Object>();
-				row.add(f.getnUser());
-				row.add(f.getPrecio());
-				row.add(f); // Metemos el objeto Sale en la columna 4
+				Sale s = f.getS();
+				if(s!=null && s.getEsSubasta()==0) {
+					row.add(s.getTitle());
+					row.add(f.getPrecio());
+					row.add(f); // Metemos el objeto Sale en la columna 4
+					row.add(s);
 				
-				tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
+					tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
 				
-				modelo.addElement(f);
+					modelo.addElement(f);
+				}
 			}
 		}
 		
 	}
 	
-	public VerContraOfertaGUI(Sale s, JFrame edicion, JFrame venta, JFrame listado){
+	public VerOfertasEnCursoGUI(String usuario){
 		thisFrame=this;
 		
 		tableModelProducts.setDataVector(null, nombreColumnas);
-		tableModelProducts.setColumnCount(3);
+		tableModelProducts.setColumnCount(4);
 		
 		this.setSize(495, 290);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -83,12 +88,13 @@ public class VerContraOfertaGUI extends JFrame {
 		getContentPane().setLayout(null);
 		BLFacade facade = MainGUI.getBusinessLogic();
 
-		ArrayList<Oferta> historial = s.getOfertas();
+		ArrayList<Oferta> historial = facade.buscarPorUser(usuario).getOfertasEnCurso();
 
 		crearTabla(historial);
 		
 		table = new JTable();
 		table.setModel(tableModelProducts);
+		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(3));
 		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(2));
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -111,40 +117,21 @@ public class VerContraOfertaGUI extends JFrame {
 			        int row = tablaClicada.rowAtPoint(point);
 			        
 	            	PosO=(Oferta) tableModelProducts.getValueAt(row, 2);
+	            	sale=(Sale) tableModelProducts.getValueAt(row, 3);
 	            }
 	        }
 	 });
-		JButton btnAceptarOferta = new JButton("Aceptar oferta");
-		btnAceptarOferta.addActionListener(new ActionListener() {
+		JButton btnEliminarOferta = new JButton("Eliminar Oferta");
+		btnEliminarOferta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(PosO!=null) {
-					facade.aceptarOferta(s, PosO);
-					facade.devolverOfertas(s);
-					JOptionPane.showMessageDialog(null, "¡Oferta aceptada con exito! "+PosO.getPrecio()+" añadidos a tu cuenta.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-					listado.dispose();
-					venta.dispose();
-					edicion.dispose();
-					dispose();
-				}
-				else {
-					lblErrores.setText("No se ha escogido oferta.");
-				}
-			}
-		});
-		
-		btnAceptarOferta.setBounds(12, 194, 131, 25);
-		getContentPane().add(btnAceptarOferta);
-		
-		JButton btnRechazarOferta = new JButton("Rechazar oferta");
-		btnRechazarOferta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(PosO!=null) {
+				if(PosO!=null && sale!=null) {
 					int confirmacion = JOptionPane.showConfirmDialog(null, 
 							"¿Estás seguro de que deseas eliminar la oferta?", 
 							"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 					
 					if (confirmacion == JOptionPane.YES_OPTION) {
-						crearTabla(facade.eliminarOferta(s, PosO).getOfertas());
+						facade.eliminarOferta(sale, PosO).getOfertas();
+						crearTabla(facade.buscarPorUser(usuario).getOfertasEnCurso());
 					}
 				}
 				else {
@@ -153,25 +140,17 @@ public class VerContraOfertaGUI extends JFrame {
 			}
 		});
 		
-		btnRechazarOferta.setBounds(188, 194, 136, 25);
-		getContentPane().add(btnRechazarOferta);
+		btnEliminarOferta.setBounds(12, 194, 131, 25);
+		getContentPane().add(btnEliminarOferta);
 		
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				listado.dispose();
-				venta.dispose();
-				edicion.dispose();
 				dispose();
 			}
 		});
 		btnSalir.setBounds(372, 194, 93, 25);
 		getContentPane().add(btnSalir);
-		
-		JLabel lblOfertasProducto = new JLabel(s.getTitle());
-		lblOfertasProducto.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblOfertasProducto.setBounds(188, 13, 114, 25);
-		getContentPane().add(lblOfertasProducto);
 		
 	}
 }

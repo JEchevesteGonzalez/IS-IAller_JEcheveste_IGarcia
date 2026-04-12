@@ -69,14 +69,15 @@ public class CompradorGUI extends JFrame {
 		btnNewButton_1.setBounds(0, 202, 218, 86);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnComprasActuales = new JButton("Compras Actuales");
-		btnComprasActuales.addActionListener(new ActionListener() {
+		JButton btnOfertasEnCurso = new JButton("Ofertas En Curso");
+		btnOfertasEnCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//...
+				JFrame OfertasEnCurso = new VerOfertasEnCursoGUI(usuario);
+				OfertasEnCurso.setVisible(true);
 			}
 		});
-		btnComprasActuales.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnComprasActuales.setBounds(216, 202, 218, 86);
-		contentPane.add(btnComprasActuales);
+		btnOfertasEnCurso.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnOfertasEnCurso.setBounds(216, 202, 218, 86);
+		contentPane.add(btnOfertasEnCurso);
 	}
 }

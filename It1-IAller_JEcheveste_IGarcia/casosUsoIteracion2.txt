@@ -12,11 +12,17 @@ Para el comprador:
 Para el vendedor:
 - Aceptar oferta (La funcionalidad para que los vendedores decidan a quién le venden un producto entre las propuestas realizadas por los compradores.) -- Hecho
 - Subastar --Hecho
-- Cerrar subasta 
-- Borrar venta
+- Cerrar subasta -- Hecho
+- Borrar venta -- Hecho
 
 
 
 NUEVAS CLASES DE DOMINIO
 - Oferta -> con atributos: nombre de usuario del cliente, precio ofertado, sale. -- Hecho 
 - Cuentas -> con atributos: numero de cuenta, saldo en aplicacion, nombre del banco. -- Hecho
+
+ERRORES Y APUNTES
+- Aceptar oferta y eliminar oferta funcionan correctamente
+- VisualizarVentasActivas actualiza tabla correctamente con el combobox
+- Compras actuales creado y completamente operativo
+- Añadido borrar venta en ver ofertas y en cerrar subasta

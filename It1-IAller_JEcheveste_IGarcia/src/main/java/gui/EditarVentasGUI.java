@@ -71,7 +71,7 @@ public class EditarVentasGUI extends JFrame {
 		thisFrame=this;
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.CreateProduct"));
+		this.setTitle("Editar Oferta");
 
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
@@ -121,7 +121,7 @@ public class EditarVentasGUI extends JFrame {
 					}
 			}
 		});
-		jButtonClose.setBounds(new Rectangle(328, 228, 101, 30));
+		jButtonClose.setBounds(new Rectangle(328, 228, 121, 30));
 		jButtonClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				thisFrame.setVisible(false);
@@ -255,9 +255,13 @@ public class EditarVentasGUI extends JFrame {
 		
 		btnVisualizarSubastas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(sale.getOfertas().isEmpty()) {
+				if(!(sale.getOfertas().isEmpty())) {
+					JOptionPane.showMessageDialog(null, "La subasta se cerro correctamente. "+sale.getOfertas().get(0).getPrecio()+" € añadidos a tu saldo.");
 					facade.aceptarOferta(sale, sale.getOfertas().get(0));
-					jLabelError.setText("La subasta se cerro correctamente");
+					facade.borrarVenta(sale);
+					listado.dispose();
+					venta.dispose();
+					dispose();
 				}
 				else {
 					jLabelError.setText("No hay puja con la que cerrar la subasta");
@@ -271,9 +275,27 @@ public class EditarVentasGUI extends JFrame {
 		}
 		getContentPane().add(btnVisualizarOfertas);
 		
+		JButton btnBorrarVenta = new JButton("Borrar venta");
+		btnBorrarVenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int confirmacion = JOptionPane.showConfirmDialog(null, 
+						"¿Estás seguro de que deseas eliminar la oferta?", 
+						"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+				
+				if (confirmacion == JOptionPane.YES_OPTION) {
+					facade.borrarVenta(sale);
+					listado.dispose();
+					venta.dispose();
+					dispose();
+				}
+			}
+		});
+		btnBorrarVenta.setBounds(328, 262, 121, 25);
+		getContentPane().add(btnBorrarVenta);
+		
 		btnVisualizarOfertas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame verContraOfertaGUI = new VerContraOfertaGUI(sale);
+				JFrame verContraOfertaGUI = new VerContraOfertaGUI(sale, thisFrame, venta, listado);
 				verContraOfertaGUI.setVisible(true);
 			}
 		});
