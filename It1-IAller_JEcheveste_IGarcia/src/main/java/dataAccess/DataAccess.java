@@ -495,6 +495,7 @@ public void open(){
 		sA.getOfertas().remove(dOf);
 		com.getHistorialDeCompras().add(sA);
 		sel.getSales().remove(sA);
+		sA.setHabilitado(false);
 		db.remove(dOf);
 		db.getTransaction().commit();
 		close();
@@ -545,7 +546,7 @@ public void open(){
                 }
             }
             
-            TypedQuery<Comprador> query = db.createQuery("SELECT c FROM Comprador c WHERE ?1 MEMBER OF c.getHistorialDeCompras()",Comprador.class);    
+            TypedQuery<Comprador> query = db.createQuery("SELECT c FROM Comprador c WHERE c.historialDeCompras IS NOT EMPTY AND ?1 MEMBER OF c.getHistorialDeCompras()",Comprador.class);    
             query.setParameter(1, saleEnBD);
             
             List<Comprador> comprador = query.getResultList(); 
