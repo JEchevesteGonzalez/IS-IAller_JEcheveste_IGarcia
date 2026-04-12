@@ -24,7 +24,7 @@ public class Seller extends Comprador implements Serializable{
 	private String email;
 	private String name; 
 	@XmlIDREF
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Sale> sales=new ArrayList<Sale>();
 	
 	public Seller(String usuario, String contrasena,String email, String name) {

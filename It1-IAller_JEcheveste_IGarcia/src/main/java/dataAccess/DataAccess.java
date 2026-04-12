@@ -333,6 +333,11 @@ public void open(){
 		Comprador user = db.find(domain.Comprador.class, usuario);
 		if (user != null) {
 			db.remove(user.getCuentas());
+			if(user.getClass()==Seller.class) {
+				Seller userS = (Seller) db.find(Seller.class, usuario);
+				db.remove(userS.getSales());
+			}
+			db.remove(user.getOfertasEnCurso());
 			db.remove(user);
 			db.getTransaction().commit(); 
 		}

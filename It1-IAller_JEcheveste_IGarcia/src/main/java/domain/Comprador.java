@@ -14,9 +14,9 @@ public class Comprador {
 	private String usuario;
 	private String contrasena;
 	@XmlIDREF
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Sale> historialDeCompras;
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Oferta> ofertasEnCurso;
 
 	@OneToOne

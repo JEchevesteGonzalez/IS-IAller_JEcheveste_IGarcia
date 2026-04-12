@@ -56,20 +56,29 @@ public class DatosBancariosGUI extends JFrame{
 		lblIntroduceTusDatos.setBounds(54, 0, 337, 40);
 		getContentPane().add(lblIntroduceTusDatos);
 		
+		JLabel lblErrores = new JLabel("\r\n");
+		lblErrores.setBounds(12, 224, 56, 16);
+		getContentPane().add(lblErrores);
+		
 		JButton btnGuardarDatos = new JButton("Guardar datos");
 		btnGuardarDatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				BLFacade facade = MainGUI.getBusinessLogic();
 				Cuentas cu = new Cuentas();
-				cu.setNumeroCuenta(Integer.parseInt(nCuenta.getText()));
-				cu.setSaldo(Float.parseFloat(sInic.getText()));
-				cu.setNombreBanco(nBanco.getText());
-				facade.anadirCuentas(usuarioIntro, contrIntro, cu);
-				thisFrame.setVisible(false);
+				try {
+					cu.setNumeroCuenta(Integer.parseInt(nCuenta.getText()));
+					cu.setSaldo(Float.parseFloat(sInic.getText()));
+					cu.setNombreBanco(nBanco.getText());
+					facade.anadirCuentas(usuarioIntro, contrIntro, cu);
+					thisFrame.setVisible(false);
+				}
+				catch (Exception e){
+					lblErrores.setText("Introduce valores correctos: Cuenta y saldo numeros, banco texto");
+				}
 			}
 		});
 		btnGuardarDatos.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnGuardarDatos.setBounds(110, 200, 224, 40);
+		btnGuardarDatos.setBounds(109, 185, 224, 40);
 		getContentPane().add(btnGuardarDatos);
 	}
 }

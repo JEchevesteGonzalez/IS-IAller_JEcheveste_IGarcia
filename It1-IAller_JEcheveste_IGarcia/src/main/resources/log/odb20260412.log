@@ -78,3 +78,70 @@ Type domain.Oferta is not enhanced.
 [2026-04-12 22:00:47 #6 type] 
 Type domain.Cuentas is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-12 23:13:32 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 305-308)
+
+[2026-04-12 23:13:32 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 3448@Joxe-Pc
+
+[2026-04-12 23:13:32 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-12 23:13:32 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-12 23:13:32 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-12 23:13:32 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-12 23:13:32 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-12 23:14:47 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 7372@Joxe-Pc
+
+[2026-04-12 23:14:47 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-12 23:14:47 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-12 23:14:47 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-12 23:14:47 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-12 23:14:47 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-12 23:14:47 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-12 23:14:47 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-12 23:14:47 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-12 23:14:47 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-12 23:14:47 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-12 23:14:47 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-12 23:14:47 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-12 23:14:47 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+

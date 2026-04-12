@@ -139,17 +139,22 @@ public class FondosGUI extends JFrame{
 						return;
 					}
 					
-					boolean exito = facade.retirarFondos(usuario, cantidadARetirar);
-					
-					if (exito) {
-						rFondos.setText("");
-						textoErrores.setForeground(Color.GREEN);
-						textoErrores.setText("Transaccion ejecutada correctamente");
-						Comprador userActualizado = facade.buscarPorUser(usuario);
-						lblfondosActuales.setText(userActualizado.getSaldo() + " €");
-					} else {
-						textoErrores.setForeground(Color.RED);
-						textoErrores.setText("Error en la base de datos al retirar fondos.");
+					if(facade.buscarPorUser(usuario).getCuentas().getSaldo()>0) {
+						boolean exito = facade.retirarFondos(usuario, cantidadARetirar);
+						
+						if (exito) {
+							rFondos.setText("");
+							textoErrores.setForeground(Color.GREEN);
+							textoErrores.setText("Transaccion ejecutada correctamente");
+							Comprador userActualizado = facade.buscarPorUser(usuario);
+							lblfondosActuales.setText(userActualizado.getSaldo() + " €");
+						} else {
+							textoErrores.setForeground(Color.RED);
+							textoErrores.setText("Error en la base de datos al retirar fondos.");
+						}
+					}
+					else {
+						textoErrores.setText("El saldo es 0. No se puede retirar mas");
 					}
 					
 				} catch (NumberFormatException ex) {

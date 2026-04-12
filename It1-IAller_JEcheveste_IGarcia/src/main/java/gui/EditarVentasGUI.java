@@ -113,6 +113,7 @@ public class EditarVentasGUI extends JFrame {
 						thisFrame.setVisible(false);
 						venta.setVisible(false);
 						listado.setVisible(false);
+						dispose();
 					
 					} catch (Exception e1) {
 
