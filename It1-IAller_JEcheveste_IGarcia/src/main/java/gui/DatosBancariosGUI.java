@@ -57,7 +57,7 @@ public class DatosBancariosGUI extends JFrame{
 		getContentPane().add(lblIntroduceTusDatos);
 		
 		JLabel lblErrores = new JLabel("\r\n");
-		lblErrores.setBounds(12, 224, 56, 16);
+		lblErrores.setBounds(12, 224, 365, 16);
 		getContentPane().add(lblErrores);
 		
 		JButton btnGuardarDatos = new JButton("Guardar datos");
