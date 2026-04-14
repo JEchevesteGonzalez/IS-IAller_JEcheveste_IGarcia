@@ -69,15 +69,15 @@ public class FondosGUI extends JFrame{
 				
 				 try {
 				 
-					float cantidadAAñadir = Float.parseFloat(textField.getText());
+					float cantidadAAnadir = Float.parseFloat(textField.getText());
 					
-					if (cantidadAAñadir <= 0) {
+					if (cantidadAAnadir <= 0) {
 						textoErrores.setForeground(Color.RED);
 						textoErrores.setText("Error: Introduce una cantidad mayor a 0.");
 						return;
 					}
 					
-					boolean exito = facade.anadirFondos(usuario, cantidadAAñadir);
+					boolean exito = facade.anadirFondos(usuario, cantidadAAnadir);
 					
 					if (exito) {
 						textField.setText("");

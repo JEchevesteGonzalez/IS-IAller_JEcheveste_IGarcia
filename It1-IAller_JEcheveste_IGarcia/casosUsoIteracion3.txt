@@ -1,0 +1,23 @@
+NUEVOS CASOS DE USO: ITERACION 3
+
+Para la clase Comprador:
+- Registrar un Comprador Friendly
+- Visualizar lista de deseos del Comprador Friendly
+- Ver reseñas de Vendedor
+- Poner reseña
+- Solicitar devolucion
+
+Para la clase Vendedor:
+- Visualizar devoluciones
+- Aceptar/Rechazar devolucion
+
+Para la nueva clase de dominio Comprador Friendly:
+- Login
+- Añadir a lista de deseos
+- Ver ofertas/subastas
+
+NUEVAS CLASES DE DOMINIO
+Comprador Friendly-> Usuario del comprador a cargo, nombre, contraseña
+Reseña-> Valoracion, foto del producto (Opcional), descripcion.
+
+En Vendedor añadimos el atributo -> devoluciones, que es un ArrayList de las posibles devoluciones.
