@@ -259,7 +259,6 @@ public class EditarVentasGUI extends JFrame {
 				if(!(sale.getOfertas().isEmpty())) {
 					JOptionPane.showMessageDialog(null, "La subasta se cerro correctamente. "+sale.getOfertas().get(0).getPrecio()+" € añadidos a tu saldo.");
 					facade.aceptarOferta(sale, sale.getOfertas().get(0));
-					facade.borrarVenta(sale);
 					listado.dispose();
 					venta.dispose();
 					dispose();

@@ -3,8 +3,8 @@ NUEVOS CASOS DE USO: ITERACION 3
 Para la clase Comprador:
 - Registrar un Comprador Friendly
 - Visualizar lista de deseos del Comprador Friendly
-- Ver rese�as de Vendedor
-- Poner rese�a
+- Ver reseñas de Vendedor
+- Poner reseña
 - Solicitar devolucion
 
 Para la clase Vendedor:
@@ -13,11 +13,22 @@ Para la clase Vendedor:
 
 Para la nueva clase de dominio Comprador Friendly:
 - Login
-- A�adir a lista de deseos
+- Añadir a lista de deseos
 - Ver ofertas/subastas
 
 NUEVAS CLASES DE DOMINIO
-Comprador Friendly-> Usuario del comprador a cargo, nombre, contrase�a
-Rese�a-> Valoracion, foto del producto (Opcional), descripcion.
+Comprador Friendly-> Usuario del comprador a cargo, nombre, contraseña
+Reseña-> Valoracion, foto del producto (Opcional), descripcion.
 
-En Vendedor a�adimos el atributo -> devoluciones, que es un ArrayList de las posibles devoluciones.
+En Vendedor añadimos el atributo -> devoluciones, que es un ArrayList de las posibles devoluciones.
+
+ERRORES Y CORRECIONES
+- En la pantalla de registrar cuando se abre lo del banco si pones un nombre en el número de cuenta da error fuera de la pantalla --Corregido
+- ⁠la pantalla de editar subasta debería de cerrarse después de darle a cerrar subasta --Corregido
+- (si no hay tiempo no hacer aún) el precio de la oferta debería cambiar cuando se compra con una contraoferta --Corregido
+- ⁠si se borra una cuenta, que se borren sus ventas también y que devuelvan el dinero reservado cada una --Corregido
+- ⁠en la pantalla de registrar banco si metes una letra en vez de un número en el saldo no sale el error por pantalla, sino por eclipse --Corregido
+- ⁠si retiro más dinero del que tengo cuando el saldo es 0 sale transacción ejecutada con éxito --Corregido
+- (si no hay tiempo no hacer) si se borra una cuenta, que se borren las ofertas activas también -Corregido (Ajustarlo para que las subastas solo cuenten la ultima oferta pero tengan mas de una)
+
+APUNTES Y COMENTARIOS

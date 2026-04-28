@@ -154,6 +154,7 @@ public class FondosGUI extends JFrame{
 						}
 					}
 					else {
+						textoErrores.setForeground(Color.RED);
 						textoErrores.setText("El saldo es 0. No se puede retirar mas");
 					}
 					

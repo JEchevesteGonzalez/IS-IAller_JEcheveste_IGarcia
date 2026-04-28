@@ -76,15 +76,24 @@ public class DataAccess  {
 	 * This method is invoked by the business logic (constructor of BLFacadeImplementation) when the option "initialize" is declared in the tag dataBaseOpenMode of resources/config.xml file
 	 */	
 	public void initializeDB(){
-		
-		db.getTransaction().begin();
-
 		try { 
 	       
 			//Create compradores
-			Comprador comprador1=new Comprador("AitorMenta","batbihirulau");
-			Comprador comprador2=new Comprador("Megaane","contrasena");
-			Comprador comprador3=new Comprador("Teseller","12345");
+			Cuentas cuentas1 = new Cuentas(1234567890, 100, "A");
+			Cuentas cuentas2 = new Cuentas(1234567890, 100, "B");
+			Cuentas cuentas3 = new Cuentas(1234567890, 100, "C");
+			anadirCuentasIni("a", "a", cuentas1);
+			anadirCuentasIni("b", "b", cuentas2);
+			anadirCuentasIni("c", "c", cuentas3);
+			String vendedor1 = cuentas1.getComprador().getUsuario();
+			addSellerIni(vendedor1, "a", "a");
+			Date today = UtilDate.trim(new Date());
+			float price = 100;
+			File foto1 = new File("src/main/resources/images/bici.jpg");
+			File foto2 = new File("src/main/resources/images/descarga.jpg");
+			createSale("A", "a", 1, price,  today, vendedor1, foto1, 0);
+			createSale("B", "b", 1, price,  today, vendedor1, foto2, 1);
+
 
 		/*	
 		    //Create sellers 
@@ -109,13 +118,6 @@ public class DataAccess  {
 
 			seller3.addSale("sukaldeko mahaia", "1.8*0.8, 4 aulkiekin. Prezio finkoa", 3,45, today, null);
 		 */
-			
-			db.persist(comprador1);
-			db.persist(comprador2);
-			db.persist(comprador3);
-
-	
-			db.getTransaction().commit();
 			System.out.println("db initialized");
 		}
 		catch (Exception e){
@@ -123,7 +125,27 @@ public class DataAccess  {
 		}
 	}
 	
+	public void anadirCuentasIni(String usuario, String contrasena, Cuentas cu) {
+		db.getTransaction().begin();
+		Comprador user = new Comprador(usuario, contrasena);
+		cu.setComprador(user);
+		user.setCuentas(cu);
+		db.persist(user);
+		db.persist(cu);
+		db.getTransaction().commit();
+	}
 	
+	public void addSellerIni(String usuario, String correo, String nombre) {
+		db.getTransaction().begin();
+		Comprador user=db.find(Comprador.class, usuario);
+		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
+		vendedor.setCuentas(user.getCuentas());
+		vendedor.getCuentas().setComprador(vendedor);
+		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
+		db.remove(user);
+		db.persist(vendedor);
+		db.getTransaction().commit();
+	}
 	/**
 	 * This method creates/adds a product to a seller
 	 * 
@@ -175,6 +197,7 @@ public class DataAccess  {
 		
 		
 	}
+	
 	
 	/**
 	 * This method retrieves all the products that contain a desc text in a title
@@ -330,14 +353,35 @@ public void open(){
     public void eliminarUsuario(String usuario) {
 		open();
 		db.getTransaction().begin();
-		Comprador user = db.find(domain.Comprador.class, usuario);
+		Comprador user = db.find(Comprador.class, usuario);
 		if (user != null) {
 			db.remove(user.getCuentas());
+			ArrayList<Oferta> oUs = new ArrayList<Oferta>(user.getOfertasEnCurso());
+			for(Oferta o:oUs) {
+				Sale sO = db.find(Sale.class, o.getS().getSaleNumber());
+				sO.getOfertas().remove(o);
+				user.getOfertasEnCurso().remove(o);
+				user.setSaldo(user.getSaldo()+o.getPrecio());
+				db.remove(o);
+			}
 			if(user.getClass()==Seller.class) {
 				Seller userS = (Seller) db.find(Seller.class, usuario);
-				db.remove(userS.getSales());
+				ArrayList<Sale> sAux = new ArrayList<Sale>(userS.getSales());
+				for(Sale s:sAux) {
+					if(!(s.getOfertas().isEmpty())) {
+						ArrayList<Oferta> sOAux = new ArrayList<Oferta>(s.getOfertas());
+						for(Oferta o:sOAux) {
+							Comprador c= db.find(Comprador.class, o.getnUser());
+							float nuevoSaldo = c.getSaldo() + o.getPrecio();
+							c.setSaldo(nuevoSaldo);
+							c.getOfertasEnCurso().remove(o);
+							s.getOfertas().remove(o);
+							db.remove(o);
+						}
+					}
+					db.remove(s);
+				}
 			}
-			db.remove(user.getOfertasEnCurso());
 			db.remove(user);
 			db.getTransaction().commit(); 
 		}
@@ -498,6 +542,7 @@ public void open(){
 		float nuevoSaldo = sel.getSaldo() + dOf.getPrecio();
 		sel.setSaldo(nuevoSaldo);
 		sA.getOfertas().remove(dOf);
+		sA.setPrice(dOf.getPrecio());
 		com.getHistorialDeCompras().add(sA);
 		sel.getSales().remove(sA);
 		sA.setHabilitado(false);
