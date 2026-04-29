@@ -34,7 +34,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 @SuppressWarnings("serial")
-public class VisualizarVentasActivasGUI extends JFrame {	
+public class VisualizarVentasYSubastasActivasGUI extends JFrame {	
 
 	JFrame thisFrame;
 	private JPanel contentPane;
@@ -70,7 +70,7 @@ public class VisualizarVentasActivasGUI extends JFrame {
 		}
 	}
 	
-	public VisualizarVentasActivasGUI(String usuario) {
+	public VisualizarVentasYSubastasActivasGUI(String usuario) {
 		thisFrame=this;
 		
 		tableModelProducts.setDataVector(null, nombreColumnas);

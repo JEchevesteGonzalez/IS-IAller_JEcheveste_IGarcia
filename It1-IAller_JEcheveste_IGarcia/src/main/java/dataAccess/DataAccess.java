@@ -463,9 +463,6 @@ public void open(){
 			if (user != null) {
 				
 				float nuevoSaldo = user.getSaldo() - cantidad;
-				if (nuevoSaldo<0) {
-					nuevoSaldo=0;
-				}
 				user.setSaldo(nuevoSaldo);
 				db.getTransaction().commit();
 				return true;

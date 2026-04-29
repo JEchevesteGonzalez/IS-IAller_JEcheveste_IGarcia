@@ -23,7 +23,7 @@ import businessLogic.BLFacade;
 import configuration.UtilDate;
 
 
-public class CreateSaleGUI extends JFrame {
+public class CrearVentaOSubastaGUI extends JFrame {
 	
     File targetFile;
     BufferedImage targetImg;
@@ -56,19 +56,19 @@ public class CreateSaleGUI extends JFrame {
 	List<String> status;
 
 
-	private JButton jButtonCreate = new JButton("Crear Oferta");
+	private JButton jButtonCreate = new JButton("Crear Venta");
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 	private JFrame thisFrame;
 	private final JButton btnNewButton_2 = new JButton("grabar Imagen"); //$NON-NLS-1$ //$NON-NLS-2$
 
-	public CreateSaleGUI(String usuario) {
+	public CrearVentaOSubastaGUI(String usuario) {
 
 		thisFrame=this;
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.CreateProduct"));
+		this.setTitle("Crear Venta O Subasta");
 
 		jLabelTitle.setBounds(new Rectangle(6, 24, 92, 20));
 		
@@ -80,19 +80,19 @@ public class CreateSaleGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int tVenta = tipoVenta.getSelectedIndex();
 				if(tVenta==0) {
-					jButtonCreate.setText("Crear Oferta");
+					jButtonCreate.setText("Crear Venta");
 				}
 				else {
 					jButtonCreate.setText("Crear Subasta");
 				}
 			}
 		});
-		tipoVenta.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
+		tipoVenta.setModel(new DefaultComboBoxModel<String>(new String[] {"Venta", "Subasta"}));
 		tipoVenta.setBounds(90, 223, 114, 22);
 		
 		getContentPane().add(tipoVenta);
 		
-		JLabel lblTipoDeVenta = new JLabel("Tipo de venta");
+		JLabel lblTipoDeVenta = new JLabel("Tipo");
 		lblTipoDeVenta.setBounds(6, 225, 129, 16);
 		getContentPane().add(lblTipoDeVenta);
 		
@@ -115,7 +115,7 @@ public class CreateSaleGUI extends JFrame {
 						int numStatus=status.indexOf(s);
 						int tVenta = tipoVenta.getSelectedIndex();
 						facade.createSale(fieldTitle.getText(), fieldDescription.getText(), numStatus, price,  UtilDate.trim(jCalendar.getDate()), usuario, targetFile, tVenta);
-						if(tVenta==0) jLabelMsg.setText("Se ha creado la oferta");
+						if(tVenta==0) jLabelMsg.setText("Se ha creado la venta");
 						else jLabelMsg.setText("Se ha creado la subasta");
 
 					

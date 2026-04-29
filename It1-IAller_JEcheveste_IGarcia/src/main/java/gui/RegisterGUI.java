@@ -168,9 +168,6 @@ public class RegisterGUI extends JFrame {
 			                if (contrIntro.equals(new String(repContrasena.getPassword()))) {
 			    		            JFrame verDBan = new DatosBancariosGUI(usuarioIntro, contrIntro);
 			    		            verDBan.setVisible(true);
-			    		            while(verDBan.isVisible()) {
-			    		            	
-			    		            }
 			                    	textoErrores.setText("¡Comprador registrado con éxito!");
 			                    	repContrasena.setText("");
 				                    

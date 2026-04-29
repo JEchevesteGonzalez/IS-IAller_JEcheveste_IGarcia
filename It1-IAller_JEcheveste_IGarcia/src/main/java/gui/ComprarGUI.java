@@ -138,7 +138,7 @@ public class ComprarGUI extends JFrame {
 							}
 					}
 				}catch(NumberFormatException ex){
-					textoErrores.setText("Error:introduce una cifra numérica");
+					textoErrores.setText("Error: Introduce una cifra numérica");
 				}
 			}
 		});

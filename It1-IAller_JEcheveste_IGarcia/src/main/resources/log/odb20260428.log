@@ -838,3 +838,556 @@ Type domain.Seller is not enhanced.
 [2026-04-28 10:59:51 #14 type.registry] 
 New type java.util.ArrayList<java.lang.Object>
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:34:37 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 1-1)
+
+[2026-04-28 11:34:37 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 23416@Joxe-Pc
+
+[2026-04-28 11:34:41 #3 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 11:34:41 #4 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:34:41 #5 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 11:34:41 #6 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 11:34:41 #7 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 11:34:41 #8 type.registry] 
+New type domain.Sale
+
+[2026-04-28 11:34:41 #9 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 11:34:41 #10 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:34:41 #11 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:34:41 #12 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:34:41 #13 type.registry] 
+New type domain.Seller
+
+[2026-04-28 11:34:41 #14 type] 
+Type domain.Seller is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:36:14 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 2-3)
+
+[2026-04-28 11:36:15 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 13076@Joxe-Pc
+
+[2026-04-28 11:36:15 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:36:15 #4 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:36:15 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:36:15 #6 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:36:15 #7 type] 
+Type domain.Seller is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:37:12 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 23152@Joxe-Pc
+
+[2026-04-28 11:37:12 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:37:12 #3 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:37:12 #4 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:37:12 #5 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:37:12 #6 type] 
+Type domain.Seller is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:47:09 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 17908@Joxe-Pc
+
+[2026-04-28 11:47:09 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:47:09 #3 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:47:09 #4 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:47:09 #5 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:47:09 #6 type] 
+Type domain.Seller is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:47:27 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22468@Joxe-Pc
+
+[2026-04-28 11:47:27 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 11:47:27 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:47:27 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 11:47:27 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 11:47:27 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 11:47:27 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 11:47:27 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 11:47:27 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:47:27 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:47:27 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:47:27 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 11:47:27 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 11:47:27 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 11:47:55 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 23416@Joxe-Pc
+
+[2026-04-28 11:47:55 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 11:47:55 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 11:47:55 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 11:47:55 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 11:47:55 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 11:47:55 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 11:47:55 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 11:47:55 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 11:47:55 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 11:47:55 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 11:47:55 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 11:47:55 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 11:47:55 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:04:51 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22448@Joxe-Pc
+
+[2026-04-28 12:04:51 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:04:51 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:04:51 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:04:51 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:04:51 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:04:51 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:04:51 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:04:51 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:04:51 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:04:51 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:04:51 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:04:51 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:04:51 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:08:49 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 17740@Joxe-Pc
+
+[2026-04-28 12:08:49 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:08:49 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:08:49 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:08:49 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:08:49 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:08:49 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:08:49 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:08:49 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:08:49 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:08:49 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:08:49 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:08:49 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:08:49 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:09:42 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 13200@Joxe-Pc
+
+[2026-04-28 12:09:42 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:09:42 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:09:42 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:09:42 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:09:42 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:09:42 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:09:42 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:09:42 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:09:42 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:09:42 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:09:42 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:09:42 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:09:42 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:10:13 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22148@Joxe-Pc
+
+[2026-04-28 12:10:13 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:10:13 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:10:13 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:10:13 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:10:13 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:10:13 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:10:13 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:10:13 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:10:13 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:10:13 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:10:13 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:10:13 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:10:13 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:40:21 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 13460@Joxe-Pc
+
+[2026-04-28 12:40:22 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:40:22 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:40:22 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:40:22 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:40:22 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:40:22 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:40:22 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:40:22 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:40:22 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:40:22 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:40:22 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:40:22 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:40:22 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:41:54 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 3980@Joxe-Pc
+
+[2026-04-28 12:41:54 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:41:54 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:41:54 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:41:54 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:41:54 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:41:54 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:41:54 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:41:54 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:41:54 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:41:54 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:41:54 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:41:54 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:41:54 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 12:46:50 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 6112@Joxe-Pc
+
+[2026-04-28 12:46:50 #2 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 12:46:50 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 12:46:50 #4 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 12:46:50 #5 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 12:46:50 #6 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 12:46:50 #7 type.registry] 
+New type domain.Sale
+
+[2026-04-28 12:46:50 #8 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 12:46:50 #9 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 12:46:50 #10 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 12:46:50 #11 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 12:46:50 #12 type.registry] 
+New type domain.Seller
+
+[2026-04-28 12:46:50 #13 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 12:46:50 #14 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-28 18:49:45 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 2400@Joxe-Pc
+
+[2026-04-28 18:49:45 #2 type.registry] 
+New type domain.Usuario
+
+[2026-04-28 18:49:45 #3 type.registry] 
+New type domain.Comprador
+
+[2026-04-28 18:49:45 #4 type] 
+Type domain.Usuario is not enhanced.
+
+[2026-04-28 18:49:45 #5 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-28 18:49:45 #6 type.registry] 
+New type domain.Cuentas
+
+[2026-04-28 18:49:45 #7 type.registry] 
+New type domain.Oferta
+
+[2026-04-28 18:49:45 #8 type.registry] 
+New type java.util.ArrayList<domain.Oferta>
+
+[2026-04-28 18:49:45 #9 type.registry] 
+New type domain.Sale
+
+[2026-04-28 18:49:45 #10 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+[2026-04-28 18:49:45 #11 type] 
+Type domain.Cuentas is not enhanced.
+
+[2026-04-28 18:49:45 #12 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-28 18:49:45 #13 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-28 18:49:45 #14 type.registry] 
+New type domain.Seller
+
+[2026-04-28 18:49:45 #15 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-28 18:49:45 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+

@@ -21,7 +21,7 @@ public class FondosGUI extends JFrame{
 	private JTextField rFondos;
 	public FondosGUI(String usuario) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(467, 300);
+		setSize(670, 300);
 		getContentPane().setLayout(null);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
@@ -43,7 +43,7 @@ public class FondosGUI extends JFrame{
 		
 		JLabel textoErrores = new JLabel("");
 		textoErrores.setForeground(new Color(255, 0, 0));
-		textoErrores.setBounds(10, 184, 289, 42);
+		textoErrores.setBounds(10, 184, 422, 42);
 		getContentPane().add(textoErrores);
 		
 		textField = new JTextField();
@@ -54,7 +54,7 @@ public class FondosGUI extends JFrame{
 			}
 		});
 		
-		textField.setBounds(314, 81, 121, 20);
+		textField.setBounds(442, 81, 121, 20);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -98,7 +98,7 @@ public class FondosGUI extends JFrame{
 				 
 			}
 		});
-		btnNewButton.setBounds(314, 114, 121, 23);
+		btnNewButton.setBounds(442, 114, 121, 23);
 		getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Atrás");
@@ -122,7 +122,7 @@ public class FondosGUI extends JFrame{
 			}
 		});
 		rFondos.setColumns(10);
-		rFondos.setBounds(316, 172, 121, 20);
+		rFondos.setBounds(444, 172, 121, 20);
 		getContentPane().add(rFondos);
 		
 		JButton btnRetirarFondos = new JButton("Retirar Fondos");
@@ -140,12 +140,15 @@ public class FondosGUI extends JFrame{
 					}
 					
 					if(facade.buscarPorUser(usuario).getCuentas().getSaldo()>0) {
+						if(cantidadARetirar>= facade.buscarPorUser(usuario).getCuentas().getSaldo()) {
+							cantidadARetirar = facade.buscarPorUser(usuario).getCuentas().getSaldo();
+						}
 						boolean exito = facade.retirarFondos(usuario, cantidadARetirar);
 						
 						if (exito) {
 							rFondos.setText("");
 							textoErrores.setForeground(Color.GREEN);
-							textoErrores.setText("Transaccion ejecutada correctamente");
+							textoErrores.setText("Transaccion ejecutada correctamente, se han sustraido "+ cantidadARetirar +" €.");
 							Comprador userActualizado = facade.buscarPorUser(usuario);
 							lblfondosActuales.setText(userActualizado.getSaldo() + " €");
 						} else {
@@ -167,7 +170,7 @@ public class FondosGUI extends JFrame{
 			}
 		});
 		
-		btnRetirarFondos.setBounds(316, 203, 121, 23);
+		btnRetirarFondos.setBounds(444, 203, 121, 23);
 		getContentPane().add(btnRetirarFondos);
 		
 		

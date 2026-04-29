@@ -24,7 +24,7 @@ import configuration.UtilDate;
 import domain.Sale;
 
 
-public class EditarVentasGUI extends JFrame {
+public class EditarVentasYSubastasGUI extends JFrame {
 	
     File targetFile;
     BufferedImage targetImg;
@@ -57,7 +57,7 @@ public class EditarVentasGUI extends JFrame {
 	List<String> status;
 
 
-	private JButton jButtonCreate = new JButton("Editar oferta");
+	private JButton jButtonCreate = new JButton("");
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
@@ -66,12 +66,12 @@ public class EditarVentasGUI extends JFrame {
 	private final JButton btnVisualizarSubastas = new JButton("Cerrar Subasta");
 	private final JButton btnVisualizarOfertas = new JButton("Visualizar Ofertas");
 
-	public EditarVentasGUI(String usuario, Sale sale, JFrame venta, JFrame listado) {
+	public EditarVentasYSubastasGUI(String usuario, Sale sale, JFrame venta, JFrame listado) {
 
 		thisFrame=this;
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle("Editar Oferta");
+		this.setTitle("Editar Venta");
 
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
@@ -80,8 +80,8 @@ public class EditarVentasGUI extends JFrame {
 		jLabelPrice.setBounds(new Rectangle(6, 141, 101, 20));
 		jTextFieldPrice.setBounds(new Rectangle(97, 141, 60, 20));
 
-		JComboBox<String> habilitado = new JComboBox();
-		habilitado.setModel(new DefaultComboBoxModel(new String[] {"Habilitada", "Deshabilitada"}));
+		JComboBox<String> habilitado = new JComboBox<String>();
+		habilitado.setModel(new DefaultComboBoxModel<String>(new String[] {"Habilitada", "Deshabilitada"}));
 		habilitado.setBounds(248, 183, 95, 29);
 		getContentPane().add(habilitado);
 		
@@ -89,7 +89,15 @@ public class EditarVentasGUI extends JFrame {
 		jButtonCreate.setFont(new Font("Lucida Grande", Font.BOLD, 15));
 
 		jButtonCreate.setBounds(new Rectangle(184, 239, 140, 48));
-
+		
+		int tVenta = sale.getEsSubasta();
+		if(tVenta==0) {
+			jButtonCreate.setText("Editar Venta");
+		}
+		else {
+			jButtonCreate.setText("Editar Subasta");
+		}
+		
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jLabelMsg.setText("");
@@ -109,7 +117,7 @@ public class EditarVentasGUI extends JFrame {
 							hab = false;
 						}
 						facade.editSale(sale, fieldDescription.getText(), numStatus, price,  UtilDate.trim(jCalendar.getDate()),hab);
-						jLabelMsg.setText("Oferta editada");
+						jLabelMsg.setText("Venta editada");
 						thisFrame.setVisible(false);
 						venta.setVisible(false);
 						listado.setVisible(false);
@@ -151,6 +159,11 @@ public class EditarVentasGUI extends JFrame {
 		
 		this.getContentPane().add(jLabelPrice, null);
 		this.getContentPane().add(jTextFieldPrice, null);
+		jTextFieldPrice.setText(String.valueOf(sale.getPrice()));
+		if(tVenta == 1) {
+			jTextFieldPrice.setEditable(false);
+			jTextFieldPrice.setEnabled(false);
+		}
 		
 		jLabelProductStatus.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelProductStatus.setBounds(6, 202, 140, 25);
@@ -241,11 +254,6 @@ public class EditarVentasGUI extends JFrame {
 		jLabelPublicationDate.setBounds(360, 26, 197, 20);
 		getContentPane().add(jLabelPublicationDate);
 		
-		
-		
-		JLabel precioOriginal = new JLabel();
-		precioOriginal.setBounds(26, 166, 197, 23);
-
 	
 		btnVisualizarSubastas.setBounds(6, 231, 166, 25);
 		if(sale.getEsSubasta()==0) {
@@ -275,11 +283,17 @@ public class EditarVentasGUI extends JFrame {
 		}
 		getContentPane().add(btnVisualizarOfertas);
 		
-		JButton btnBorrarVenta = new JButton("Borrar venta");
+		JButton btnBorrarVenta = new JButton("");
+		if(tVenta==0) {
+			btnBorrarVenta.setText("Borrar Venta");
+		}
+		else {
+			btnBorrarVenta.setText("Borrar Subasta");
+		}
 		btnBorrarVenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int confirmacion = JOptionPane.showConfirmDialog(null, 
-						"¿Estás seguro de que deseas eliminar la oferta?", 
+						"¿Estás seguro de que deseas eliminar la venta?", 
 						"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 				
 				if (confirmacion == JOptionPane.YES_OPTION) {
@@ -299,13 +313,6 @@ public class EditarVentasGUI extends JFrame {
 				verContraOfertaGUI.setVisible(true);
 			}
 		});
-		
-		if(!sale.isHabilitado()) {
-			precioOriginal.setText("El precio de la contraoferta es:"+sale.getPrice());
-		}
-		else {
-			precioOriginal.setText("El precio anterior era:"+sale.getPrice());
-		}
 
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent propertychangeevent) {
