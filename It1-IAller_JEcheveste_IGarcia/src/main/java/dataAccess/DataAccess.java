@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -87,7 +88,7 @@ public class DataAccess  {
 			anadirCuentasIni("c", "c", cuentas3);
 			String vendedor1 = cuentas1.getComprador().getUsuario();
 			addSellerIni(vendedor1, "a", "a");
-			Date today = UtilDate.trim(new Date());
+			Date today = new Date();
 			float price = 100;
 			File foto1 = new File("src/main/resources/images/bici.jpg");
 			File foto2 = new File("src/main/resources/images/descarga.jpg");
@@ -226,17 +227,59 @@ public class DataAccess  {
 	 * @return collection of products that contain desc in a title
 	 */
 	public List<Sale> getPublishedSales(String desc, Date pubDate) {
+		open();
+		db.getTransaction().begin();
+		
+		Calendar c = Calendar.getInstance();
+		c.setTime(pubDate);
+		c.set(Calendar.HOUR_OF_DAY, 23);
+		c.set(Calendar.MINUTE, 59);
+		c.set(Calendar.SECOND, 59);
+		Date finDelDia = c.getTime();
+		
 		System.out.println(">> DataAccess: getProducts=> from= "+desc);
 
 		List<Sale> res = new ArrayList<Sale>();	
 		TypedQuery<Sale> query = db.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1 AND s.pubDate <=?2",Sale.class);   
 		query.setParameter(1, "%"+desc+"%");
-		query.setParameter(2,pubDate);
+		query.setParameter(2, finDelDia);
 		
 		List<Sale> sales = query.getResultList();
+		Date ahora =new Date();
 	 	 for (Sale sale:sales){
-		   res.add(sale);
+	 		// nuevo
+				if (sale.getEsSubasta() == 1 && sale.isHabilitado() && sale.getFinDate() != null && sale.getFinDate().before(ahora)) {
+					
+					if (!sale.getOfertas().isEmpty()) {
+						Oferta ofertaGanadora = sale.getOfertas().get(0);
+						
+						Comprador ganador = db.find(Comprador.class, ofertaGanadora.getnUser());
+						if (ganador != null) {
+							ganador.getOfertasEnCurso().remove(ofertaGanadora);
+							if (sale.getUsuarioVendedor() != null) {
+								Seller vendedor = db.find(Seller.class, sale.getUsuarioVendedor());
+								if (vendedor != null) {
+									vendedor.setSaldo(vendedor.getSaldo() + ofertaGanadora.getPrecio());
+									db.merge(vendedor);
+								}
+							}
+							sale.setHabilitado(false);
+							ganador.getHistorialDeCompras().add(sale);
+							sale.getOfertas().remove(ofertaGanadora);
+							db.remove(ofertaGanadora);
+							db.merge(ganador);
+						}
+					} else {
+						sale.setHabilitado(false);
+					}
+					db.merge(sale);
+				} 
+				
+				if (sale.isHabilitado()) {
+					res.add(sale);
+				}
 		  }
+	 	 db.getTransaction().commit();
 	 	return res;
 	}
 
@@ -445,6 +488,20 @@ public void open(){
 		Sale producto = db.find(Sale.class, pro.getSaleNumber());
 		if (producto != null) {
 			producto.setPrice(price);
+			//nuevo
+			Date ahora = new Date();
+			long tiempoRestante = producto.getFinDate().getTime() - ahora.getTime();
+			long unDiaEnMilisegundos = 1000 * 60 * 60 * 24;
+			//long unDiaEnMilisegundos= 1000*60;
+			if (tiempoRestante < unDiaEnMilisegundos) {
+				Calendar c = Calendar.getInstance();
+				c.setTime(producto.getFinDate());
+				c.add(Calendar.DAY_OF_MONTH, 1);
+				//c.add(Calendar.MINUTE, 1);
+				producto.setFinDate(c.getTime());
+				//System.out.println(" +1 seg" );
+			}
+			
 			db.persist(producto);
 			db.getTransaction().commit();
 			close();
@@ -463,6 +520,9 @@ public void open(){
 			if (user != null) {
 				
 				float nuevoSaldo = user.getSaldo() - cantidad;
+				if (nuevoSaldo<0) {
+					nuevoSaldo=0;
+				}
 				user.setSaldo(nuevoSaldo);
 				db.getTransaction().commit();
 				return true;
@@ -505,6 +565,7 @@ public void open(){
 		c.setSaldo(nuevoSaldo);
 		sA.getOfertas().add(o);
 		o.setS(sA);
+		
 		db.getTransaction().commit();
 		close();
 	}

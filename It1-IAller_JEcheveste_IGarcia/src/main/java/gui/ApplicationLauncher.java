@@ -30,7 +30,7 @@ public class ApplicationLauncher {
 			
 			BLFacade appFacadeInterface;
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-			 
+			
 			if (c.isBusinessLogicLocal()) {
 				DataAccess da= new DataAccess();
 				appFacadeInterface=new BLFacadeImplementation(da);

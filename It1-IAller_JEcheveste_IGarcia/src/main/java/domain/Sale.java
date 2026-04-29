@@ -3,6 +3,7 @@ package domain;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -39,6 +40,7 @@ public class Sale implements Serializable {
 	}
 
 	private Date pubDate;
+	private Date finDate; //nuevo
 	private String fileName;
 	private boolean habilitado;
 	private String usuarioVendedor;
@@ -56,9 +58,17 @@ public class Sale implements Serializable {
 		this.description = description;
 		this.status = status;
 		this.price=price;
-		this.pubDate=pubDate;
-		this.habilitado=true;
 		this.esSubasta=tVenta;
+		this.pubDate=pubDate;
+		if (this.esSubasta == 1) {
+			Calendar c = Calendar.getInstance();
+			c.setTime(pubDate);
+			c.add(Calendar.DAY_OF_MONTH, 7);
+			//c.add(Calendar.MINUTE, 2);
+			this.finDate=c.getTime()
+;		}
+		this.habilitado=true;
+		
 		
 		if (file!=null) {
 		    this.fileName=file.getName();
@@ -259,6 +269,14 @@ public class Sale implements Serializable {
 
 	public void setOfertas(ArrayList<Oferta> ofertas) {
 		this.ofertas = ofertas;
+	}
+
+	public Date getFinDate() {
+		return finDate;
+	}
+
+	public void setFinDate(Date finDate) {
+		this.finDate = finDate;
 	}
 
 	

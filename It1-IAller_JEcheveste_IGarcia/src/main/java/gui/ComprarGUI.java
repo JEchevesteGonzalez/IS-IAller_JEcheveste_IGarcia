@@ -113,7 +113,7 @@ public class ComprarGUI extends JFrame {
 							else if(ofer==sale.getPrice()) {
 								Comprador comprador = facade.buscarPorUser(usuario);
 								boolean exito = facade.comprarProducto(usuario, sale);
-								if(sale.getOfertas().isEmpty()) {
+								if(!sale.getOfertas().isEmpty()) {
 									facade.devolverOfertas(sale);
 								}
 								if(exito) {
@@ -138,7 +138,7 @@ public class ComprarGUI extends JFrame {
 							}
 					}
 				}catch(NumberFormatException ex){
-					textoErrores.setText("Error: Introduce una cifra numérica");
+					textoErrores.setText("Error:introduce una cifra numérica");
 				}
 			}
 		});

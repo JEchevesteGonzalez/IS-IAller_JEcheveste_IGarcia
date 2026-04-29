@@ -147,12 +147,12 @@ public class RegisterGUI extends JFrame {
 			                            usuario.setEnabled(true);
 			                            contrasena.setEnabled(true);
 			                        } else {
-			                            textoErrores.setText("Introduce un correo y nombre válidos.");
+			                            textoErrores.setText("Introduce un correo y nombre validos.");
 			                        }
 			                    }
 			                }
 			            } else {
-			                textoErrores.setText("La contraseña es incorrecta.");
+			                textoErrores.setText("La contrasena es incorrecta.");
 			                usuario.setEnabled(true);
 			                contrasena.setEnabled(true);
 			            }
@@ -160,7 +160,7 @@ public class RegisterGUI extends JFrame {
 			        // CASO 3: EL USUARIO NO EXISTE (Registro nuevo)
 			        else {
 			            if (!repContrasena.isVisible()) {
-			                textoErrores.setText("Usuario nuevo. Repite la contraseña para registrarte.");
+			                textoErrores.setText("Usuario nuevo. Repite la contrasena para registrarte.");
 			                repContrasena.setVisible(true);
 			                usuario.setEnabled(false);
 			                contrasena.setEnabled(false);
@@ -168,7 +168,8 @@ public class RegisterGUI extends JFrame {
 			                if (contrIntro.equals(new String(repContrasena.getPassword()))) {
 			    		            JFrame verDBan = new DatosBancariosGUI(usuarioIntro, contrIntro);
 			    		            verDBan.setVisible(true);
-			                    	textoErrores.setText("¡Comprador registrado con éxito!");
+			    		            
+			                    	textoErrores.setText("�Comprador registrado con exito!");
 			                    	repContrasena.setText("");
 				                    
 				                    // Reseteamos la vista
@@ -176,7 +177,7 @@ public class RegisterGUI extends JFrame {
 				                    usuario.setEnabled(true);
 				                    contrasena.setEnabled(true);
 			                } else {
-			                    textoErrores.setText("Las contraseñas no coinciden.");
+			                    textoErrores.setText("Las contrasenas no coinciden.");
 			                }
 			            }
 			        }

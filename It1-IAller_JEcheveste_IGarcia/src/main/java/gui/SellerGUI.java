@@ -55,20 +55,20 @@ public class SellerGUI extends JFrame {
 		setContentPane(jContentPane);
 		jContentPane.setLayout(null);
 		
-		btnNewButton = new JButton("Visualizar Ventas y SUbastasActivas\r\n");
+		btnNewButton = new JButton("Visualizar Ventas Activas\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame verVentasActivas = new VisualizarVentasYSubastasActivasGUI(usuario);
+				JFrame verVentasActivas = new VisualizarVentasActivasGUI(usuario);
 				verVentasActivas.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(0, 0, 477, 128);
 		jContentPane.add(btnNewButton);
 		
-		btnCrearVenta = new JButton("Crear Venta O Subasta");
+		btnCrearVenta = new JButton("Crear Venta");
 		btnCrearVenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame crear = new CrearVentaOSubastaGUI(usuario);
+				JFrame crear = new CreateSaleGUI(usuario);
 				crear.setVisible(true);
 			}
 		});

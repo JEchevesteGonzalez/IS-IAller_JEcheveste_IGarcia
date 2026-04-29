@@ -36,7 +36,7 @@ public class CompradorGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Visualizar ventas o subastas");
+		JButton btnNewButton = new JButton("Visualizar ofertas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JFrame verVentas = new QuerySalesGUI(usuario);

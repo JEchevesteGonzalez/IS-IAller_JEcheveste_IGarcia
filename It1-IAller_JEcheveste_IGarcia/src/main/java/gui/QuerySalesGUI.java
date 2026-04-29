@@ -30,7 +30,7 @@ public class QuerySalesGUI extends JFrame {
 	private JFrame thisFrame; 
 
 	private String[] columnNamesProducts = new String[] {
-			"Titulo", "Precio","Fecha de publicación","Tipo"
+			"Titulo", "Precio","Fecha de publicación","Tipo de venta"
 	};
 	private JTextField jTextFieldSearch;
 	
@@ -103,7 +103,7 @@ public class QuerySalesGUI extends JFrame {
 							row.add(new SimpleDateFormat("dd-MM-yyyy").format(sale.getPublicationDate()));
 							int tVenta = sale.getEsSubasta();
 							if(tVenta==0) {
-								row.add("Venta");
+								row.add("Oferta");
 							}
 							else {
 								row.add("Subasta");

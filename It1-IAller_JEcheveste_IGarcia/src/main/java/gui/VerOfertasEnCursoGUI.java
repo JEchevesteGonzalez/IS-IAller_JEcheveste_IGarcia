@@ -61,7 +61,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 			for (Oferta f : historial) {
 				Vector<Object> row = new Vector<Object>();
 				Sale s = f.getS();
-				if(s!=null && s.getEsSubasta()==0) {
+				if(s!=null) {
 					row.add(s.getTitle());
 					row.add(f.getPrecio());
 					row.add(f); // Metemos el objeto Sale en la columna 4
@@ -108,19 +108,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 		getContentPane().add(lblErrores);
 		
 		
-		table.addMouseListener(new MouseAdapter() {
-	        @Override
-	        public void mousePressed(MouseEvent mouseEvent) {
-	            if(mouseEvent.getClickCount() == 1 && table.getSelectedRow() != -1) {
-			        JTable tablaClicada =(JTable) mouseEvent.getSource();
-	            	Point point = mouseEvent.getPoint();
-			        int row = tablaClicada.rowAtPoint(point);
-			        
-	            	PosO=(Oferta) tableModelProducts.getValueAt(row, 2);
-	            	sale=(Sale) tableModelProducts.getValueAt(row, 3);
-	            }
-	        }
-	 });
+		
 		JButton btnEliminarOferta = new JButton("Eliminar Oferta");
 		btnEliminarOferta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -132,6 +120,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 					if (confirmacion == JOptionPane.YES_OPTION) {
 						facade.eliminarOferta(sale, PosO).getOfertas();
 						crearTabla(facade.buscarPorUser(usuario).getOfertasEnCurso());
+						btnEliminarOferta.setEnabled(false);
 					}
 				}
 				else {
@@ -152,5 +141,25 @@ public class VerOfertasEnCursoGUI extends JFrame {
 		btnSalir.setBounds(372, 194, 93, 25);
 		getContentPane().add(btnSalir);
 		
+		table.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mousePressed(MouseEvent mouseEvent) {
+	            if(mouseEvent.getClickCount() == 1 && table.getSelectedRow() != -1) {
+			        JTable tablaClicada =(JTable) mouseEvent.getSource();
+	            	Point point = mouseEvent.getPoint();
+			        int row = tablaClicada.rowAtPoint(point);
+			        
+	            	PosO=(Oferta) tableModelProducts.getValueAt(row, 2);
+	            	sale=(Sale) tableModelProducts.getValueAt(row, 3);
+	            	if (sale != null && sale.getEsSubasta() == 1) {
+	            		btnEliminarOferta.setEnabled(false);
+						lblErrores.setText("No puedes eliminar una puja");
+					} else {
+						btnEliminarOferta.setEnabled(true);
+						lblErrores.setText(""); 
+					}
+	            }
+	        }
+	 });
 	}
 }

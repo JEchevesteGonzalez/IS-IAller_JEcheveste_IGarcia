@@ -1,0 +1,533 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 00:17:45 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 21760@Joxe-Pc
+
+[2026-04-10 00:17:45 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 00:17:45 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 00:17:45 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 00:17:45 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 00:17:45 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 00:22:59 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 141-146)
+
+[2026-04-10 00:22:59 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 5692@Joxe-Pc
+
+[2026-04-10 00:22:59 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 00:22:59 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 00:22:59 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 00:22:59 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 00:22:59 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 00:28:03 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 147-147)
+
+[2026-04-10 00:28:03 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 3092@Joxe-Pc
+
+[2026-04-10 00:28:03 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 00:28:03 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 00:28:03 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 00:28:03 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 00:28:03 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 00:38:25 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 21848@Joxe-Pc
+
+[2026-04-10 00:38:25 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 00:38:25 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 00:38:25 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 00:38:25 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 00:38:25 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:13:26 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 149-149)
+
+[2026-04-10 22:13:26 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 13184@Joxe-Pc
+
+[2026-04-10 22:13:26 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:13:26 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:13:26 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:13:26 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:13:26 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:22:15 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 150-151)
+
+[2026-04-10 22:22:15 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 11332@Joxe-Pc
+
+[2026-04-10 22:22:15 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:22:15 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:22:15 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:22:15 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:22:15 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:30:37 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 152-153)
+
+[2026-04-10 22:30:37 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 20512@Joxe-Pc
+
+[2026-04-10 22:30:37 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:30:37 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:30:37 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:30:37 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:30:37 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:31:58 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 20440@Joxe-Pc
+
+[2026-04-10 22:31:58 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:31:58 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:31:58 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:31:58 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:31:58 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:39:57 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 4180@Joxe-Pc
+
+[2026-04-10 22:39:57 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:39:57 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:39:57 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:39:57 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:39:57 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:44:39 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22284@Joxe-Pc
+
+[2026-04-10 22:44:39 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:44:39 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:44:39 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:44:39 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:44:39 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:48:21 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 17452@Joxe-Pc
+
+[2026-04-10 22:48:21 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:48:21 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:48:21 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:48:21 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:48:21 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:49:53 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 18844@Joxe-Pc
+
+[2026-04-10 22:49:53 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:49:53 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:49:53 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:49:53 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:49:53 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 22:57:00 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 4064@Joxe-Pc
+
+[2026-04-10 22:57:01 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 22:57:01 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 22:57:01 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 22:57:01 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 22:57:01 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:00:58 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22320@Joxe-Pc
+
+[2026-04-10 23:00:58 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:00:58 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:00:58 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:00:58 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:00:58 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:06:29 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22696@Joxe-Pc
+
+[2026-04-10 23:06:29 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:06:29 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:06:29 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:06:29 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:06:29 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:11:35 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 173-176)
+
+[2026-04-10 23:11:35 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 3556@Joxe-Pc
+
+[2026-04-10 23:11:35 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:11:35 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:11:35 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:11:35 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:11:35 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:16:09 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 177-180)
+
+[2026-04-10 23:16:09 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 14124@Joxe-Pc
+
+[2026-04-10 23:16:09 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:16:09 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:16:09 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:16:09 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:16:09 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:17:11 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 2468@Joxe-Pc
+
+[2026-04-10 23:17:11 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:17:11 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:17:11 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:17:11 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:17:11 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:33:08 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 181-187)
+
+[2026-04-10 23:33:08 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 17596@Joxe-Pc
+
+[2026-04-10 23:33:08 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:33:08 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:33:08 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:33:08 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:33:08 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:34:13 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22176@Joxe-Pc
+
+[2026-04-10 23:34:13 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:34:13 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:34:13 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:34:13 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:34:13 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:43:56 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 3044@Joxe-Pc
+
+[2026-04-10 23:43:56 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:43:56 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:43:56 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:43:56 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:43:56 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:45:59 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 4828@Joxe-Pc
+
+[2026-04-10 23:45:59 #2 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:45:59 #3 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:45:59 #4 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:45:59 #5 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:45:59 #6 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:51:32 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 197-197)
+
+[2026-04-10 23:51:32 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 22336@Joxe-Pc
+
+[2026-04-10 23:51:32 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:51:32 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:51:32 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:51:32 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:51:32 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:53:34 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 198-199)
+
+[2026-04-10 23:53:34 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 15240@Joxe-Pc
+
+[2026-04-10 23:53:35 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:53:35 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:53:35 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:53:35 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:53:35 #7 type] 
+Type domain.Cuentas is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-04-10 23:55:44 #1 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' has been recovered (tr. 200-200)
+
+[2026-04-10 23:55:44 #2 store] 
+Database 'C:\Users\Jose\IS-GIT\It1-IAller_JEcheveste_IGarcia\src\main\resources\products.temp' is opened by 7860@Joxe-Pc
+
+[2026-04-10 23:55:44 #3 type] 
+Type domain.Comprador is not enhanced.
+
+[2026-04-10 23:55:44 #4 type] 
+Type domain.Sale is not enhanced.
+
+[2026-04-10 23:55:44 #5 type] 
+Type domain.Seller is not enhanced.
+
+[2026-04-10 23:55:44 #6 type] 
+Type domain.Oferta is not enhanced.
+
+[2026-04-10 23:55:44 #7 type] 
+Type domain.Cuentas is not enhanced.
+

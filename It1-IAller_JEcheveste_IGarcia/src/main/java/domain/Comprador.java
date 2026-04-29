@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlIDREF;
 import domain.Comprador;
 
 @Entity
-public class Comprador extends Usuario{
+public class Comprador {
+	@Id
+	private String usuario;
+	private String contrasena;
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Sale> historialDeCompras;
@@ -21,12 +24,34 @@ public class Comprador extends Usuario{
 	
 	
 	public Comprador (String usuario, String contrasena){
-		super(usuario, contrasena);
+		this.usuario=usuario;
+		this.contrasena=contrasena;
 		this.historialDeCompras= new ArrayList<Sale>();	
 		this.cuentas = null;
 		this.ofertasEnCurso= new ArrayList<Oferta>();
 	}
-	
+
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+
 	public float getSaldo() {
 		return cuentas.getSaldo();
 	}
