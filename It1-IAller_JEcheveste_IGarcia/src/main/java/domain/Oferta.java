@@ -12,7 +12,6 @@ public class Oferta {
 	private Integer ofertaNumber;
 	private String nUser;
 	private float precio;
-	
 	@ManyToOne
 	private Sale s;
 	

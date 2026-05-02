@@ -12,6 +12,7 @@ import domain.Cuentas;
 import domain.Oferta;
 import domain.Sale;
 import domain.Seller;
+import domain.Usuario;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
 import exceptions.SaleAlreadyExistException;
@@ -112,7 +113,7 @@ public class BLFacadeImplementation  implements BLFacade {
     }
 
 
-    public Comprador buscarPorUser(String usuario) {
+    public Usuario buscarPorUser(String usuario) {
     	return dbManager.buscarPorUser(usuario);
     }
     

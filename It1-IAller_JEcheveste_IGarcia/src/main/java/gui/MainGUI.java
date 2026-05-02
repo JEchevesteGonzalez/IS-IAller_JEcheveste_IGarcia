@@ -9,7 +9,9 @@ import javax.swing.*;
 
 import businessLogic.BLFacade;
 import domain.Comprador;
+import domain.Friendly;
 import domain.Seller;
+import domain.Usuario;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -100,15 +102,19 @@ public class MainGUI extends JFrame {
 		jContentPane.add(register);
 		
 
+		JRadioButton rdbtnFriendly = new JRadioButton("Friendly");
+		buttonGroup.add(rdbtnFriendly);
+		rdbtnFriendly.setBounds(46, 156, 127, 25);
+		jContentPane.add(rdbtnFriendly);
 		
 		JRadioButton rdbtnComprador = new JRadioButton("Comprador");
 		buttonGroup.add(rdbtnComprador);
-		rdbtnComprador.setBounds(72, 156, 127, 25);
+		rdbtnComprador.setBounds(185, 156, 127, 25);
 		jContentPane.add(rdbtnComprador);
 		
 		JRadioButton rdbtnVendedor = new JRadioButton("Vendedor");
 		buttonGroup.add(rdbtnVendedor);
-		rdbtnVendedor.setBounds(270, 156, 127, 25);
+		rdbtnVendedor.setBounds(331, 156, 127, 25);
 		jContentPane.add(rdbtnVendedor);
 		
 		textoErrores = new JLabel("");
@@ -122,13 +128,18 @@ public class MainGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String usuarioIntro = usuario.getText();
 				String contrIntro = new String(contrasena.getPassword());
-				Comprador login=appFacadeInterface.buscarPorUser(usuarioIntro);
+				Usuario login=appFacadeInterface.buscarPorUser(usuarioIntro);
 				if( login != null && usuarioIntro.equals(login.getUsuario())) {
 					if(contrIntro.equals(login.getContrasena())){
 						if(rdbtnComprador.isSelected()) {
-							JFrame comprador = new CompradorGUI(usuarioIntro);
-							comprador.setVisible(true);
-							textoErrores.setText("");
+							if(login.getClass().equals(Comprador.class)) {
+								JFrame comprador = new CompradorGUI(usuarioIntro);
+								comprador.setVisible(true);
+								textoErrores.setText("");
+							}
+							else {
+								textoErrores.setText("Este usuario no esta registrado como comprador");
+							}
 						}
 						else if (rdbtnVendedor.isSelected()){
 							if(login.getClass().equals(Seller.class)) {
@@ -139,6 +150,17 @@ public class MainGUI extends JFrame {
 							}
 							else {
 								textoErrores.setText("Este usuario no esta registrado como vendedor");
+							}
+						}
+						else if (rdbtnFriendly.isSelected()){
+							if(login.getClass().equals(Friendly.class)) {
+								//Pasar a la otra pantalla
+								JFrame friendly = new SellerGUI(usuarioIntro);
+								friendly.setVisible(true);
+								textoErrores.setText("");
+							}
+							else {
+								textoErrores.setText("Este usuario no esta registrado como comprador friendly");
 							}
 						}
 						else {

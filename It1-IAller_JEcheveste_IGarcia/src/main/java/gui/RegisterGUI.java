@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import businessLogic.BLFacade;
 import domain.Comprador;
 import domain.Seller;
+import domain.Usuario;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -45,7 +46,7 @@ public class RegisterGUI extends JFrame {
 		lblUsuario.setBounds(12, 39, 98, 34);
 		contentPane.add(lblUsuario);
 		
-		JLabel lblContrasea = new JLabel("Contraseña:");
+		JLabel lblContrasea = new JLabel("Contrasena:");
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblContrasea.setBounds(12, 71, 98, 37);
 		contentPane.add(lblContrasea);
@@ -60,7 +61,7 @@ public class RegisterGUI extends JFrame {
 		lblNombre.setBounds(12, 175, 98, 28);
 		contentPane.add(lblNombre);
 		
-		JLabel lblRepetirContrasena = new JLabel("Repetir contraseña:");
+		JLabel lblRepetirContrasena = new JLabel("Repetir contrasena:");
 		lblRepetirContrasena.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblRepetirContrasena.setBounds(12, 103, 157, 37);
 		contentPane.add(lblRepetirContrasena);
@@ -109,7 +110,7 @@ public class RegisterGUI extends JFrame {
 				String usuarioIntro = usuario.getText();
 				String contrIntro = new String(contrasena.getPassword());
 				BLFacade facade = MainGUI.getBusinessLogic();
-				Comprador login = facade.buscarPorUser(usuarioIntro);
+				Usuario login = facade.buscarPorUser(usuarioIntro);
 				if(usuarioIntro.isEmpty()) {
                     textoErrores.setText("El usuario no puede estar vacio.");
 				}
@@ -117,12 +118,12 @@ public class RegisterGUI extends JFrame {
                     textoErrores.setText("La contrasena no puede estar vacia.");
 				}
 				else {
-					if (login != null) {
+					if (login != null && (login instanceof Seller || login instanceof Comprador)) {
 			            if (contrIntro.equals(login.getContrasena())) {
 			                
 			                // Usamos instanceof en lugar de getClass() para evitar problemas con la BD
 			                if (login instanceof Seller) {
-			                    textoErrores.setText("Este usuario ya está registrado como vendedor.");
+			                    textoErrores.setText("Este usuario ya esta registrado como vendedor.");
 			                    usuario.setEnabled(true);
 			                    contrasena.setEnabled(true);
 			                } 

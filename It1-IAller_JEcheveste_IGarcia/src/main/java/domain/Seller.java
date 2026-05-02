@@ -26,9 +26,13 @@ public class Seller extends Comprador implements Serializable{
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Sale> sales=new ArrayList<Sale>();
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Resena> resenas = new ArrayList<Resena>();
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Sale> devoluciones = new ArrayList<Sale>();
 	
-	public Seller(String usuario, String contrasena,String email, String name) {
-		super(usuario, contrasena);
+	public Seller(Comprador c,String email, String name) {
+		super(c);
 		this.email = email;
 		this.name = name;
 	}
@@ -55,7 +59,10 @@ public class Seller extends Comprador implements Serializable{
 		return sales;
 	}
 	
-	
+	public ArrayList<Resena> getResenas() {
+		return resenas;
+	}
+
 	public String toString(){
 		return email+";"+name+sales;
 	}

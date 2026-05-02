@@ -30,22 +30,14 @@ public class Sale implements Serializable {
 	private int esSubasta;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Oferta> ofertas = new ArrayList<Oferta>();;
-
-	public String getUsuarioVendedor() {
-		return usuarioVendedor;
-	}
-	
-	public void setUsuarioVendedor(String usuarioVendedor) {
-		this.usuarioVendedor = usuarioVendedor;
-	}
-
 	private Date pubDate;
 	private Date finDate; //nuevo
 	private String fileName;
 	private boolean habilitado;
 	private String usuarioVendedor;
-	
-	private Seller seller;  
+	private Seller seller;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Resena> resenas = new ArrayList<Resena>();
 	
 	public Sale(){
 		super();
@@ -277,6 +269,21 @@ public class Sale implements Serializable {
 
 	public void setFinDate(Date finDate) {
 		this.finDate = finDate;
+	}
+	public String getUsuarioVendedor() {
+		return usuarioVendedor;
+	}
+	
+	public void setUsuarioVendedor(String usuarioVendedor) {
+		this.usuarioVendedor = usuarioVendedor;
+	}
+
+	public ArrayList<Resena> getResenas() {
+		return resenas;
+	}
+
+	public void setResenas(ArrayList<Resena> resenas) {
+		this.resenas = resenas;
 	}
 
 	

@@ -21,6 +21,7 @@ import javax.persistence.TypedQuery;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.Seller;
+import domain.Usuario;
 import domain.Comprador;
 import domain.Cuentas;
 import domain.Oferta;
@@ -128,7 +129,8 @@ public class DataAccess  {
 	
 	public void anadirCuentasIni(String usuario, String contrasena, Cuentas cu) {
 		db.getTransaction().begin();
-		Comprador user = new Comprador(usuario, contrasena);
+		Usuario user1 = new Usuario (usuario, contrasena);
+		Comprador user = new Comprador (user1);
 		cu.setComprador(user);
 		user.setCuentas(cu);
 		db.persist(user);
@@ -139,7 +141,7 @@ public class DataAccess  {
 	public void addSellerIni(String usuario, String correo, String nombre) {
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
-		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
+		Seller vendedor = new Seller(user,correo,nombre);
 		vendedor.setCuentas(user.getCuentas());
 		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
@@ -328,7 +330,7 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
-		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
+		Seller vendedor = new Seller(user,correo,nombre);
 		vendedor.setCuentas(user.getCuentas());
 		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
@@ -338,9 +340,9 @@ public void open(){
 		close();
 	}
 	
-    public Comprador buscarPorUser(String usuario) {
+    public Usuario buscarPorUser(String usuario) {
     	open();
-    	Comprador a= db.find(Comprador.class,usuario);
+    	Usuario a= db.find(Usuario.class,usuario);
     	close();
     	return a;
     }
@@ -348,7 +350,8 @@ public void open(){
     public void addComprador (String usuario, String contrasena) {
     	open();
     	db.getTransaction().begin();
-    	Comprador comp = new Comprador(usuario, contrasena);
+    	Usuario user = new Usuario (usuario, contrasena);
+    	Comprador comp = new Comprador(user);
     	db.persist(comp);
     	db.getTransaction().commit();
     	close();
@@ -541,7 +544,8 @@ public void open(){
 	public void anadirCuentas(String usuario, String contrasena, Cuentas cu) {
 		open();
 		db.getTransaction().begin();
-		Comprador user = new Comprador(usuario, contrasena);
+		Usuario user1 = new Usuario(usuario, contrasena);
+		Comprador user = new Comprador(user1);
 		cu.setComprador(user);
 		user.setCuentas(cu);
 		db.persist(user);

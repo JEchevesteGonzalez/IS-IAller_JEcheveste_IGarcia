@@ -8,6 +8,7 @@ import domain.Comprador;
 import domain.Cuentas;
 import domain.Oferta;
 import domain.Sale;
+import domain.Usuario;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
 import exceptions.SaleAlreadyExistException;
@@ -68,7 +69,7 @@ public interface BLFacade  {
 		
 	@WebMethod public Image downloadImage(String imageName);
 
-	public Comprador buscarPorUser(String usuario);
+	public Usuario buscarPorUser(String usuario);
 	
 	public void addSeller(String usuario, String correo, String nombre);
 	

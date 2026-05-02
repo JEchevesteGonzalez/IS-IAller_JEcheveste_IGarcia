@@ -9,30 +9,28 @@ import javax.xml.bind.annotation.XmlIDREF;
 import domain.Comprador;
 
 @Entity
-public class Comprador {
-	@Id
-	private String usuario;
-	private String contrasena;
+public class Comprador extends Usuario{
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Sale> historialDeCompras;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Oferta> ofertasEnCurso;
-
 	@OneToOne
 	private Cuentas cuentas;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Friendly> dependientes = new ArrayList<Friendly>();
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
 	
-	
-	public Comprador (String usuario, String contrasena){
-		this.usuario=usuario;
-		this.contrasena=contrasena;
+	public Comprador (Usuario user){
+		super(user.getUsuario(),user.getContrasena());
 		this.historialDeCompras= new ArrayList<Sale>();	
 		this.cuentas = null;
 		this.ofertasEnCurso= new ArrayList<Oferta>();
 	}
 
 
-	public String getUsuario() {
+	/*public String getUsuario() {
 		return usuario;
 	}
 
@@ -49,7 +47,7 @@ public class Comprador {
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
-	}
+	}*/
 
 
 	public float getSaldo() {
@@ -87,4 +85,26 @@ public class Comprador {
 	public void setOfertasEnCurso(ArrayList<Oferta> ofertasEnCurso) {
 		this.ofertasEnCurso = ofertasEnCurso;
 	}
+
+
+	public ArrayList<Friendly> getDependientes() {
+		return dependientes;
+	}
+
+
+	public void setDependientes(ArrayList<Friendly> dependientes) {
+		this.dependientes = dependientes;
+	}
+
+
+	public ArrayList<Solicitud> getSolicitudes() {
+		return solicitudes;
+	}
+
+
+	public void setSolicitudes(ArrayList<Solicitud> solicitudes) {
+		this.solicitudes = solicitudes;
+	}
+	
+	
 }
