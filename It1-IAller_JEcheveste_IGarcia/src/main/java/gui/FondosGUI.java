@@ -58,7 +58,7 @@ public class FondosGUI extends JFrame{
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		Comprador userDB = facade.buscarPorUser(usuario);
+		Comprador userDB = (Comprador) facade.buscarPorUser(usuario);
 		if (userDB != null) {
 			lblfondosActuales.setText(userDB.getSaldo() + " €"); // Asume que tu método se llama getSaldo()
 		}
@@ -83,7 +83,7 @@ public class FondosGUI extends JFrame{
 						textField.setText("");
 						textoErrores.setForeground(Color.GREEN);
 						textoErrores.setText("Transaccion ejecutada correctamente");
-						Comprador userActualizado = facade.buscarPorUser(usuario);
+						Comprador userActualizado = (Comprador) facade.buscarPorUser(usuario);
 						lblfondosActuales.setText(userActualizado.getSaldo() + " €");
 					} else {
 						textoErrores.setForeground(Color.RED);
@@ -139,14 +139,14 @@ public class FondosGUI extends JFrame{
 						return;
 					}
 					
-					if(facade.buscarPorUser(usuario).getCuentas().getSaldo()>0) {
+					if( ((Comprador) facade.buscarPorUser(usuario)).getCuentas().getSaldo()>0) {
 						boolean exito = facade.retirarFondos(usuario, cantidadARetirar);
 						
 						if (exito) {
 							rFondos.setText("");
 							textoErrores.setForeground(Color.GREEN);
 							textoErrores.setText("Transaccion ejecutada correctamente");
-							Comprador userActualizado = facade.buscarPorUser(usuario);
+							Comprador userActualizado = (Comprador) facade.buscarPorUser(usuario);
 							lblfondosActuales.setText(userActualizado.getSaldo() + " €");
 						} else {
 							textoErrores.setForeground(Color.RED);

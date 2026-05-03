@@ -88,7 +88,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 		getContentPane().setLayout(null);
 		BLFacade facade = MainGUI.getBusinessLogic();
 
-		ArrayList<Oferta> historial = facade.buscarPorUser(usuario).getOfertasEnCurso();
+		ArrayList<Oferta> historial = ((Comprador)facade.buscarPorUser(usuario)).getOfertasEnCurso();
 
 		crearTabla(historial);
 		
@@ -119,7 +119,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 					
 					if (confirmacion == JOptionPane.YES_OPTION) {
 						facade.eliminarOferta(sale, PosO).getOfertas();
-						crearTabla(facade.buscarPorUser(usuario).getOfertasEnCurso());
+						crearTabla(((Comprador)facade.buscarPorUser(usuario)).getOfertasEnCurso());
 						btnEliminarOferta.setEnabled(false);
 					}
 				}

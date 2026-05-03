@@ -55,7 +55,7 @@ public class VisualizarComprasGUI extends JFrame {
 		getContentPane().setLayout(null);
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
-		Comprador user = facade.buscarPorUser(usuario);
+		Comprador user = (Comprador) facade.buscarPorUser(usuario);
 		ArrayList<Sale> historial = user.getHistorialDeCompras();
 		
 		tableModelProducts.setDataVector(null, nombreColumnas);

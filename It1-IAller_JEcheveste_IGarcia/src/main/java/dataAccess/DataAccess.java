@@ -636,13 +636,16 @@ public void open(){
                 }
             }
             
-            TypedQuery<Comprador> query = db.createQuery("SELECT c FROM Comprador c WHERE c.historialDeCompras IS NOT EMPTY AND ?1 MEMBER OF c.getHistorialDeCompras()",Comprador.class);    
+            TypedQuery<Comprador> query = db.createQuery("SELECT c FROM Comprador c JOIN c.historialDeCompras h WHERE h = ?1",Comprador.class);    
             query.setParameter(1, saleEnBD);
             
             List<Comprador> comprador = query.getResultList(); 
             
-            Comprador cElim = db.find(Comprador.class, comprador.get(0).getUsuario());
-            cElim.getHistorialDeCompras().remove(saleEnBD);
+            if (!comprador.isEmpty()) {
+                Comprador cElim = db.find(Comprador.class, comprador.get(0).getUsuario());
+                cElim.getHistorialDeCompras().remove(saleEnBD);
+                db.persist(cElim);
+            }
             
             db.remove(saleEnBD);
             db.getTransaction().commit();

@@ -111,7 +111,7 @@ public class ComprarGUI extends JFrame {
 								textoErrores.setText("Haga una oferta válida: el precio ofertado o menor");
 							}
 							else if(ofer==sale.getPrice()) {
-								Comprador comprador = facade.buscarPorUser(usuario);
+								Comprador comprador = (Comprador) facade.buscarPorUser(usuario);
 								boolean exito = facade.comprarProducto(usuario, sale);
 								if(!sale.getOfertas().isEmpty()) {
 									facade.devolverOfertas(sale);

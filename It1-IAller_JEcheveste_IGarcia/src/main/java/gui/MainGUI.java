@@ -129,10 +129,12 @@ public class MainGUI extends JFrame {
 				String usuarioIntro = usuario.getText();
 				String contrIntro = new String(contrasena.getPassword());
 				Usuario login=appFacadeInterface.buscarPorUser(usuarioIntro);
-				if( login != null && usuarioIntro.equals(login.getUsuario())) {
+				
+				if( login != null && usuarioIntro.equals(login.getUsuario())) {			
 					if(contrIntro.equals(login.getContrasena())){
+						
 						if(rdbtnComprador.isSelected()) {
-							if(login.getClass().equals(Comprador.class)) {
+							if(login instanceof Comprador) {
 								JFrame comprador = new CompradorGUI(usuarioIntro);
 								comprador.setVisible(true);
 								textoErrores.setText("");
@@ -142,7 +144,7 @@ public class MainGUI extends JFrame {
 							}
 						}
 						else if (rdbtnVendedor.isSelected()){
-							if(login.getClass().equals(Seller.class)) {
+							if(login instanceof Seller) {
 								//Pasar a la otra pantalla
 								JFrame vendedor = new SellerGUI(usuarioIntro);
 								vendedor.setVisible(true);
@@ -153,7 +155,7 @@ public class MainGUI extends JFrame {
 							}
 						}
 						else if (rdbtnFriendly.isSelected()){
-							if(login.getClass().equals(Friendly.class)) {
+							if(login instanceof Friendly) {
 								//Pasar a la otra pantalla
 								JFrame friendly = new SellerGUI(usuarioIntro);
 								friendly.setVisible(true);
