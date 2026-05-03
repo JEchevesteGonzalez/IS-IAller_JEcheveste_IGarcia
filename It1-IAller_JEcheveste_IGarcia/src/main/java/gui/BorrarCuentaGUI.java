@@ -7,6 +7,9 @@ import javax.swing.JTextField;
 
 import businessLogic.BLFacade;
 import domain.Comprador;
+import domain.Friendly;
+import domain.Seller;
+import domain.Usuario;
 
 import java.awt.Color;
 
@@ -23,6 +26,7 @@ public class BorrarCuentaGUI extends JFrame {
 	private JPasswordField Contrasena;
 	
 	public BorrarCuentaGUI() {
+		BLFacade facade = MainGUI.getBusinessLogic();
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setSize(450, 300);
@@ -53,24 +57,47 @@ public class BorrarCuentaGUI extends JFrame {
 				
 				if(usuarioIntro.isEmpty() || contrIntro.isEmpty()) {
 					textoErrores.setText("Rellena todos los campos.");
-					return;
 				}
-				
-				BLFacade facade = MainGUI.getBusinessLogic();
-				
-				Comprador com = facade.buscarPorUser(usuarioIntro);
-				
-				if(com != null && contrIntro.equals(com.getContrasena())) {
-					int confirmacion = JOptionPane.showConfirmDialog(null, 
-							"¿Estás seguro de que deseas eliminar la cuenta de forma permanente?", 
-							"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-					
-					if (confirmacion == JOptionPane.YES_OPTION) {
-						facade.eliminarUsuario(usuarioIntro);
-						dispose();	
+				else {
+					Usuario u = facade.buscarPorUser(usuarioIntro);
+					if(u != null) {
+						if(u instanceof Friendly) {
+							textoErrores.setText("Tu usuario es dependiente, lo debe eliminar tu supervisor");
+						}
+						else {
+							if(contrIntro.equals(u.getContrasena())) {
+								boolean bien = true;
+								Comprador c = (Comprador) u;
+								if(c.getOfertasEnCurso()!= null) {
+									textoErrores.setText("Si tienes ofertas en curso, no puedes eliminar la cuenta.");
+									bien = false;
+								}
+								if(u instanceof Seller) {
+									Seller seller = (Seller) u;
+									if(seller.getSales() != null) {
+										textoErrores.setText("Si tienes ventas o subastas en curso, no puedes eliminar la cuenta.");
+										bien = false;
+									}
+								}
+								if(bien) {
+									int confirmacion = JOptionPane.showConfirmDialog(null, 
+											"�Estas seguro de que deseas eliminar la cuenta de forma permanente?", 
+											"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+									
+									if (confirmacion == JOptionPane.YES_OPTION) {
+										facade.eliminarUsuario(usuarioIntro);
+										dispose();	
+									}
+								}
+							}
+							else {
+								textoErrores.setText("Usuario o contrasena incorrectos.");
+							}
+						}
 					}
-				} else {
-					textoErrores.setText("Usuario o contraseña incorrectos.");
+					else {
+						textoErrores.setText("Este usuario no existe.");
+					}
 				}
 			}
 				
@@ -79,7 +106,7 @@ public class BorrarCuentaGUI extends JFrame {
 		btnBorrarCuenta.setBounds(144, 183, 117, 23);
 		getContentPane().add(btnBorrarCuenta);
 		
-		JButton btnAtrs = new JButton("Atrás");
+		JButton btnAtrs = new JButton("Atras");
 		btnAtrs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

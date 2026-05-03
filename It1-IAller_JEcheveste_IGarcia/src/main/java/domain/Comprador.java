@@ -15,15 +15,15 @@ public class Comprador extends Usuario{
 	private ArrayList<Sale> historialDeCompras;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Oferta> ofertasEnCurso;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Cuentas cuentas;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Friendly> dependientes = new ArrayList<Friendly>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
 	
-	public Comprador (Usuario user){
-		super(user.getUsuario(),user.getContrasena());
+	public Comprador (String usuario, String contrasena){
+		super(usuario, contrasena);
 		this.historialDeCompras= new ArrayList<Sale>();	
 		this.cuentas = null;
 		this.ofertasEnCurso= new ArrayList<Oferta>();

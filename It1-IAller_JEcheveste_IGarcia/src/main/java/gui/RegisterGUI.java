@@ -34,6 +34,9 @@ public class RegisterGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public RegisterGUI() {
+		
+		BLFacade facade = MainGUI.getBusinessLogic();
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -109,8 +112,6 @@ public class RegisterGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String usuarioIntro = usuario.getText();
 				String contrIntro = new String(contrasena.getPassword());
-				BLFacade facade = MainGUI.getBusinessLogic();
-				Usuario login = facade.buscarPorUser(usuarioIntro);
 				if(usuarioIntro.isEmpty()) {
                     textoErrores.setText("El usuario no puede estar vacio.");
 				}
@@ -118,7 +119,8 @@ public class RegisterGUI extends JFrame {
                     textoErrores.setText("La contrasena no puede estar vacia.");
 				}
 				else {
-					if (login != null && (login instanceof Seller || login instanceof Comprador)) {
+					Usuario login = facade.buscarPorUser(usuarioIntro);
+					if (login != null) {
 			            if (contrIntro.equals(login.getContrasena())) {
 			                
 			                // Usamos instanceof en lugar de getClass() para evitar problemas con la BD
@@ -128,8 +130,9 @@ public class RegisterGUI extends JFrame {
 			                    contrasena.setEnabled(true);
 			                } 
 			                // Si no es Seller, obligatoriamente es Comprador. Procedemos a "ascenderlo".
-			                else {
-			                    if (!correo.isVisible() && !nombre.isVisible() && facade.buscarPorUser(usuarioIntro).getCuentas()!=null) {
+			                else if(login instanceof Comprador){
+			                	Comprador c = (Comprador) login;
+			                    if (!correo.isVisible() && !nombre.isVisible() && c.getCuentas()!=null) {
 			                        // Mostrar los campos extra para que se haga vendedor
 			                        correo.setVisible(true);
 			                        nombre.setVisible(true);
@@ -140,7 +143,7 @@ public class RegisterGUI extends JFrame {
 			                        // Guardar el nuevo vendedor (tu DataAccess ya borra el comprador antiguo)
 			                        if (!correo.getText().isEmpty() && !nombre.getText().isEmpty()) {
 			                            facade.addSeller(usuarioIntro, correo.getText(), nombre.getText());
-			                            textoErrores.setText("¡Ascendido a vendedor con éxito!");
+			                            textoErrores.setText("�Ascendido a vendedor con exito!");
 			                            
 			                            // Reseteamos la vista por si quiere hacer algo más
 			                            correo.setVisible(false);
@@ -152,8 +155,12 @@ public class RegisterGUI extends JFrame {
 			                        }
 			                    }
 			                }
-			            } else {
-			                textoErrores.setText("La contrasena es incorrecta.");
+			                else {
+			                	textoErrores.setText("Este usuario ya esta registrado");
+			                }
+			            }
+			            else {
+			                textoErrores.setText("La contrasena es incorrecta o el usuario ya esta creado por otra persona.");
 			                usuario.setEnabled(true);
 			                contrasena.setEnabled(true);
 			            }
@@ -165,7 +172,8 @@ public class RegisterGUI extends JFrame {
 			                repContrasena.setVisible(true);
 			                usuario.setEnabled(false);
 			                contrasena.setEnabled(false);
-			            } else {
+			            }
+			            else {
 			                if (contrIntro.equals(new String(repContrasena.getPassword()))) {
 			    		            JFrame verDBan = new DatosBancariosGUI(usuarioIntro, contrIntro);
 			    		            verDBan.setVisible(true);
@@ -177,7 +185,8 @@ public class RegisterGUI extends JFrame {
 				                    repContrasena.setVisible(false);
 				                    usuario.setEnabled(true);
 				                    contrasena.setEnabled(true);
-			                } else {
+			                }
+			                else {
 			                    textoErrores.setText("Las contrasenas no coinciden.");
 			                }
 			            }

@@ -24,6 +24,7 @@ import domain.Seller;
 import domain.Usuario;
 import domain.Comprador;
 import domain.Cuentas;
+import domain.Friendly;
 import domain.Oferta;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
@@ -129,8 +130,7 @@ public class DataAccess  {
 	
 	public void anadirCuentasIni(String usuario, String contrasena, Cuentas cu) {
 		db.getTransaction().begin();
-		Usuario user1 = new Usuario (usuario, contrasena);
-		Comprador user = new Comprador (user1);
+		Comprador user = new Comprador (usuario, contrasena);
 		cu.setComprador(user);
 		user.setCuentas(cu);
 		db.persist(user);
@@ -141,10 +141,13 @@ public class DataAccess  {
 	public void addSellerIni(String usuario, String correo, String nombre) {
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
-		Seller vendedor = new Seller(user,correo,nombre);
+		Seller vendedor = new Seller(usuario,user.getContrasena(),correo,nombre);
 		vendedor.setCuentas(user.getCuentas());
 		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
+		vendedor.setOfertasEnCurso(user.getOfertasEnCurso());;
+		vendedor.setDependientes(user.getDependientes());
+		vendedor.setSolicitudes(user.getSolicitudes());
 		db.remove(user);
 		db.persist(vendedor);
 		db.getTransaction().commit();
@@ -330,7 +333,7 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
-		Seller vendedor = new Seller(user,correo,nombre);
+		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
 		vendedor.setCuentas(user.getCuentas());
 		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
@@ -347,11 +350,10 @@ public void open(){
     	return a;
     }
 	
-    public void addComprador (String usuario, String contrasena) {
+    public void addComprador (String usuario, String contra) {
     	open();
     	db.getTransaction().begin();
-    	Usuario user = new Usuario (usuario, contrasena);
-    	Comprador comp = new Comprador(user);
+    	Comprador comp = new Comprador(usuario, contra);
     	db.persist(comp);
     	db.getTransaction().commit();
     	close();
@@ -395,39 +397,15 @@ public void open(){
 		}
     }
     
+    public void eliminarFriendly(Friendly f) {
+    	
+    }
 
     public void eliminarUsuario(String usuario) {
 		open();
 		db.getTransaction().begin();
-		Comprador user = db.find(Comprador.class, usuario);
+		Usuario user = db.find(Usuario.class, usuario);
 		if (user != null) {
-			db.remove(user.getCuentas());
-			ArrayList<Oferta> oUs = new ArrayList<Oferta>(user.getOfertasEnCurso());
-			for(Oferta o:oUs) {
-				Sale sO = db.find(Sale.class, o.getS().getSaleNumber());
-				sO.getOfertas().remove(o);
-				user.getOfertasEnCurso().remove(o);
-				user.setSaldo(user.getSaldo()+o.getPrecio());
-				db.remove(o);
-			}
-			if(user.getClass()==Seller.class) {
-				Seller userS = (Seller) db.find(Seller.class, usuario);
-				ArrayList<Sale> sAux = new ArrayList<Sale>(userS.getSales());
-				for(Sale s:sAux) {
-					if(!(s.getOfertas().isEmpty())) {
-						ArrayList<Oferta> sOAux = new ArrayList<Oferta>(s.getOfertas());
-						for(Oferta o:sOAux) {
-							Comprador c= db.find(Comprador.class, o.getnUser());
-							float nuevoSaldo = c.getSaldo() + o.getPrecio();
-							c.setSaldo(nuevoSaldo);
-							c.getOfertasEnCurso().remove(o);
-							s.getOfertas().remove(o);
-							db.remove(o);
-						}
-					}
-					db.remove(s);
-				}
-			}
 			db.remove(user);
 			db.getTransaction().commit(); 
 		}
@@ -544,8 +522,8 @@ public void open(){
 	public void anadirCuentas(String usuario, String contrasena, Cuentas cu) {
 		open();
 		db.getTransaction().begin();
-		Usuario user1 = new Usuario(usuario, contrasena);
-		Comprador user = new Comprador(user1);
+		this.addComprador(usuario, contrasena);
+		Comprador user = db.find(Comprador.class, usuario);
 		cu.setComprador(user);
 		user.setCuentas(cu);
 		db.persist(user);

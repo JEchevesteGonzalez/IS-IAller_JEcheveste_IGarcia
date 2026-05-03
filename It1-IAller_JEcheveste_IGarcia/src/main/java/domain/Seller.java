@@ -31,8 +31,8 @@ public class Seller extends Comprador implements Serializable{
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Sale> devoluciones = new ArrayList<Sale>();
 	
-	public Seller(Comprador c,String email, String name) {
-		super(c);
+	public Seller(String usuario, String contrasena,String email, String name) {
+		super(usuario, contrasena);
 		this.email = email;
 		this.name = name;
 	}
