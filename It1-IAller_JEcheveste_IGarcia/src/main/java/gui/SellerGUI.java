@@ -58,7 +58,7 @@ public class SellerGUI extends JFrame {
 		btnNewButton = new JButton("Visualizar Ventas Activas\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame verVentasActivas = new VisualizarVentasActivasGUI(usuario);
+				JFrame verVentasActivas = new VisualizarVentasYSubastasActivasGUI(usuario);
 				verVentasActivas.setVisible(true);
 			}
 		});

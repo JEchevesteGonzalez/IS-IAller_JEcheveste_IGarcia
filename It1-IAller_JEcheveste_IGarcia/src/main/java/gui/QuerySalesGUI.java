@@ -30,7 +30,7 @@ public class QuerySalesGUI extends JFrame {
 	private JFrame thisFrame; 
 
 	private String[] columnNamesProducts = new String[] {
-			"Titulo", "Precio","Fecha de publicación","Tipo de venta"
+			"Titulo", "Precio","Fecha de publicación","Tipo"
 	};
 	private JTextField jTextFieldSearch;
 	
@@ -93,7 +93,7 @@ public class QuerySalesGUI extends JFrame {
 
 					List<Sale> sales=facade.getPublishedSales(jTextFieldSearch.getText(),today);
 
-					if (sales.isEmpty() ) jLabelProducts.setText(ResourceBundle.getBundle("Etiquetas").getString("QuerySalesGUI.NoProducts"));
+					if (sales.isEmpty() ) jLabelProducts.setText("No hay ventas disponibles");
 					else jLabelProducts.setText(ResourceBundle.getBundle("Etiquetas").getString("QuerySalesGUI.Products"));
 					for (Sale sale:sales){
 						if (sale.isHabilitado()) {
@@ -103,7 +103,7 @@ public class QuerySalesGUI extends JFrame {
 							row.add(new SimpleDateFormat("dd-MM-yyyy").format(sale.getPublicationDate()));
 							int tVenta = sale.getEsSubasta();
 							if(tVenta==0) {
-								row.add("Oferta");
+								row.add("Venta");
 							}
 							else {
 								row.add("Subasta");

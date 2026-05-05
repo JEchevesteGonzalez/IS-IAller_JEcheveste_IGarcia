@@ -166,7 +166,7 @@ public class ShowSaleGUI extends JFrame {
 		}
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame editar = new EditarVentasGUI(usuario,sale, thisFrame, listado);
+				JFrame editar = new EditarVentasYSubastasGUI(usuario,sale, thisFrame, listado);
 				editar.setVisible(true);
 			}
 		});

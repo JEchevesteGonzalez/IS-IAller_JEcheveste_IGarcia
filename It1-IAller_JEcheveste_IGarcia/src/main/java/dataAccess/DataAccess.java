@@ -257,30 +257,14 @@ public class DataAccess  {
 					
 					if (!sale.getOfertas().isEmpty()) {
 						Oferta ofertaGanadora = sale.getOfertas().get(0);
-						
-						Comprador ganador = db.find(Comprador.class, ofertaGanadora.getnUser());
-						if (ganador != null) {
-							ganador.getOfertasEnCurso().remove(ofertaGanadora);
-							if (sale.getUsuarioVendedor() != null) {
-								Seller vendedor = db.find(Seller.class, sale.getUsuarioVendedor());
-								if (vendedor != null) {
-									vendedor.setSaldo(vendedor.getSaldo() + ofertaGanadora.getPrecio());
-									db.merge(vendedor);
-								}
-							}
-							sale.setHabilitado(false);
-							ganador.getHistorialDeCompras().add(sale);
-							sale.getOfertas().remove(ofertaGanadora);
-							db.remove(ofertaGanadora);
-							db.merge(ganador);
-						}
-					} else {
+						aceptarOfertaIni(sale, ofertaGanadora);
+					}
+					else{
 						sale.setHabilitado(false);
 					}
-					db.merge(sale);
 				} 
 				
-				if (sale.isHabilitado()) {
+				else if (sale.isHabilitado()) {
 					res.add(sale);
 				}
 		  }
@@ -472,15 +456,15 @@ public void open(){
 			//nuevo
 			Date ahora = new Date();
 			long tiempoRestante = producto.getFinDate().getTime() - ahora.getTime();
-			long unDiaEnMilisegundos = 1000 * 60 * 60 * 24;
-			//long unDiaEnMilisegundos= 1000*60;
+			//long unDiaEnMilisegundos = 1000 * 60 * 60 * 24; // 1 dia
+			long unDiaEnMilisegundos= 1000*60; //1 min
 			if (tiempoRestante < unDiaEnMilisegundos) {
 				Calendar c = Calendar.getInstance();
 				c.setTime(producto.getFinDate());
-				c.add(Calendar.DAY_OF_MONTH, 1);
-				//c.add(Calendar.MINUTE, 1);
+				//c.add(Calendar.DAY_OF_MONTH, 1);
+				c.add(Calendar.MINUTE, 1);
 				producto.setFinDate(c.getTime());
-				//System.out.println(" +1 seg" );
+				System.out.println(" +1 min" );
 			}
 			
 			db.persist(producto);
@@ -590,6 +574,23 @@ public void open(){
 		db.getTransaction().commit();
 		close();
 	}
+	
+	public void aceptarOfertaIni(Sale s, Oferta o) {
+		Sale sA = db.find(Sale.class,s.getSaleNumber());
+		Oferta dOf = db.find(Oferta.class, o.getOfertaNumber());
+		Seller sel= db.find(Seller.class, s.getSeller());
+		Comprador com = db.find(Comprador.class, dOf.getnUser());
+		com.getOfertasEnCurso().remove(dOf);
+		float nuevoSaldo = sel.getSaldo() + dOf.getPrecio();
+		sel.setSaldo(nuevoSaldo);
+		sA.getOfertas().remove(dOf);
+		sA.setPrice(dOf.getPrecio());
+		com.getHistorialDeCompras().add(sA);
+		sel.getSales().remove(sA);
+		sA.setHabilitado(false);
+		db.remove(dOf);
+	}
+	
 	
 	public Sale eliminarOferta(Sale s, Oferta o) {
 		open();

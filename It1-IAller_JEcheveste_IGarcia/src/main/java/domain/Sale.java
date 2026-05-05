@@ -55,8 +55,8 @@ public class Sale implements Serializable {
 		if (this.esSubasta == 1) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(pubDate);
-			c.add(Calendar.DAY_OF_MONTH, 7);
-			//c.add(Calendar.MINUTE, 2);
+			//c.add(Calendar.DAY_OF_MONTH, 7);
+			c.add(Calendar.MINUTE, 2);
 			this.finDate=c.getTime()
 ;		}
 		this.habilitado=true;
