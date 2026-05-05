@@ -157,7 +157,7 @@ public class MainGUI extends JFrame {
 						else if (rdbtnFriendly.isSelected()){
 							if(login instanceof Friendly) {
 								//Pasar a la otra pantalla
-								JFrame friendly = new SellerGUI(usuarioIntro);
+								JFrame friendly = new FriendlyGUI(usuarioIntro);
 								friendly.setVisible(true);
 								textoErrores.setText("");
 							}

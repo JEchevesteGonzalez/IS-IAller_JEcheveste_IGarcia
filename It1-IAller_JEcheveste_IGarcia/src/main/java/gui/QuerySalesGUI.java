@@ -2,7 +2,9 @@ package gui;
 
 import businessLogic.BLFacade;
 import configuration.UtilDate;
+import domain.Friendly;
 import domain.Sale;
+import domain.Usuario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -93,23 +95,27 @@ public class QuerySalesGUI extends JFrame {
 
 					List<Sale> sales=facade.getPublishedSales(jTextFieldSearch.getText(),today);
 
+					Usuario userActual = facade.buscarPorUser(usuario);
+					
 					if (sales.isEmpty() ) jLabelProducts.setText("No hay ventas disponibles");
 					else jLabelProducts.setText(ResourceBundle.getBundle("Etiquetas").getString("QuerySalesGUI.Products"));
 					for (Sale sale:sales){
 						if (sale.isHabilitado()) {
-							Vector<Object> row = new Vector<Object>();
-							row.add(sale.getTitle());
-							row.add(sale.getPrice());
-							row.add(new SimpleDateFormat("dd-MM-yyyy").format(sale.getPublicationDate()));
-							int tVenta = sale.getEsSubasta();
-							if(tVenta==0) {
-								row.add("Venta");
+							if (!(userActual instanceof Friendly && sale.getEsSubasta() == 1)) {
+								Vector<Object> row = new Vector<Object>();
+								row.add(sale.getTitle());
+								row.add(sale.getPrice());
+								row.add(new SimpleDateFormat("dd-MM-yyyy").format(sale.getPublicationDate()));
+								int tVenta = sale.getEsSubasta();
+								if(tVenta==0) {
+									row.add("Venta");
+								}
+								else {
+									row.add("Subasta");
+								}
+								row.add(sale); // product object added in order to obtain it with tableModelProducts.getValueAt(i,2)
+								tableModelProducts.addRow(row);	
 							}
-							else {
-								row.add("Subasta");
-							}
-							row.add(sale); // product object added in order to obtain it with tableModelProducts.getValueAt(i,2)
-							tableModelProducts.addRow(row);	
 						}
 					}
 				} catch (Exception e1) {

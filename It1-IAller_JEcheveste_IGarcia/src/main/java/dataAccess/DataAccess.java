@@ -21,6 +21,7 @@ import javax.persistence.TypedQuery;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.Seller;
+import domain.Solicitud;
 import domain.Usuario;
 import domain.Comprador;
 import domain.Cuentas;
@@ -701,4 +702,71 @@ public void open(){
 		}
 		close();
 	}
+	
+	public void registrarFriendly(String usuario, String contrasena, String cUsr) {
+		open();
+		db.getTransaction().begin();
+		
+		Comprador padre = db.find(Comprador.class, cUsr);
+		
+		if (padre != null) {
+			Friendly nuevoFriendly = new Friendly(usuario, contrasena, padre);
+			
+			padre.getDependientes().add(nuevoFriendly);
+			
+			db.persist(nuevoFriendly);
+			db.getTransaction().commit();
+		}
+		close();
+	}
+	
+	public Sale buscarVentaPorId(Integer saleNumber) {
+		open();
+		Sale s = db.find(Sale.class, saleNumber);
+		close();
+		return s;
+	}
+	
+	public void crearSolicitud(String usuarioFriendly, Integer saleNumber) {
+		open();
+		db.getTransaction().begin();
+
+		Friendly friendly = db.find(Friendly.class, usuarioFriendly);
+		
+		if (friendly != null) {
+			Comprador supervisor = friendly.getSupervisor();
+
+			Solicitud nuevaSolicitud = new Solicitud();
+			nuevaSolicitud.setSaleNumber(saleNumber);
+			nuevaSolicitud.setEstado("En trámite");
+
+			db.persist(nuevaSolicitud);
+
+			if (friendly.getSolicitudes() != null) {
+				friendly.getSolicitudes().add(nuevaSolicitud);
+			}
+			
+			if (supervisor != null && supervisor.getSolicitudes() != null) {
+				supervisor.getSolicitudes().add(nuevaSolicitud);
+			}
+
+			db.getTransaction().commit();
+		}
+		close();
+	}
+	
+	public void actualizarEstadoSolicitud(Integer solNumber, String nuevoEstado) {
+	    open();
+	    db.getTransaction().begin();
+	    
+	    Solicitud sol = db.find(Solicitud.class, solNumber);
+	    
+	    if (sol != null) {
+	        sol.setEstado(nuevoEstado);
+	        db.getTransaction().commit();
+	    }
+	    close();
+	}
+	
+	
 }

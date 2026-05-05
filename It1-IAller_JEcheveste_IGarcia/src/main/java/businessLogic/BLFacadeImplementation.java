@@ -182,5 +182,18 @@ public class BLFacadeImplementation  implements BLFacade {
 	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException {
 		dbManager.addResena(valoracion, descripcion, file, sale, nUser);
 	}
+	public void registrarFriendly(String usuario, String contrasena, String supervisorUsr) {
+		dbManager.registrarFriendly(usuario, contrasena, supervisorUsr);
+	}
+	public Sale buscarVentaPorId(Integer saleNumber) {
+		return dbManager.buscarVentaPorId(saleNumber);
+	}
+	public void crearSolicitud(String usuarioFriendly, Integer saleNumber) {
+		dbManager.crearSolicitud(usuarioFriendly, saleNumber);
+	}
+	public void actualizarEstadoSolicitud(Integer solNumber, String nuevoEstado) {
+	    dbManager.actualizarEstadoSolicitud(solNumber, nuevoEstado);
+	}
+	
 }
 

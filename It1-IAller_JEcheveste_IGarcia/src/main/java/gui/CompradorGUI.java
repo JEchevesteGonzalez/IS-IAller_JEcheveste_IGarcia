@@ -30,7 +30,7 @@ public class CompradorGUI extends JFrame {
 	public CompradorGUI(String usuario) {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 454, 333);
+		setBounds(100, 100, 658, 554);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -44,7 +44,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton.setBounds(0, 101, 434, 103);
+		btnNewButton.setBounds(0, 101, 637, 103);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizarComprasAnteriores = new JButton("Visualizar compras anteriores");
@@ -55,7 +55,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnVisualizarComprasAnteriores.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnVisualizarComprasAnteriores.setBounds(0, 0, 434, 103);
+		btnVisualizarComprasAnteriores.setBounds(0, 0, 637, 103);
 		contentPane.add(btnVisualizarComprasAnteriores);
 		
 		JButton btnNewButton_1 = new JButton("Agregar Fondos");
@@ -66,7 +66,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton_1.setBounds(0, 202, 218, 86);
+		btnNewButton_1.setBounds(0, 202, 326, 86);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnOfertasEnCurso = new JButton("Ofertas En Curso");
@@ -77,7 +77,29 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnOfertasEnCurso.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnOfertasEnCurso.setBounds(216, 202, 218, 86);
+		btnOfertasEnCurso.setBounds(326, 202, 311, 86);
 		contentPane.add(btnOfertasEnCurso);
+		
+		JButton btnRegistrarFriendly = new JButton("Registrar Friendly");
+		btnRegistrarFriendly.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFrame registrarFriendly = new RegistrarFriendlyGUI(usuario);
+				registrarFriendly.setVisible(true);
+			}
+		});
+		btnRegistrarFriendly.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnRegistrarFriendly.setBounds(0, 286, 637, 103);
+		contentPane.add(btnRegistrarFriendly);
+		
+		JButton btnSolicitudesFriendly = new JButton("Ver solicitudes del Friendly");
+		btnSolicitudesFriendly.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFrame gestionar = new GestionarSolicitudesGUI(usuario);
+				gestionar.setVisible(true);
+			}
+		});
+		btnSolicitudesFriendly.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnSolicitudesFriendly.setBounds(0, 389, 637, 103);
+		contentPane.add(btnSolicitudesFriendly);
 	}
 }

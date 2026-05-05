@@ -21,6 +21,10 @@ public class Solicitud {
 	private Friendly friendly;
 	@ManyToOne
 	private Comprador supervisor;
+	
+	public Solicitud() {
+		super();
+	}
 	public Solicitud(Integer solNumber, Integer saleNumber, String estado, Friendly friendly, Comprador supervisor) {
 		super();
 		this.solicitudNumber = solNumber;

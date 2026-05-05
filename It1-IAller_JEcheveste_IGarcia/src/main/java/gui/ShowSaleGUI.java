@@ -11,7 +11,9 @@ import java.text.SimpleDateFormat;
 import java.awt.image.BufferedImage;
 
 import businessLogic.BLFacade;
+import domain.Friendly;
 import domain.Sale;
+import domain.Usuario;
 
 
 public class ShowSaleGUI extends JFrame {
@@ -132,22 +134,39 @@ public class ShowSaleGUI extends JFrame {
 		getContentPane().add(statusField);
 		
 		JButton btnComprar = new JButton("Comprar");
-		if(sale.getEsSubasta()==1){
-			btnComprar.setText("Pujar");
-		}
-		btnComprar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(sale.getEsSubasta()==1){
-					JFrame pujar = new PujarGUI(sale, usuario, thisFrame, listado);
-					pujar.setVisible(true);
+		
+		Usuario userActual = facade.buscarPorUser(usuario);
+		
+		if (userActual instanceof Friendly) {
+			
+			btnComprar.setText("Solicitar");
+			btnComprar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					facade.crearSolicitud(usuario, sale.getSaleNumber());
+					JOptionPane.showMessageDialog(null, "Solicitud enviada correctamente a tu supervisor.");
+					thisFrame.dispose(); 
 				}
-				else {
-					JFrame comprar = new ComprarGUI(sale, usuario, thisFrame, listado);
-					comprar.setVisible(true);
-				}
-
+			});
+			
+		} else {
+		
+			if(sale.getEsSubasta()==1){
+				btnComprar.setText("Pujar");
 			}
-		});
+			btnComprar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(sale.getEsSubasta()==1){
+						JFrame pujar = new PujarGUI(sale, usuario, thisFrame, listado);
+						pujar.setVisible(true);
+					}
+					else {
+						JFrame comprar = new ComprarGUI(sale, usuario, thisFrame, listado);
+						comprar.setVisible(true);
+					}
+
+				}
+			});
+		}
 		JButton btnDevolver = new JButton("Devolver compra");
 		btnDevolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -178,15 +197,21 @@ public class ShowSaleGUI extends JFrame {
 		btnComprar.setBounds(128, 214, 89, 23);
 		getContentPane().add(btnComprar);
 		if(comprador) {
-			if (sale.isHabilitado()) {
+			if (userActual instanceof Friendly) {
 				btnComprar.setVisible(true);
 				btnDevolver.setVisible(false);
 				btnResena.setVisible(false);
-			}
-			else{
-				btnComprar.setVisible(false);
-				btnDevolver.setVisible(true);
-				btnResena.setVisible(true);
+			}else {
+				if (sale.isHabilitado()) {
+					btnComprar.setVisible(true);
+					btnDevolver.setVisible(false);
+					btnResena.setVisible(false);
+				}
+				else{
+					btnComprar.setVisible(false);
+					btnDevolver.setVisible(true);
+					btnResena.setVisible(true);
+				}
 			}
 		}
 		else {
