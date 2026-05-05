@@ -26,9 +26,11 @@ import domain.Comprador;
 import domain.Cuentas;
 import domain.Friendly;
 import domain.Oferta;
+import domain.Resena;
 import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
+import exceptions.ResenaAlreadyExistsException;
 import exceptions.SaleAlreadyExistException;
 
 /**
@@ -380,10 +382,7 @@ public void open(){
 			return false;
 		}
     }
-    
-    public void eliminarFriendly(Friendly f) {
-    	
-    }
+  
 
     public void eliminarUsuario(String usuario) {
 		open();
@@ -680,4 +679,26 @@ public void open(){
 		close();
 	}
 	
+	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException {
+		open();
+		if (file==null)
+			throw new FileNotUploadedException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.ErrorFileNotUploadedException"));
+		try {
+			db.getTransaction().begin();
+			Sale s = db.find(Sale.class, sale.getSaleNumber());
+			Seller seller = db.find(Seller.class, sale.getSeller().getUsuario());
+			Resena res = new Resena(valoracion, descripcion, file, s, nUser, seller);
+			seller.getResenas().add(res);
+			s.getResenas().add(res);
+			db.persist(s);
+			db.persist(seller);
+			db.persist(res);
+			db.getTransaction().commit();
+		}catch (NullPointerException e) {
+			   e.printStackTrace();
+				// TODO Auto-generated catch block
+				db.getTransaction().commit();
+		}
+		close();
+	}
 }

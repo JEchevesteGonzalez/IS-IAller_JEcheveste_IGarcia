@@ -8,9 +8,11 @@ import domain.Comprador;
 import domain.Cuentas;
 import domain.Oferta;
 import domain.Sale;
+import domain.Seller;
 import domain.Usuario;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
+import exceptions.ResenaAlreadyExistsException;
 import exceptions.SaleAlreadyExistException;
 
 import javax.jws.WebMethod;
@@ -103,4 +105,6 @@ public interface BLFacade  {
 
 
 	public void devolverCompra(Sale sale, String usuario);
+	
+	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException;
 }

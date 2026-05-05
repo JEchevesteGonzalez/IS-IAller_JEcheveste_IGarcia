@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import javax.imageio.ImageIO;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+@Entity
 public class Resena {
 
 	@XmlID
@@ -29,7 +31,7 @@ public class Resena {
 	private Seller seller;
 	
 	
-	public Resena(float valoracion, File fotoProducto, String descripcion, Sale sale, String nUser, Seller sel) {
+	public Resena(float valoracion, String descripcion, File fotoProducto, Sale sale, String nUser, Seller sel) {
 		this.valoracion = valoracion;
 		this.descripcion = descripcion;
 		this.sale = sale;

@@ -168,7 +168,8 @@ public class ShowSaleGUI extends JFrame {
 		JButton btnResena = new JButton("Hacer reseña");
 		btnResena.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JFrame resena = new ResenaGUI(sale, usuario);
+				resena.setVisible(true);
 			}
 		});
 		btnResena.setBounds(161, 285, 145, 25);
@@ -176,15 +177,17 @@ public class ShowSaleGUI extends JFrame {
 		
 		btnComprar.setBounds(128, 214, 89, 23);
 		getContentPane().add(btnComprar);
-		if (comprador && sale.isHabilitado()) {
-			btnComprar.setVisible(true);
-			btnDevolver.setVisible(false);
-			btnResena.setVisible(false);
-		}
-		else if (!sale.isHabilitado()){
+		if(comprador) {
+			if (sale.isHabilitado()) {
+				btnComprar.setVisible(true);
+				btnDevolver.setVisible(false);
+				btnResena.setVisible(false);
+			}
+			else{
 				btnComprar.setVisible(false);
 				btnDevolver.setVisible(true);
 				btnResena.setVisible(true);
+			}
 		}
 		else {
 			btnComprar.setVisible(false);
@@ -195,8 +198,6 @@ public class ShowSaleGUI extends JFrame {
 		JButton btnEditar = new JButton("Editar");
 		if (comprador) {
 			btnEditar.setVisible(false);
-			btnDevolver.setVisible(true);
-			btnResena.setVisible(true);
 		}
 		else {
 			btnEditar.setVisible(true);

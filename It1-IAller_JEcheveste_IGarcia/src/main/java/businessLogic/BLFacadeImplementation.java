@@ -15,6 +15,7 @@ import domain.Seller;
 import domain.Usuario;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
+import exceptions.ResenaAlreadyExistsException;
 import exceptions.SaleAlreadyExistException;
 
 import java.awt.image.BufferedImage;
@@ -178,6 +179,8 @@ public class BLFacadeImplementation  implements BLFacade {
 	public void devolverCompra(Sale sale, String usuario) {
 		dbManager.devolverCompra(sale, usuario);
 	}
-	
+	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException {
+		dbManager.addResena(valoracion, descripcion, file, sale, nUser);
+	}
 }
 

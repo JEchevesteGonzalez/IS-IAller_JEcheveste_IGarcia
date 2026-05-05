@@ -100,6 +100,13 @@ public class Seller extends Comprador implements Serializable{
 			 return true;
 		return false;
 	}
+	
+	public boolean doesResenaExist(int resenaNumber)  {	
+		for (Resena r: resenas)
+			if (r.getResenaNumber() == resenaNumber )
+			 return true;
+		return false;
+	}
 		
 	@Override
 	public boolean equals(Object obj) {
