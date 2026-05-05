@@ -107,4 +107,5 @@ public interface BLFacade  {
 	public void devolverCompra(Sale sale, String usuario);
 	
 	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException;
+	public Sale buscarPorNum(Integer num);
 }

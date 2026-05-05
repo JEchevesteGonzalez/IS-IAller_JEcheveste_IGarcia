@@ -182,5 +182,8 @@ public class BLFacadeImplementation  implements BLFacade {
 	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException {
 		dbManager.addResena(valoracion, descripcion, file, sale, nUser);
 	}
+	public Sale buscarPorNum(Integer num) {
+		return dbManager.buscarPorNum(num);
+	}
 }
 

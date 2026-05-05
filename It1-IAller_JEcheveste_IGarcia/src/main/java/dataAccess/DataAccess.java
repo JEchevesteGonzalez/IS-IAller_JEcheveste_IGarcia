@@ -701,4 +701,13 @@ public void open(){
 		}
 		close();
 	}
+	
+	public Sale buscarPorNum(Integer num) {
+		open();
+		db.getTransaction().begin();
+		Sale sale = db.find(Sale.class, num);
+		db.getTransaction().commit();
+		close();
+		return sale;
+	}
 }

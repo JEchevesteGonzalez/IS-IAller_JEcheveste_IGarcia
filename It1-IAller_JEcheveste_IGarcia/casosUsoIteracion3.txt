@@ -14,7 +14,7 @@ Para la nueva clase de dominio Comprador Friendly:
 
 NUEVAS CLASES DE DOMINIO
 Comprador Friendly-> Usuario del comprador a cargo, nombre, contraseña
-Reseña-> Valoracion, foto del producto (Opcional), descripcion.
+Reseña-> Valoracion, foto del producto, descripcion.
 
 En Vendedor añadimos el atributo -> devoluciones, que es un ArrayList de las posibles devoluciones.
 

@@ -44,8 +44,10 @@ public class ShowSaleGUI extends JFrame {
 	private JLabel jLabelError = new JLabel();
 	private JLabel statusField=new JLabel();
 	private JFrame thisFrame;
+	private final JButton btnVerResenas = new JButton("Ver Reseñas");
+	private final JButton btnVerReseasDel = new JButton("Ver Reseñas del Vendedor");
 	
-	public ShowSaleGUI(Sale sale, boolean comprador,String usuario, JFrame listado) { 
+	public ShowSaleGUI(Sale sale, boolean comprador,String usuario, JFrame listado, boolean paraNoBucle) { 
 		thisFrame=this; 
 		this.setVisible(true);
 		this.getContentPane().setLayout(null);
@@ -178,25 +180,38 @@ public class ShowSaleGUI extends JFrame {
 		btnComprar.setBounds(128, 214, 89, 23);
 		getContentPane().add(btnComprar);
 		if(comprador) {
-			if (sale.isHabilitado()) {
-				btnComprar.setVisible(true);
+			if(paraNoBucle) {
+				btnVerResenas.setVisible(false);
+				btnVerReseasDel.setVisible(false);
+				btnComprar.setVisible(false);
 				btnDevolver.setVisible(false);
 				btnResena.setVisible(false);
 			}
 			else{
-				btnComprar.setVisible(false);
-				btnDevolver.setVisible(true);
-				btnResena.setVisible(true);
+				btnVerResenas.setVisible(true);
+				btnVerReseasDel.setVisible(true);
+				if (sale.isHabilitado()) {
+					btnComprar.setVisible(true);
+					btnDevolver.setVisible(false);
+					btnResena.setVisible(false);
+				}
+				else{
+					btnComprar.setVisible(false);
+					btnDevolver.setVisible(true);
+					btnResena.setVisible(true);
+				}
 			}
 		}
 		else {
 			btnComprar.setVisible(false);
+			btnVerResenas.setVisible(false);
+			btnVerReseasDel.setVisible(false);
 			btnDevolver.setVisible(false);
 			btnResena.setVisible(false);
 		}
 		
 		JButton btnEditar = new JButton("Editar");
-		if (comprador) {
+		if (comprador || paraNoBucle) {
 			btnEditar.setVisible(false);
 		}
 		else {
@@ -212,8 +227,31 @@ public class ShowSaleGUI extends JFrame {
 		});
 		btnEditar.setBounds(217, 214, 89, 23);
 		getContentPane().add(btnEditar);
+		
+		btnVerResenas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame resenas = new VerResenasRecibidasGUI(usuario, true, sale.getSaleNumber());
+				resenas.setVisible(true);
+			}
+		});
+		btnVerResenas.setBounds(85, 3, 180, 34);
+		
+		getContentPane().add(btnVerResenas);
+		btnVerReseasDel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame resenas = new VerResenasRecibidasGUI(sale.getSeller().getUsuario(), true, null);
+				resenas.setVisible(true);
+			}
+		});
+		btnVerReseasDel.setBounds(275, 3, 270, 34);
+		
+		getContentPane().add(btnVerReseasDel);
 		setVisible(true);
 	}	 
+	
+	
+	
+	
 	public BufferedImage rescale(BufferedImage originalImage)
     {
         BufferedImage resizedImage = new BufferedImage(baseSize, baseSize, BufferedImage.TYPE_INT_RGB);

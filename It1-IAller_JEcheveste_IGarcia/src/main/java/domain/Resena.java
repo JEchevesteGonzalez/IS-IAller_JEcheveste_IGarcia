@@ -114,5 +114,8 @@ public class Resena {
 	public String toString(){
 		return this.resenaNumber+";"+this.valoracion;  
 	}
+	public String getFile() {
+		return fotoProducto;
+	}
 	
 }
