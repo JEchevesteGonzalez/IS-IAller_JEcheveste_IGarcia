@@ -5,11 +5,7 @@ Para la clase Comprador:
 - Visualizar lista de deseos del Comprador Friendly
 - Ver reseñas de Vendedor
 - Poner reseña
-- Solicitar devolucion
-
-Para la clase Vendedor:
-- Visualizar devoluciones
-- Aceptar/Rechazar devolucion
+- Hacer devolucion
 
 Para la nueva clase de dominio Comprador Friendly:
 - Login

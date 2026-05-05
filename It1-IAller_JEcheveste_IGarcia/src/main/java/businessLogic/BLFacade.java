@@ -100,4 +100,7 @@ public interface BLFacade  {
 	public Sale eliminarOferta(Sale s, Oferta dOf);
 	
 	public void borrarVenta(Sale s);
+
+
+	public void devolverCompra(Sale sale, String usuario);
 }

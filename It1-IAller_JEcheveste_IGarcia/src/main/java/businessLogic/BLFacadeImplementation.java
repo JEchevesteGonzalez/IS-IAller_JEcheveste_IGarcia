@@ -174,6 +174,10 @@ public class BLFacadeImplementation  implements BLFacade {
 	public void borrarVenta(Sale s) {
 		dbManager.borrarVenta(s);
 	}
+
+	public void devolverCompra(Sale sale, String usuario) {
+		dbManager.devolverCompra(sale, usuario);
+	}
 	
 }
 

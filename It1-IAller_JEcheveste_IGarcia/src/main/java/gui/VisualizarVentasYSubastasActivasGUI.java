@@ -94,7 +94,7 @@ public class VisualizarVentasYSubastasActivasGUI extends JFrame {
 			}
 		});
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Oferta", "Subasta"}));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Venta", "Subasta"}));
 		comboBox.setBounds(113, 13, 220, 22);
 		getContentPane().add(comboBox);
 		

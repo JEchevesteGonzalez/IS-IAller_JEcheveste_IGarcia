@@ -356,12 +356,12 @@ public void open(){
 					producto.setHabilitado(false);
 				
 				
-					if (producto.getUsuarioVendedor() != null) {
-						Seller vendedor = db.find(Seller.class, producto.getUsuarioVendedor());
+					if (producto.getSeller() != null) {
+						Seller vendedor = db.find(Seller.class, producto.getSeller().getUsuario());
 						if (vendedor != null) {
 							producto.setUsuarioVendedor(vendedor.getUsuario());
 							vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
-							vendedor.getSales().add(producto);
+							vendedor.getSales().remove(producto);
 							db.persist(vendedor);
 						}
 					}
@@ -432,6 +432,13 @@ public void open(){
 		s.setStatus(numStatus);
 		s.setPrice(price);
 		s.setPublicationDate(trim);
+		if (hab=true) {
+			Calendar c = Calendar.getInstance();
+			c.setTime(s.getPublicationDate());
+			//c.add(Calendar.DAY_OF_MONTH, 7);
+			c.add(Calendar.MINUTE, 2);
+			s.setFinDate(c.getTime());
+		}
 		s.setHabilitado(hab);
 		db.persist(s);
 		//db.persist(sale.getSeller());
@@ -653,5 +660,24 @@ public void open(){
         } 
         close();
     }
+
+	public void devolverCompra(Sale s, String usuario) {
+		open();
+		db.getTransaction().begin();
+		Sale sA = db.find(Sale.class,s.getSaleNumber());
+		Seller sel= db.find(Seller.class, s.getSeller());
+		Comprador com = db.find(Comprador.class, usuario);
+		float saldoAdd = com.getSaldo() + sA.getPrice();
+		float saldoRes = sel.getSaldo() - sA.getPrice();
+		if (saldoRes<= 0) {
+			saldoRes = 0;
+		}
+		com.setSaldo(saldoAdd);
+		sel.setSaldo(saldoRes);
+		com.getHistorialDeCompras().remove(sA);
+		sel.getSales().add(sA);
+		db.getTransaction().commit();
+		close();
+	}
 	
 }

@@ -28,8 +28,6 @@ public class Seller extends Comprador implements Serializable{
 	private List<Sale> sales=new ArrayList<Sale>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Resena> resenas = new ArrayList<Resena>();
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	private ArrayList<Sale> devoluciones = new ArrayList<Sale>();
 	
 	public Seller(String usuario, String contrasena,String email, String name) {
 		super(usuario, contrasena);
@@ -116,6 +114,4 @@ public class Seller extends Comprador implements Serializable{
 			return false;
 		return true;
 	}
-
-	
 }

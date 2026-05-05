@@ -116,7 +116,7 @@ public class EditarVentasYSubastasGUI extends JFrame {
 						else {
 							hab = false;
 						}
-						facade.editSale(sale, fieldDescription.getText(), numStatus, price,  UtilDate.trim(jCalendar.getDate()),hab);
+						facade.editSale(sale, fieldDescription.getText(), numStatus, price,  jCalendar.getDate(),hab);
 						jLabelMsg.setText("Venta editada");
 						thisFrame.setVisible(false);
 						venta.setVisible(false);
