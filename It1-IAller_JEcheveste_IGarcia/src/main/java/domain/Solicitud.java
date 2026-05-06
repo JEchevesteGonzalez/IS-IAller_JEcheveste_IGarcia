@@ -16,18 +16,14 @@ public class Solicitud {
 	@GeneratedValue
 	private Integer solicitudNumber;
 	private Integer saleNumber;
-	private String estado; //En tramite, rechazada, aceptada, comprada
+	private String estado; //En tramite, rechazada, aceptada
 	@ManyToOne
 	private Friendly friendly;
 	@ManyToOne
 	private Comprador supervisor;
 	
-	public Solicitud() {
-		super();
-	}
-	public Solicitud(Integer solNumber, Integer saleNumber, String estado, Friendly friendly, Comprador supervisor) {
-		super();
-		this.solicitudNumber = solNumber;
+
+	public Solicitud(Integer saleNumber, String estado, Friendly friendly, Comprador supervisor) {
 		this.saleNumber = saleNumber;
 		this.estado = estado;
 		this.friendly = friendly;

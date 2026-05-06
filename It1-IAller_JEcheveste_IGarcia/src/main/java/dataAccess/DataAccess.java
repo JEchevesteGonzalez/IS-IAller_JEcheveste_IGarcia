@@ -745,9 +745,7 @@ public void open(){
 		if (friendly != null) {
 			Comprador supervisor = friendly.getSupervisor();
 
-			Solicitud nuevaSolicitud = new Solicitud();
-			nuevaSolicitud.setSaleNumber(saleNumber);
-			nuevaSolicitud.setEstado("En tr�mite");
+			Solicitud nuevaSolicitud = new Solicitud(saleNumber, "En tramite", friendly, supervisor);
 
 			db.persist(nuevaSolicitud);
 
@@ -758,9 +756,8 @@ public void open(){
 			if (supervisor != null && supervisor.getSolicitudes() != null) {
 				supervisor.getSolicitudes().add(nuevaSolicitud);
 			}
-
-			db.getTransaction().commit();
 		}
+		db.getTransaction().commit();
 		close();
 	}
 	

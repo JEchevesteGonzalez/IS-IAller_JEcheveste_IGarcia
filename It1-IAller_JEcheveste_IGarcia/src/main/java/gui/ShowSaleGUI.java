@@ -198,42 +198,42 @@ public class ShowSaleGUI extends JFrame {
 		
 		btnComprar.setBounds(128, 214, 89, 23);
 		getContentPane().add(btnComprar);
-		if(comprador) {
-			if (userActual instanceof Friendly) {
-				btnComprar.setVisible(true);
+		if (userActual instanceof Friendly) {
+			btnComprar.setVisible(true);
+			btnVerResenas.setVisible(false);
+			btnVerReseasDel.setVisible(false);
+			btnDevolver.setVisible(false);
+			btnResena.setVisible(false);
+		}
+		else if(comprador) {
+			if(paraNoBucle) {
+				btnVerResenas.setVisible(false);
+				btnVerReseasDel.setVisible(false);
+				btnComprar.setVisible(false);
 				btnDevolver.setVisible(false);
 				btnResena.setVisible(false);
 			}
-			else if(comprador) {
-				if(paraNoBucle) {
-					btnVerResenas.setVisible(false);
-					btnVerReseasDel.setVisible(false);
-					btnComprar.setVisible(false);
+			else{
+				btnVerResenas.setVisible(true);
+				btnVerReseasDel.setVisible(true);
+				if (sale.isHabilitado()) {
+					btnComprar.setVisible(true);
 					btnDevolver.setVisible(false);
 					btnResena.setVisible(false);
 				}
 				else{
-					btnVerResenas.setVisible(true);
-					btnVerReseasDel.setVisible(true);
-					if (sale.isHabilitado()) {
-						btnComprar.setVisible(true);
-						btnDevolver.setVisible(false);
-						btnResena.setVisible(false);
-					}
-					else{
-						btnComprar.setVisible(false);
-						btnDevolver.setVisible(true);
-						btnResena.setVisible(true);
-					}
+					btnComprar.setVisible(false);
+					btnDevolver.setVisible(true);
+					btnResena.setVisible(true);
 				}
 			}
-			else {
-				btnComprar.setVisible(false);
-				btnVerResenas.setVisible(false);
-				btnVerReseasDel.setVisible(false);
-				btnDevolver.setVisible(false);
-				btnResena.setVisible(false);
-			}
+		}
+		else {
+			btnComprar.setVisible(false);
+			btnVerResenas.setVisible(false);
+			btnVerReseasDel.setVisible(false);
+			btnDevolver.setVisible(false);
+			btnResena.setVisible(false);
 		}
 		
 		JButton btnEditar = new JButton("Editar");
@@ -242,8 +242,6 @@ public class ShowSaleGUI extends JFrame {
 		}
 		else {
 			btnEditar.setVisible(true);
-			btnDevolver.setVisible(false);
-			btnResena.setVisible(false);
 		}
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

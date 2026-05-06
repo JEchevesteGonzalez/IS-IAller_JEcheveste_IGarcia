@@ -88,8 +88,8 @@ public class ResenaGUI extends JFrame {
 						jLabelMsg.setText("Introduzca los datos necesarios");
 					}
 					facade.addResena(val, desc, targetFile, sale, usuario);
-					jLabelMsg.setForeground(Color.GREEN);
-					jLabelMsg.setText("Reseña añadida a la compra con éxito");
+					JOptionPane.showMessageDialog(null, "Reseña añadida a la compra con éxito","Resena", JOptionPane.INFORMATION_MESSAGE);
+					thisFrame.setVisible(false);
 				}
 				}catch (java.lang.NumberFormatException e1) {
 					jLabelError.setForeground(Color.RED);

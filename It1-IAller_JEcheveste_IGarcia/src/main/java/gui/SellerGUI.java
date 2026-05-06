@@ -62,7 +62,7 @@ public class SellerGUI extends JFrame {
 				verVentasActivas.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(0, 0, 477, 128);
+		btnNewButton.setBounds(0, 0, 477, 74);
 		jContentPane.add(btnNewButton);
 		
 		btnCrearVenta = new JButton("Crear Venta");
@@ -72,8 +72,19 @@ public class SellerGUI extends JFrame {
 				crear.setVisible(true);
 			}
 		});
-		btnCrearVenta.setBounds(0, 123, 477, 128);
+		btnCrearVenta.setBounds(0, 73, 477, 74);
 		jContentPane.add(btnCrearVenta);
+		
+		
+		JButton btnVerResenasRecibidas = new JButton("Ver Reseñas Recibidas");
+		btnVerResenasRecibidas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame resenas = new VerResenasRecibidasGUI(usuario, false, null);
+				resenas.setVisible(true);
+			}
+		});
+		btnVerResenasRecibidas.setBounds(0, 145, 477, 81);
+		jContentPane.add(btnVerResenasRecibidas);
 		
 	}
 	

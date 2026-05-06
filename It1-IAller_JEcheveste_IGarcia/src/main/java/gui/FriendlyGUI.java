@@ -14,7 +14,7 @@ public class FriendlyGUI extends JFrame {
 
 	public FriendlyGUI(String usuario) {
 		setTitle("Panel de Usuario Friendly: " + usuario);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

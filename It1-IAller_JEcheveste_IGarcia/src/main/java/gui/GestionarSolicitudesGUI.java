@@ -26,15 +26,18 @@ public class GestionarSolicitudesGUI extends JFrame {
 	private JTable table;
 	private DefaultTableModel tableModel;
 	private String[] columnNames = {"Friendly", "Producto", "Estado", "ObjetoSolicitud"};
+	private JFrame thisFrame;
 
 	public GestionarSolicitudesGUI(String usuarioSupervisor) {
-		setTitle("Gestión de Solicitudes Friendly - Supervisor: " + usuarioSupervisor);
+		setTitle("Gestiï¿½n de Solicitudes Friendly - Supervisor: " + usuarioSupervisor);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		thisFrame = this;
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 11, 664, 250);
@@ -66,6 +69,8 @@ public class GestionarSolicitudesGUI extends JFrame {
 					Solicitud s = (Solicitud) tableModel.getValueAt(fila, 3);
 					facade.actualizarEstadoSolicitud(s.getSolNumber(), "Aceptada");
 					JOptionPane.showMessageDialog(null, "Solicitud aceptada");
+					Sale sale = facade.buscarPorNum(s.getSaleNumber());
+					new ShowSaleGUI(sale, true, usuarioSupervisor, thisFrame, false);
 				}
 				else {
 		            JOptionPane.showMessageDialog(null, "Por favor, selecciona una solicitud.");
@@ -80,6 +85,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 					Solicitud s = (Solicitud) tableModel.getValueAt(fila, 3);
 					facade.actualizarEstadoSolicitud(s.getSolNumber(), "Rechazada");
 					JOptionPane.showMessageDialog(null, "Solicitud rechazada.");
+					thisFrame.setVisible(false);
 				}
 				else {
 		            JOptionPane.showMessageDialog(null, "Por favor, selecciona una solicitud.");
