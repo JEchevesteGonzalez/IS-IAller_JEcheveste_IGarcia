@@ -388,8 +388,11 @@ public void open(){
     public void eliminarUsuario(String usuario) {
 		open();
 		db.getTransaction().begin();
+		
 		Usuario user = db.find(Usuario.class, usuario);
+		
 		if (user != null) {
+			
 			db.remove(user);
 			db.getTransaction().commit(); 
 		}
@@ -730,6 +733,9 @@ public void open(){
 	}
 	
 	public Sale buscarVentaPorId(Integer saleNumber) {
+		if (saleNumber == null) {
+			return null;
+		}
 		open();
 		Sale s = db.find(Sale.class, saleNumber);
 		close();
@@ -746,7 +752,10 @@ public void open(){
 			Comprador supervisor = friendly.getSupervisor();
 
 			Solicitud nuevaSolicitud = new Solicitud(saleNumber, "En tramite", friendly, supervisor);
-
+			
+			nuevaSolicitud.setFriendly(friendly);
+			nuevaSolicitud.setSupervisor(supervisor);
+			
 			db.persist(nuevaSolicitud);
 
 			if (friendly.getSolicitudes() != null) {
@@ -772,6 +781,35 @@ public void open(){
 	        db.getTransaction().commit();
 	    }
 	    close();
+	}
+	
+	public void eliminarFriendlyAsignado(String usuarioFriendly) {
+		open();
+		db.getTransaction().begin();
+		
+		Friendly f = db.find(Friendly.class, usuarioFriendly);
+		
+		if (f != null) {
+			Comprador supervisor = f.getSupervisor();
+			
+			
+			if (supervisor != null) {
+				supervisor.getDependientes().remove(f);
+			}
+			
+			if (f.getSolicitudes() != null) {
+				for (domain.Solicitud s : f.getSolicitudes()) {
+					db.remove(s);
+				}
+			}
+			
+			db.remove(f);
+			
+			db.getTransaction().commit();
+		} else {
+			db.getTransaction().rollback();
+		}
+		close();
 	}
 	
 	

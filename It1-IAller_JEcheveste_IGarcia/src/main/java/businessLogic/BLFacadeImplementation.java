@@ -198,5 +198,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	    dbManager.actualizarEstadoSolicitud(solNumber, nuevoEstado);
 	}
 	
+	public void eliminarFriendlyAsignado(String usuarioFriendly) {
+		dbManager.eliminarFriendlyAsignado(usuarioFriendly);
+	}
+	
 }
 

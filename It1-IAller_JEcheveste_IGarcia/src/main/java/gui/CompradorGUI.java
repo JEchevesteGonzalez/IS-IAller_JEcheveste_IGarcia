@@ -30,7 +30,7 @@ public class CompradorGUI extends JFrame {
 	public CompradorGUI(String usuario) {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 658, 554);
+		setBounds(100, 100, 659, 554);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -88,7 +88,7 @@ public class CompradorGUI extends JFrame {
 			}
 		});
 		btnRegistrarFriendly.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnRegistrarFriendly.setBounds(0, 286, 637, 103);
+		btnRegistrarFriendly.setBounds(0, 286, 326, 103);
 		contentPane.add(btnRegistrarFriendly);
 		
 		JButton btnSolicitudesFriendly = new JButton("Ver solicitudes del Friendly");
@@ -101,5 +101,16 @@ public class CompradorGUI extends JFrame {
 		btnSolicitudesFriendly.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnSolicitudesFriendly.setBounds(0, 389, 637, 103);
 		contentPane.add(btnSolicitudesFriendly);
+		
+		JButton btnEliminarFriendly = new JButton("Eliminar Friendly");
+		btnEliminarFriendly.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFrame eliminarGUI = new EliminarFriendlyGUI(usuario);
+				eliminarGUI.setVisible(true);
+			}
+		});
+		btnEliminarFriendly.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnEliminarFriendly.setBounds(326, 286, 311, 103);
+		contentPane.add(btnEliminarFriendly);
 	}
 }

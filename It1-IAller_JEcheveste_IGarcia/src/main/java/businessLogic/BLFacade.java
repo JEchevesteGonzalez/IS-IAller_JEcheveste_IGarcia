@@ -117,4 +117,6 @@ public interface BLFacade  {
 	public void crearSolicitud(String usuarioFriendly, Integer saleNumber);
 	
 	void actualizarEstadoSolicitud(Integer solNumber, String nuevoEstado);
+	
+	public void eliminarFriendlyAsignado(String usuarioFriendly);
 }

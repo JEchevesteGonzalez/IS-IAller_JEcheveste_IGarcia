@@ -45,7 +45,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 
 		tableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(tableModel);
-		
+		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(3));
 		scrollPane.setViewportView(table);
 		
 		JButton btnAceptar = new JButton("Aceptar Solicitud");
@@ -69,6 +69,8 @@ public class GestionarSolicitudesGUI extends JFrame {
 					Solicitud s = (Solicitud) tableModel.getValueAt(fila, 3);
 					facade.actualizarEstadoSolicitud(s.getSolNumber(), "Aceptada");
 					JOptionPane.showMessageDialog(null, "Solicitud aceptada");
+					thisFrame.setVisible(false);
+
 					Sale sale = facade.buscarPorNum(s.getSaleNumber());
 					new ShowSaleGUI(sale, true, usuarioSupervisor, thisFrame, false);
 				}
@@ -98,20 +100,22 @@ public class GestionarSolicitudesGUI extends JFrame {
 		Comprador supervisor = (Comprador) facade.buscarPorUser(usuarioSupervisor);
 		if (supervisor != null && supervisor.getSolicitudes() != null) {
 			for (Solicitud s : supervisor.getSolicitudes()) {
-				Vector<Object> row = new Vector<Object>();
-				row.add(s.getFriendly().getUsuario());
-				Sale sA = facade.buscarVentaPorId(s.getSaleNumber());
-				if (sA !=null) {
-					row.add(sA.getTitle());
-				}
-				else {
-					row.add("Producto borrado");
-
-				}
 				
-				row.add(s.getEstado());
-				row.add(s);
-				tableModel.addRow(row);
+				Vector<Object> row = new Vector<Object>();
+				
+				if(s.getFriendly() != null && s.getSaleNumber() != null) {
+					
+					Sale sA = facade.buscarVentaPorId(s.getSaleNumber());
+		
+					if (sA !=null) {
+						row.add(s.getFriendly().getUsuario());
+						row.add(sA.getTitle());
+						row.add(s.getEstado());
+						row.add(s);
+						
+						tableModel.addRow(row);
+					}
+				}
 			}
 		}
 	}
