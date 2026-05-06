@@ -108,6 +108,8 @@ public interface BLFacade  {
 	
 	public void addResena(float valoracion, String descripcion, File file, Sale sale, String nUser) throws FileNotUploadedException, ResenaAlreadyExistsException;
 
+	public Sale buscarPorNum(Integer num);
+	
 	public void registrarFriendly(String usuario, String contrasena, String supervisorUsr);
 
 	public Sale buscarVentaPorId(Integer saleNumber);

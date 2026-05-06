@@ -146,7 +146,7 @@ public class QuerySalesGUI extends JFrame {
 				        int row = table.rowAtPoint(point);
 		            	Sale s=(Sale) tableModelProducts.getValueAt(row, 4);
 		            	//Poner la manera de "comprar"
-			            new ShowSaleGUI(s, true, usuario, thisFrame);
+			            new ShowSaleGUI(s, true, usuario, thisFrame, false);
 		            }
 		        }
 		 });

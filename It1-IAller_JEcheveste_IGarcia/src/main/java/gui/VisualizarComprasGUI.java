@@ -99,7 +99,7 @@ public class VisualizarComprasGUI extends JFrame {
 			        
 	            	Sale s=(Sale) tableModelProducts.getValueAt(row, 3);
 	            	
-		            new ShowSaleGUI(s, true, usuario, thisFrame);
+		            new ShowSaleGUI(s, true, usuario, thisFrame, false);
 	            }
 	        }
 	 });

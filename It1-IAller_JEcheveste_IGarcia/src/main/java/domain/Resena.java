@@ -115,4 +115,7 @@ public class Resena {
 		return this.resenaNumber+";"+this.valoracion;  
 	}
 	
+	public String getFile() {
+		return fotoProducto;
+	}
 }

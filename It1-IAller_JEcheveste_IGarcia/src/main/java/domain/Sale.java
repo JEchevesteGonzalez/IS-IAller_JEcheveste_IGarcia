@@ -286,5 +286,13 @@ public class Sale implements Serializable {
 		this.resenas = resenas;
 	}
 
+	public String getQueEs() {
+		if(this.esSubasta==1) {
+			return "Subasta";
+		}
+		else {
+			return "Venta";
+		}
+	}
 	
 }

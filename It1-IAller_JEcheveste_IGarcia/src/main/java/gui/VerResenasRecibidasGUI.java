@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import businessLogic.BLFacade;
 import domain.Comprador;
+import domain.Resena;
 import domain.Sale;
 import domain.Seller;
 
@@ -34,12 +35,12 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 @SuppressWarnings("serial")
-public class VisualizarVentasYSubastasActivasGUI extends JFrame {	
+public class VerResenasRecibidasGUI extends JFrame {	
 
 	JFrame thisFrame;
 	private JPanel contentPane;
 	private JTable table;
-	private String[] nombreColumnas = {"Título", "Precio", "Fecha", "Habilitada"};
+	private String[] nombreColumnas = {"Título", "Precio", "Tipo", "Usuario Comprador", "Valoracion"};
 	private DefaultTableModel tableModelProducts = new DefaultTableModel(null, nombreColumnas);
 
 	public boolean isCellEditable(int row, int column) {
@@ -49,32 +50,31 @@ public class VisualizarVentasYSubastasActivasGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	private void crearTabla(List<Sale> historial, int sub) {
+	private void crearTabla(List<Resena> historial) {
 		tableModelProducts.setRowCount(0);
 		if (historial != null) {
-			DefaultListModel<Sale> modelo = new DefaultListModel<>();
-			for (Sale s : historial) {
-				if(s.getEsSubasta()==sub) {
-					Vector<Object> row = new Vector<Object>();
-					row.add(s.getTitle());
-					row.add(s.getPrice());
-					row.add(s.getPublicationDate());
-					row.add(s.isHabilitado());
-					row.add(s); // Metemos el objeto Sale en la columna 4
-					
-					tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
-	
-					modelo.addElement(s);
-				}
+			DefaultListModel<Resena> modelo = new DefaultListModel<>();
+			for (Resena r : historial) {
+				Vector<Object> row = new Vector<Object>();
+				row.add(r.getSale().getTitle());
+				row.add(r.getSale().getPrice());
+				row.add(r.getSale().getQueEs());
+				row.add(r.getnUser());
+				row.add(r.getValoracion());
+				row.add(r); // Metemos el objeto Resena en la columna 6
+				
+				tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
+
+				modelo.addElement(r);
 			}
 		}
 	}
 	
-	public VisualizarVentasYSubastasActivasGUI(String usuario) {
+	public VerResenasRecibidasGUI(String usuario, boolean comprador, Integer saleNum) {
 		thisFrame=this;
 		
 		tableModelProducts.setDataVector(null, nombreColumnas);
-		tableModelProducts.setColumnCount(5);
+		tableModelProducts.setColumnCount(6);
 		
 		this.setSize(495, 290);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -82,34 +82,26 @@ public class VisualizarVentasYSubastasActivasGUI extends JFrame {
 		getContentPane().setLayout(null);
 		BLFacade facade = MainGUI.getBusinessLogic();
 		
-		Seller user = (Seller) facade.buscarPorUser(usuario);
-		List<Sale> historial = user.getSales();
+		List<Resena> historial = new ArrayList<Resena>();
+		if(comprador && saleNum != null) {
+			Sale sale = facade.buscarPorNum(saleNum);
+			historial = sale.getResenas();
+		}
+		else{
+			Seller user = (Seller) facade.buscarPorUser(usuario);
+			historial = user.getResenas();
+		}
 		
-		int sub;
-		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				crearTabla(historial,comboBox.getSelectedIndex());
-			}
-		});
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Venta", "Subasta"}));
-		comboBox.setBounds(113, 13, 220, 22);
-		getContentPane().add(comboBox);
-		
-		sub = comboBox.getSelectedIndex();
-		
-		crearTabla(historial,sub);
+		crearTabla(historial);
 		
 		
 		table = new JTable();
 		table.setModel(tableModelProducts);
-		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(4));
+		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(5));
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(26, 36, 380, 204);
+		scrollPane.setBounds(26, 19, 380, 221);
 		getContentPane().add(scrollPane);
 		
 		scrollPane.setViewportView(table);
@@ -122,9 +114,9 @@ public class VisualizarVentasYSubastasActivasGUI extends JFrame {
 	            	Point point = mouseEvent.getPoint();
 			        int row = tablaClicada.rowAtPoint(point);
 			        
-	            	Sale s=(Sale) tableModelProducts.getValueAt(row, 4);
+	            	Resena r=(Resena) tableModelProducts.getValueAt(row, 5);
 	            	
-		            new ShowSaleGUI(s, false, usuario, thisFrame, false);
+		            new ShowResenaGUI(r, comprador, usuario, thisFrame);
 	            }
 	        }
 	 });

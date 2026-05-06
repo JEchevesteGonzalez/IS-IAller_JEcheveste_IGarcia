@@ -703,6 +703,15 @@ public void open(){
 		close();
 	}
 	
+	public Sale buscarPorNum(Integer num) {
+		open();
+		db.getTransaction().begin();
+		Sale sale = db.find(Sale.class, num);
+		db.getTransaction().commit();
+		close();
+		return sale;
+	}
+	
 	public void registrarFriendly(String usuario, String contrasena, String cUsr) {
 		open();
 		db.getTransaction().begin();
@@ -738,7 +747,7 @@ public void open(){
 
 			Solicitud nuevaSolicitud = new Solicitud();
 			nuevaSolicitud.setSaleNumber(saleNumber);
-			nuevaSolicitud.setEstado("En trámite");
+			nuevaSolicitud.setEstado("En trï¿½mite");
 
 			db.persist(nuevaSolicitud);
 
