@@ -2,10 +2,15 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 
 import businessLogic.BLFacade;
 import domain.Comprador;
+import domain.Resena;
 import domain.Sale;
 import domain.Solicitud;
 
@@ -25,9 +31,9 @@ public class GestionarSolicitudesGUI extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private DefaultTableModel tableModel;
-	private String[] columnNames = {"Friendly", "Producto", "Estado", "ObjetoSolicitud"};
+	private String[] columnNames = {"Friendly", "Producto", "Estado", "S"};
 	private JFrame thisFrame;
-
+	
 	public GestionarSolicitudesGUI(String usuarioSupervisor) {
 		setTitle("Gesti�n de Solicitudes Friendly - Supervisor: " + usuarioSupervisor);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -94,16 +100,37 @@ public class GestionarSolicitudesGUI extends JFrame {
 		        }
 			}
 		});
+		
+		table.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mousePressed(MouseEvent mouseEvent) {
+	            if(mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
+			        JTable tablaClicada =(JTable) mouseEvent.getSource();
+	            	Point point = mouseEvent.getPoint();
+			        int row = tablaClicada.rowAtPoint(point);
+			        
+	            	Solicitud s=(Solicitud) tableModel.getValueAt(row, 3);
+	            	Sale sal = facade.buscarPorNum(s.getSaleNumber());
+	            	
+	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true);
+					sale.setVisible(true);
+	            }
+	        }
+	 });
+		
 	}
 
 	private void llenarTabla(String usuarioSupervisor, BLFacade facade) {
 		Comprador supervisor = (Comprador) facade.buscarPorUser(usuarioSupervisor);
 		if (supervisor != null && supervisor.getSolicitudes() != null) {
-			for (Solicitud s : supervisor.getSolicitudes()) {
+			ArrayList<Solicitud> sols = supervisor.getSolicitudes();
+			tableModel.setRowCount(0);
+			DefaultListModel<Solicitud> modelo = new DefaultListModel<>();
+			for (Solicitud s : sols) {
 				
 				Vector<Object> row = new Vector<Object>();
 				
-				if(s.getFriendly() != null && s.getSaleNumber() != null) {
+				if(s.getFriendly() != null && s.getSaleNumber() != null && (s.getEstado().equals("Aceptada") || s.getEstado().equals("En tramite"))) {
 					
 					Sale sA = facade.buscarVentaPorId(s.getSaleNumber());
 		
@@ -114,6 +141,8 @@ public class GestionarSolicitudesGUI extends JFrame {
 						row.add(s);
 						
 						tableModel.addRow(row);
+						
+						modelo.addElement(s);
 					}
 				}
 			}

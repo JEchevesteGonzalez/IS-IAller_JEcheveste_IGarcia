@@ -2,9 +2,13 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -22,6 +26,8 @@ public class VerSolicitudesGUI extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private DefaultTableModel tableModel;
+	private BLFacade facade = MainGUI.getBusinessLogic();
+	private JFrame thisFrame;
 
 	public VerSolicitudesGUI(String usuario) {
 		setTitle("Mis Solicitudes - " + usuario);
@@ -31,24 +37,44 @@ public class VerSolicitudesGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		thisFrame = this;
 
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 
-		String[] columnNames = {"Producto", "Estado de la Solicitud"};
+		String[] columnNames = {"Producto", "Estado de la Solicitud", "S"};
 		tableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(tableModel);
+		table.getColumnModel().removeColumn(table.getColumnModel().getColumn(2));
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		scrollPane.setViewportView(table);
 
 		cargarSolicitudes(usuario);
+		
+		
+		table.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mousePressed(MouseEvent mouseEvent) {
+	            if(mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
+			        JTable tablaClicada =(JTable) mouseEvent.getSource();
+	            	Point point = mouseEvent.getPoint();
+			        int row = tablaClicada.rowAtPoint(point);
+			        
+	            	Solicitud s=(Solicitud) tableModel.getValueAt(row, 2);
+	            	Sale sal = facade.buscarPorNum(s.getSaleNumber());
+	            	
+	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true);
+					sale.setVisible(true);
+	            }
+	        }
+	 });
 	}
 
 	private void cargarSolicitudes(String usuario) {
-		BLFacade facade = MainGUI.getBusinessLogic();
 		
 		Friendly friendly = (Friendly) facade.buscarPorUser(usuario);
-
+		DefaultListModel<Solicitud> modelo = new DefaultListModel<>();
 		if (friendly != null) {
 			ArrayList<Solicitud> listaSolicitudes = friendly.getSolicitudes();
 
@@ -64,8 +90,10 @@ public class VerSolicitudesGUI extends JFrame {
 				}
 				
 				fila.add(solicitud.getEstado());
+				fila.add(solicitud);
 				
 				tableModel.addRow(fila);
+				modelo.addElement(solicitud);
 			}
 		}
 	}
