@@ -93,7 +93,7 @@ public interface BLFacade  {
 
 	public void anadirCuentas(String usuarioIntro, String contrIntro, Cuentas cu);
 	
-	public void crearOferta(String nUser, float precio, Sale s);
+	public boolean crearOferta(String nUser, float precio, Sale s);
 	
 	public void devolverOfertas(Sale s);
 	

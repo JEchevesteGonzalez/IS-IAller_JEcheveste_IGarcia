@@ -156,8 +156,8 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.anadirCuentas(comprIntro, contrIntro, cu);
 	}
 	
-	public void crearOferta(String nUser, float precio, Sale s) {
-		dbManager.crearOferta(nUser, precio, s);
+	public boolean crearOferta(String nUser, float precio, Sale s) {
+		return dbManager.crearOferta(nUser, precio, s);
 	}
 	
 	public void devolverOfertas(Sale s) {

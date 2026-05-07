@@ -130,11 +130,16 @@ public class ComprarGUI extends JFrame {
 								}
 							}
 							else {
-								facade.crearOferta(usuario, ofer, sale);
-								JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
-								thisFrame.setVisible(false);
-								compra.setVisible(false);
-								posCompras.setVisible(false);
+								boolean exitoOferta =facade.crearOferta(usuario, ofer, sale);
+								if(exitoOferta) {
+									facade.crearOferta(usuario, ofer, sale);
+									JOptionPane.showMessageDialog(null, "Has propuesto una contraoferta.", "Contraoferta", JOptionPane.INFORMATION_MESSAGE);
+									thisFrame.setVisible(false);
+									compra.setVisible(false);
+									posCompras.setVisible(false);
+								}else {
+									textoErrores.setText("Error: Saldo insuficiente.");
+								}
 							}
 					}
 				}catch(NumberFormatException ex){

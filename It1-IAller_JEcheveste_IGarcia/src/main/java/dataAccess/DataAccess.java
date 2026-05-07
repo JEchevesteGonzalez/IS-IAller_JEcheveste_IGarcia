@@ -528,24 +528,34 @@ public void open(){
 		close();
 	}
 	
-	public void crearOferta(String nUser, float precio, Sale s) {
+	public boolean crearOferta(String nUser, float precio, Sale s) {
 		open();
 		db.getTransaction().begin();
 		Sale sA = db.find (Sale.class,s.getSaleNumber());
-		Oferta o = new Oferta(nUser, precio, sA);
 		Comprador c = db.find(Comprador.class, nUser);
-		db.persist(o);
-		c.getOfertasEnCurso().add(o);
-		float nuevoSaldo = c.getSaldo() - precio;
-		if (nuevoSaldo<0) {
-			nuevoSaldo=0;
-		}
-		c.setSaldo(nuevoSaldo);
-		sA.getOfertas().add(o);
-		o.setS(sA);
+		if (c.getSaldo()>=precio) {
+
+			Oferta o = new Oferta(nUser, precio, sA);
+			db.persist(o);
+			
+			c.getOfertasEnCurso().add(o);
+			
+			float nuevoSaldo = c.getSaldo() - precio;
+			if (nuevoSaldo<0) {
+				nuevoSaldo=0;
+			}
+			c.setSaldo(nuevoSaldo);
+			sA.getOfertas().add(o);
+			o.setS(sA);
 		
-		db.getTransaction().commit();
-		close();
+			db.getTransaction().commit();
+			close();
+			return true;
+		}else {
+
+			close();
+			return false;
+		}
 	}
 	
 	public void devolverOfertas(Sale s) {
