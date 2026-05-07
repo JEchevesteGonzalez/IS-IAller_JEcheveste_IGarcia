@@ -148,8 +148,8 @@ public class BLFacadeImplementation  implements BLFacade {
 		return dbManager.retirarFondos(usuario, cantidad);
 	}
 	
-	public boolean pujar(Sale sale, float ofer) {
-		return dbManager.pujar(sale, ofer);
+	public boolean pujar(Sale sale, float ofer, String usuario) {
+		return dbManager.pujar(sale, ofer, usuario);
 	}
 	
 	public void anadirCuentas(String comprIntro, String contrIntro, Cuentas cu) {

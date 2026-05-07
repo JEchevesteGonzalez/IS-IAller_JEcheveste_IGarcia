@@ -86,7 +86,7 @@ public interface BLFacade  {
 	public void eliminarUsuario(String usuario);
 
 
-	public boolean pujar(Sale sale, float ofer);
+	public boolean pujar(Sale sale, float ofer, String usuario);
 
 
 	public boolean retirarFondos(String usuario, float cantidadARetirar);

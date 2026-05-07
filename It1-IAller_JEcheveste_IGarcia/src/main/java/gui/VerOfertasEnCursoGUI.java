@@ -41,7 +41,7 @@ public class VerOfertasEnCursoGUI extends JFrame {
 	JFrame thisFrame;
 	private JPanel contentPane;
 	private JTable table;
-	private String[] nombreColumnas = {"Nombre de venta", "Precio ofertado"};
+	private String[] nombreColumnas = {"Nombre", "Precio ofertado"};
 	private DefaultTableModel tableModelProducts = new DefaultTableModel(null, nombreColumnas);
 	private Oferta PosO = null;
 	private Sale sale = null;

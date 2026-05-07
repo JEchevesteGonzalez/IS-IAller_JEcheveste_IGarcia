@@ -124,19 +124,19 @@ public class PujarGUI extends JFrame{
 								textoErrores.setText("Haga una oferta válida: el precio mayor al pujado");
 							}
 							else {
-								boolean exito = facade.pujar(sale, ofer);
+								boolean exito = facade.pujar(sale, ofer, usuario);
 								if (exito) {
 									if(!(sale.getOfertas().isEmpty())) {
 										facade.devolverOfertas(sale);
 									}
 									facade.crearOferta(usuario, ofer, sale);
-									JOptionPane.showMessageDialog(null, "Has pujado por "+ofer+" €.");
+									JOptionPane.showMessageDialog(null, "Ha pujado por "+ofer+" €.");
 									thisFrame.setVisible(false);
 									compra.setVisible(false);
 									posCompras.setVisible(false);
 								}
 								else {
-									jLabelError.setText("Error al procesar la puja.");
+									textoErrores.setText("Error: No tiene saldo suficiente.");
 								}
 							}
 					}

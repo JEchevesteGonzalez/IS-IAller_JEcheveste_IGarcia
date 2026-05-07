@@ -457,11 +457,12 @@ public void open(){
 		System.out.println("DataAcess closed");
 	}
 
-	public boolean pujar(Sale pro, float price) {
+	public boolean pujar(Sale pro, float price, String usuario) {
 		open();
 		db.getTransaction().begin();
 		Sale producto = db.find(Sale.class, pro.getSaleNumber());
-		if (producto != null) {
+		Comprador co = db.find(Comprador.class, usuario);
+		if (price<=co.getCuentas().getSaldo()) {
 			producto.setPrice(price);
 			//nuevo
 			Date ahora = new Date();
@@ -482,6 +483,7 @@ public void open(){
 			close();
 			return true;
 		}
+		close();
 		return false;
 		
 	}
