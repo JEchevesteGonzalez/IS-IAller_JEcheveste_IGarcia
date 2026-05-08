@@ -435,7 +435,7 @@ public void open(){
 		s.setStatus(numStatus);
 		s.setPrice(price);
 		s.setPublicationDate(trim);
-		if (hab=true) {
+		if (hab==true) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(s.getPublicationDate());
 			//c.add(Calendar.DAY_OF_MONTH, 7);
@@ -467,13 +467,13 @@ public void open(){
 			//nuevo
 			Date ahora = new Date();
 			long tiempoRestante = producto.getFinDate().getTime() - ahora.getTime();
-			//long unDiaEnMilisegundos = 1000 * 60 * 60 * 24; // 1 dia
-			long unDiaEnMilisegundos= 1000*60; //1 min
+			long unDiaEnMilisegundos = 1000 * 60 * 60 * 24; // 1 dia
+			//long unDiaEnMilisegundos= 1000*60; //1 min
 			if (tiempoRestante < unDiaEnMilisegundos) {
 				Calendar c = Calendar.getInstance();
 				c.setTime(producto.getFinDate());
-				//c.add(Calendar.DAY_OF_MONTH, 1);
-				c.add(Calendar.MINUTE, 1);
+				c.add(Calendar.DAY_OF_MONTH, 1);
+				//c.add(Calendar.MINUTE, 1);
 				producto.setFinDate(c.getTime());
 				System.out.println(" +1 min" );
 			}

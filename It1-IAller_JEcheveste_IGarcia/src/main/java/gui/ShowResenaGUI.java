@@ -99,7 +99,7 @@ public class ShowResenaGUI extends JFrame {
 		getContentPane().add(panel_1);
 		btnVerVentaO.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame sale = new ShowSaleGUI(resena.getSale(),comprador,usuario,thisFrame, true);
+				JFrame sale = new ShowSaleGUI(resena.getSale(),comprador,usuario,thisFrame, true, false);
 				sale.setVisible(true);
 			}
 		});

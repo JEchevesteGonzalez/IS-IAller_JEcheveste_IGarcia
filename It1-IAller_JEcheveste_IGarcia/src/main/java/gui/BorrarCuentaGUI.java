@@ -68,8 +68,12 @@ public class BorrarCuentaGUI extends JFrame {
 							if(contrIntro.equals(u.getContrasena())) {
 								boolean bien = true;
 								Comprador c = (Comprador) u;
-								if(c.getOfertasEnCurso()!= null) {
+								if(!(c.getOfertasEnCurso().isEmpty())) {
 									textoErrores.setText("Si tienes ofertas en curso, no puedes eliminar la cuenta.");
+									bien = false;
+								}
+								else if(!(c.getDependientes().isEmpty())) {
+									textoErrores.setText("Si tienes usuarios dependientes de ti, no puedes eliminar la cuenta.");
 									bien = false;
 								}
 								if(u instanceof Seller) {
@@ -81,7 +85,7 @@ public class BorrarCuentaGUI extends JFrame {
 								}
 								if(bien) {
 									int confirmacion = JOptionPane.showConfirmDialog(null, 
-											"¿Estas seguro de que deseas eliminar la cuenta de forma permanente?", 
+											"ï¿½Estas seguro de que deseas eliminar la cuenta de forma permanente?", 
 											"Confirmar Borrado", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 									
 									if (confirmacion == JOptionPane.YES_OPTION) {
@@ -117,7 +121,7 @@ public class BorrarCuentaGUI extends JFrame {
 		
 		textoErrores = new JLabel("");
 		textoErrores.setForeground(Color.RED);
-		textoErrores.setBounds(49, 187, 46, 14);
+		textoErrores.setBounds(49, 226, 371, 14);
 		getContentPane().add(textoErrores);
 		
 		Contrasena = new JPasswordField();

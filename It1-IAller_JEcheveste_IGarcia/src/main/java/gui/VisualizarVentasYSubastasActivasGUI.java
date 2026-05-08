@@ -124,7 +124,7 @@ public class VisualizarVentasYSubastasActivasGUI extends JFrame {
 			        
 	            	Sale s=(Sale) tableModelProducts.getValueAt(row, 4);
 	            	
-		            new ShowSaleGUI(s, false, usuario, thisFrame, false);
+		            new ShowSaleGUI(s, false, usuario, thisFrame, false, false);
 	            }
 	        }
 	 });

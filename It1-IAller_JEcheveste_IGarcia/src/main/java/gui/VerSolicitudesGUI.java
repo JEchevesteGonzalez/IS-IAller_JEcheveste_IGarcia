@@ -64,7 +64,7 @@ public class VerSolicitudesGUI extends JFrame {
 	            	Solicitud s=(Solicitud) tableModel.getValueAt(row, 2);
 	            	Sale sal = facade.buscarPorNum(s.getSaleNumber());
 	            	
-	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true);
+	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true, false);
 					sale.setVisible(true);
 	            }
 	        }

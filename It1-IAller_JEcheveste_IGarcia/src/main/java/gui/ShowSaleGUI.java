@@ -49,7 +49,7 @@ public class ShowSaleGUI extends JFrame {
 	private final JButton btnVerResenas = new JButton("Ver Reseñas");
 	private final JButton btnVerReseasDel = new JButton("Ver Reseñas del Vendedor");
 	
-	public ShowSaleGUI(Sale sale, boolean comprador,String usuario, JFrame listado, boolean paraNoBucle) { 
+	public ShowSaleGUI(Sale sale, boolean comprador,String usuario, JFrame listado, boolean paraNoBucle, boolean desdeSol) { 
 		thisFrame=this; 
 		this.setVisible(true);
 		this.getContentPane().setLayout(null);
@@ -221,7 +221,12 @@ public class ShowSaleGUI extends JFrame {
 					btnDevolver.setVisible(false);
 					btnResena.setVisible(false);
 				}
-				else{
+				else if (desdeSol){
+					btnComprar.setVisible(false);
+					btnDevolver.setVisible(false);
+					btnResena.setVisible(false);
+				}
+				else {
 					btnComprar.setVisible(false);
 					btnDevolver.setVisible(true);
 					btnResena.setVisible(true);

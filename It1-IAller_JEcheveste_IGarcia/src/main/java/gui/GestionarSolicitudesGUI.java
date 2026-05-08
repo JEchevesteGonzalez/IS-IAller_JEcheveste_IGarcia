@@ -78,7 +78,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 					thisFrame.setVisible(false);
 
 					Sale sale = facade.buscarPorNum(s.getSaleNumber());
-					new ShowSaleGUI(sale, true, usuarioSupervisor, thisFrame, false);
+					new ShowSaleGUI(sale, true, usuarioSupervisor, thisFrame, false, true);
 				}
 				else {
 		            JOptionPane.showMessageDialog(null, "Por favor, selecciona una solicitud.");
@@ -112,7 +112,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 	            	Solicitud s=(Solicitud) tableModel.getValueAt(row, 3);
 	            	Sale sal = facade.buscarPorNum(s.getSaleNumber());
 	            	
-	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true);
+	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true, false);
 					sale.setVisible(true);
 	            }
 	        }
