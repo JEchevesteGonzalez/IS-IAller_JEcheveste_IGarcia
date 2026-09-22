@@ -1,0 +1,231 @@
+
+ gui.ResenaGUI#%field_initializer*
+ src\main\java\gui\ResenaGUI.java ("1*ˇ
+1
+__unknown_file (ê
+ç
+ (-
+%0businessLogic.BLFacade"6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;*+
+
+__unknown_file ("
+gui.MainGUIk
+i
+ (.
+gui.ResenaGUI"
+facade"__id*:
+
+__unknown_file (
+
+%0businessLogic.BLFacadeX
+V
+! !( 
+gui.ResenaGUI"
+encodedfile"__id*"
+
+__unknown_file (
+""B@
+*( *(2
+%1javax.swing.JTextField"javax.swing.JTextFieldp
+n
+*$ *(4
+%2" javax.swing.JTextField#<init>()V*:
+
+__unknown_file (
+
+%1javax.swing.JTextFieldt
+r
+* *(5$
+gui.ResenaGUI"
+fieldValoracion"__id*:
+
+__unknown_file (
+
+%1javax.swing.JTextFieldB@
++) +(3
+%3javax.swing.JTextField"javax.swing.JTextFieldp
+n
++% +(5
+%4" javax.swing.JTextField#<init>()V*:
+
+__unknown_file (
+
+%3javax.swing.JTextFieldu
+s
++ +(6%
+gui.ResenaGUI"
+fieldDescription"__id*:
+
+__unknown_file (
+
+%3javax.swing.JTextField:8
+-" -((
+%5javax.swing.JLabel"javax.swing.JLabel©
+¶
+- -(8
+%6".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%5javax.swing.JLabel*,
+
+__unknown_file (
+Valoracion: l
+j
+- -(9 
+gui.ResenaGUI"
+jLabelTitle"__id*6
+
+__unknown_file (
+
+%5javax.swing.JLabel:8
+.( .(.
+%7javax.swing.JLabel"javax.swing.JLabel©
+¶
+.$ .(>
+%8".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%7javax.swing.JLabel*,
+
+__unknown_file (
+Descripcion:r
+p
+. .(?&
+gui.ResenaGUI"
+jLabelDescription"__id*6
+
+__unknown_file (
+
+%7javax.swing.JLabelDB
+0, 0(7
+%9javax.swing.JScrollPane"javax.swing.JScrollPanes
+q
+0( 0(9
+%10"!javax.swing.JScrollPane#<init>()V*;
+
+__unknown_file (
+
+%9javax.swing.JScrollPanev
+t
+0 0(:%
+gui.ResenaGUI"
+scrollPaneEvents"__id*;
+
+__unknown_file (
+
+%9javax.swing.JScrollPaneWU
+12 1(N'
+%11 javax.swing.DefaultComboBoxModel" javax.swing.DefaultComboBoxModelá
+Ñ
+1. 1(P
+%12"*javax.swing.DefaultComboBoxModel#<init>()V*E
+
+__unknown_file ()
+'
+%11 javax.swing.DefaultComboBoxModel}
+{
+1 1(Q"
+gui.ResenaGUI"
+statusOptions"__id*E
+
+__unknown_file ()
+'
+%11 javax.swing.DefaultComboBoxModel=;
+5% 5(,
+%13javax.swing.JButton"javax.swing.JButton≠
+™
+5! 5(<
+%14"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
+
+__unknown_file (
+
+%13javax.swing.JButton*,
+
+__unknown_file (
+Crear Resenap
+n
+5 5(="
+gui.ResenaGUI"
+jButtonCreate"__id*8
+
+__unknown_file (
+
+%13javax.swing.JButton=;
+6$ 6(+
+%15javax.swing.JButton"javax.swing.JButton£
+†
+6  6(e
+%16"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
+
+__unknown_file (
+
+%15javax.swing.JButton*"
+
+__unknown_file (
+""o
+m
+6 6(f!
+gui.ResenaGUI"
+jButtonClose"__id*8
+
+__unknown_file (
+
+%15javax.swing.JButton;9
+7  7(&
+%17javax.swing.JLabel"javax.swing.JLabelj
+h
+7 7((
+%18"javax.swing.JLabel#<init>()V*7
+
+__unknown_file (
+
+%17javax.swing.JLabelk
+i
+7 7()
+gui.ResenaGUI"
+	jLabelMsg"__id*7
+
+__unknown_file (
+
+%17javax.swing.JLabel;9
+8" 8((
+%19javax.swing.JLabel"javax.swing.JLabelj
+h
+8 8(*
+%20"javax.swing.JLabel#<init>()V*7
+
+__unknown_file (
+
+%19javax.swing.JLabelm
+k
+8 8(+ 
+gui.ResenaGUI"
+jLabelError"__id*7
+
+__unknown_file (
+
+%19javax.swing.JLabel=;
+:, :(3
+%21javax.swing.JButton"javax.swing.JButtonÆ
+´
+:( :(D
+%22"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
+
+__unknown_file (
+
+%21javax.swing.JButton*-
+
+__unknown_file (
+grabar Imagenq
+o
+: :(E#
+gui.ResenaGUI"
+btnNewButton_2"__id*8
+
+__unknown_file (
+
+%21javax.swing.JButton"
+ ‡(
+implicit returnB
+gui.ResenaGUI

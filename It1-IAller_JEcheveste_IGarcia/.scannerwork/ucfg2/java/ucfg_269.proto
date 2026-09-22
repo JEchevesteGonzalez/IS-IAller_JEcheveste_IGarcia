@@ -1,0 +1,34 @@
+
+WbusinessLogic.BLFacadeImplementation#buscarVentaPorId(Ljava/lang/Integer;)Ldomain/Sale;C
+7src\main\java\businessLogic\BLFacadeImplementation.javaø ø("1*Ã
+1
+¿	 ¿(á
+Ñ
+
+¿	 ¿(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerçä
+
+¿	 ¿(/
+%1domain.Sale"HdataAccess.DataAccess#buscarVentaPorId(Ljava/lang/Integer;)Ldomain/Sale;*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess*=
+
+__unknown_file (!
+
+
+saleNumberjava.lang.Integer2%buscarVentaPorId(Ljava/lang/Integer;)"!
+
+¿ ¿(0
+
+%1domain.Sale:-
+
+ø ø(0
+
+saleNumberjava.lang.IntegerB(&
+$businessLogic.BLFacadeImplementationH

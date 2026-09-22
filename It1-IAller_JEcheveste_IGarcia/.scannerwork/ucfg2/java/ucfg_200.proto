@@ -1,0 +1,42 @@
+
+#domain.Comprador#%field_initializer-
+#src\main\java\domain\Comprador.java ("1*õ
+1
+__unknown_file (<:
+0 (C
+%0java.util.ArrayList"java.util.ArrayListj
+h
+, (E
+%1"java.util.ArrayList#<init>()V*7
+
+__unknown_file (
+
+%0java.util.ArrayListq
+o
+ (F$
+domain.Comprador"
+dependientes"__id*7
+
+__unknown_file (
+
+%0java.util.ArrayList<:
+0 (D
+%2java.util.ArrayList"java.util.ArrayListj
+h
+, (F
+%3"java.util.ArrayList#<init>()V*7
+
+__unknown_file (
+
+%2java.util.ArrayListp
+n
+ (G#
+domain.Comprador"
+solicitudes"__id*7
+
+__unknown_file (
+
+%2java.util.ArrayList"
+ n(
+implicit returnB
+domain.Comprador

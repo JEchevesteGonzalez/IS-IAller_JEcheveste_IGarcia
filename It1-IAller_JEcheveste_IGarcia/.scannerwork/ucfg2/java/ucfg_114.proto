@@ -1,0 +1,42 @@
+
+domain.Sale#%field_initializer(
+src\main\java\domain\Sale.java ("1*ã
+1
+__unknown_file (<:
+ )  (:
+%0java.util.ArrayList"java.util.ArrayListj
+h
+ %  (<
+%1"java.util.ArrayList#<init>()V*7
+
+__unknown_file (
+
+%0java.util.ArrayListg
+e
+  (=
+domain.Sale"	
+ofertas"__id*7
+
+__unknown_file (
+
+%0java.util.ArrayList<:
+() ((:
+%2java.util.ArrayList"java.util.ArrayListj
+h
+(% ((<
+%3"java.util.ArrayList#<init>()V*7
+
+__unknown_file (
+
+%2java.util.ArrayListg
+e
+' ((=
+domain.Sale"	
+resenas"__id*7
+
+__unknown_file (
+
+%2java.util.ArrayList"
+ ª(
+implicit returnB
+domain.Sale

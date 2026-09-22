@@ -1,0 +1,39 @@
+
+^businessLogic.BLFacadeImplementation#eliminarOferta(Ldomain/Sale;Ldomain/Oferta;)Ldomain/Sale;C
+7src\main\java\businessLogic\BLFacadeImplementation.java« «("1*ÿ
+1
+¬	 ¬(‡
+„
+
+¬	 ¬(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÀ½
+
+¬	 ¬()
+%1domain.Sale"OdataAccess.DataAccess#eliminarOferta(Ldomain/Sale;Ldomain/Oferta;)Ldomain/Sale;*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess*.
+
+__unknown_file (
+
+sdomain.Sale*2
+
+__unknown_file (
+
+dOfdomain.Oferta2,eliminarOferta(Ldomain/Sale;Ldomain/Oferta;)"!
+
+¬ ¬(*
+
+%1domain.Sale:
+
+« «(#
+sdomain.Sale:"
+
+«$ «(.
+dOfdomain.OfertaB(&
+$businessLogic.BLFacadeImplementationH

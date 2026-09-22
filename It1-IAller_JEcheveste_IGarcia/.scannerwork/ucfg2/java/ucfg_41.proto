@@ -1,0 +1,22 @@
+
+(gui.VerSolicitudesGUI#%field_initializer2
+(src\main\java\gui\VerSolicitudesGUI.java ("1*ƒ
+1
+__unknown_file (ê
+ç
+ (5
+%0businessLogic.BLFacade"6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;*+
+
+__unknown_file ("
+gui.MainGUIs
+q
+ (6#
+gui.VerSolicitudesGUI"
+facade"__id*:
+
+__unknown_file (
+
+%0businessLogic.BLFacade"
+ d(
+implicit returnB
+gui.VerSolicitudesGUI
