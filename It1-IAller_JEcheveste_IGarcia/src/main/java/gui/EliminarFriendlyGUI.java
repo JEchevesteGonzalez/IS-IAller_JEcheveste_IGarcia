@@ -50,7 +50,7 @@ public class EliminarFriendlyGUI extends JFrame {
 		
 		if (supervisor != null && supervisor.getDependientes() != null && !supervisor.getDependientes().isEmpty()) {
 			for (Friendly f : supervisor.getDependientes()) {
-				comboFriendlies.addItem(f.getUsuario());
+				comboFriendlies.addItem(f.getNombreUsuario());
 			}
 		} else {
 			comboFriendlies.addItem("No tienes usuarios asignados");
@@ -58,20 +58,20 @@ public class EliminarFriendlyGUI extends JFrame {
 			btnEliminar.setEnabled(false);
 		}
 
-		// --- ACCIÓN DEL BOTÓN ELIMINAR ---
+		// --- ACCIï¿½N DEL BOTï¿½N ELIMINAR ---
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String friendlySeleccionado = (String) comboFriendlies.getSelectedItem();
 				
 				int confirmar = JOptionPane.showConfirmDialog(null, 
-						"¿Estás seguro de que deseas eliminar permanentemente la cuenta de " + friendlySeleccionado + "?", 
-						"Confirmar Eliminación", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+						"ï¿½Estï¿½s seguro de que deseas eliminar permanentemente la cuenta de " + friendlySeleccionado + "?", 
+						"Confirmar Eliminaciï¿½n", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 				
 				if (confirmar == JOptionPane.YES_OPTION) {
-					// Llamamos al método especializado del Facade
+					// Llamamos al mï¿½todo especializado del Facade
 					facade.eliminarFriendlyAsignado(friendlySeleccionado);
 					
-					JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito.");
+					JOptionPane.showMessageDialog(null, "Usuario eliminado con ï¿½xito.");
 					dispose(); // Cerramos la ventana
 				}
 			}

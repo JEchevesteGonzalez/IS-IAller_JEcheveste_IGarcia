@@ -112,7 +112,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 	            	Solicitud s=(Solicitud) tableModel.getValueAt(row, 3);
 	            	Sale sal = facade.buscarPorNum(s.getSaleNumber());
 	            	
-	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getUsuario(),thisFrame, true, false);
+	            	JFrame sale = new ShowSaleGUI(sal,true,s.getSupervisor().getNombreUsuario(),thisFrame, true, false);
 					sale.setVisible(true);
 	            }
 	        }
@@ -135,7 +135,7 @@ public class GestionarSolicitudesGUI extends JFrame {
 					Sale sA = facade.buscarVentaPorId(s.getSaleNumber());
 		
 					if (sA !=null) {
-						row.add(s.getFriendly().getUsuario());
+						row.add(s.getFriendly().getNombreUsuario());
 						row.add(sA.getTitle());
 						row.add(s.getEstado());
 						row.add(s);

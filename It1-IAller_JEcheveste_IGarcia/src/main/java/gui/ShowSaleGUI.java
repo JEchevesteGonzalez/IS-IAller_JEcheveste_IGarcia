@@ -28,7 +28,7 @@ public class ShowSaleGUI extends JFrame {
     
 
     private static final int BASE_SIZE = 160;
-
+    private static final String BASE_PATH = "src/main/resources/images/";
     
     private static final long serialVersionUID = 1L;
 
@@ -36,18 +36,20 @@ public class ShowSaleGUI extends JFrame {
     private JTextField fieldDescription=new JTextField();
     
     JLabel labelStatus = new JLabel(); 
+    
+    private static final ResourceBundle ETIQUETAS = ResourceBundle.getBundle("Etiquetas");
 
-    private JLabel jLabelTitle = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ShowSaleGUI.Title"));
-    private JLabel jLabelDescription = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.Description")); 
-    private JLabel jLabelProductStatus = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.Status"));
-    private JLabel jLabelPrice = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateSaleGUI.Price"));
+    private JLabel jLabelTitle = new JLabel(ETIQUETAS.getString("ShowSaleGUI.Title"));
+    private JLabel jLabelDescription = new JLabel(ETIQUETAS.getString("CreateSaleGUI.Description")); 
+    private JLabel jLabelProductStatus = new JLabel(ETIQUETAS.getString("CreateSaleGUI.Status"));
+    private JLabel jLabelPrice = new JLabel(ETIQUETAS.getString("CreateSaleGUI.Price"));
     private JTextField fieldPrice = new JTextField();
     private File selectedFile;
     private String irudia;
 
     private JScrollPane scrollPaneEvents = new JScrollPane();
     DefaultComboBoxModel statusOptions = new DefaultComboBoxModel();
-    private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+    private JButton jButtonClose = new JButton(ETIQUETAS.getString("Close"));
     private JLabel jLabelMsg = new JLabel();
     private JLabel jLabelError = new JLabel();
     private JLabel statusField=new JLabel();
@@ -275,7 +277,7 @@ public class ShowSaleGUI extends JFrame {
         getContentPane().add(btnVerResenas);
         btnVerReseasDel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame resenas = new VerResenasRecibidasGUI(sale.getSeller().getUsuario(), true, null);
+                JFrame resenas = new VerResenasRecibidasGUI(sale.getSeller().getNombreUsuario(), true, null);
                 resenas.setVisible(true);
             }
         });

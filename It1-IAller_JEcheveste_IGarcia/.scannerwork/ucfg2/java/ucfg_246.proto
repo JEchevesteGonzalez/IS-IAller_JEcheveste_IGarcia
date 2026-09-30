@@ -1,9 +1,9 @@
 
-jbusinessLogic.BLFacadeImplementation#getPublishedSales(Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;A
-7src\main\java\businessLogic\BLFacadeImplementation.javaJ J(%"startingBlock*ß
-startingBlockJ% J(@
+QbusinessLogic.BLFacadeImplementation#getSales(Ljava/lang/String;)Ljava/util/List;A
+7src\main\java\businessLogic\BLFacadeImplementation.java? ?("startingBlock*þ
+startingBlock? ?((
 
-I I(
+> >(
 %6"
 __annotate*)
 
@@ -14,40 +14,22 @@ __annotate*)
 
 descjava.lang.StringX
 V
-J- J(1
+?# ?('
 descjava.lang.String"__annotation*"
 
 __unknown_file (
 
-%6ƒ
-€
-I I(
-%7"
-__annotate*)
-
-__unknown_file (
-	WebMethod*7
-
-__unknown_file (
-
-pubDatejava.util.DateY
-W
-J8 J(?
-pubDatejava.util.Date"__annotation*"
-
-__unknown_file (
-
-%7*
-1*	
-1K K(…
+%6*
+1*¢
+1@ @(…
 ‚
-K K(
+@ @(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerzx
-K K(
+@ @(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -55,14 +37,14 @@ $businessLogic.BLFacadeImplementation"
 
 %0dataAccess.DataAccess2open()…
 ‚
-L L(
+A A(
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
-	dbManagerãà
-L L(>
-%3java.util.List"[dataAccess.DataAccess#getPublishedSales(Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;*9
+	dbManagerøõ
+A A(,
+%3java.util.List"BdataAccess.DataAccess#getSales(Ljava/lang/String;)Ljava/util/List;*9
 
 __unknown_file (
 
@@ -70,37 +52,31 @@ $businessLogic.BLFacadeImplementation"
 
 __unknown_file (
 
-descjava.lang.String*7
-
-__unknown_file (
-
-pubDatejava.util.Date25getPublishedSales(Ljava/lang/String;Ljava/util/Date;)_
+descjava.lang.String2getSales(Ljava/lang/String;)_
 ]
-L L(?
+A A(-
 ridesjava.util.List"__id*2
 
 __unknown_file (
 
 %3java.util.List…
 ‚
-M M(
+B B(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
-M M(
+B B(
 
 %5void"dataAccess.DataAccess#close()V*9
 
 __unknown_file (
 
 %4dataAccess.DataAccess2close()"%
-N N(
+C C(
 
 ridesjava.util.List:$
-J& J(2
-descjava.lang.String:%
-J3 J(?
-pubDatejava.util.DateB(&
+? ?('
+descjava.lang.StringB(&
 $businessLogic.BLFacadeImplementationH

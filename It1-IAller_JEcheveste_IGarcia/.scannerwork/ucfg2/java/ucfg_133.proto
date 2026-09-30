@@ -1,19 +1,81 @@
 
-domain.Sale#isHabilitado()Z*
-src\main\java\domain\Sale.javaÒ Ò("1*ê
+(domain.Sale#toString()Ljava/lang/String;*
+src\main\java\domain\Sale.java ("1*Ω
 1
-Ú	 Ú(`
-^
+Ò	 Ò(j
+h
 
-Ú	 Ú(
-%0boolean"__id*;
+Ò	 Ò(
+%0java.lang.Integer"__id*;
 
 __unknown_file (*
 domain.Sale"
 
-habilitado"
+saleNumbern
+l
 
-Ú Ú(
+Ò	 Ò(
+%1java.lang.String"__concat*'
 
-%0booleanB
-domain.SaleHX
+Ò	 Ò(
+
+%0java.lang.Integer*
+
+Ò Ò(
+;d
+b
+
+Ò Ò(
+%2java.lang.String"__id*6
+
+__unknown_file (*
+domain.Sale"
+titleÄ
+~
+
+Ò	 Ò(
+%3java.lang.String"__concat*&
+
+Ò	 Ò(
+
+%1java.lang.String*&
+
+Ò Ò(
+
+%2java.lang.Stringm
+k
+
+Ò	 Ò(!
+%4java.lang.String"__concat*&
+
+Ò	 Ò(
+
+%3java.lang.String*
+
+Ò Ò(!
+;Y
+W
+
+Ò" Ò('
+%5float"__id*6
+
+__unknown_file (*
+domain.Sale"
+priceu
+s
+
+Ò	 Ò('
+%6java.lang.String"__concat*&
+
+Ò	 Ò(!
+
+%4java.lang.String*
+
+Ò" Ò('
+
+%5float"&
+
+Ò Ò((
+
+%6java.lang.StringB
+domain.SaleH

@@ -82,7 +82,8 @@ public class Seller extends Comprador implements Serializable{
 
 	public Sale addSale(String title, String description, int status, float price,  Date pubDate, File file, int tVenta)  {
 		
-		Sale sale=new Sale(title, description, status, price,  pubDate, file, this, tVenta);
+		Sale sale=new Sale(title, description, status, price, file, this, tVenta);
+		sale.anadirFecha(pubDate);
         sales.add(sale);
         return sale;
 	}
