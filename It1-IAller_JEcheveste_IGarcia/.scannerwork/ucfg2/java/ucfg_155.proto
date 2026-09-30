@@ -1,8 +1,8 @@
 
 ]gui.PujarGUI#<init>(Ldomain/Sale;Ljava/lang/String;Ljavax/swing/JFrame;Ljavax/swing/JFrame;)V)
-src\main\java\gui\PujarGUI.java9 9("startingBlock*Ô
-2n n(ÿ’
-n n(
+src\main\java\gui\PujarGUI.java6 6("startingBlock*Ô
+2k k(ÿ’
+k k(
 %78void"7javax.swing.AbstractButton#setText(Ljava/lang/String;)V*?
 
 __unknown_file (#
@@ -13,17 +13,17 @@ btnComprarjavax.swing.JButton*%
 __unknown_file (	
 Pujar2setText(Ljava/lang/String;)*
 1*ıa
-3B B(A
+3? ?(A
 ?
-B) B(2	
+?) ?(2	
 %8int"__id*"
 
 __unknown_file (
 ""0.
-B B(
+? ?(
 %9java.awt.Font"java.awt.FontÁ
 ‰
-B B(7
+? ?(7
 %10"+java.awt.Font#<init>(Ljava/lang/String;II)V*1
 
 __unknown_file (
@@ -39,7 +39,7 @@ btnComprarjavax.swing.JButton*%
 %8int* 
 
 __unknown_file (2⁄◊
-B B(8
+? ?(8
 %11void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*?
 
 __unknown_file (#
@@ -49,7 +49,7 @@ btnComprarjavax.swing.JButton*%
 __unknown_file (
 
 %9java.awt.Font2setFont(Ljava/awt/Font;)öó
-C C((
+@ @((
 %12void"#java.awt.Component#setBounds(IIII)V*?
 
 __unknown_file (#
@@ -63,12 +63,12 @@ btnComprarjavax.swing.JButton*%
 __unknown_file (2∞* 
 
 __unknown_file (2(2setBounds(IIII)°û
-D D(
+A A(
 %13java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()ˇ¸
-D D(#
+A A(#
 %14java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -78,10 +78,10 @@ btnComprarjavax.swing.JButton*%
 __unknown_file (#
 !
 lblNewLabeljavax.swing.JLabel2add(Ljava/awt/Component;);9
-F F(
+C C(
 %15javax.swing.JLabel"javax.swing.JLabel¨
 ©
-F F(0
+C C(0
 %16".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -91,23 +91,23 @@ btnComprarjavax.swing.JButton*%
 __unknown_file (
 Haga su puja:l
 j
-F F(1
+C C(1
 	lblOfertajavax.swing.JLabel"__id*7
 
 __unknown_file (
 
 %15javax.swing.JLabelB
 @
-G' G(1
+D' D(1
 
 %17int"__id*"
 
 __unknown_file (
 ""1/
-G G(
+D D(
 %18java.awt.Font"java.awt.FontÈ
 Ê
-G G(6
+D D(6
 %19"+java.awt.Font#<init>(Ljava/lang/String;II)V*2
 
 __unknown_file (
@@ -124,7 +124,7 @@ j
 %17int* 
 
 __unknown_file (2Ÿ÷
-G G(7
+D D(7
 %20void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*=
 
 __unknown_file (!
@@ -134,7 +134,7 @@ j
 __unknown_file (
 
 %18java.awt.Font2setFont(Ljava/awt/Font;)ôñ
-H H('
+E E('
 %21void"#java.awt.Component#setBounds(IIII)V*=
 
 __unknown_file (!
@@ -148,12 +148,12 @@ j
 __unknown_file (2Ç* 
 
 __unknown_file (2(2setBounds(IIII)°û
-I I(
+F F(
 %22java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()˝˙
-I I(!
+F F(!
 %23java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -163,10 +163,10 @@ j
 __unknown_file (!
 
 	lblOfertajavax.swing.JLabel2add(Ljava/awt/Component;);9
-K K(#
+H H(#
 %24javax.swing.JLabel"javax.swing.JLabelÌ
 Í
-K K(u
+H H(u
 %25".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -176,23 +176,23 @@ j
 __unknown_file (RP
 NLa puja ha de ser mayor a la puja anterior o, igual o mayor a la puja inicial.p
 n
-K K(v#
+H H(v#
 lblSiSuOfertajavax.swing.JLabel"__id*7
 
 __unknown_file (
 
 %24javax.swing.JLabelB
 @
-L+ L(5
+I+ I(5
 
 %26int"__id*"
 
 __unknown_file (
 ""1/
-L L( 
+I I( 
 %27java.awt.Font"java.awt.FontÈ
 Ê
-L L(:
+I I(:
 %28"+java.awt.Font#<init>(Ljava/lang/String;II)V*2
 
 __unknown_file (
@@ -209,7 +209,7 @@ n
 %26int* 
 
 __unknown_file (2›⁄
-L L(;
+I I(;
 %29void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*A
 
 __unknown_file (%
@@ -219,7 +219,7 @@ n
 __unknown_file (
 
 %27java.awt.Font2setFont(Ljava/awt/Font;)ùö
-M M(+
+J J(+
 %30void"#java.awt.Component#setBounds(IIII)V*A
 
 __unknown_file (%
@@ -233,12 +233,12 @@ n
 __unknown_file (2 * 
 
 __unknown_file (2(2setBounds(IIII)°û
-N N(
+K K(
 %31java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()Å˛
-N N(%
+K K(%
 %32java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -248,10 +248,10 @@ n
 __unknown_file (%
 #
 lblSiSuOfertajavax.swing.JLabel2add(Ljava/awt/Component;)=;
-P P(!
+M M(!
 %33javax.swing.JButton"javax.swing.JButtonß
 §
-P P(+
+M M(+
 %34"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
 __unknown_file (
@@ -262,22 +262,22 @@ n
 
 Volvern
 l
-P P(, 
+M M(, 
 	btnVolverjavax.swing.JButton"__id*8
 
 __unknown_file (
 
 %33javax.swing.JButton31
-Q" Q(0
+N" N(0
 %35gui.PujarGUI$1"gui.PujarGUI$1d
 b
-Q U(
+N R(
 %36"java.lang.Object#<init>()V*3
 
 __unknown_file (
 
 %35gui.PujarGUI$1ìê
-Q U(
+N R(
 %37void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*>
 
 __unknown_file ("
@@ -287,7 +287,7 @@ b
 __unknown_file (
 
 %35gui.PujarGUI$122addActionListener(Ljava/awt/event/ActionListener;)ôñ
-V V(&
+S S(&
 %38void"#java.awt.Component#setBounds(IIII)V*>
 
 __unknown_file ("
@@ -301,12 +301,12 @@ b
 __unknown_file (2Y* 
 
 __unknown_file (22setBounds(IIII)°û
-W W(
+T T(
 %39java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()˛˚
-W W(!
+T T(!
 %40java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -316,17 +316,17 @@ b
 __unknown_file ("
  
 	btnVolverjavax.swing.JButton2add(Ljava/awt/Component;)CA
-Y Y(
+V V(
 %41javax.swing.JTextField"javax.swing.JTextFieldr
 p
-Y Y(
+V V(
 %42" javax.swing.JTextField#<init>()V*;
 
 __unknown_file (
 
 %41javax.swing.JTextFieldk
 i
-Y Y(
+V V(
 gui.PujarGUI"
 oferta"__id*;
 
@@ -334,13 +334,13 @@ i
 
 %41javax.swing.JTextFieldk
 i
-Z Z(
+W W(
 %43javax.swing.JTextField"__id*8
 
 __unknown_file (*
 gui.PujarGUI"
 ofertaóî
-Z Z($
+W W($
 %44void"#java.awt.Component#setBounds(IIII)V*;
 
 __unknown_file (
@@ -354,19 +354,19 @@ i
 __unknown_file (2V* 
 
 __unknown_file (22setBounds(IIII)°û
-[ [(
+X X(
 %45java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()k
 i
-[ [(
+X X(
 %46javax.swing.JTextField"__id*8
 
 __unknown_file (*
 gui.PujarGUI"
 oferta˚¯
-[ [(
+X X(
 %47java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -377,13 +377,13 @@ i
 
 %46javax.swing.JTextField2add(Ljava/awt/Component;)k
 i
-\ \(
+Y Y(
 %48javax.swing.JTextField"__id*8
 
 __unknown_file (*
 gui.PujarGUI"
 ofertaØ¨
-\ \(
+Y Y(
 %49void"%javax.swing.JTextField#setColumns(I)V*;
 
 __unknown_file (
@@ -392,10 +392,10 @@ i
 
 __unknown_file (2
 2setColumns(I);9
-^ ^( 
+[ [( 
 %50javax.swing.JLabel"javax.swing.JLabelù
 ö
-^ ^($
+[ [($
 %51".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -404,7 +404,7 @@ i
 
 __unknown_file ( m
 k
-^ ^(% 
+[ [(% 
 
 PrecioSalejavax.swing.JLabel"__id*7
 
@@ -412,16 +412,16 @@ PrecioSalejavax.swing.JLabel"__id*7
 
 %50javax.swing.JLabelB
 @
-_( _(2
+\( \(2
 
 %52int"__id*"
 
 __unknown_file (
 ""1/
-_ _(
+\ \(
 %53java.awt.Font"java.awt.FontÈ
 Ê
-_ _(7
+\ \(7
 %54"+java.awt.Font#<init>(Ljava/lang/String;II)V*2
 
 __unknown_file (
@@ -438,7 +438,7 @@ PrecioSalejavax.swing.JLabel"__id*7
 %52int* 
 
 __unknown_file (2⁄◊
-_ _(8
+\ \(8
 %55void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*>
 
 __unknown_file ("
@@ -449,7 +449,7 @@ PrecioSalejavax.swing.JLabel*2
 __unknown_file (
 
 %53java.awt.Font2setFont(Ljava/awt/Font;)öó
-` `((
+] ]((
 %56void"#java.awt.Component#setBounds(IIII)V*>
 
 __unknown_file ("
@@ -464,12 +464,12 @@ PrecioSalejavax.swing.JLabel*!
 __unknown_file (2É* 
 
 __unknown_file (2(2setBounds(IIII)°û
-a a(
+^ ^(
 %57java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()˛˚
-a a("
+^ ^("
 %58java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -480,7 +480,7 @@ PrecioSalejavax.swing.JLabel*!
  
 
 PrecioSalejavax.swing.JLabel2add(Ljava/awt/Component;)rp
-b$ b(3
+_$ _(3
 %59float"domain.Sale#getPrice()F*1
 
 __unknown_file (
@@ -488,7 +488,7 @@ PrecioSalejavax.swing.JLabel2add(Ljava/awt/Component;)rp
 saledomain.Sale2
 getPrice()≥
 ∞
-b b(4
+_ _(4
 %60java.lang.String"-java.lang.String#valueOf(F)Ljava/lang/String;*0
 
 __unknown_file ("
@@ -497,7 +497,7 @@ getPrice()≥
 __unknown_file (
 
 %59floatﬂ‹
-b b(5
+_ _(5
 %61void"/javax.swing.JLabel#setText(Ljava/lang/String;)V*>
 
 __unknown_file ("
@@ -508,10 +508,10 @@ PrecioSalejavax.swing.JLabel*5
 __unknown_file (
 
 %60java.lang.String2setText(Ljava/lang/String;);9
-d d("
+a a("
 %62javax.swing.JLabel"javax.swing.JLabelù
 ö
-d d(&
+a a(&
 %63".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -520,19 +520,19 @@ PrecioSalejavax.swing.JLabel*5
 
 __unknown_file ( o
 m
-d d('"
+a a('"
 textoErroresjavax.swing.JLabel"__id*7
 
 __unknown_file (
 
 %62javax.swing.JLabelM
 K
-e e(&
+b b(&
 %64java.awt.Color"__id*"
 
 __unknown_file (
 ""ÎË
-e e('
+b b('
 %65void"7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V*@
 
 __unknown_file ($
@@ -543,16 +543,16 @@ K
 
 %64java.awt.Color2setForeground(Ljava/awt/Color;)B
 @
-f* f(4
+c* c(4
 
 %66int"__id*"
 
 __unknown_file (
 ""1/
-f f(
+c c(
 %67java.awt.Font"java.awt.FontÈ
 Ê
-f f(9
+c c(9
 %68"+java.awt.Font#<init>(Ljava/lang/String;II)V*2
 
 __unknown_file (
@@ -569,7 +569,7 @@ K
 %66int* 
 
 __unknown_file (2‹Ÿ
-f f(:
+c c(:
 %69void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*@
 
 __unknown_file ($
@@ -579,7 +579,7 @@ K
 __unknown_file (
 
 %67java.awt.Font2setFont(Ljava/awt/Font;)úô
-g g(*
+d d(*
 %70void"#java.awt.Component#setBounds(IIII)V*@
 
 __unknown_file ($
@@ -593,12 +593,12 @@ K
 __unknown_file (2◊* 
 
 __unknown_file (22setBounds(IIII)°û
-h h(
+e e(
 %71java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()Ä˝
-h h($
+e e($
 %72java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -609,22 +609,22 @@ K
 "
 textoErroresjavax.swing.JLabel2add(Ljava/awt/Component;)ë
 é
-j j(.
+g g(.
 %73businessLogic.BLFacade"6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;*+
 
 __unknown_file ("
 gui.MainGUIq
 o
-j j(/ 
+g g(/ 
 facadebusinessLogic.BLFacade"__id*;
 
 __unknown_file (
 
 %73businessLogic.BLFacade=;
-l l("
+i i("
 %74javax.swing.JButton"javax.swing.JButton¶
 £
-l l(+
+i i(+
 %75"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
 __unknown_file (
@@ -634,14 +634,14 @@ o
 __unknown_file (	
 Pujaro
 m
-l l(,!
+i i(,!
 
 btnComprarjavax.swing.JButton"__id*8
 
 __unknown_file (
 
 %74javax.swing.JButtonxv
-m m(
+j j(
 
 %76int"domain.Sale#getEsSubasta()I*1
 
@@ -649,33 +649,33 @@ btnComprarjavax.swing.JButton"__id*8
 
 saledomain.Sale2getEsSubasta()g
 e
-m m(
+j j(
 %77boolean"	__compare*
-m m(
+j j(
 ==*
-m m(
+j j(
 
 
 %76int*
-m m(2*
+j j(2*
 1
 2*Â
-startingBlock9 9(b
+startingBlock6 6(b
 `
-9 9(
+6 6(
 %97"gui.PujarGUI#%field_initializer*,
 
 __unknown_file (
 gui.PujarGUI_
 ]
-9 9(
+6 6(
 %98"javax.swing.JFrame#<init>()V*,
 
 __unknown_file (
 gui.PujarGUI*
 5*Ô
-4@ @(ÿ’
-@ @((
+4= =(ÿ’
+= =((
 
 %7void"/javax.swing.JLabel#setText(Ljava/lang/String;)V*?
 
@@ -687,15 +687,15 @@ e
 Puja inicial: 2setText(Ljava/lang/String;)*
 3*Ü
 
-5: :(_
+57 7(_
 ]
-: :(
+7 7(
 gui.PujarGUI"
 	thisFrame"__id*,
 
 __unknown_file (
 gui.PujarGUIòï
-; ;(
+8 8(
 
 %0void"java.awt.Window#setVisible(Z)V*,
 
@@ -703,12 +703,12 @@ e
 gui.PujarGUI* 
 
 __unknown_file (22setVisible(Z)†ù
-< <(
+9 9(
 %1java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()”–
-< <('
+9 9('
 
 %2void"7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V*6
 
@@ -718,10 +718,10 @@ e
 
 __unknown_file (
 ""2#setLayout(Ljava/awt/LayoutManager;):8
-> >(!
+; ;(!
 %3javax.swing.JLabel"javax.swing.JLabel™
 ß
-> >(2
+; ;(2
 %4".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
 
 __unknown_file (
@@ -731,19 +731,19 @@ e
 __unknown_file (
 Ultima puja: m
 k
-> >(3!
+; ;(3!
 lblNewLabeljavax.swing.JLabel"__id*6
 
 __unknown_file (
 
 %3javax.swing.JLabelòï
-? ?(
+< <(
 %5java.util.ArrayList"-domain.Sale#getOfertas()Ljava/util/ArrayList;*1
 
 __unknown_file (
 
 saledomain.Sale2getOfertas()}
-? ?( 
+< <( 
 %6boolean"java.util.ArrayList#isEmpty()Z*7
 
 __unknown_file (
@@ -753,19 +753,19 @@ k
 4*(
 0 "!
 
-û û(
+õ õ(
 implicit return*∞
-1p p(31
-p# p(1
+1m m(31
+m# m(1
 %79gui.PujarGUI$2"gui.PujarGUI$2e
 c
-	p ì(
+	m ê(
 %80"java.lang.Object#<init>()V*3
 
 __unknown_file (
 
 %79gui.PujarGUI$2ïí
-	p ì(
+	m ê(
 %81void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*?
 
 __unknown_file (#
@@ -777,7 +777,7 @@ btnComprarjavax.swing.JButton*3
 
 %79gui.PujarGUI$222addActionListener(Ljava/awt/event/ActionListener;)ùö
 
-î î((
+ë ë((
 %82void"#java.awt.Component#setBounds(IIII)V*?
 
 __unknown_file (#
@@ -793,13 +793,13 @@ btnComprarjavax.swing.JButton*!
 
 __unknown_file (22setBounds(IIII)£†
 
-ï ï(
+í í(
 %83java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()Å˛
 
-ï ï("
+í í("
 %84java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -811,11 +811,11 @@ btnComprarjavax.swing.JButton*!
 
 btnComprarjavax.swing.JButton2add(Ljava/awt/Component;)=;
 
-ó ó(
+î î(
 %85javax.swing.JLabel"javax.swing.JLabel§
 °
 
-ó ó( 
+î î( 
 %86".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -826,7 +826,7 @@ btnComprarjavax.swing.JButton2add(Ljava/awt/Component;)=;
 ‚Ç¨j
 h
 
-ó ó(!
+î î(!
 labeljavax.swing.JLabel"__id*7
 
 __unknown_file (
@@ -834,18 +834,18 @@ h
 %85javax.swing.JLabelD
 B
 
-ò# ò(-
+ï# ï(-
 
 %87int"__id*"
 
 __unknown_file (
 ""31
 
-ò ò(
+ï ï(
 %88java.awt.Font"java.awt.FontÎ
 Ë
 
-ò ò(2
+ï ï(2
 %89"+java.awt.Font#<init>(Ljava/lang/String;II)V*2
 
 __unknown_file (
@@ -863,7 +863,7 @@ B
 
 __unknown_file (2◊‘
 
-ò ò(3
+ï ï(3
 %90void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*9
 
 __unknown_file (
@@ -874,7 +874,7 @@ B
 
 %88java.awt.Font2setFont(Ljava/awt/Font;)ñì
 
-ô ô("
+ñ ñ("
 %91void"#java.awt.Component#setBounds(IIII)V*9
 
 __unknown_file (
@@ -889,13 +889,13 @@ B
 
 __unknown_file (2(2setBounds(IIII)£†
 
-ö ö(
+ó ó(
 %92java.awt.Container"7javax.swing.JFrame#getContentPane()Ljava/awt/Container;*,
 
 __unknown_file (
 gui.PujarGUI2getContentPane()˚¯
 
-ö ö(
+ó ó(
 %93java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*7
 
 __unknown_file (
@@ -906,11 +906,11 @@ B
 
 labeljavax.swing.JLabel2add(Ljava/awt/Component;)=;
 
-õ õ(
+ò ò(
 %94java.awt.Dimension"java.awt.Dimensionµ
 ≤
 
-õ õ(&
+ò ò(&
 %95"java.awt.Dimension#<init>(II)V*7
 
 __unknown_file (
@@ -921,7 +921,7 @@ B
 
 __unknown_file (2Ú“œ
 
-õ õ('
+ò ò('
 %96void".java.awt.Window#setSize(Ljava/awt/Dimension;)V*,
 
 __unknown_file (
@@ -931,13 +931,13 @@ B
 
 %94java.awt.Dimension2setSize(Ljava/awt/Dimension;)*
 0:
-9 9(
+6 6(
 saledomain.Sale:'
-9 9(*
+6 6(*
 usuariojava.lang.String:(
-9+ 9(9
+6+ 6(9
 comprajavax.swing.JFrame:,
-9: 9(K 
+6: 6(K 
 
 posComprasjavax.swing.JFrameB
 gui.PujarGUIH

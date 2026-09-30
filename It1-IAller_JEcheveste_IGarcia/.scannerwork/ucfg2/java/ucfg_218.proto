@@ -1,15 +1,15 @@
 
-domain.Cuentas#getSaldo()F+
-!src\main\java\domain\Cuentas.java$ $("1*„
-1%	 %(Z
-X
-%	 %(
-%0float"__id*9
+2domain.Oferta#getOfertaNumber()Ljava/lang/Integer;*
+ src\main\java\domain\Oferta.java0 0("1*¢
+11	 1(l
+j
+1	 1(
+%0java.lang.Integer"__id*?
 
-__unknown_file (*
-domain.Cuentas"
-saldo"
-% %(
-
-%0floatB
-domain.CuentasHX
+__unknown_file (#*!
+domain.Oferta"
+ofertaNumber"%
+1 1(
+
+%0java.lang.IntegerB
+domain.OfertaH

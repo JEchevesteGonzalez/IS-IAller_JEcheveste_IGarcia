@@ -1,15 +1,18 @@
 
-5configuration.ConfigXML#getLocale()Ljava/lang/String;4
-*src\main\java\configuration\ConfigXML.java1 1("1*¤
-12	 2(o
-m
-2	 2(
-%0java.lang.String"__id*C
+0configuration.ConfigXML#isDatabaseInitialized()Z6
+*src\main\java\configuration\ConfigXML.java£ £(%"1*§
+1
+¤	 ¤(w
+u
+
+¤	 ¤(
+%0boolean"__id*R
 
-__unknown_file ('*%
-configuration.ConfigXML"
-locale"$
-2 2(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+__unknown_file (6*4
+configuration.ConfigXML"
+isDatabaseInitialized"
+
+¤ ¤(
+
+%0booleanB
+configuration.ConfigXMLHX

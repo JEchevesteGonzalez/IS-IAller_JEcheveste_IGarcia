@@ -1,6 +1,8 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +20,7 @@ public class Comprador extends Usuario{
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cuentas cuentas;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	private ArrayList<Friendly> dependientes = new ArrayList<Friendly>();
+	private List<Friendly> dependientes = new ArrayList<Friendly>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private ArrayList<Solicitud> solicitudes = new ArrayList<Solicitud>();
 	
@@ -87,13 +89,13 @@ public class Comprador extends Usuario{
 	}
 
 
-	public ArrayList<Friendly> getDependientes() {
+	public List<Friendly> getDependientes() {
 		return dependientes;
 	}
 
 
-	public void setDependientes(ArrayList<Friendly> dependientes) {
-		this.dependientes = dependientes;
+	public void setDependientes(List<Friendly> list) {
+		this.dependientes = list;
 	}
 
 

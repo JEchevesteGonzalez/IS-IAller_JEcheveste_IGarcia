@@ -1,13 +1,15 @@
 
--businessLogic.BusinessLogicServer$1#<init>()V>
-4src\main\java\businessLogic\BusinessLogicServer.java4( 4()"startingBlock*»
-startingBlock4( 4()
-}
-4( 4()
-%0"&java.awt.event.WindowAdapter#<init>()V*C
+3configuration.ConfigXML#getUser()Ljava/lang/String;4
+*src\main\java\configuration\ConfigXML.java9 9("1*¢
+1:	 :(m
+k
+:	 :(
+%0java.lang.String"__id*A
 
-__unknown_file ('%
-#businessLogic.BusinessLogicServer$1"
-4( 4()
-implicit returnB'%
-#businessLogic.BusinessLogicServer$1
+__unknown_file (%*#
+configuration.ConfigXML"
+user"$
+: :(
+
+%0java.lang.StringB
+configuration.ConfigXMLH

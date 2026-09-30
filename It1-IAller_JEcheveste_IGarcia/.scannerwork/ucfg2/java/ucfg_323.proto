@@ -1,13 +1,16 @@
 
-$gui.VisualizarComprasGUI$1#<init>()V5
-+src\main\java\gui\VisualizarComprasGUI.java\, \(-"startingBlock*±
-startingBlock\, \(-u
-s
-\, \(-
-%0"%java.awt.event.MouseAdapter#<init>()V*:
+gui.MainGUI$3#<init>()V*
+src\main\java\gui\MainGUI.java¹( ¹()"startingBlock*«
+startingBlock
+¹( ¹()k
+i
+
+¹( ¹()
+%0"&java.awt.event.WindowAdapter#<init>()V*-
 
-__unknown_file (
-gui.VisualizarComprasGUI$1"
-\, \(-
-implicit returnB
-gui.VisualizarComprasGUI$1
+__unknown_file (
+gui.MainGUI$3"!
+
+¹( ¹()
+implicit returnB
+gui.MainGUI$3

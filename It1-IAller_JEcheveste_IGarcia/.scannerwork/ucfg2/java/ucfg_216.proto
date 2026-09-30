@@ -1,15 +1,17 @@
 
-!domain.Cuentas#getNumeroCuenta()I+
-!src\main\java\domain\Cuentas.java ("1*‡
-1	 (_
-]
-	 (	
-%0int"__id*@
+!domain.Oferta#getS()Ldomain/Sale;*
+ src\main\java\domain\Oferta.java( (("1*‹
+1)	 )(
+[
+Y
+)	 )(
+
+%0domain.Sale"__id*4
 
-__unknown_file ($*"
-domain.Cuentas"
-numeroCuenta"
- (
-	
-%0intB
-domain.CuentasHX
+__unknown_file (*
+domain.Oferta"
+s"
+) )(
+
+%0domain.SaleB
+domain.OfertaH
