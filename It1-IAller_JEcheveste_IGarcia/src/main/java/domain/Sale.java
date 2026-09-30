@@ -42,8 +42,12 @@ public class Sale implements Serializable {
 	public Sale(){
 		super();
 	}
-		
-	public Sale(String title, String description, int status, float price, Date pubDate, File file, Seller seller, int tVenta) {
+	
+	public void anadirFecha(Date pubDate) {
+		this.pubDate=pubDate;
+	}	
+	
+	public Sale(String title, String description, int status, float price, File file, Seller seller, int tVenta) {
 		super();
 
 		this.title = title;
@@ -51,7 +55,6 @@ public class Sale implements Serializable {
 		this.status = status;
 		this.price=price;
 		this.esSubasta=tVenta;
-		this.pubDate=pubDate;
 		if (this.esSubasta == 1) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(pubDate);
