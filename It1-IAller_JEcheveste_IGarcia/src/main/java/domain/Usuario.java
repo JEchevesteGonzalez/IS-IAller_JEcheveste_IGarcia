@@ -5,30 +5,29 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario {
-	@Id
-	private String usuario;
-	private String contrasena;
-	
-	public Usuario(String usuario, String contrasena) {
-		this.usuario = usuario;
-		this.contrasena=contrasena;
-	}
+    @Id
+    private String nombreUsuario;
+    private String contrasena;
+    
+    public Usuario(String nombreUsuario, String contrasena) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+    }
 
-	public String getUsuario() {
-		return usuario;
-	}
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+    
+    public String getContrasena() {
+        return contrasena;
+    }
 
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
-	
-	
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+    
 }

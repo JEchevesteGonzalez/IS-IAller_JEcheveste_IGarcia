@@ -1,15 +1,15 @@
 
-*configuration.ConfigXML#getDatabasePort()I4
-*src\main\java\configuration\ConfigXML.java5 5("1*ê
-16	 6(h
-f
-6	 6(	
-%0int"__id*I
+3configuration.ConfigXML#getUser()Ljava/lang/String;4
+*src\main\java\configuration\ConfigXML.java9 9("1*¢
+1:	 :(m
+k
+:	 :(
+%0java.lang.String"__id*A
 
-__unknown_file (-*+
-configuration.ConfigXML"
-databasePort"
-6 6(
-	
-%0intB
-configuration.ConfigXMLHX
+__unknown_file (%*#
+configuration.ConfigXML"
+user"$
+: :(
+
+%0java.lang.StringB
+configuration.ConfigXMLH

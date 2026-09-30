@@ -1,19 +1,18 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.javaŸ Ÿ("1*®
+0configuration.ConfigXML#isDatabaseInitialized()Z6
+*src\main\java\configuration\ConfigXML.javaŸ Ÿ(%"1*§
 1
- 	  (u
-s
+ 	  (w
+u
 
- 	  (
-%0java.lang.String"__id*G
+ 	  (
+%0boolean"__id*R
 
-__unknown_file (+*)
-configuration.ConfigXML"
+__unknown_file (6*4
+configuration.ConfigXML"
+isDatabaseInitialized"
 
-dbFilename"&
+   (
 
-   (
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+%0booleanB
+configuration.ConfigXMLHX

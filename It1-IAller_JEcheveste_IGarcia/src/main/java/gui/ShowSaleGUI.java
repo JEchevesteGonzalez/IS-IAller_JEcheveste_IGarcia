@@ -9,6 +9,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.awt.image.BufferedImage;
+import java.util.logging.Logger;
 
 import businessLogic.BLFacade;
 import domain.Friendly;
@@ -21,8 +22,8 @@ public class ShowSaleGUI extends JFrame {
     File targetFile;
     BufferedImage targetImg;
     public JPanel panel_1;
-    private static final int baseSize = 160;
-	private static final String basePath="src/main/resources/images/";
+    private static final int BASE_SIZE = 160;
+    private static final String BASE_PATH = "src/main/resources/images/";
 	
 	private static final long serialVersionUID = 1L;
 
@@ -130,7 +131,14 @@ public class ShowSaleGUI extends JFrame {
 			panel_1.setLayout(new BorderLayout(0, 0));
 			panel_1.add(new JLabel(new ImageIcon(targetImg))); 
 		}
-		System.out.println("status: "+sale.getStatus());
+		
+		// 1. Añadir el Logger como atributo de la clase
+		private static final Logger logger = Logger.getLogger(ShowSaleGUI.class.getName());
+
+		// 2. Reemplazar el System.out
+		logger.info("status: " + sale.getStatus());
+		
+		
 		statusField = new JLabel(Utils.getStatus(sale.getStatus())); 
 		statusField.setBounds(137, 191, 92, 16);
 		getContentPane().add(statusField);

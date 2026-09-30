@@ -111,11 +111,8 @@ public class BorrarCuentaGUI extends JFrame {
 		getContentPane().add(btnBorrarCuenta);
 		
 		JButton btnAtrs = new JButton("Atras");
-		btnAtrs.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
+		btnAtrs.addActionListener(e -> dispose());
+		
 		btnAtrs.setBounds(10, 19, 89, 23);
 		getContentPane().add(btnAtrs);
 		

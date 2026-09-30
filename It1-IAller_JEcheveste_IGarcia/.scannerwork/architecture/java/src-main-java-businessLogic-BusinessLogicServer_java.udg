@@ -1,5 +1,5 @@
 
-1.0&joxeechevestegonzalez_market26-itfinalJavaFrontend"1790064885402*java2.B˝ 
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790763666502*java2.Bì$
 9
 4src/main/java/businessLogic/BusinessLogicServer.java2
 	
@@ -74,8 +74,8 @@ full-range13
 (37:2)-(37:18)45
 
 server46
-
-businessLogic.BLFacade48
+
+BLFacade48
 /
 )businessLogic.BusinessLogicServer.service50
 
@@ -242,28 +242,40 @@ E
 8javax.swing.JDialog#getRootPane()Ljavax/swing/JRootPane;175
 
 Cancel176
-(
-!Recovered#typeBindingLConfigXML;0178
+
+configuration.ConfigXML178
+E
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;180
+6
+/configuration.ConfigXML#isBusinessLogicLocal()Z182
 9
-2\nERROR, the business logic is configured as local179
+2\nERROR, the business logic is configured as local183
+1
+*configuration.ConfigXML#isDatabaseLocal()Z185
 
-java.io.PrintStream181
-'
- java.io.PrintStream#println([C)V183
-
-java.lang.System.out185
-+
-$businessLogic.BLFacadeImplementation187
+java.io.PrintStream187
 7
 0java.io.PrintStream#println(Ljava/lang/String;)V189
-7
-0java.lang.Throwable#toString()Ljava/lang/String;191
-:
-3\nYou should have not launched DBManagerServer...\n192
-H
-A\n\nOr maybe there is a BusinessLogicServer already launched...\n193
+
+java.lang.System.out191
+B
+;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;193
 1
-*\n\n\nPress button to exit this server... 194J
+*configuration.ConfigXML#getDatabasePort()I195
+G
+@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;197
+G
+@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;199
+G
+@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;201
+7
+0java.lang.Throwable#toString()Ljava/lang/String;203
+:
+3\nYou should have not launched DBManagerServer...\n204
+H
+A\n\nOr maybe there is a BusinessLogicServer already launched...\n205
+1
+*\n\n\nPress button to exit this server... 206J
 
 1
 12
@@ -273,7 +285,7 @@ A\n\nOr maybe there is a BusinessLogicServer already launched...\n193
 4 Z
 
 5
-5768j•
+5768jØ
 
 98
 989519
@@ -300,8 +312,8 @@ M
 100
 10010119
 
-190
-19019157
+202
+20220357
 
 102
 10210357
@@ -309,17 +321,14 @@ M
 142
 14214319
 
-184
-18418519
-
-47
-474819
+190
+19019119
 
 131
 13113257
 
-182
-18218357
+179
+17918057
 M
 55G
 555657 *
@@ -410,6 +419,9 @@ M
 
 62
 626357
+
+198
+19819957
 M
 79G
 798057 *
@@ -432,6 +444,9 @@ M
 
 174
 17417557
+
+177
+17717819
 
 127
 12712857
@@ -463,8 +478,11 @@ V
 
 95
 
-177
-17717819
+196
+19619757
+
+194
+19419557
 M
 36G
 363724 *
@@ -513,6 +531,12 @@ F
 
 138
 13813957
+
+181
+18118257
+
+47
+474819
 
 53
 535419
@@ -526,9 +550,6 @@ F
 125
 12512619
 
-180
-18018119
-
 186
 18618719
 
@@ -540,6 +561,9 @@ F
 
 147
 14714819
+
+192
+19219357
 
 82
 828319
@@ -549,6 +573,9 @@ F
 
 134
 13413519
+
+184
+18418557
 
 162
 16216319
@@ -589,6 +616,9 @@ T
 145
 14514619
 
+200
+20020157
+
 153
 15315419
 G
@@ -612,7 +642,7 @@ G
 414219
 
 66
-666719rú,
+666719r0
 
 81720*
 1* (1
@@ -1077,6 +1107,24 @@ S
 
 7917721*
 1^ ^(
+
+79177120*
+1^ ^($
+
+7917761*
+1^ ^($
+
+7917935*
+1^ ^($
+
+7917721*
+1^ ^(
+
+7917761*
+1` `(
+
+7918135*
+1`	 `(
 
 794161*
 1a a(
@@ -1085,7 +1133,7 @@ S
 1a a(2
 
 64
-179
+183
 
 793661*
 1a a(
@@ -1096,35 +1144,81 @@ S
 793661*
 1a a(
 
-7918061*
+7917761*
+1h
+ h(
+
+7918435*
+1h h(
+
+7918661*
 1i i(
 
-7918235*
+7918835*
 1i i(
 
 7910021*
 1i i(
 
-7918021*
+7918621*
 1i i(
 
-7918461*
+7919061*
 1i i(
+
+7953120*
+1ip i(Å
+
+7917761*
+1ip i(Å
+
+7919235*
+1ir i(Å
+
+7917761*
+1ié i(ü
+
+7919435*
+1iê i(ü
 
 795321*
 1l l(
 
 794961*
 1l l(
+
+7953120*
+1l l(.
+
+7917761*
+1l l(.
+
+7919635*
+1l l(.
+
+7953120*
+1l7 l(M
+
+7917761*
+1l7 l(M
+
+7919835*
+1l9 l(M
+
+7953120*
+1lW l(m
+
+7917761*
+1lW l(m
+
+7920035*
+1lY l(m
 
 795321*
 1n n(
 
 794961*
 1n n(
-
-7918635*
-1n# n(9
 
 797334*
 1r r(
@@ -1132,7 +1226,7 @@ S
 797321*
 1r r(
 
-7918061*
+7918661*
 1s s(
 
 7918835*
@@ -1141,10 +1235,10 @@ S
 7910021*
 1s s(
 
-7918021*
+7918621*
 1s s(
 
-7918461*
+7919061*
 1s s(
 
 7953120*
@@ -1153,7 +1247,7 @@ S
 797561*
 1s9 s(C
 
-7919035*
+7920235*
 1s; s(C
 
 794161*
@@ -1163,7 +1257,7 @@ S
 1t t(2
 
 64
-192
+204
 
 793661*
 1t t(
@@ -1181,7 +1275,7 @@ S
 1u u(2
 
 64
-193
+205
 
 793661*
 1u u(
@@ -1220,7 +1314,7 @@ S
 1z z(2
 
 64
-194
+206
 
 793661*
 1z z(
@@ -1258,5 +1352,5 @@ S
 797561*
 1} }(
 
-7919035*
+7920235*
 1} }(

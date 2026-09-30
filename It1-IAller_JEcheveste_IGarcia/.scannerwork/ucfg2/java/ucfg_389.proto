@@ -1,18 +1,19 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.java› ›(#"1*µ
+9configuration.ConfigXML#getDbFilename()Ljava/lang/String;6
+*src\main\java\configuration\ConfigXML.java› ›("1*®
 1
-œ	 œ(|
-z
+œ	 œ(u
+s
 
-œ	 œ(
-%0java.lang.String"__id*N
+œ	 œ(
+%0java.lang.String"__id*G
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicName"&
+__unknown_file (+*)
+configuration.ConfigXML"
 
-œ œ(
+dbFilename"&
+
+œ œ(
 
 %0java.lang.StringB
 configuration.ConfigXMLH

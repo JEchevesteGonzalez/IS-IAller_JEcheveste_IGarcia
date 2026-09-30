@@ -1,5 +1,5 @@
 
-@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;6
+@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;6
 *src\main\java\configuration\ConfigXML.java“ “(#"1*µ
 1
 ”	 ”(|
@@ -10,7 +10,7 @@ z
 
 __unknown_file (2*0
 configuration.ConfigXML"
-businessLogicNode"&
+businessLogicPort"&
 
 ” ”(
 
