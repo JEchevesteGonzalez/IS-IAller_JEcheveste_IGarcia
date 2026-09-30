@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -354,29 +357,29 @@ public void open(){
 		try {
 			Comprador comprador = db.find(Comprador.class, usuario);
 			Sale producto = db.find(Sale.class, pro.getSaleNumber());
-			if (comprador != null && producto !=null && producto.isHabilitado()) {
-				if (comprador.getSaldo() >= producto.getPrice()) {
-					comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
-					comprador.getHistorialDeCompras().add(producto); 
-					producto.setHabilitado(false);
-				
-				
-					if (producto.getSeller() != null) {
-						Seller vendedor = db.find(Seller.class, producto.getSeller().getNombreUsuario());
-						if (vendedor != null) {
-							producto.setUsuarioVendedor(vendedor.getNombreUsuario());
-							vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
-							vendedor.getSales().remove(producto);
-							db.persist(vendedor);
-						}
+			if (comprador != null && producto !=null && producto.isHabilitado() && comprador.getSaldo() >= producto.getPrice()) {
+			
+				comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
+				comprador.getHistorialDeCompras().add(producto); 
+				producto.setHabilitado(false);
+			
+			
+				if (producto.getSeller() != null) {
+					Seller vendedor = db.find(Seller.class, producto.getSeller().getNombreUsuario());
+					if (vendedor != null) {
+						producto.setUsuarioVendedor(vendedor.getNombreUsuario());
+						vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
+						vendedor.getSales().remove(producto);
+						db.persist(vendedor);
 					}
-					db.persist(comprador);
-					db.persist(producto);
-					db.getTransaction().commit();
-					close();
-					return true; 
-				}			
-			}
+				}
+				db.persist(comprador);
+				db.persist(producto);
+				db.getTransaction().commit();
+				close();
+				return true; 
+			}			
+			
 			close();
 			return false;
 		}
@@ -437,7 +440,7 @@ public void open(){
 		s.setStatus(numStatus);
 		s.setPrice(price);
 		s.setPublicationDate(trim);
-		if (hab==true) {
+		if (hab) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(s.getPublicationDate());
 			//c.add(Calendar.DAY_OF_MONTH, 7);
