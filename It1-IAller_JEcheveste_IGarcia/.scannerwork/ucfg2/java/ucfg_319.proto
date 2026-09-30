@@ -1,15 +1,15 @@
 
-1gui.MainGUI#getTextoErrores()Ljavax/swing/JLabel;(
-src\main\java\gui\MainGUI.java1 1("1*¢
-12	 2(k
-i
-2	 2(
-%0javax.swing.JLabel"__id*=
+5domain.Friendly#getSolicitudes()Ljava/util/ArrayList;,
+"src\main\java\domain\Friendly.java (+"1*§
+1 	  (o
+m
+ 	  (
+%0java.util.ArrayList"__id*@
 
-__unknown_file (!*
-gui.MainGUI"
-textoErrores"&
-2 2(
-
-%0javax.swing.JLabelB
-gui.MainGUIH
+__unknown_file ($*"
+domain.Friendly"
+solicitudes"'
+   (
+
+%0java.util.ArrayListB
+domain.FriendlyH

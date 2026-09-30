@@ -1,15 +1,25 @@
 
-5configuration.ConfigXML#getLocale()Ljava/lang/String;4
-*src\main\java\configuration\ConfigXML.java1 1("1*§
-12	 2(o
-m
-2	 2(
-%0java.lang.String"__id*C
+4businessLogic.BusinessLogicServer#%field_initializer>
+4src\main\java\businessLogic\BusinessLogicServer.java ( "1*Á
+1
+__unknown_file (:8
+#) #(/
+%0javax.swing.JPanel"javax.swing.JPanelh
+f
+#% #(1
+%1"javax.swing.JPanel#<init>()V*6
 
-__unknown_file ('*%
-configuration.ConfigXML"
-locale"$
-2 2(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+__unknown_file (
+
+%0javax.swing.JPanelÅ
+
+# #(25#
+!businessLogic.BusinessLogicServer"
+contentPanel"__id*6
+
+__unknown_file (
+
+%0javax.swing.JPanel"
+ Ç(
+implicit returnB%#
+!businessLogic.BusinessLogicServer

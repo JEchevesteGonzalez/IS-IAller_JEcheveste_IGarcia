@@ -1,32 +1,41 @@
 
-SbusinessLogic.BLFacadeImplementation#buscarPorNum(Ljava/lang/Integer;)Ldomain/Sale;C
-7src\main\java\businessLogic\BLFacadeImplementation.java¹ ¹("1*½
+VbusinessLogic.BLFacadeImplementation#comprarProducto(Ljava/lang/String;Ldomain/Sale;)ZC
+7src\main\java\businessLogic\BLFacadeImplementation.java‚ ‚("1*ƒ
 1
-º	 º(‡
+ƒ	 ƒ(‡
 „
 
-º	 º(
+ƒ	 ƒ(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
-	dbManagerþû
+	dbManagerÈÅ
 
-º	 º($
-%1domain.Sale"DdataAccess.DataAccess#buscarPorNum(Ljava/lang/Integer;)Ldomain/Sale;*9
+ƒ	 ƒ(7
+%1boolean"GdataAccess.DataAccess#comprarProducto(Ljava/lang/String;Ldomain/Sale;)Z*9
 
 __unknown_file (
 
-%0dataAccess.DataAccess*6
+%0dataAccess.DataAccess*9
 
-__unknown_file (
+__unknown_file (
+
+usuariojava.lang.String*7
 
-numjava.lang.Integer2!buscarPorNum(Ljava/lang/Integer;)"!
+__unknown_file (
+
 
-º º(%
-
-%1domain.Sale:&
+saleNumberdomain.Sale20comprarProducto(Ljava/lang/String;Ldomain/Sale;)"
 
-¹ ¹(%
-numjava.lang.IntegerB(&
-$businessLogic.BLFacadeImplementationH
+ƒ ƒ(8
+
+%1boolean:)
+
+‚  ‚(/
+usuariojava.lang.String:'
+
+‚0 ‚(?
+
+saleNumberdomain.SaleB(&
+$businessLogic.BLFacadeImplementationHX

@@ -1,15 +1,15 @@
 
-1domain.Cuentas#getNombreBanco()Ljava/lang/String;+
-!src\main\java\domain\Cuentas.java, ,("1* 
-1-	 -(k
-i
--	 -(
-%0java.lang.String"__id*?
+-domain.Comprador#getCuentas()Ldomain/Cuentas;-
+#src\main\java\domain\Comprador.javaJ J("1*š
+1K	 K(g
+e
+K	 K(
+%0domain.Cuentas"__id*=
 
-__unknown_file (#*!
-domain.Cuentas"
-nombreBanco"$
-- -(
-
-%0java.lang.StringB
-domain.CuentasH
+__unknown_file (!*
+domain.Comprador"	
+cuentas""
+K K(
+
+%0domain.CuentasB
+domain.CompradorH

@@ -1,13 +1,15 @@
 
-gui.FondosGUI$1#<init>()V*
- src\main\java\gui\FondosGUI.java20 2(1"startingBlock*¦
-startingBlock20 2(1j
-h
-20 2(1
-%0"%java.awt.event.MouseAdapter#<init>()V*/
+1domain.Cuentas#getNombreBanco()Ljava/lang/String;+
+!src\main\java\domain\Cuentas.java, ,("1* 
+1-	 -(k
+i
+-	 -(
+%0java.lang.String"__id*?
 
-__unknown_file (
-gui.FondosGUI$1"
-20 2(1
-implicit returnB
-gui.FondosGUI$1
+__unknown_file (#*!
+domain.Cuentas"
+nombreBanco"$
+- -(
+
+%0java.lang.StringB
+domain.CuentasH

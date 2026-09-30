@@ -1,17 +1,15 @@
 
-/domain.Cuentas#getComprador()Ldomain/Comprador;+
-!src\main\java\domain\Cuentas.java4 4("1*–
-15	 5(
-a
-_
-5	 5(
-
-%0domain.Comprador"__id*5
+9domain.Comprador#getOfertasEnCurso()Ljava/util/ArrayList;-
+#src\main\java\domain\Comprador.javaR R(+"1*«
+1S	 S(s
+q
+S	 S(
+%0java.util.ArrayList"__id*D
 
-__unknown_file (*
-domain.Cuentas"
-c"$
-5 5(
-
-%0domain.CompradorB
-domain.CuentasH
+__unknown_file ((*&
+domain.Comprador"
+ofertasEnCurso"'
+S S(
+
+%0java.util.ArrayListB
+domain.CompradorH

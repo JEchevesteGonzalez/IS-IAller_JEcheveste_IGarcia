@@ -1,19 +1,16 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.javaŸ Ÿ("1*®
-1
- 	  (u
-s
-
- 	  (
-%0java.lang.String"__id*G
-
-__unknown_file (+*)
+*configuration.ConfigXML#%field_initializer4
+*src\main\java\configuration\ConfigXML.java ("1*»
+1
+__unknown_file (|
+z
+ (=)
 configuration.ConfigXML"
 
-dbFilename"&
-
-   (
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+configFile"__id*=
+
+__unknown_file (!
+src/main/resources/config.xml"
+ §(
+implicit returnB
+configuration.ConfigXML

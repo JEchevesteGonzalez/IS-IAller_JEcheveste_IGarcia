@@ -1,138 +1,228 @@
 
-Tgui.CrearVentaOSubastaGUI#encodeFileToBase64Binary(Ljava/io/File;)Ljava/lang/String;8
-,src\main\java\gui\CrearVentaOSubastaGUI.java¥ ¥('"10*ê
-2
-∫ ∫(Ex
+$gui.ShowResenaGUI#%field_initializer.
+$src\main\java\gui\ShowResenaGUI.java ("1*á
+1
+__unknown_file (B@
+% (/
+%0javax.swing.JTextField"javax.swing.JTextFieldp
+n
+! (1
+%1" javax.swing.JTextField#<init>()V*:
+
+__unknown_file (
+
+%0javax.swing.JTextFieldu
+s
+ (2%
+gui.ShowResenaGUI"
+fieldUsuario"__id*:
+
+__unknown_file (
+
+%0javax.swing.JTextFieldB@
+) (3
+%2javax.swing.JTextField"javax.swing.JTextFieldp
+n
+% (5
+%3" javax.swing.JTextField#<init>()V*:
+
+__unknown_file (
+
+%2javax.swing.JTextFieldy
+w
+ (6)
+gui.ShowResenaGUI"
+fieldDescription"__id*:
+
+__unknown_file (
+
+%2javax.swing.JTextField:8
+' (-
+%4javax.swing.JLabel"javax.swing.JLabel§
+°
+# (8
+%5".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%4javax.swing.JLabel*'
+
+__unknown_file (	
+Usuariou
+s
+ (9)
+gui.ShowResenaGUI"
+jLabelValoracion"__id*6
+
+__unknown_file (
+
+%4javax.swing.JLabel:8
+ (  (.
+%6javax.swing.JLabel"javax.swing.JLabel®
+•
+ $  (=
+%7".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%6javax.swing.JLabel*+
+
+__unknown_file (
+Descripcionv
+t
+   (>*
+gui.ShowResenaGUI"
+jLabelDescription"__id*6
+
+__unknown_file (
+
+%6javax.swing.JLabel:8
+!* !(0
+%8javax.swing.JLabel"javax.swing.JLabel°
+û
+!& !(8
+%9".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%8javax.swing.JLabel*$
+
+__unknown_file (
+Fotox
 v
-
-∫ ∫(E,
-gui.CrearVentaOSubastaGUI"
-encodedfile"__id*4
+! !(9,
+gui.ShowResenaGUI"
+jLabelProductStatus"__id*6
 
-__unknown_file (
-
-%7java.lang.String*
-1*Ë
-5
-∫ ∫(E86
-
-∫ ∫("
-%7java.lang.String"java.lang.Stringï
-í
-
-∫ ∫(E
-%8"java.lang.String#<init>([B)V*4
+__unknown_file (
 
-__unknown_file (
-
-%7java.lang.String**
+%8javax.swing.JLabel;9
+"" "((
+%10javax.swing.JLabel"javax.swing.JLabel©
+¶
+" "(6
+%11".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
-__unknown_file (
-
-%6byte[]*
-2*÷
-6
-∫> ∫(CΩ∫
+__unknown_file (
+
+%10javax.swing.JLabel**
+
+__unknown_file (
 
-∫# ∫(D
-%6byte[]"%java.util.Base64$Encoder#encode([B)[B*<
+Valoracionq
+o
+" "(7$
+gui.ShowResenaGUI"
+jLabelPrice"__id*7
+
+__unknown_file (
+
+%10javax.swing.JLabelCA
+#* #(4
+%12javax.swing.JTextField"javax.swing.JTextFieldr
+p
+#& #(6
+%13" javax.swing.JTextField#<init>()V*;
+
+__unknown_file (
+
+%12javax.swing.JTextFieldy
+w
+# #(7(
+gui.ShowResenaGUI"
+fieldValoracion"__id*;
+
+__unknown_file (
+
+%12javax.swing.JTextFieldEC
+', '(7
+%14javax.swing.JScrollPane"javax.swing.JScrollPanet
+r
+'( '(9
+%15"!javax.swing.JScrollPane#<init>()V*<
 
 __unknown_file ( 
 
-%5java.util.Base64$Encoder*-
+%14javax.swing.JScrollPane{
+y
+' '(:)
+gui.ShowResenaGUI"
+scrollPaneEvents"__id*<
 
-__unknown_file (
-
-bytesbyte[]2
-encode([B)*
-5*≥
-7
-∫# ∫()ö
-ó
-
-∫# ∫(6
-%5java.util.Base64$Encoder"7java.util.Base64#getEncoder()Ljava/util/Base64$Encoder;*0
+__unknown_file ( 
+
+%14javax.swing.JScrollPaneWU
+(2 ((N'
+%16 javax.swing.DefaultComboBoxModel" javax.swing.DefaultComboBoxModelá
+Ñ
+(. ((P
+%17"*javax.swing.DefaultComboBoxModel#<init>()V*E
 
-__unknown_file ("
-java.util.Base64*
-6*ÿ
-8
-∏$ ∏(6$"
-
-∏ ∏(7
-%3byte[]"byte[]Q
-O
-
-∏ ∏(8
-bytesbyte[]"__id**
+__unknown_file ()
+'
+%16 javax.swing.DefaultComboBoxModelÅ
+
+( ((Q&
+gui.ShowResenaGUI"
+statusOptions"__id*E
 
-__unknown_file (
-
-%3byte[]∆√
-
-π π(-	
-%4int"!java.io.FileInputStream#read([B)I*N
+__unknown_file ()
+'
+%16 javax.swing.DefaultComboBoxModel;9
+)  )(&
+%18javax.swing.JLabel"javax.swing.JLabelj
+h
+) )((
+%19"javax.swing.JLabel#<init>()V*7
 
-__unknown_file (2
-0
-fileInputStreamReaderjava.io.FileInputStream*-
+__unknown_file (
+
+%18javax.swing.JLabelo
+m
+) )()"
+gui.ShowResenaGUI"
+	jLabelMsg"__id*7
 
-__unknown_file (
-
-bytesbyte[]2read([B)*
-7*è
-9
-∂ ∑(EÑ
-Å
-
-∂ ∑(E0
-fileInputStreamReaderjava.io.FileInputStream"__id*;
+__unknown_file (
+
+%18javax.swing.JLabel;9
+*  *(&
+%20javax.swing.JLabel"javax.swing.JLabelj
+h
+* *((
+%21"javax.swing.JLabel#<init>()V*7
 
-__unknown_file (
-
-%0java.io.FileInputStreampn
-
-∏) ∏(6
-
-%2long"java.io.File#length()J*2
+__unknown_file (
+
+%20javax.swing.JLabelq
+o
+* *()$
+gui.ShowResenaGUI"
+statusField"__id*7
 
-__unknown_file (
-
-filejava.io.File2length()*
-8*ô
-10
-∑? ∑(CFD
-
-∑/ ∑(>
-%0java.io.FileInputStream"java.io.FileInputStream∑
-¥
-
-∑+ ∑(D
-%1"/java.io.FileInputStream#<init>(Ljava/io/File;)V*;
+__unknown_file (
+
+%20javax.swing.JLabel=;
+,* ,(1
+%22javax.swing.JButton"javax.swing.JButtonª
+∏
+,& ,(O
+%23"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
-__unknown_file (
-
-%0java.io.FileInputStream*2
+__unknown_file (
+
+%22javax.swing.JButton*:
 
-__unknown_file (
-
-filejava.io.File*
-9*≥
-1
-ƒ ƒ(y
-w
-
-ƒ ƒ(
-%11java.lang.String"__id*J
+__unknown_file (
+Ver Venta o Subasta Ligadas
+q
+, ,(P%
+gui.ShowResenaGUI"
+btnVerVentaO"__id*8
 
-__unknown_file (.*,
-gui.CrearVentaOSubastaGUI"
-encodedfile"'
-
-ƒ ƒ(
-
-%11java.lang.String:"
-
-¥( ¥(1
-filejava.io.FileB
-gui.CrearVentaOSubastaGUIH
+__unknown_file (
+
+%22javax.swing.JButton"
+ Ä(
+implicit returnB
+gui.ShowResenaGUI
