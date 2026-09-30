@@ -1,15 +1,16 @@
 
-5configuration.ConfigXML#getLocale()Ljava/lang/String;4
-*src\main\java\configuration\ConfigXML.java1 1("1*¤
-12	 2(o
-m
-2	 2(
-%0java.lang.String"__id*C
+*configuration.ConfigXML#%field_initializer4
+*src\main\java\configuration\ConfigXML.java ("1*»
+1
+__unknown_file (|
+z
+ (=)
+configuration.ConfigXML"
+
+configFile"__id*=
 
-__unknown_file ('*%
-configuration.ConfigXML"
-locale"$
-2 2(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+__unknown_file (!
+src/main/resources/config.xml"
+ §(
+implicit returnB
+configuration.ConfigXML

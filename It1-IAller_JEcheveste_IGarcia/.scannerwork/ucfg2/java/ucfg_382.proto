@@ -1,15 +1,16 @@
 
-*configuration.ConfigXML#isDatabaseLocal()Z4
-*src\main\java\configuration\ConfigXML.javaA A("1*™
-1B	 B(m
-k
-B	 B(
-%0boolean"__id*J
+7configuration.ConfigXML#getPassword()Ljava/lang/String;4
+*src\main\java\configuration\ConfigXML.java= =("1*¦
+1>	 >(q
+o
+>	 >(
+%0java.lang.String"__id*E
 
-__unknown_file (.*,
-configuration.ConfigXML"
-databaseLocal"
-B B(
+__unknown_file ()*'
+configuration.ConfigXML"
 
-%0booleanB
-configuration.ConfigXMLHX
+password"$
+> >(
+
+%0java.lang.StringB
+configuration.ConfigXMLH

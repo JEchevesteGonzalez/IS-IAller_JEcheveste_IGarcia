@@ -1,81 +1,19 @@
 
-(domain.Sale#toString()Ljava/lang/String;*
-src\main\java\domain\Sale.javaí í("1*½
+'domain.Sale#getFile()Ljava/lang/String;*
+src\main\java\domain\Sale.javaë ë("1* 
 1
-î	 î(j
-h
+ì	 ì(g
+e
 
-î	 î(
-%0java.lang.Integer"__id*;
+ì	 ì(
+%0java.lang.String"__id*9
 
-__unknown_file (*
-domain.Sale"
+__unknown_file (*
+domain.Sale"
 
-saleNumbern
-l
+fileName"&
 
-î	 î(
-%1java.lang.String"__concat*'
-
-î	 î(
-
-%0java.lang.Integer*
-
-î î(
-;d
-b
-
-î î(
-%2java.lang.String"__id*6
-
-__unknown_file (*
-domain.Sale"
-title€
-~
-
-î	 î(
-%3java.lang.String"__concat*&
-
-î	 î(
+ì ì(
 
-%1java.lang.String*&
-
-î î(
-
-%2java.lang.Stringm
-k
-
-î	 î(!
-%4java.lang.String"__concat*&
-
-î	 î(
-
-%3java.lang.String*
-
-î î(!
-;Y
-W
-
-î" î('
-%5float"__id*6
-
-__unknown_file (*
-domain.Sale"
-priceu
-s
-
-î	 î('
-%6java.lang.String"__concat*&
-
-î	 î(!
-
-%4java.lang.String*
-
-î" î('
-
-%5float"&
-
-î î((
-
-%6java.lang.StringB
+%0java.lang.StringB
 domain.SaleH

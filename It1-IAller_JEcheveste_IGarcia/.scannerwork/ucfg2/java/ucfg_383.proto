@@ -1,15 +1,15 @@
 
-/configuration.ConfigXML#isBusinessLogicLocal()Z4
-*src\main\java\configuration\ConfigXML.javaE E($"1*ž
-1F	 F(r
-p
-F	 F(
-%0boolean"__id*O
+*configuration.ConfigXML#isDatabaseLocal()Z4
+*src\main\java\configuration\ConfigXML.javaA A("1*™
+1B	 B(m
+k
+B	 B(
+%0boolean"__id*J
 
-__unknown_file (3*1
-configuration.ConfigXML"
-businessLogicLocal"
-F F(
+__unknown_file (.*,
+configuration.ConfigXML"
+databaseLocal"
+B B(
 
 %0booleanB
 configuration.ConfigXMLHX
