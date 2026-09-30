@@ -1,19 +1,19 @@
 
-HbusinessLogic.BLFacadeImplementation#retirarFondos(Ljava/lang/String;F)ZC
-7src\main\java\businessLogic\BLFacadeImplementation.javaì ì("1*ﬂ
+GbusinessLogic.BLFacadeImplementation#anadirFondos(Ljava/lang/String;F)ZC
+7src\main\java\businessLogic\BLFacadeImplementation.javaè è("1*›
 1
-î	 î(á
+ê	 ê(á
 Ñ
 
-î	 î(
+ê	 ê(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
-	dbManager§°
+	dbManager¢ü
 
-î	 î(3
-%1boolean"9dataAccess.DataAccess#retirarFondos(Ljava/lang/String;F)Z*9
+ê	 ê(2
+%1boolean"8dataAccess.DataAccess#anadirFondos(Ljava/lang/String;F)Z*9
 
 __unknown_file (
 
@@ -25,15 +25,15 @@ $businessLogic.BLFacadeImplementation"
 
 __unknown_file (
 
-cantidadfloat2"retirarFondos(Ljava/lang/String;F)"
+cantidadfloat2!anadirFondos(Ljava/lang/String;F)"
 
-î î(4
+ê ê(3
 
 %1boolean:)
 
-ì ì(-
+è è(,
 usuariojava.lang.String:
 
-ì. ì(<
+è- è(;
 cantidadfloatB(&
 $businessLogic.BLFacadeImplementationHX

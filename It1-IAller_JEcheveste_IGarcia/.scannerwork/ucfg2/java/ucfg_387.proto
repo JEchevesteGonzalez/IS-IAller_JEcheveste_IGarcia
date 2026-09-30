@@ -1,18 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.javaì ì(#"1*µ
+@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;6
+*src\main\java\configuration\ConfigXML.javaè è(#"1*µ
 1
-î	 î(|
+ê	 ê(|
 z
 
-î	 î(
+ê	 ê(
 %0java.lang.String"__id*N
 
 __unknown_file (2*0
 configuration.ConfigXML"
-businessLogicPort"&
+businessLogicNode"&
 
-î î(
+ê ê(
 
 %0java.lang.StringB
 configuration.ConfigXMLH

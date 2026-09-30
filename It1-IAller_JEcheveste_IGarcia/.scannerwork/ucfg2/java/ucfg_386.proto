@@ -1,18 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.javaè è(#"1*µ
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;6
+*src\main\java\configuration\ConfigXML.javaã ã($"1*Ω
 1
-ê	 ê(|
-z
+å	 å(}
+{
 
-ê	 ê(
-%0java.lang.String"__id*N
+å	 å(
+%0configuration.ConfigXML"__id*H
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicNode"&
+__unknown_file (,**
+configuration.ConfigXML"
+theInstance"-
 
-ê ê(
-
-%0java.lang.StringB
+å å(
+
+%0configuration.ConfigXMLB"
 configuration.ConfigXMLH

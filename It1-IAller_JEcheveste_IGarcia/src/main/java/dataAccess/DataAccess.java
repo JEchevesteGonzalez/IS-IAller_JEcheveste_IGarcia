@@ -3,6 +3,9 @@ package dataAccess;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -53,14 +56,13 @@ public class DataAccess  {
 
 			if (!c.isDatabaseLocal()) fileName=dbServerDir+fileName;
 			
-			File fileToDelete= new File(fileName);
-			if(fileToDelete.delete()){
-				File fileToDeleteTemp= new File(fileName+"$");
-				fileToDeleteTemp.delete();
+			Path pathFileName = Paths.get(fileName);
+			try {
+				Files.delete(pathFileName);
 				System.out.println("File deleted");
-			 } else {
-				 System.out.println("Operation failed");
-				}
+			}catch(Exception e) {
+				System.out.println("Operation failed: "+e);
+			}
 		}
 		open();
 		if  (c.isDatabaseInitialized()) 

@@ -1,5 +1,5 @@
 
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790765801066*java2.B˝ 
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790769706873*java2.Bö!
 +
 &src/main/java/gui/BorrarCuentaGUI.java2
 	
@@ -72,12 +72,12 @@ lblUsuario34
 
 textoErrores44
 $
-gui.BorrarCuentaGUI.Contrasena46
+gui.BorrarCuentaGUI.contrasena46
 
 (26:2)-(26:36)47
 
 
-Contrasena48
+contrasena48
  
 javax.swing.JPasswordField50
 #
@@ -224,78 +224,80 @@ HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;142
 9domain.Comprador#getOfertasEnCurso()Ljava/util/ArrayList;157
 @
 9Si tienes ofertas en curso, no puedes eliminar la cuenta.158
->
-7domain.Comprador#getDependientes()Ljava/util/ArrayList;160
+
+java.util.List160
+ 
+java.util.List#isEmpty()Z162
+9
+2domain.Comprador#getDependientes()Ljava/util/List;164
 K
-DSi tienes usuarios dependientes de ti, no puedes eliminar la cuenta.161
+DSi tienes usuarios dependientes de ti, no puedes eliminar la cuenta.165
 
-domain.Seller163
-
-java.util.List165
+domain.Seller167
 /
-(domain.Seller#getSales()Ljava/util/List;167
+(domain.Seller#getSales()Ljava/util/List;169
 J
-CSi tienes ventas o subastas en curso, no puedes eliminar la cuenta.168
+CSi tienes ventas o subastas en curso, no puedes eliminar la cuenta.170
 
-javax.swing.JOptionPane170
+javax.swing.JOptionPane172
 m
-fjavax.swing.JOptionPane#showConfirmDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I172
+fjavax.swing.JOptionPane#showConfirmDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I174
 L
-EÔøΩEstas seguro de que deseas eliminar la cuenta de forma permanente?173
+EÔøΩEstas seguro de que deseas eliminar la cuenta de forma permanente?175
 
-Confirmar Borrado174
+Confirmar Borrado176
 
-0175
+0177
 
-ARG_4176
+ARG_4178
 ,
-%javax.swing.JOptionPane.YES_NO_OPTION178
+%javax.swing.JOptionPane.YES_NO_OPTION180
 .
-'javax.swing.JOptionPane.WARNING_MESSAGE180
+'javax.swing.JOptionPane.WARNING_MESSAGE182
 )
-"javax.swing.JOptionPane.YES_OPTION182
+"javax.swing.JOptionPane.YES_OPTION184
 B
-;businessLogic.BLFacade#eliminarUsuario(Ljava/lang/String;)V184
+;businessLogic.BLFacade#eliminarUsuario(Ljava/lang/String;)V186
 !
-java.awt.Window#dispose()V186
+java.awt.Window#dispose()V188
 (
-!Usuario o contrasena incorrectos.187
+!Usuario o contrasena incorrectos.189
 
-Este usuario no existe.188
+Este usuario no existe.190
 
 
-144189
+144191
 
 
-183190
+183192
 
 
-117191
+117193
 	
-23192
+23194
 	
-19193
+19195
 	
-89194
+89196
 
-javax.swing.JComponent196
+javax.swing.JComponent198
 >
-7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V198
+7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V200
 
-java.awt.Color200
+java.awt.Color202
 
-java.awt.Color.RED202
+java.awt.Color.RED204
 
 
-226203
+226205
 
 
-371204
+371206
 
 
-130205
+130207
 	
-87206J
+87208J
 
 1
 12
@@ -305,13 +307,13 @@ B
 4 Z
 
 5
-5768j–
+5768jÁ
 
-199
-19920019
+201
+20120219
 
-166
-16616753
+168
+16816953
 M
 37G
 373824 *
@@ -332,20 +334,20 @@ M
 130
 13013153
 
-177
-17717819
+179
+17918019
 
 56
 565719
 
-181
-18118219
+183
+18318419
 
 132
 13213353
 
-185
-18518653
+187
+18718853
 
 150
 15015119
@@ -369,8 +371,11 @@ G
 148
 14814953
 
-179
-17918019
+161
+16116253
+
+181
+18118219
 M
 51G
 515253 *
@@ -387,6 +392,22 @@ M
 
 15
 16
+M
+45G
+454624 *
+1 (#28:5B$
+
+
+11
+25
+
+
+13
+47
+
+
+15
+48
 
 154
 15415553
@@ -413,33 +434,17 @@ M
 15
 27
 
-164
-16416519
+159
+15916019
 
 59
 596019
 
 72
 727353
-M
-45G
-454624 *
-1 (#28:5B$
-
-
-11
-25
-
-
-13
-47
-
-
-15
-48
 
-171
-17117253
+173
+17317453
 M
 31G
 313224 *
@@ -489,11 +494,11 @@ T
 93
 939453
 
-197
-19719853
+199
+19920053
 
-159
-15916053
+163
+16316453
 
 77
 777819
@@ -523,8 +528,8 @@ M
 15
 44
 
-195
-19519619
+197
+19719819
 
 64
 646553
@@ -538,8 +543,8 @@ M
 139
 13914019
 
-169
-16917019
+171
+17117219
 
 123
 12312419
@@ -556,8 +561,8 @@ M
 136
 13613753
 
-201
-20120219
+203
+20320419
 G
 8B
 8910 *
@@ -584,8 +589,8 @@ G
 146
 14614753
 
-162
-16216319
+166
+16616719
 
 81
 818253
@@ -599,8 +604,8 @@ G
 68
 686919
 
-183
-18318453r∆?
+185
+18518653r∆?
 
 81720*
 1& (,
@@ -1195,19 +1200,19 @@ N
 1H
  H(
 
-11915261*
+11915961*
 1K K(.
 
-11915455*
+11916155*
 1K' K(.
 
-11915258*
+11915958*
 1K K($
 
 11915061*
 1K K($
 
-11915955*
+11916355*
 1K K($
 
 1193561*
@@ -1218,7 +1223,7 @@ N
 1L L(2
 
 66
-161
+165
 
 1194161*
 1L
@@ -1232,26 +1237,26 @@ N
 1L
  L(
 
-11916221*
+11916621*
 1O O(
 
-11916230*
+11916630*
 1P P(
 
-11916221*
+11916621*
 1P
  P(
 
-11916221*
+11916621*
 1P P(!
 
-11916458*
+11915958*
 1Q Q(
 
-11916261*
+11916661*
 1Q Q(
 
-11916655*
+11916855*
 1Q Q(
 
 1193561*
@@ -1261,7 +1266,7 @@ N
 1R R(2
 
 66
-168
+170
 
 1194161*
 1R R(
@@ -1272,55 +1277,55 @@ N
 1194161*
 1R R(
 
-11916961*
+11917161*
 1W W(:
 Q
-11917155*
+11917355*
 1W) W(:24
 
 75
-173
-
-89
-174
-
-91
 175
 
-176
+89
+176
+
+91
+177
+
+178
 67
 
-11916921*
+11917121*
 1W W((
 
-11916921*
+11917121*
 1Y! Y(,
 
-11917761*
+11917961*
 1Y- Y(:
 
-11916921*
+11917121*
 1Y< Y(G
 
-11917961*
+11918161*
 1YH Y(W
 
-11916921*
+11917121*
 1[ [()
 
-11918161*
+11918361*
 1[* [(4
 
 1195661*
 1\ \(!
 
-11918355*
+11918555*
 1\ \(!
 
 1197061*
 1] ](
 
-11918555*
+11918755*
 1] ](
 
 1193561*
@@ -1330,7 +1335,7 @@ Q
 1b b(2
 
 66
-187
+189
 
 1194161*
 1b	 b(
@@ -1348,7 +1353,7 @@ Q
 1g g(2
 
 66
-188
+190
 
 1194161*
 1g g(
@@ -1366,16 +1371,16 @@ O
 1n n(24
 
 66
-189
-
-75
-190
-
-89
 191
 
-91
+75
 192
+
+89
+193
+
+91
+194
 
 518358*
 1o o(
@@ -1417,7 +1422,7 @@ O
 517061*
 1r" r()
 
-5118555*
+5118755*
 1r" r()
 
 518361*
@@ -1430,13 +1435,13 @@ O
 101
 
 75
-193
+195
 
 89
-194
+196
 
 91
-192
+194
 
 518358*
 1u u(
@@ -1465,10 +1470,10 @@ O
 513555*
 1w w(
 
-5119561*
+5119761*
 1x x(
 
-5119755*
+5119955*
 1x x(
 
 514161*
@@ -1480,13 +1485,13 @@ O
 514161*
 1x x(
 
-5119921*
+5120121*
 1x x(#
 
-5119921*
+5120121*
 1x$ x('
 
-5120161*
+5120361*
 1x$ x('
 
 518361*
@@ -1499,10 +1504,10 @@ O
 102
 
 75
-203
+205
 
 89
-204
+206
 
 91
 105
@@ -1560,10 +1565,10 @@ M
 95
 
 75
-205
+207
 
 89
-206
+208
 
 
 91

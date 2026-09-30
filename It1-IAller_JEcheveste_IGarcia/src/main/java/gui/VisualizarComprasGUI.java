@@ -73,6 +73,9 @@ public class VisualizarComprasGUI extends JFrame {
 				tableModelProducts.addRow(row); // Lo añadimos al modelo de la tabla
 			}
 		}
+		else {
+			return;
+		}
 		
 		DefaultListModel<Sale> modelo = new DefaultListModel<>();
 

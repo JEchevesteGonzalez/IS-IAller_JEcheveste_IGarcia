@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.*;
 
@@ -25,9 +24,7 @@ import domain.Sale;
 public class PujarGUI extends JFrame{
 	
     File targetFile;
-    BufferedImage targetImg;
     public JPanel panel_1;
-    private static final int baseSize = 160;
 	private static final String basePath="src/main/resources/images/";
 	
 	private static final long serialVersionUID = 1L;

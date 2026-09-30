@@ -28,7 +28,7 @@ public class ShowSaleGUI extends JFrame {
     
 
     private static final int BASE_SIZE = 160;
-    private static final String BASE_PATH = "src/main/resources/images/";
+
     
     private static final long serialVersionUID = 1L;
 

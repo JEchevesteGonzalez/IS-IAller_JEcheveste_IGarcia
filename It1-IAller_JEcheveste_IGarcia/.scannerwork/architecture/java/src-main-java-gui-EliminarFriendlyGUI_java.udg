@@ -1,5 +1,5 @@
 
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790765800665*java2.Bô
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790769706458*java2.Bå
 /
 *src/main/java/gui/EliminarFriendlyGUI.java2
 	
@@ -163,12 +163,12 @@ F
 domain.Usuario114
 O
 HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;116
-
-java.util.ArrayList118
->
-7domain.Comprador#getDependientes()Ljava/util/ArrayList;120
-%
-java.util.ArrayList#isEmpty()Z122
+
+java.util.List118
+9
+2domain.Comprador#getDependientes()Ljava/util/List;120
+ 
+java.util.List#isEmpty()Z122
 
 domain.Friendly124
 9
@@ -306,6 +306,9 @@ M
 84
 848519
 
+121
+12112241
+
 160
 16016119
 
@@ -317,12 +320,12 @@ M
 
 80
 808141
-
-121
-12112241
 
 86
 868719
+
+117
+11711819
 
 107
 10710819
@@ -374,9 +377,6 @@ G
 
 15
 16
-
-117
-11711819
 
 133
 13313441
