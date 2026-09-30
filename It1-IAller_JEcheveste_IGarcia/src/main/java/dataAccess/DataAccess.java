@@ -4,6 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -53,14 +56,18 @@ public class DataAccess  {
 
 			if (!c.isDatabaseLocal()) fileName=dbServerDir+fileName;
 			
-			File fileToDelete= new File(fileName);
-			if(fileToDelete.delete()){
-				File fileToDeleteTemp= new File(fileName+"$");
-				fileToDeleteTemp.delete();
-				System.out.println("File deleted");
-			 } else {
-				 System.out.println("Operation failed");
-				}
+			
+			try {
+			    Path fileToDelete = Paths.get(fileName);
+			    Files.delete(fileToDelete); 
+			    
+			    Path fileToDeleteTemp = Paths.get(fileName + "$");
+			    Files.deleteIfExists(fileToDeleteTemp); 
+			    
+			    System.out.println("File deleted");
+			} catch (IOException e) {
+			    System.out.println("Operation failed: " + e.getMessage());
+			}
 		}
 		open();
 		if  (c.isDatabaseInitialized()) 
@@ -352,29 +359,29 @@ public void open(){
 		try {
 			Comprador comprador = db.find(Comprador.class, usuario);
 			Sale producto = db.find(Sale.class, pro.getSaleNumber());
-			if (comprador != null && producto !=null && producto.isHabilitado()) {
-				if (comprador.getSaldo() >= producto.getPrice()) {
-					comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
-					comprador.getHistorialDeCompras().add(producto); 
-					producto.setHabilitado(false);
-				
-				
-					if (producto.getSeller() != null) {
-						Seller vendedor = db.find(Seller.class, producto.getSeller().getUsuario());
-						if (vendedor != null) {
-							producto.setUsuarioVendedor(vendedor.getUsuario());
-							vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
-							vendedor.getSales().remove(producto);
-							db.persist(vendedor);
-						}
+			if (comprador != null && producto !=null && producto.isHabilitado() && comprador.getSaldo() >= producto.getPrice()) {
+			
+				comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
+				comprador.getHistorialDeCompras().add(producto); 
+				producto.setHabilitado(false);
+			
+			
+				if (producto.getSeller() != null) {
+					Seller vendedor = db.find(Seller.class, producto.getSeller().getUsuario());
+					if (vendedor != null) {
+						producto.setUsuarioVendedor(vendedor.getUsuario());
+						vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
+						vendedor.getSales().remove(producto);
+						db.persist(vendedor);
 					}
-					db.persist(comprador);
-					db.persist(producto);
-					db.getTransaction().commit();
-					close();
-					return true; 
-				}			
-			}
+				}
+				db.persist(comprador);
+				db.persist(producto);
+				db.getTransaction().commit();
+				close();
+				return true; 
+			}			
+			
 			close();
 			return false;
 		}
@@ -435,7 +442,7 @@ public void open(){
 		s.setStatus(numStatus);
 		s.setPrice(price);
 		s.setPublicationDate(trim);
-		if (hab==true) {
+		if (hab) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(s.getPublicationDate());
 			//c.add(Calendar.DAY_OF_MONTH, 7);
@@ -445,7 +452,7 @@ public void open(){
 		s.setHabilitado(hab);
 		db.persist(s);
 		//db.persist(sale.getSeller());
-		db.getTransaction().commit();
+		db.getTransaction().comSmit();
 		close(); 
     }
     
