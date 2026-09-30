@@ -131,7 +131,7 @@ public class MainGUI extends JFrame {
 				String contrIntro = new String(contrasena.getPassword());
 				Usuario login=appFacadeInterface.buscarPorUser(usuarioIntro);
 				
-				if( login != null && usuarioIntro.equals(login.getUsuario())) {			
+				if( login != null && usuarioIntro.equals(login.getNombreUsuario())) {			
 					if(contrIntro.equals(login.getContrasena())){
 						
 						if(rdbtnComprador.isSelected()) {

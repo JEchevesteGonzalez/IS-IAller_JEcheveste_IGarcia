@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 1.0pruebasisjag_market26-itfinalJavaFrontend"1790765305215*java2.BòG
+=======
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790765800482*java2.BˆG
+>>>>>>> refs/remotes/origin/master
 '
 "src/main/java/gui/ShowSaleGUI.java2
 	
@@ -22,7 +26,11 @@
 
 full-range13
 
+<<<<<<< HEAD
 (20:1)-(297:2)14
+=======
+(19:1)-(298:2)14
+>>>>>>> refs/remotes/origin/master
 
 simple-name15
 
@@ -36,21 +44,30 @@ full-range13
 
 
 uses21
- 
-gui.ShowSaleGUI.targetFile23
+
+gui.ShowSaleGUI.logger23
 
 field24
-
-	protected25
+
+private25
 
+<<<<<<< HEAD
 (22:5)-(22:21)26
 
 
 targetFile27
 
 java.io.File29
+=======
+(22:5)-(22:88)26
+
+logger27
+
+java.util.logging.Logger29
+>>>>>>> refs/remotes/origin/master
 
 is type30
+<<<<<<< HEAD
 
 gui.ShowSaleGUI.targetImg32
 
@@ -63,7 +80,10 @@ targetFile27
 gui.ShowSaleGUI.panel_138
 
 (24:5)-(24:27)39
+=======
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 panel_140
 
 javax.swing.JPanel42
@@ -93,8 +113,12 @@ targetFile27
 gui.ShowSaleGUI.fieldTitle59
 
 (30:2)-(30:49)60
+=======
+returns31
+>>>>>>> refs/remotes/origin/master
 
 
+<<<<<<< HEAD
 fieldTitle61
 
 javax.swing.JTextField63
@@ -135,7 +159,11 @@ Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;84
 ARG_086
 
 ShowSaleGUI.Title87
+=======
+references32
+>>>>>>> refs/remotes/origin/master
 V
+<<<<<<< HEAD
 Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;89
 
 	Etiquetas90
@@ -206,7 +234,11 @@ $
 jButtonClose133
 
 javax.swing.JButton135
+=======
+Pjava.util.logging.Logger#getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;34
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 Close136
  
 gui.ShowSaleGUI.jLabelMsg138
@@ -256,41 +288,15 @@ Ogui.ShowSaleGUI#<init>(Ldomain/Sale;ZLjava/lang/String;Ljavax/swing/JFrame;ZZ)V
 java.awt.Window168
 %
 java.awt.Window#setVisible(Z)V170
+=======
+method35
+>>>>>>> refs/remotes/origin/master
 
-true171
-
-java.awt.Container173
->
-7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V175
->
-7javax.swing.JFrame#getContentPane()Ljava/awt/Container;177
-5
-.java.awt.Window#setSize(Ljava/awt/Dimension;)V179
-
-java.awt.Dimension181
-&
-javax.swing.text.JTextComponent183
-C
-<javax.swing.text.JTextComponent#setText(Ljava/lang/String;)V185
-/
-(domain.Sale#getTitle()Ljava/lang/String;187
-5
-.domain.Sale#getDescription()Ljava/lang/String;189
+calls36
 
-java.lang.Float191
-4
--java.lang.Float#toString(F)Ljava/lang/String;193
-
-domain.Sale#getPrice()F195
-6
-/javax.swing.JLabel#setText(Ljava/lang/String;)V197
-
-java.text.DateFormat199
-F
-?java.text.DateFormat#format(Ljava/util/Date;)Ljava/lang/String;201
-!
-java.text.SimpleDateFormat203
+java.lang.String38
 
+<<<<<<< HEAD
 java.util.Date205
 7
 0domain.Sale#getPublicationDate()Ljava/util/Date;207
@@ -395,21 +401,22 @@ G
 160269
 7
 0javax.swing.JComponent#setFont(Ljava/awt/Font;)V271
+=======
+java.lang.Class40
+1
++java.lang.Class#getName()Ljava/lang/String;42
+ 
+gui.ShowSaleGUI.targetFile44
+
+	protected45
+>>>>>>> refs/remotes/origin/master
 
-java.awt.Font273
-
-java.awt.Font.BOLD275
-	
-37276
+(25:5)-(25:21)46
+
 
-
-231277
-
-
-289278
-
-businessLogic.BLFacade280
+targetFile47
 
+<<<<<<< HEAD
 gui.MainGUI282
 =
 6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;284
@@ -425,9 +432,86 @@ Ugui.ShowSaleGUI#rescale(Ljava/awt/image/BufferedImage;)Ljava/awt/image/Buffered
 java.awt.BorderLayout294
 
 javax.swing.ImageIcon296
+=======
+java.io.File49
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 java.util.logging.Logger298
+=======
+gui.ShowSaleGUI.targetImg51
+
+(26:5)-(26:29)52
+
+	targetImg53
+"
+java.awt.image.BufferedImage55
+
+gui.ShowSaleGUI.panel_157
+
+(27:5)-(27:27)58
+
+panel_159
+
+javax.swing.JPanel61
+
+gui.ShowSaleGUI.BASE_SIZE63
+
+(30:5)-(30:46)64
+
+	BASE_SIZE65
+
+gui.ShowSaleGUI.BASE_PATH67
+
+(31:5)-(31:74)68
+
+	BASE_PATH69
+&
+ gui.ShowSaleGUI.serialVersionUID71
+
+(33:5)-(33:53)72
+
+serialVersionUID73
+ 
+gui.ShowSaleGUI.fieldTitle75
+
+(35:5)-(35:52)76
+
+
+fieldTitle77
+
+javax.swing.JTextField79
+&
+ gui.ShowSaleGUI.fieldDescription81
+
+(36:5)-(36:58)82
+
+fieldDescription83
+!
+gui.ShowSaleGUI.labelStatus85
+
+(38:5)-(38:39)86
+
+labelStatus87
+
+javax.swing.JLabel89
+!
+gui.ShowSaleGUI.jLabelTitle91
+
+(40:5)-(40:115)92
+
+jLabelTitle93
+
+java.util.ResourceBundle95
+N
+Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;97
+
+ARG_098
+
+ShowSaleGUI.Title99
+>>>>>>> refs/remotes/origin/master
 W
+<<<<<<< HEAD
 Pjava.util.logging.Logger#getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;300
 
 java.lang.Class302
@@ -566,7 +650,44 @@ G
 @gui.ShowSaleGUI$6#actionPerformed(Ljava/awt/event/ActionEvent;)V401
 
 (260:4)-(263:5)402
+=======
+Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;101
+
+	Etiquetas102
+(
+!gui.ShowSaleGUI.jLabelDescription104
+
+(41:5)-(41:129)105
+
+jLabelDescription106
+ 
+CreateSaleGUI.Description107
+*
+#gui.ShowSaleGUI.jLabelProductStatus109
+
+(42:5)-(42:126)110
+
+jLabelProductStatus111
+
+CreateSaleGUI.Status112
+"
+gui.ShowSaleGUI.jLabelPrice114
+
+(43:5)-(43:117)115
+
+jLabelPrice116
+
+CreateSaleGUI.Price117
+!
+gui.ShowSaleGUI.fieldPrice119
+
+(44:5)-(44:54)120
+
+
+fieldPrice121
+>>>>>>> refs/remotes/origin/master
 #
+<<<<<<< HEAD
 gui.EditarVentasYSubastasGUI404
 
 
@@ -621,6 +742,450 @@ W
 Pjava.awt.Graphics#drawImage(Ljava/awt/Image;IIIILjava/awt/image/ImageObserver;)Z440
 #
 java.awt.Graphics#dispose()V442J
+=======
+gui.ShowSaleGUI.selectedFile123
+
+(45:5)-(45:31)124
+
+selectedFile125
+
+gui.ShowSaleGUI.irudia127
+
+(46:5)-(46:27)128
+
+irudia129
+'
+ gui.ShowSaleGUI.scrollPaneEvents131
+
+(48:5)-(48:62)132
+
+scrollPaneEvents133
+
+javax.swing.JScrollPane135
+$
+gui.ShowSaleGUI.statusOptions137
+
+(49:5)-(49:69)138
+
+statusOptions139
+'
+ javax.swing.DefaultComboBoxModel141
+#
+gui.ShowSaleGUI.jButtonClose143
+
+(50:5)-(50:106)144
+
+jButtonClose145
+
+javax.swing.JButton147
+
+Close148
+ 
+gui.ShowSaleGUI.jLabelMsg150
+
+(51:5)-(51:45)151
+
+	jLabelMsg152
+"
+gui.ShowSaleGUI.jLabelError154
+
+(52:5)-(52:47)155
+
+jLabelError156
+"
+gui.ShowSaleGUI.statusField158
+
+(53:5)-(53:45)159
+
+statusField160
+ 
+gui.ShowSaleGUI.thisFrame162
+
+(54:5)-(54:30)163
+
+	thisFrame164
+$
+gui.ShowSaleGUI.btnVerResenas166
+
+(55:5)-(55:70)167
+
+btnVerResenas168
+&
+gui.ShowSaleGUI.btnVerReseasDel170
+
+(56:5)-(56:85)171
+
+btnVerReseasDel172
+V
+Ogui.ShowSaleGUI#<init>(Ldomain/Sale;ZLjava/lang/String;Ljavax/swing/JFrame;ZZ)V174
+
+(58:5)-(286:6)175
+
+domain.Sale177
+
+	has param178
+
+java.awt.Window180
+%
+java.awt.Window#setVisible(Z)V182
+
+true183
+
+java.awt.Container185
+>
+7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V187
+>
+7javax.swing.JFrame#getContentPane()Ljava/awt/Container;189
+5
+.java.awt.Window#setSize(Ljava/awt/Dimension;)V191
+
+java.awt.Dimension193
+&
+javax.swing.text.JTextComponent195
+C
+<javax.swing.text.JTextComponent#setText(Ljava/lang/String;)V197
+/
+(domain.Sale#getTitle()Ljava/lang/String;199
+5
+.domain.Sale#getDescription()Ljava/lang/String;201
+
+java.lang.Float203
+4
+-java.lang.Float#toString(F)Ljava/lang/String;205
+
+domain.Sale#getPrice()F207
+6
+/javax.swing.JLabel#setText(Ljava/lang/String;)V209
+
+java.text.DateFormat211
+F
+?java.text.DateFormat#format(Ljava/util/Date;)Ljava/lang/String;213
+!
+java.text.SimpleDateFormat215
+
+java.util.Date217
+7
+0domain.Sale#getPublicationDate()Ljava/util/Date;219
+
+java.awt.Component221
+:
+3java.awt.Component#setBounds(Ljava/awt/Rectangle;)V223
+
+java.awt.Rectangle225
+6
+/javax.swing.text.JTextComponent#setEditable(Z)V227
+
+false228
+!
+javax.swing.AbstractButton230
+U
+Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V232
+
+java.lang.Object234
+
+gui.ShowSaleGUI$1236
+
+(80:61)-(83:10)237
+G
+@gui.ShowSaleGUI$1#actionPerformed(Ljava/awt/event/ActionEvent;)V239
+
+(81:13)-(82:58)240
+
+actionPerformed241
+!
+java.awt.event.ActionEvent243
+
+javax.swing.JComponent245
+>
+7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V247
+
+java.awt.Color249
+
+java.awt.Color.red251
+F
+?java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V253
+*
+#java.awt.Component#setBounds(IIII)V255
+
+6256
+
+ARG_1257
+
+
+187258
+
+ARG_2259
+
+
+140260
+
+ARG_3261
+	
+25262
+G
+@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;264
+	
+81265
+
+
+109266
+	
+16267
+
+
+128268
+	
+53269
+
+
+370270
+	
+26271
+,
+%javax.swing.JTextField#setColumns(I)V273
+	
+10274
+
+
+127275
+
+
+371276
+	
+73277
+
+
+318278
+
+
+166279
+
+
+180280
+
+
+160281
+7
+0javax.swing.JComponent#setFont(Ljava/awt/Font;)V283
+
+java.awt.Font285
+
+java.awt.Font.BOLD287
+	
+37288
+
+
+231289
+
+
+289290
+
+businessLogic.BLFacade292
+
+gui.MainGUI294
+=
+6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;296
+.
+'domain.Sale#getFile()Ljava/lang/String;298
+
+java.awt.Image300
+O
+HbusinessLogic.BLFacade#downloadImage(Ljava/lang/String;)Ljava/awt/Image;302
+\
+Ugui.ShowSaleGUI#rescale(Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;304
+
+java.awt.BorderLayout306
+
+javax.swing.ImageIcon308
+9
+2java.util.logging.Logger#info(Ljava/lang/String;)V310
+
+domain.Sale#getStatus()I312
+
+	gui.Utils314
+/
+(gui.Utils#getStatus(I)Ljava/lang/String;316
+
+
+137317
+
+
+191318
+	
+92319
+
+domain.Usuario321
+O
+HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;323
+
+domain.Friendly325
+>
+7javax.swing.AbstractButton#setText(Ljava/lang/String;)V327
+
+	Solicitar328
+
+gui.ShowSaleGUI$2330
+
+(152:63)-(158:14)331
+G
+@gui.ShowSaleGUI$2#actionPerformed(Ljava/awt/event/ActionEvent;)V333
+
+(153:17)-(157:18)334
+T
+MbusinessLogic.BLFacade#crearSolicitud(Ljava/lang/String;Ljava/lang/Integer;)V336
+
+java.lang.Integer338
+5
+.domain.Sale#getSaleNumber()Ljava/lang/Integer;340
+
+javax.swing.JOptionPane342
+Y
+Rjavax.swing.JOptionPane#showMessageDialog(Ljava/awt/Component;Ljava/lang/Object;)V344
+7
+0Solicitud enviada correctamente a tu supervisor.345
+!
+java.awt.Window#dispose()V347
+"
+domain.Sale#getEsSubasta()I349
+
+Pujar350
+
+gui.ShowSaleGUI$3352
+
+(165:63)-(177:14)353
+G
+@gui.ShowSaleGUI$3#actionPerformed(Ljava/awt/event/ActionEvent;)V355
+
+(166:17)-(176:18)356
+
+gui.PujarGUI358
+
+gui.ComprarGUI360
+
+gui.ShowSaleGUI$4362
+
+(180:60)-(192:10)363
+G
+@gui.ShowSaleGUI$4#actionPerformed(Ljava/awt/event/ActionEvent;)V365
+
+(181:13)-(191:14)366
+m
+fjavax.swing.JOptionPane#showConfirmDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I368
+7
+0¬øEst√°s seguro de que deseas devolver la compra369
+
+Confirmar Devolucion370
+
+0371
+
+ARG_4372
+
+2373
+,
+%javax.swing.JOptionPane.YES_NO_OPTION375
+.
+'javax.swing.JOptionPane.WARNING_MESSAGE377
+)
+"javax.swing.JOptionPane.YES_OPTION379
+N
+GbusinessLogic.BLFacade#devolverCompra(Ldomain/Sale;Ljava/lang/String;)V381
+
+
+161382
+
+
+247383
+
+
+145384
+
+gui.ShowSaleGUI$5386
+
+(197:58)-(202:10)387
+G
+@gui.ShowSaleGUI$5#actionPerformed(Ljava/awt/event/ActionEvent;)V389
+
+(198:13)-(201:14)390
+
+gui.ResenaGUI392
+
+
+285393
+
+
+214394
+	
+89395
+	
+23396
+,
+%javax.swing.JComponent#setVisible(Z)V398
+"
+domain.Sale#isHabilitado()Z400
+
+gui.ShowSaleGUI$6402
+
+(258:58)-(263:10)403
+G
+@gui.ShowSaleGUI$6#actionPerformed(Ljava/awt/event/ActionEvent;)V405
+
+(259:13)-(262:14)406
+#
+gui.EditarVentasYSubastasGUI408
+
+
+217409
+
+gui.ShowSaleGUI$7411
+
+(267:62)-(272:10)412
+G
+@gui.ShowSaleGUI$7#actionPerformed(Ljava/awt/event/ActionEvent;)V414
+
+(268:13)-(271:14)415
+!
+gui.VerResenasRecibidasGUI417
+	
+85418
+
+3419
+	
+34420
+
+gui.ShowSaleGUI$8422
+
+(276:64)-(281:10)423
+G
+@gui.ShowSaleGUI$8#actionPerformed(Ljava/awt/event/ActionEvent;)V425
+
+(277:13)-(280:14)426
+
+domain.Seller428
+-
+&domain.Sale#getSeller()Ldomain/Seller;430
+
+
+275431
+
+
+270432
+
+(288:5)-(297:7)433
+
+rescale434
+0
+)java.awt.image.BufferedImage.TYPE_INT_RGB436
+
+java.awt.Graphics2D438
+I
+Bjava.awt.image.BufferedImage#createGraphics()Ljava/awt/Graphics2D;440
+
+java.awt.Graphics442
+W
+Pjava.awt.Graphics#drawImage(Ljava/awt/Image;IIIILjava/awt/image/ImageObserver;)Z444
+#
+java.awt.Graphics#dispose()V446J
+>>>>>>> refs/remotes/origin/master
 
 1
 12
@@ -630,24 +1195,369 @@ Pjava.awt.Graphics#drawImage(Ljava/awt/Image;IIIILjava/awt/image/ImageObserver;)
 4 Z
 
 5
+<<<<<<< HEAD
 5768j‹-
+=======
+5768j¨.
+>>>>>>> refs/remotes/origin/master
 
-236
-23623719
+248
+24824919
+
+33
+333435
+
+202
+20220319
+
+286
+28628719
+M
+43G
+434424 *
+1
+ (28:5B$
+
+
+11
+45
+
+
+13
+46
+
+
+15
+47
+M
+80G
+808124 *
+1$ $((28:5B$
+
+
+11
+25
+
+
+13
+82
+
+
+15
+83
+R
+126K
+12612724 *
+1. .(28:5B&
+
+
+11
+25
+
+13
+128
+
+15
+129
+
+337
+33733819
+
+301
+30130235
+
+41
+414235
+
+17
+171819
+T
+238M
+23823935 *
+1Q Q((2235:5B&
+
+
+11
+12
+
+13
+240
+
+15
+241
+
+324
+32432519
+
+335
+33533635
+
+376
+37637719
+I
+421B
+42142210 *
+1î@ ô(
+2173:5B
+
+
+11
+45
+
+13
+423
+
+176
+17617719
+I
+351B
+35135210 *
+1•? ±(2173:5B
+
+
+11
+45
+
+13
+353
+I
+329B
+32933010 *
+1ò? û(2173:5B
+
+
+11
+45
+
+13
+331
+G
+235@
+23523610 *
+1P= S(
+2173:5B
+
+
+11
+45
+
+13
+237
+
+282
+28228335
+I
+410B
+41041110 *
+1ã> ê(
+2173:5B
+
+
+11
+45
+
+13
+412
+
+220
+22022119
+I
+401B
+40140210 *
+1Ç: á(
+2173:5B
+
+
+11
+45
+
+13
+403
+I
+385B
+38538610 *
+1≈:  (
+2173:5B
+
+
+11
+45
+
+13
+387
+I
+361B
+36136210 *
+1¥< ¿(
+2173:5B
+
+
+11
+45
+
+13
+363
+R
+165K
+16516624 *
+17 7((28:5B&
+
+
+11
+25
+
+13
+167
+
+15
+168
+
+293
+29329419
+
+367
+36736835
+
+222
+22222335
+
+218
+21821935
+R
+118K
+11811924 *
+1, ,("28:5B&
+
+
+11
+25
+
+13
+120
+
+15
+121
+
+359
+35936019
+
+60
+606119
+Q
+173J
+17317435 *
+1: :(28:5B%
+
+
+11
+12
+
+13
+175
+
+
+15
+16
+
+445
+44544635
+
+407
+40740819
+
+214
+21421519
 
 190
-19019119
+19019135
 
+<<<<<<< HEAD
 299
 29930085
 
 274
 27427519
+=======
+206
+20620735
+
+94
+949519
+M
+90G
+909124 *
+1( ((28:5B$
+
+
+11
+25
+
+
+13
+92
+
+
+15
+93
+M
+84G
+848524 *
+1& &(28:5B$
+
+
+11
+45
+
+
+13
+86
+
+
+15
+87
+
+100
+10010135
+
+307
+30730819
+
+311
+31131235
+
+309
+30931035
+
+37
+373819
+
+184
+18418519
+
+229
+22923019
+
+226
+22622735
+
+313
+31331419
+
+315
+31531635
+
+146
+14614719
+>>>>>>> refs/remotes/origin/master
 M
 22G
 222324 *
+<<<<<<< HEAD
 1
  (28:5B$
+=======
+1! ('28:5B$
+>>>>>>> refs/remotes/origin/master
 
 
 11
@@ -660,6 +1570,7 @@ M
 
 15
 27
+<<<<<<< HEAD
 M
 65G
 656624 *
@@ -1095,27 +2006,112 @@ R
 
 176
 17617785
+=======
+>>>>>>> refs/remotes/origin/master
 R
 157K
 15715824 *
+<<<<<<< HEAD
 13 3('28:5B&
+=======
+15 5(28:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
-45
+25
 
 13
 159
 
 15
 160
+V
+388O
+38838935 *
+1∆ ∆((2385:5B&
+
+
+11
+12
+
+13
+390
+
+15
+241
 
+<<<<<<< HEAD
 387
 38738819
+=======
+198
+19819935
+V
+424O
+42442535 *
+1ï ï((2421:5B&
+
+
+11
+12
+
+13
+426
+
+15
+241
+
+179
+17918019
+V
+332O
+33233335 *
+1ô ô(,2329:5B&
+
+
+11
+12
+
+13
+334
+
+15
+241
+R
+108K
+10810924 *
+1* *('28:5B&
+
+
+11
+25
+
+13
+110
+
+15
+111
+
+48
+484919
+
+186
+18618735
+
+134
+13413519
+>>>>>>> refs/remotes/origin/master
 M
+<<<<<<< HEAD
 31G
 313224 *
 1 (28:5B$
+=======
+74G
+747524 *
+1# #("28:5B$
+>>>>>>> refs/remotes/origin/master
 
 
 11
@@ -1123,15 +2119,80 @@ M
 
 
 13
-33
+76
 
 
 15
-34
+77
+
+435
+43543619
+R
+149K
+14915024 *
+13 3(28:5B&
+
+
+11
+25
+
+13
+151
+
+15
+152
+
+272
+27227335
+
+399
+39940035
+
+188
+18818935
+R
+169K
+16917024 *
+18 8(*28:5B&
+
+
+11
+25
+
+13
+171
+
+15
+172
+
+391
+39139219
 M
+<<<<<<< HEAD
 37G
 373824 *
 1 (28:5B$
+=======
+50G
+505124 *
+1 (28:5B$
+
+
+11
+45
+
+
+13
+52
+
+
+15
+53
+M
+56G
+565724 *
+1 (28:5B$
+>>>>>>> refs/remotes/origin/master
 
 
 11
@@ -1139,20 +2200,28 @@ M
 
 
 13
-39
+58
 
 
 15
-40
+59
 
+<<<<<<< HEAD
 439
 43944085
 
 192
 19219385
+=======
+443
+44344435
+>>>>>>> refs/remotes/origin/master
 
 204
-20420519
+20420535
+
+216
+21621719
 G
 8B
 8910 *
@@ -1170,103 +2239,303 @@ G
 15
 16
 
+<<<<<<< HEAD
 370
 37037119
+=======
+374
+37437519
+>>>>>>> refs/remotes/origin/master
 V
+<<<<<<< HEAD
 400O
 40040185 *
 1Ñ Ñ(2397:5B&
+=======
+404O
+40440535 *
+1É É((2401:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 12
 
 13
+<<<<<<< HEAD
 402
+=======
+406
+>>>>>>> refs/remotes/origin/master
 
 15
-229
+241
 M
+<<<<<<< HEAD
 48G
 484924 *
 1! (*28:5B$
+=======
+66G
+666724 *
+1! (*28:5B$
+>>>>>>> refs/remotes/origin/master
 
 
 11
-45
+25
 
 
 13
-50
+68
 
 
 15
-51
+69
 R
+<<<<<<< HEAD
 149K
 14915024 *
 11 1(28:5B&
+=======
+161K
+16116224 *
+16 6(28:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
-45
+25
 
 13
-151
+163
 
 15
-152
+164
 
+<<<<<<< HEAD
 425
 42542685
+=======
+429
+42943035
 
-240
-24024185
+252
+25225335
+>>>>>>> refs/remotes/origin/master
 
+291
+29129219
+
+<<<<<<< HEAD
 279
 27928019
 
 374
 37437519
+=======
+378
+37837919
+>>>>>>> refs/remotes/origin/master
 T
+<<<<<<< HEAD
 291M
 29129285 *
 1° °(28:5B&
+=======
+303M
+30330435 *
+1† †(!28:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 12
 
 13
+<<<<<<< HEAD
 429
+=======
+433
+>>>>>>> refs/remotes/origin/master
 
 15
+<<<<<<< HEAD
 430
+=======
+434
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 342
 34234385
+=======
+346
+34634735
+>>>>>>> refs/remotes/origin/master
 V
+<<<<<<< HEAD
 409O
 40941085 *
 1ç ç(2406:5B&
+=======
+413O
+41341435 *
+1å å((2410:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 12
 
 13
+<<<<<<< HEAD
 411
+=======
+415
+>>>>>>> refs/remotes/origin/master
 
 15
-229
+241
 R
-130K
-13013124 *
+142K
+14214324 *
+12 2(!28:5B&
+
+
+11
+25
+
+13
+144
+
+15
+145
+
+380
+38038135
+
+140
+14014119
+
+181
+18118235
+
+305
+30530619
+
+210
+21021119
+
+96
+969735
+
+54
+545519
+
+299
+29930019
+
+284
+28428519
+
+28
+282919
+
+192
+19219319
+R
+153K
+15315424 *
+14 4(28:5B&
+
+
+11
+25
+
+13
+155
+
+15
+156
+
+357
+35735819
+
+441
+44144219
+
+224
+22422519
+
+348
+34834935
+
+254
+25425535
+V
+354O
+35435535 *
+1¶ ¶(,2351:5B&
+
+
+11
+12
+
+13
+356
+
+15
+241
+
+78
+787919
+R
+103K
+10310424 *
+1) )(%28:5B&
+
+
+11
+25
+
+13
+105
+
+15
+106
+
+297
+29729835
+
+212
+21221335
+R
+122K
+12212324 *
 1- -(28:5B&
 
 
 11
-45
+25
+
+13
+124
+
+15
+125
+R
+130K
+13013124 *
+<<<<<<< HEAD
+1- -(28:5B&
+=======
+10 0()28:5B&
+>>>>>>> refs/remotes/origin/master
+
+
+11
+25
 
 13
 132
@@ -1274,27 +2543,27 @@ R
 15
 133
 
+<<<<<<< HEAD
 376
 37637785
+=======
+231
+23123235
+>>>>>>> refs/remotes/origin/master
 
-128
-12812919
+250
+25025119
 
-169
-16917085
+263
+26326435
 
-293
-29329419
+437
+43743819
 
-198
-19819919
-
-83
-838485
-
-35
-353619
+246
+24624735
 
+<<<<<<< HEAD
 287
 28728819
 
@@ -1494,63 +2763,174 @@ R
 
 412
 41241319
+=======
+439
+43944035
+>>>>>>> refs/remotes/origin/master
 
 196
-19619785
+19619735
+V
+364O
+36436535 *
+1µ µ((2361:5B&
+
+
+11
+12
+
+13
+366
+
+15
+241
+
+244
+24424519
+
+397
+39739835
+M
+62G
+626324 *
+1 ('28:5B$
+
+
+11
+25
+
+
+13
+64
+
+
+15
+65
 R
+<<<<<<< HEAD
 124K
 12412524 *
 1, ,(,28:5B&
+=======
+113K
+11311424 *
+1+ +(28:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 25
 
 13
-126
+115
 
 15
-127
+116
 
+339
+33934035
+
+200
+20020135
+
+<<<<<<< HEAD
 322
 32232385
 M
 54G
 545524 *
 1 (,28:5B$
+=======
+320
+32032119
+
+341
+34134219
+
+194
+19419519
+
+242
+24224319
+
+416
+41641719
+
+208
+20820935
+R
+136K
+13613724 *
+11 1('28:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 45
+
+13
+138
+
+15
+139
+
+326
+32632735
+M
+70G
+707124 *
+1! !(/28:5B$
+
+
+11
+25
 
 
 13
-56
+72
 
 
 15
-57
+73
 
-73
-737419
+88
+888919
 
-283
-28328485
+295
+29529635
 
+<<<<<<< HEAD
 423
 42342419
+=======
+427
+42742819
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 318
 31831985
+=======
+322
+32232335
+
+39
+394019
+>>>>>>> refs/remotes/origin/master
 
-221
-22122219
+233
+23323419
 
+<<<<<<< HEAD
 301
 30130219
 
 339
 33934085r•À
+=======
+343
+34334435r∑Ã
+>>>>>>> refs/remotes/origin/master
 
 81720*
 1" ((
@@ -1559,112 +2939,304 @@ M
 1" ((
 
 222830*
+<<<<<<< HEAD
 1 (	
+=======
+1 ( 
+>>>>>>> refs/remotes/origin/master
 
 222821*
+<<<<<<< HEAD
 1 (	
+=======
+1 ( 
+>>>>>>> refs/remotes/origin/master
 
 222821*
+<<<<<<< HEAD
 1
  (
+=======
+1! ('
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 313530*
 1 (
+=======
+222831*
+1* (:
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 313521*
 1 (
+=======
+222832*
+1* (:
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 313521*
 1 (
+=======
+223336*
+11 (:
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 374130*
 1 (
+=======
+222821*
+1* (0
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 374121*
 1 (
+=======
+223731*
+1; (T
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 374121*
 1 (
+=======
+223932*
+1; (T
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 485230*
 1 ( 
+=======
+224136*
+1M (T
+
+22821*
+1; (F
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 485221*
 1 ( 
+=======
+434830*
+1 (	
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 485221*
 1! (*
+=======
+434821*
+1 (	
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 586230*
 1
  (
+=======
+434821*
+1
+ (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 586221*
 1
  (
+=======
+505430*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 586221*
 1 (
+=======
+505421*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 586264*
 1$ (.
+=======
+505421*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 656230*
 1
  (
+=======
+566030*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 656221*
 1
  (
+=======
+566021*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 656221*
 1 (%
+=======
+566021*
+1 (
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 656264*
 1* (4
+=======
+663730*
+1 ( 
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 697330*
 1! !(
+=======
+663721*
+1 ( 
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 697321*
 1! !(
+=======
+663721*
+1! (*
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 697321*
 1!	 !(
+=======
+747830*
+1# #(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 697364*
 1! !(!
+=======
+747821*
+1# #(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 757330*
 1#
  #(
+=======
+747821*
+1# #("
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 757321*
 1#
  #(
+=======
+747836*
+1#' #(1
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 757321*
 1# #(
+=======
+807830*
+1$ $(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 757364*
 1## #()
+=======
+807821*
+1$ $(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 755279*
 1#* #(Y
+=======
+807821*
+1$ $((
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 758082*
 1#* #(Y
+=======
+807836*
+1$- $(7
+
+848830*
+1& &(
+
+848821*
+1& &(
+
+848821*
+1& &(
+
+848836*
+1& &($
+
+908830*
+1( ((
+
+908821*
+1( ((
+
+908821*
+1( ((
+
+908836*
+1(& ((,
+
+903731*
+1(- ((\
+
+909432*
+1(- ((\
+>>>>>>> refs/remotes/origin/master
 '
+<<<<<<< HEAD
 758364*
 1#P #(Y2
+=======
+909636*
+1(S ((\2
+>>>>>>> refs/remotes/origin/master
 
 
-86
-87
+98
+99
 
+<<<<<<< HEAD
 758079*
 1#* #(B
+=======
+909431*
+1(- ((E
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 758082*
 1#* #(B
 '
@@ -1782,16 +3354,34 @@ M
 
 1018082*
 1&* &(Y
+=======
+909432*
+1(- ((E
+>>>>>>> refs/remotes/origin/master
 )
+<<<<<<< HEAD
 1018364*
 1&P &(Y2
+=======
+9010036*
+1(< ((E2
+>>>>>>> refs/remotes/origin/master
 
-86
-105
+98
+102
+
+909421*
+1(- ((;
 
+<<<<<<< HEAD
 1018079*
 1&* &(B
+=======
+1038830*
+1) )(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1018082*
 1&* &(B
 (
@@ -1801,41 +3391,108 @@ M
 
 86
 90
+=======
+1038821*
+1) )(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1018021*
 1&* &(8
+=======
+1038821*
+1) )(%
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1066230*
 1'
  '(
+=======
+1038836*
+1), )(2
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1066221*
 1'
  '(
+=======
+1033731*
+1)3 )(b
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1066221*
 1' '(
+=======
+1039432*
+1)3 )(b
+)
+1039636*
+1)Y )(b2
+
+98
+107
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1066264*
 1'& '(0
+=======
+1039431*
+1)3 )(K
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1102830*
 1(
  ((
+=======
+1039432*
+1)3 )(K
+*
+10310036*
+1)B )(K2
+
+98
+102
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1102821*
 1(
  ((
+=======
+1039421*
+1)3 )(A
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1102821*
 1( ((
+=======
+1088830*
+1* *(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1145230*
 1) )(
+=======
+1088821*
+1* *(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1145221*
 1) )(
+=======
+1088821*
+1* *('
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1145221*
 1) )(
 
@@ -1858,7 +3515,12 @@ M
 
 12412821*
 1, ,(
+=======
+1088836*
+1*. *(4
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1245221*
 1, ,(
 
@@ -1867,39 +3529,191 @@ M
 
 12412864*
 1,3 ,(G
+=======
+1083731*
+1*5 *(d
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1245221*
 1,H ,(N
+=======
+1089432*
+1*5 *(d
+)
+1089636*
+1*[ *(d2
+
+98
+112
+
+1089431*
+1*5 *(M
+
+1089432*
+1*5 *(M
+*
+10810036*
+1*D *(M2
+
+98
+102
+
+1089421*
+1*5 *(C
+
+1138830*
+1+ +(
+
+1138821*
+1+ +(
+
+1138821*
+1+ +(
+
+1138836*
+1+& +(,
+
+1133731*
+1+- +(\
+
+1139432*
+1+- +(\
+)
+1139636*
+1+S +(\2
+
+98
+117
+
+1139431*
+1+- +(E
+
+1139432*
+1+- +(E
+*
+11310036*
+1+< +(E2
+
+98
+102
+
+1139421*
+1+- +(;
+
+1187830*
+1, ,(
+
+1187821*
+1, ,(
+
+1187821*
+1, ,("
+
+1187836*
+1,) ,(3
+
+1224830*
+1- -(
+
+1224821*
+1- -(
+
+1224821*
+1- -(
+
+1263730*
+1. .(
+
+1263721*
+1. .(
+
+1263721*
+1. .(
+>>>>>>> refs/remotes/origin/master
 
 13013430*
+<<<<<<< HEAD
 1-
  -(
+=======
+10 0(
+>>>>>>> refs/remotes/origin/master
 
 13013421*
+<<<<<<< HEAD
 1-
  -(
+=======
+10 0(
+>>>>>>> refs/remotes/origin/master
 
 13013421*
+<<<<<<< HEAD
 1- -(
+=======
+10 0()
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 13013464*
 1-% -(,
+=======
+13013436*
+100 0(;
+
+13614030*
+11 1(
+
+14214630*
+12 2(
+
+14214621*
+12 2(
+
+14214621*
+12 2(!
+
+14214636*
+12( 2(/
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1305279*
 1-- -(\
+=======
+1423731*
+120 2(_
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1308082*
 1-- -(\
+=======
+1429432*
+120 2(_
+>>>>>>> refs/remotes/origin/master
 )
+<<<<<<< HEAD
 1308364*
 1-S -(\2
+=======
+1429636*
+12V 2(_2
+>>>>>>> refs/remotes/origin/master
 
-86
-136
+98
+148
 
+<<<<<<< HEAD
 1308079*
 1-- -(E
+=======
+1429431*
+120 2(H
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1308082*
 1-- -(E
 (
@@ -1909,35 +3723,98 @@ M
 
 86
 90
+=======
+1429432*
+120 2(H
+*
+14210036*
+12? 2(H2
+
+98
+102
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1308021*
 1-- -(;
+=======
+1429421*
+120 2(>
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1377330*
 1.
  .(
+=======
+1498830*
+13 3(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1377321*
 1.
  .(
+=======
+1498821*
+13 3(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1377321*
 1. .(
+=======
+1498821*
+13 3(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1377364*
 1.! .('
+=======
+1498836*
+13$ 3(*
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1417330*
 1/
  /(
+=======
+1538830*
+14 4(
 
+1538821*
+14 4(
+
+1538821*
+14 4(
+
+1538836*
+14& 4(,
+
+1578830*
+15 5(
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 1417321*
 1/
  /(
+=======
+1578821*
+15 5(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1417321*
 1/ /(
+=======
+1578821*
+15 5(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1417364*
 1/# /()
 
@@ -2013,16 +3890,33 @@ M
 
 1615221*
 152 5(8
+=======
+1578836*
+15$ 5(*
+>>>>>>> refs/remotes/origin/master
 
 1611730*
+<<<<<<< HEAD
 15I 5(P
+=======
+16 6(
+>>>>>>> refs/remotes/origin/master
 
 1611721*
+<<<<<<< HEAD
 15B 5(H
+=======
+16 6(
+>>>>>>> refs/remotes/origin/master
 
 1611721*
+<<<<<<< HEAD
 16 6(
+=======
+16 6(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16114982*
 16 6(
 
@@ -2031,7 +3925,12 @@ M
 
 161882*
 16 6(
+=======
+16514630*
+17 7(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16116782*
 17 7(
 *
@@ -2049,19 +3948,39 @@ M
 
 161882*
 17 7(
+=======
+16514621*
+17 7(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117282*
 18 8("
+=======
+16514621*
+17 7((
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117464*
 18 8("
+=======
+16514636*
+17/ 7(6
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117279*
 18 8(
 
 1611782*
 18 8(
+=======
+16914630*
+18 8(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117664*
 18 8(
 
@@ -2073,10 +3992,20 @@ M
 
 161882*
 18 8(
+=======
+16914621*
+18 8(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16116782*
 19 9(
+=======
+16914621*
+18 8(*
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117864*
 19 9(
 
@@ -2334,22 +4263,85 @@ M
 
 16122164*
 1L& L(4
+=======
+16914636*
+181 8(8
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 226230166*
 1M  M(+
+=======
+173176178*
+1: :(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 22623030*
 1M, M(-
+=======
+17337178*
+1:5 :(;
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 22623021*
 1M  M(+
+=======
+17317178*
+1:E :(K
+
+173836*
+1: :(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 22616782*
 1N N(
+=======
+17317630*
+1: :(!
+
+17317621*
+1: :(
+
+1733730*
+1:< :(C
+
+1733721*
+1:5 :(;
+
+1731730*
+1:L :(S
+
+1731721*
+1:E :(K
+
+1731721*
+1;	 ;(
+
+17316132*
+1;	 ;(
+
+173821*
+1; ;(
+
+173832*
+1; ;(
+
+17317932*
+1<	 <(
+>>>>>>> refs/remotes/origin/master
 *
+<<<<<<< HEAD
 22616964*
 1N N(2
+=======
+17318136*
+1< <(2
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 216
 
@@ -2460,22 +4452,61 @@ M
 
 16117664*
 1X X(
+=======
+98
+183
 
-161882*
-1X X(
+173832*
+1<	 <(
 
-161821*
-1X X(
+173821*
+1<	 <(
 
+173832*
+1<	 <(
+
+17318432*
+1=	 =((
+
+17318636*
+1= =((
+
+17318431*
+1=	 =(
+
+1731732*
+1=	 =(
+
+17318836*
+1= =(
+>>>>>>> refs/remotes/origin/master
+
+173832*
+1=	 =(
+
+173821*
+1=	 =(
+
+<<<<<<< HEAD
 161882*
 1X X(
 
 1617321*
 1X X(&
+=======
+173832*
+1=	 =(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16113782*
 1X X(&
+=======
+17317932*
+1>	 >(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117282*
 1Y Y(
 
@@ -2490,31 +4521,53 @@ M
 
 16117664*
 1Y Y(
+=======
+17319036*
+1> >(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 161882*
 1Y Y(
+=======
+173832*
+1>	 >(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 161821*
 1Y Y(
+=======
+173821*
+1>	 >(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 161882*
 1Y Y(
 
 1617321*
 1Y Y((
+=======
+173832*
+1>	 >(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16114182*
 1Y Y((
+=======
+17319236*
+1> >(#
 
-16117282*
-1[ [(
+17319432*
+1@	 @(
+>>>>>>> refs/remotes/origin/master
 
-16124064*
-1[ [(
-
-16117279*
-1[ [(
+17319636*
+1@ @(
 
+<<<<<<< HEAD
 1611782*
 1[ [(
 
@@ -2544,10 +4597,26 @@ M
 
 16117279*
 1\ \(
+=======
+1737432*
+1@	 @(
 
+1737821*
+1@	 @(
+
+1737432*
+1@	 @(
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 1611782*
 1\ \(
+=======
+1733731*
+1@ @()
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117664*
 1\ \(
 
@@ -2559,7 +4628,21 @@ M
 
 161882*
 1\ \(
+=======
+17317632*
+1@ @()
+
+17319836*
+1@! @()
+
+17319432*
+1A	 A(!
+
+17319636*
+1A A(!
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1617321*
 1\ \((
 
@@ -2574,22 +4657,15 @@ M
 
 16117279*
 1_ _(
+=======
+1738032*
+1A	 A(
+>>>>>>> refs/remotes/origin/master
 
-1611782*
-1_ _(
-
-16117664*
-1_ _(
-
-161882*
-1_ _(
-
-161821*
-1_ _(
-
-161882*
-1_ _(
+1737821*
+1A	 A(
 
+<<<<<<< HEAD
 1617321*
 1_ _((
 
@@ -2625,7 +4701,18 @@ M
 
 16110682*
 1` `('
+=======
+1738032*
+1A	 A(
+
+1733731*
+1A" A(5
 
+17317632*
+1A" A(5
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 16120882*
 1b b( 
 
@@ -2661,16 +4748,63 @@ T
 
 249
 250
+=======
+17320036*
+1A' A(5
+
+17319432*
+1C	 C(
+
+17319636*
+1C C(
+
+17311832*
+1C	 C(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1619682*
 1c c(
+=======
+1737821*
+1C	 C(
+
+17311832*
+1C	 C(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1617321*
 1c c(
+=======
+1733731*
+1C C(*
+
+17320232*
+1C C(*
+
+17320436*
+1C" C(*
+
+17320221*
+1C C(!
+
+17317632*
+1C+ C(8
+
+17320636*
+1C0 C(8
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1619682*
 1c c(
+=======
+1738832*
+1E	 E(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16120879*
 1d d(
 
@@ -2682,16 +4816,31 @@ T
 
 16117279*
 1d d(
+=======
+17320836*
+1E E(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1611782*
 1d d(
 
 16117664*
 1d d(
+=======
+1738432*
+1E	 E(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1617321*
 1d d(+
+=======
+1738821*
+1E	 E(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1619682*
 1d d(+
 
@@ -2712,13 +4861,52 @@ T
 
 249
 255
+=======
+1738432*
+1E	 E(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1619182*
 1f f(
+=======
+1733731*
+1E E(F
+
+17321032*
+1E E(F
+
+17321236*
+1E@ E(F
+
+17321436*
+1E! E(1
+
+17321631*
+1EG E(^
+
+17317632*
+1EG E(^
+
+17321836*
+1EL E(^
+
+17322032*
+1G	 G(
+
+17322236*
+1G G(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1617321*
 1f f(
+=======
+1739032*
+1G	 G(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1619182*
 1f f(
 
@@ -2733,10 +4921,20 @@ T
 
 16117279*
 1g g(
+=======
+1738821*
+1G	 G(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1611782*
 1g g(
+=======
+1739032*
+1G	 G(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117664*
 1g g(
 
@@ -2745,13 +4943,46 @@ T
 
 1619182*
 1g g()
+=======
+17322436*
+1G# G(,
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16118282*
 1h h(
+=======
+17322032*
+1I	 I(
+
+17322236*
+1I I(
+
+17311332*
+1I	 I(
+
+1738821*
+1I	 I(
+
+17311332*
+1I	 I(
+
+17322436*
+1I# I(,
+
+17319432*
+1J	 J(
+>>>>>>> refs/remotes/origin/master
 *
+<<<<<<< HEAD
 16121464*
 1h h(2
+=======
+17322636*
+1J J(2
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 216
 
@@ -2763,22 +4994,422 @@ T
 
 1615882*
 1h h(
+=======
+98
+228
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16120882*
 1k k(
 T
 16124264*
 1k k(27
+=======
+17311832*
+1J	 J(
+
+1737821*
+1J	 J(
+
+17311832*
+1J	 J(
+
+17322032*
+1K	 K(
+
+17322236*
+1K K(
+
+17311832*
+1K	 K(
+
+1737821*
+1K	 K(
+
+17311832*
+1K	 K(
+
+17322436*
+1K" K(+
+
+17322032*
+1N	 N(#
+
+17322236*
+1N N(#
+
+17313032*
+1N	 N(
+
+17313421*
+1N	 N(
+
+17313032*
+1N	 N(
+
+17322436*
+1N( N(1
+
+17322032*
+1O	 O(
+
+17322236*
+1O O(
+
+17314232*
+1O	 O(
+
+17314621*
+1O	 O(
+
+17314232*
+1O	 O(
+
+17322436*
+1O$ O(-
+
+17322932*
+1P	 P('
+
+17323136*
+1P P('
+
+17314232*
+1P	 P(
+
+17314621*
+1P	 P(
+
+17314232*
+1P	 P(
+
+17323336*
+1P, P(:
+
+238242178*
+1Q) Q(4
+
+23824230*
+1Q5 Q(6
+
+23824221*
+1Q) Q(4
+
+23817932*
+1R R(%
+*
+23818136*
+1R R(%2
+>>>>>>> refs/remotes/origin/master
 
-86
+98
+228
+
+23816132*
+1R R(
+
+2381721*
+1R R(
+
+23816132*
+1R R(
+
+17322032*
+1U	 U(
+
+17322236*
+1U U(
+
+17314932*
+1U	 U(
+
+1738821*
+1U	 U(
+
+17314932*
+1U	 U(
+
+17322436*
+1U! U(*
+
+17324432*
+1V	 V( 
+
+17324636*
+1V V( 
+
+17314932*
+1V	 V(
+
+1738821*
+1V	 V(
+
+17314932*
+1V	 V(
+
+17324821*
+1V! V(&
+
+17324821*
+1V' V(*
+
+17325032*
+1V' V(*
+
+17322032*
+1X	 X(
+
+17322236*
+1X X(
+
+17315332*
+1X	 X(
+
+1738821*
+1X	 X(
+
+17315332*
+1X	 X(
+
+17322436*
+1X# X(,
+
+17324432*
+1Y	 Y("
+
+17324636*
+1Y Y("
+
+17315332*
+1Y	 Y(
+
+1738821*
+1Y	 Y(
+
+17315332*
+1Y	 Y(
+
+17324821*
+1Y# Y((
+
+17324821*
+1Y) Y(,
+
+17325032*
+1Y) Y(,
+
+17318432*
+1\	 \("
+
+17325236*
+1\ \("
+
+17318431*
+1\	 \(
+
+1731732*
+1\	 \(
+
+17318836*
+1\ \(
+
+173832*
+1\	 \(
+
+173821*
+1\	 \(
+
+173832*
+1\	 \(
+
+1738821*
+1\# \(,
+
+17314932*
+1\# \(,
+
+17318432*
+1]	 ]("
+
+17325236*
+1] ]("
+
+17318431*
+1]	 ](
+
+1731732*
+1]	 ](
+
+17318836*
+1] ](
+
+173832*
+1]	 ](
+
+173821*
+1]	 ](
+
+173832*
+1]	 ](
+
+1738821*
+1]# ](.
+
+17315332*
+1]# ](.
+
+17318432*
+1_	 _("
+
+17325236*
+1_ _("
+
+17318431*
+1_	 _(
+
+1731732*
+1_	 _(
+
+17318836*
+1_ _(
+
+173832*
+1_	 _(
+
+173821*
+1_	 _(
+
+173832*
+1_	 _(
+
+17314621*
+1_# _(/
+
+17314232*
+1_# _(/
+
+17318432*
+1`	 `("
+
+17325236*
+1` `("
+
+17318431*
+1`	 `(
+
+1731732*
+1`	 `(
+
+17318836*
+1` `(
+
+173832*
+1`	 `(
+
+173821*
+1`	 `(
+
+173832*
+1`	 `(
+
+1738821*
+1`# `(.
+
+1739032*
+1`# `(.
+
+17318432*
+1c	 c("
+
+17325236*
+1c c("
+
+17318431*
+1c	 c(
+
+1731732*
+1c	 c(
+
+17318836*
+1c c(
+
+173832*
+1c	 c(
+
+173821*
+1c	 c(
+
+173832*
+1c	 c(
+
+1738821*
+1c# c(.
+
+17311332*
+1c# c(.
+
+17318432*
+1d	 d("
+
+17325236*
+1d d("
+
+17318431*
+1d	 d(
+
+1731732*
+1d	 d(
+
+17318836*
+1d d(
+
+173832*
+1d	 d(
+
+173821*
+1d	 d(
+
+173832*
+1d	 d(
+
+1737821*
+1d# d(-
+
+17311832*
+1d# d(-
+
+17322032*
+1f	 f(&
+
+17322236*
+1f f(&
+
+17310832*
+1f	 f(
+
+1738821*
+1f	 f(
+
+17310832*
+1f	 f(
+
+17322436*
+1f+ f(4
+
+17322032*
+1g	 g(&
+T
+17325436*
+1g g(&27
+
+98
 256
 
-245
-257
-
-247
+257
 258
 
+<<<<<<< HEAD
 249
 259
 
@@ -2822,7 +5453,14 @@ T
 1m m(2
 
 86
+=======
+259
+260
+
+261
+>>>>>>> refs/remotes/origin/master
 262
+<<<<<<< HEAD
 
 1615882*
 1m m(
@@ -2832,7 +5470,10 @@ T
 
 1615882*
 1m m(
+=======
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16118282*
 1n n(
 *
@@ -2841,7 +5482,12 @@ T
 
 86
 216
+=======
+17310832*
+1g	 g(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1616582*
 1n n(
 
@@ -2850,13 +5496,55 @@ T
 
 1616582*
 1n n(
+=======
+1738821*
+1g	 g(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16120882*
 1q q(
+=======
+17310832*
+1g	 g(
+
+17322031*
+1h	 h(
+
+17318432*
+1h	 h(
+
+17326336*
+1h h(
+
+17318431*
+1h	 h(
+
+1731732*
+1h	 h(
+
+17318836*
+1h	 h(
+
+1738821*
+1h h(1
+
+17310832*
+1h h(1
+
+17322032*
+1j	 j($
+>>>>>>> refs/remotes/origin/master
 T
+<<<<<<< HEAD
 16124264*
 1q q(27
+=======
+17325436*
+1j j($27
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 263
 
@@ -3692,14 +6380,28 @@ V
 1œ œ(27
 
 86
+=======
+98
+>>>>>>> refs/remotes/origin/master
 256
 
+<<<<<<< HEAD
 245
 390
+=======
+257
+265
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 247
 391
+=======
+259
+266
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 249
 392
 
@@ -3729,7 +6431,51 @@ V
 ,
 16139364*
 1“ “(2
+=======
+261
+267
+
+17310332*
+1j	 j(
+
+1738821*
+1j	 j(
+
+17310332*
+1j	 j(
+
+17322031*
+1k	 k(
+
+17318432*
+1k	 k(
+
+17326336*
+1k k(
+
+17318431*
+1k	 k(
+
+1731732*
+1k	 k(
+
+17318836*
+1k	 k(
+
+1738821*
+1k k(/
+
+17310332*
+1k k(/
+
+17319432*
+1l	 l(
+*
+17322636*
+1l l(2
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 171
 
@@ -3738,7 +6484,27 @@ V
 ,
 16139364*
 1” ”(2
+=======
+98
+228
+
+1737432*
+1l	 l(
+
+1737821*
+1l	 l(
+
+1737432*
+1l	 l(
+
+17322032*
+1o	 o(
+T
+17325436*
+1o o(27
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 216
 
@@ -4209,8 +6975,12 @@ V
 415
 
 247
+=======
+98
+>>>>>>> refs/remotes/origin/master
 268
 
+<<<<<<< HEAD
 249
 416
 
@@ -4297,28 +7067,501 @@ V
 ,
 42016964*
 1ò ò(2
+=======
+257
+269
+
+259
+270
+
+261
+271
+
+1737432*
+1o	 o(
+
+1737821*
+1o	 o(
+
+1737432*
+1o	 o(
+
+17322031*
+1p	 p(
+
+17318432*
+1p	 p(
+
+17326336*
+1p p(
+
+17318431*
+1p	 p(
+
+1731732*
+1p	 p(
+
+17318836*
+1p	 p(
+
+1737821*
+1p p((
+
+1737432*
+1p p((
+
+1737832*
+1q	 q(
+*
+17327236*
+1q q(2
+>>>>>>> refs/remotes/origin/master
 
-86
-171
+98
+274
+
+1737432*
+1q	 q(
+
+1737821*
+1q	 q(
+
+1737432*
+1q	 q(
+
+17319432*
+1r	 r(%
+*
+17322636*
+1r r(%2
+
+98
+228
+
+1738032*
+1r	 r(
+
+1737821*
+1r	 r(
+
+1738032*
+1r	 r(
+
+17322032*
+1u	 u(#
+T
+17325436*
+1u u(#27
+
+98
+275
+
+257
+265
+
+259
+276
+
+261
+277
+
+1738032*
+1u	 u(
+
+1737821*
+1u	 u(
+
+1738032*
+1u	 u(
+
+17322031*
+1v	 v(
+
+17318432*
+1v	 v(
+
+17326336*
+1v v(
+
+17318431*
+1v	 v(
+
+1731732*
+1v	 v(
+
+17318836*
+1v	 v(
+
+1737821*
+1v v(.
+
+1738032*
+1v v(.
+
+1737832*
+1w	 w($
+*
+17327236*
+1w w($2
+
+98
+274
+
+1738032*
+1w	 w(
+
+1737821*
+1w	 w(
+
+1738032*
+1w	 w(
+
+1736021*
+1y	 y(
+
+1735632*
+1y	 y(
+
+1736036*
+1y y(
+
+17322032*
+1z	 z(
+T
+17325436*
+1z z(27
+
+98
+278
+
+257
+279
+
+259
+280
+
+261
+281
+
+1735632*
+1z	 z(
+
+1736021*
+1z	 z(
+
+1735632*
+1z	 z(
+
+17322031*
+1{	 {(
+
+17318432*
+1{	 {(
+
+17326336*
+1{ {(
+
+17318431*
+1{	 {(
+
+1731732*
+1{	 {(
+
+17318836*
+1{	 {(
+
+1736021*
+1{ {(%
+
+1735632*
+1{ {(%
+
+17324432*
+1}	 }(
+
+17328236*
+1} }(
+
+1738432*
+1}	 }(
+
+1738821*
+1}	 }(
+
+1738432*
+1}	 }(
+
+17328436*
+1}! }(%
+
+17328421*
+1}7 }(;
+
+17328632*
+1}< }(@
+
+17322032*
+1~	 ~(
+T
+17325436*
+1~ ~(27
+
+98
+288
+
+257
+289
+
+259
+290
+
+261
+267
+
+1738432*
+1~	 ~(
+
+1738821*
+1~	 ~(
+
+1738432*
+1~	 ~(
+
+17322031*
+1	 (
+
+17318432*
+1	 (
+
+17326336*
+1 (
+
+17318431*
+1	 (
+
+1731732*
+1	 (
+
+17318836*
+1	 (
+
+1738821*
+1 ()
+
+1738432*
+1 ()
 
+<<<<<<< HEAD
 16120882*
 1õ õ(
+=======
+17329130*
+1Ç Ç(
+
+17329121*
+1Ç	 Ç(
+
+17329131*
+1Ç Ç(3
+
+17329332*
+1Ç Ç(3
+
+17329536*
+1Ç# Ç(3
+
+17329321*
+1Ç Ç("
+
+1733730*
+1É É(
+
+1733721*
+1É	 É(
+
+1733731*
+1É É(!
+
+17317632*
+1É É(!
+
+17329736*
+1É É(!
+
+17329930*
+1Ö Ö(
+
+17329921*
+1Ö Ö(
+
+17329931*
+1Ö Ö(+
+
+17329132*
+1Ö Ö(+
+
+17330136*
+1Ö Ö(+
+
+1735421*
+1Ü Ü(
+
+1735032*
+1Ü Ü(
+
+1735431*
+1Ü Ü( 
+
+173832*
+1Ü Ü( 
+
+17330336*
+1Ü Ü( 
+
+1735421*
+1Ü" Ü(/
+
+17318432*
+1á á(
+
+17318636*
+1á á(
+
+1735632*
+1á á(
+
+1736021*
+1á á(
+
+1735632*
+1á á(
+
+17330536*
+1á# á(/
+
+17322031*
+1à à(
+
+17318432*
+1à à(
+
+17326336*
+1à à(
+
+1735632*
+1à à(
+
+1736021*
+1à à(
+
+1735632*
+1à à(
+
+1738836*
+1à à(#
+
+17330736*
+1à( à(1
+
+1735421*
+1à2 à(;
+
+1735032*
+1à2 à(;
+
+1732832*
+1ã	 ã(
+
+17330936*
+1ã ã(
+
+1732232*
+1ã	 ã(
+
+1732821*
+1ã	 ã(
+
+1732232*
+1ã	 ã(
+
+17317632*
+1ã" ã(0
+
+17331136*
+1ã' ã(0
+
+1738821*
+1ç	 ç(
+
+17315732*
+1ç	 ç(
+
+1738836*
+1ç ç(!
+
+1733731*
+1ç" ç(1
+
+17331332*
+1ç" ç(1
+
+17331536*
+1ç( ç(1
+
+17331321*
+1ç" ç('
+
+17317632*
+1ç2 ç(@
+
+17331136*
+1ç7 ç(@
+
+17322032*
+1é	 é(
+>>>>>>> refs/remotes/origin/master
 V
+<<<<<<< HEAD
 16124264*
 1õ õ(27
+=======
+17325436*
+1é é(27
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 427
+=======
+98
+317
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 245
 415
+=======
+257
+318
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 247
 428
+=======
+259
+319
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 249
 416
+=======
+261
+267
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16115782*
 1õ õ(
 
@@ -4339,31 +7582,116 @@ V
 
 16117279*
 1ù ù(
+=======
+17315732*
+1é	 é(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1611782*
 1ù ù(
+=======
+1738821*
+1é	 é(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16117664*
 1ù ù(
+=======
+17315732*
+1é	 é(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16113421*
 1ù ù('
+=======
+17322031*
+1è	 è(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16115782*
 1ù ù('
+=======
+17318432*
+1è	 è(
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 16116782*
 1û û(
+=======
+17326336*
+1è è(
+
+17318431*
+1è	 è(
+
+1731732*
+1è	 è(
+
+17318836*
+1è	 è(
+
+1738821*
+1è è()
+
+17315732*
+1è è()
+
+17314630*
+1ë ë(
+
+17314621*
+1ë	 ë(
+
+17314636*
+1ë" ë()
+
+17332030*
+1ì ì(
+
+17332021*
+1ì	 ì(
+
+17332031*
+1ì ì(2
+
+17329132*
+1ì ì(2
+
+17332236*
+1ì% ì(2
+
+17332421*
+1ï# ï(+
+
+17322932*
+1ó ó(
+>>>>>>> refs/remotes/origin/master
 ,
+<<<<<<< HEAD
 16116964*
 1û û(2
+=======
+17332636*
+1ó ó(2
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 86
 171
 
 2913579*
 1°	 °(
+=======
+98
+328
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29135166*
 1° °(,
 
@@ -4387,39 +7715,1168 @@ V
 
 2913521*
 1£L £(Y
+=======
+17322932*
+1ò ò()
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143182*
 1£Z £(f
+=======
+17323136*
+1ò ò()
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143330*
 1§ §(
+=======
+17323336*
+1ò. ò(<
+
+332242178*
+1ô- ô(8
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143321*
 1§	 §(
+=======
+33224230*
+1ô9 ô(:
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143379*
 1§ §(3
 
 2913582*
 1§ §(3
+=======
+33224221*
+1ô- ô(8
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143564*
 1§% §(3
+=======
+33229132*
+1ö ö(*
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143782*
 1•	 •(
 ;
 29143964*
 1• •(2
+=======
+33233536*
+1ö ö(*
+
+33233731*
+1ö4 ö(F
+
+33217632*
+1ö4 ö(F
+
+33233936*
+1ö9 ö(F
+
+33234132*
+1õ õ(2
+-
+33234336*
+1õ! õ(22
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 245
 367
+=======
+257
+345
+
+33234121*
+1õ õ( 
+
+33217932*
+1ú ú(&
+
+33234636*
+1ú ú(&
+
+33216132*
+1ú ú(
+
+3321721*
+1ú ú(
+
+33216132*
+1ú ú(
+
+17317632*
+1¢ ¢(!
+
+17334836*
+1¢ ¢(!
+
+17322932*
+1£ £(#
+,
+17332636*
+1£ £(#2
+
+98
+350
+
+17322932*
+1• •()
+
+17323136*
+1• •()
+
+17323336*
+1•. •(<
+
+354242178*
+1¶- ¶(8
+
+35424230*
+1¶9 ¶(:
+
+35424221*
+1¶- ¶(8
+
+35417632*
+1ß ß()
+
+35434836*
+1ß ß()
+
+3541730*
+1®  ®(%
+
+3541721*
+1® ®(
+
+35435736*
+1®, ®(4
+
+3541721*
+1®D ®(M
+
+35416132*
+1®D ®(M
+
+35417932*
+1© ©()
+,
+35418136*
+1© ©()2
+
+98
+183
+
+3541730*
+1¨  ¨('
+
+3541721*
+1¨ ¨(
+
+35435936*
+1¨. ¨(8
+
+3541721*
+1¨H ¨(Q
+
+35416132*
+1¨H ¨(Q
+
+35417932*
+1≠ ≠(+
+,
+35418136*
+1≠! ≠(+2
+
+98
+183
+
+17314630*
+1≥ ≥(
+
+17314621*
+1≥	 ≥(
+
+17314636*
+1≥# ≥(*
+
+17322932*
+1¥	 ¥(&
+
+17323136*
+1¥ ¥(&
+
+17323336*
+1¥+ ¥(9
+
+364242178*
+1µ) µ(4
+
+36424230*
+1µ5 µ(9
+
+36424221*
+1µ) µ(4
+
+36434132*
+1∂$ ∂(A
+W
+36436736*
+1∂0 ∂(A28
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 247
 367
+=======
+257
+369
+
+259
+370
+
+261
+371
+
+372
+373
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29143782*
 1¶	 ¶(
+=======
+36434121*
+1∂$ ∂(/
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 29144164*
 1¶ ¶(
+=======
+36434121*
+1∏1 ∏(<
+
+36437432*
+1∏= ∏(J
+
+36434121*
+1∏L ∏(W
+
+36437632*
+1∏X ∏(g
+
+36434121*
+1∫% ∫(0
+
+36437832*
+1∫1 ∫(;
+
+36429132*
+1ª ª(*
+
+36438036*
+1ª ª(*
+
+36417932*
+1º º($
+
+36434636*
+1º º($
+
+36417932*
+1Ω Ω(
+
+36434636*
+1Ω Ω(
+
+17322032*
+1¡	 ¡(
+V
+17325436*
+1¡ ¡(27
+
+98
+382
+
+257
+383
+
+259
+384
+
+261
+262
+
+17322031*
+1¬	 ¬(
+
+17318432*
+1¬	 ¬(
+
+17326336*
+1¬ ¬(
+
+17318431*
+1¬	 ¬(
+
+1731732*
+1¬	 ¬(
+
+17318836*
+1¬	 ¬(
+
+17314630*
+1ƒ ƒ(
+
+17314621*
+1ƒ	 ƒ(
+
+17314636*
+1ƒ! ƒ((
+
+17322932*
+1≈	 ≈($
+
+17323136*
+1≈ ≈($
+
+17323336*
+1≈) ≈(7
+
+388242178*
+1∆) ∆(4
+
+38824230*
+1∆5 ∆(6
+
+38824221*
+1∆) ∆(4
+
+3881730*
+1« «(
+
+3881721*
+1« «(
+
+38839136*
+1«% «(.
+
+38817932*
+1» »("
+,
+38818136*
+1» »("2
+
+98
+183
+
+17322032*
+1À	 À(
+V
+17325436*
+1À À(27
+
+98
+382
+
+257
+393
+
+259
+384
+
+261
+262
+
+17322031*
+1Ã	 Ã(
+
+17318432*
+1Ã	 Ã(
+
+17326336*
+1Ã Ã(
+
+17318431*
+1Ã	 Ã(
+
+1731732*
+1Ã	 Ã(
+
+17318836*
+1Ã	 Ã(
+
+17322032*
+1Œ	 Œ(
+V
+17325436*
+1Œ Œ(27
+
+98
+268
+
+257
+394
+
+259
+395
+
+261
+396
+
+17322031*
+1œ	 œ(
+
+17318432*
+1œ	 œ(
+
+17326336*
+1œ œ(
+
+17318431*
+1œ	 œ(
+
+1731732*
+1œ	 œ(
+
+17318836*
+1œ	 œ(
+
+17332421*
+1–# –(+
+
+17324432*
+1— —("
+,
+17339736*
+1— —("2
+
+98
+183
+
+17324432*
+1“ “(%
+,
+17339736*
+1“ “(%2
+
+98
+228
+
+17316532*
+1“ “(
+
+17314621*
+1“ “(
+
+17316532*
+1“ “(
+
+17324432*
+1” ”('
+,
+17339736*
+1” ”('2
+
+98
+228
+
+17316932*
+1” ”(
+
+17314621*
+1” ”(
+
+17316932*
+1” ”(
+
+17324432*
+1‘ ‘(#
+,
+17339736*
+1‘ ‘(#2
+
+98
+228
+
+17324432*
+1’ ’(!
+,
+17339736*
+1’ ’(!2
+
+98
+228
+
+17324432*
+1Ÿ Ÿ()
+,
+17339736*
+1Ÿ Ÿ()2
+
+98
+228
+
+17316532*
+1Ÿ Ÿ(
+
+17314621*
+1Ÿ Ÿ(
+
+17316532*
+1Ÿ Ÿ(
+
+17324432*
+1⁄ ⁄(+
+,
+17339736*
+1⁄! ⁄(+2
+
+98
+228
+
+17316932*
+1⁄ ⁄( 
+
+17314621*
+1⁄ ⁄( 
+
+17316932*
+1⁄ ⁄( 
+
+17324432*
+1€ €(&
+,
+17339736*
+1€ €(&2
+
+98
+228
+
+17324432*
+1‹ ‹('
+,
+17339736*
+1‹ ‹('2
+
+98
+228
+
+17324432*
+1› ›(%
+,
+17339736*
+1› ›(%2
+
+98
+228
+
+17324432*
+1‡ ‡()
+,
+17339736*
+1‡ ‡()2
+
+98
+183
+
+17316532*
+1‡ ‡(
+
+17314621*
+1‡ ‡(
+
+17316532*
+1‡ ‡(
+
+17324432*
+1· ·(+
+,
+17339736*
+1·! ·(+2
+
+98
+183
+
+17316932*
+1· ·( 
+
+17314621*
+1· ·( 
+
+17316932*
+1· ·( 
+
+17317632*
+1‚ ‚(&
+
+17339936*
+1‚ ‚(&
+
+17324432*
+1„ „(*
+,
+17339736*
+1„  „(*2
+
+98
+183
+
+17324432*
+1‰ ‰(+
+,
+17339736*
+1‰! ‰(+2
+
+98
+228
+
+17324432*
+1Â Â()
+,
+17339736*
+1Â Â()2
+
+98
+228
+
+17324432*
+1Ë Ë(*
+,
+17339736*
+1Ë  Ë(*2
+
+98
+228
+
+17324432*
+1È È(+
+,
+17339736*
+1È! È(+2
+
+98
+228
+
+17324432*
+1Í Í()
+,
+17339736*
+1Í Í()2
+
+98
+228
+
+17324432*
+1Ì Ì(*
+,
+17339736*
+1Ì  Ì(*2
+
+98
+228
+
+17324432*
+1Ó Ó(+
+,
+17339736*
+1Ó! Ó(+2
+
+98
+183
+
+17324432*
+1Ô Ô()
+,
+17339736*
+1Ô Ô()2
+
+98
+183
+
+17324432*
+1Ù Ù("
+,
+17339736*
+1Ù Ù("2
+
+98
+228
+
+17324432*
+1ı ı(%
+,
+17339736*
+1ı ı(%2
+
+98
+228
+
+17316532*
+1ı ı(
+
+17314621*
+1ı ı(
+
+17316532*
+1ı ı(
+
+17324432*
+1ˆ ˆ('
+,
+17339736*
+1ˆ ˆ('2
+
+98
+228
+
+17316932*
+1ˆ ˆ(
+
+17314621*
+1ˆ ˆ(
+
+17316932*
+1ˆ ˆ(
+
+17324432*
+1˜ ˜(#
+,
+17339736*
+1˜ ˜(#2
+
+98
+228
+
+17324432*
+1¯ ¯(!
+,
+17339736*
+1¯ ¯(!2
+
+98
+228
+
+17314630*
+1˚ ˚(
+
+17314621*
+1˚	 ˚(
+
+17314636*
+1˚! ˚((
+
+17324432*
+1˝ ˝(!
+,
+17339736*
+1˝ ˝(!2
+
+98
+228
+
+17324432*
+1Ä Ä(!
+,
+17339736*
+1Ä Ä(!2
+
+98
+183
+
+17322932*
+1Ç	 Ç($
+
+17323136*
+1Ç Ç($
+
+17323336*
+1Ç) Ç(7
+
+404242178*
+1É) É(4
+
+40424230*
+1É5 É(6
+
+40424221*
+1É) É(4
+
+4041730*
+1Ñ Ñ(
+
+4041721*
+1Ñ Ñ(
+
+40440736*
+1Ñ% Ñ(=
+
+4041721*
+1ÑL Ñ(U
+
+40416132*
+1ÑL Ñ(U
+
+40417932*
+1Ö Ö("
+,
+40418136*
+1Ö Ö("2
+
+98
+183
+
+17322032*
+1à	 à(
+V
+17325436*
+1à à(27
+
+98
+409
+
+257
+394
+
+259
+395
+
+261
+396
+
+17322031*
+1â	 â(
+
+17318432*
+1â	 â(
+
+17326336*
+1â â(
+
+17318431*
+1â	 â(
+
+1731732*
+1â	 â(
+
+17318836*
+1â	 â(
+
+17322932*
+1ã	 ã((
+
+17323136*
+1ã ã((
+
+17316532*
+1ã	 ã(
+
+17314621*
+1ã	 ã(
+
+17316532*
+1ã	 ã(
+
+17323336*
+1ã- ã(;
+
+413242178*
+1å) å(4
+
+41324230*
+1å5 å(6
+
+41324221*
+1å) å(4
+
+4131730*
+1ç ç(
+
+4131721*
+1ç ç(
+
+41341636*
+1ç& ç(<
+
+41333731*
+1çL ç(^
+
+41317632*
+1çL ç(^
+
+41333936*
+1çQ ç(^
+
+41317932*
+1é é(#
+,
+41318136*
+1é é(#2
+
+98
+183
+
+17322032*
+1ë	 ë( 
+V
+17325436*
+1ë ë( 27
+
+98
+418
+
+257
+419
+
+259
+280
+
+261
+420
+
+17316532*
+1ë	 ë(
+
+17314621*
+1ë	 ë(
+
+17316532*
+1ë	 ë(
+
+17322031*
+1ì	 ì(
+
+17318432*
+1ì	 ì(
+
+17326336*
+1ì ì(
+
+17318431*
+1ì	 ì(
+
+1731732*
+1ì	 ì(
+
+17318836*
+1ì	 ì(
+
+17314621*
+1ì ì(+
+
+17316532*
+1ì ì(+
+
+17322932*
+1î	 î(*
+
+17323136*
+1î î(*
+
+17316932*
+1î	 î(
+
+17314621*
+1î	 î(
+
+17316932*
+1î	 î(
+
+17323336*
+1î/ î(=
+
+424242178*
+1ï) ï(4
+
+42424230*
+1ï5 ï(6
+
+42424221*
+1ï) ï(4
+
+4241730*
+1ñ ñ(
+
+4241721*
+1ñ ñ(
+
+42441636*
+1ñ& ñ(<
+
+42442731*
+1ñ= ñ(K
+
+42417632*
+1ñ= ñ(K
+
+42442936*
+1ñB ñ(K
+
+42417932*
+1ó ó(#
+,
+42418136*
+1ó ó(#2
+
+98
+183
+
+17322032*
+1ö	 ö("
+V
+17325436*
+1ö ö("27
+
+98
+431
+
+257
+419
+
+259
+432
+
+261
+420
+
+17316932*
+1ö	 ö(
+
+17314621*
+1ö	 ö(
+
+17316932*
+1ö	 ö(
+
+17322031*
+1ú	 ú(
+
+17318432*
+1ú	 ú(
+
+17326336*
+1ú ú(
+
+17318431*
+1ú	 ú(
+
+1731732*
+1ú	 ú(
+
+17318836*
+1ú	 ú(
+
+17314621*
+1ú ú(-
+
+17316932*
+1ú ú(-
+
+17317932*
+1ù	 ù(
+,
+17318136*
+1ù	 ù(2
+
+98
+183
+
+3035431*
+1† †(
+
+30354178*
+1†" †(/
+
+3035421*
+1† †(
+
+3035430*
+1†0 †(=
+
+3035421*
+1†" †(/
+
+3035430*
+1£ £($
+
+3035421*
+1£
+ £(
+
+3035436*
+1£+ £(8
+
+3036232*
+1£9 £(B
+
+3036232*
+1£D £(M
+
+3035421*
+1£O £(\
+
+30343532*
+1£] £(i
+
+30343730*
+1§ §(
+
+30343721*
+1§
+ §(
+
+30343731*
+1§ §(4
+
+3035432*
+1§ §(4
+
+30343936*
+1§& §(4
+
+30344132*
+1•
+ •(
+W
+30344336*
+1• •(28
+
+257
+371
+
+259
+371
+
+261
+281
+
+372
+281
+
+3036232*
+1•+ •(4
+
+3036232*
+1•6 •(?
+
+30344132*
+1ß
+ ß(
+
+30344536*
+1ß ß(
+>>>>>>> refs/remotes/origin/master
