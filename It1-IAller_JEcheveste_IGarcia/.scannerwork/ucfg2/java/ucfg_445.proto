@@ -1,0 +1,40 @@
+
+*domain.Resena#toString()Ljava/lang/String;*
+ src\main\java\domain\Resena.javar r("1*Ü
+1s	 s(l
+j
+s	 s(
+%0java.lang.Integer"__id*?
+
+__unknown_file (#*!
+domain.Resena"
+resenaNumberh
+f
+s	 s(
+%1java.lang.String"__concat*%
+s	 s(
+
+%0java.lang.Integer*
+s s(
+;^
+\
+s s(.
+%2float"__id*=
+
+__unknown_file (!*
+domain.Resena"
+
+valoraciono
+m
+s	 s(.
+%3java.lang.String"__concat*$
+s	 s(
+
+%1java.lang.String*
+s s(.
+
+%2float"$
+s s(/
+
+%3java.lang.StringB
+domain.ResenaH

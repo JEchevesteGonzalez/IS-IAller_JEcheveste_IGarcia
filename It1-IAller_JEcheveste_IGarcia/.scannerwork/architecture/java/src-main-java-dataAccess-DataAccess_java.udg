@@ -1,5 +1,5 @@
 
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790764117938*java2.BÎX
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790764985821*java2.BÊX
 -
 (src/main/java/dataAccess/DataAccess.java2
 	
@@ -217,8 +217,8 @@ A
 :domain.Comprador#setOfertasEnCurso(Ljava/util/ArrayList;)V157
 @
 9domain.Comprador#getOfertasEnCurso()Ljava/util/ArrayList;159
-?
-8domain.Comprador#setDependientes(Ljava/util/ArrayList;)V161
+:
+3domain.Comprador#setDependientes(Ljava/util/List;)V161
 
 java.util.List163
 9
@@ -762,9 +762,6 @@ Q
 254
 25425525
 
-160
-16016157
-
 343
 34334457
 
@@ -810,6 +807,9 @@ M
 
 53
 535425
+
+160
+16016157
 M
 34G
 343519 *

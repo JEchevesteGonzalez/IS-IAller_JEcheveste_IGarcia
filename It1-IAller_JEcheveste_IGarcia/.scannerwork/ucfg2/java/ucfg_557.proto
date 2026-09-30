@@ -1,0 +1,15 @@
+
+.domain.Solicitud#getEstado()Ljava/lang/String;-
+#src\main\java\domain\Solicitud.java, ,("1*
+1-	 -(h
+f
+-	 -(
+%0java.lang.String"__id*<
+
+__unknown_file ( *
+domain.Solicitud"
+estado"$
+- -(
+
+%0java.lang.StringB
+domain.SolicitudH
