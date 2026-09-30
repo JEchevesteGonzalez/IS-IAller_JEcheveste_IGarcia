@@ -1,19 +1,19 @@
 
 "gui.ShowSaleGUI#%field_initializer,
-"src\main\java\gui\ShowSaleGUI.java ("1*»(
+"src\main\java\gui\ShowSaleGUI.java ("1*¼(
 1
 __unknown_file (B@
-# (-
+#& #(0
 %0javax.swing.JTextField"javax.swing.JTextFieldp
 n
- (/
+#" #(2
 %1" javax.swing.JTextField#<init>()V*:
 
 __unknown_file (
 
 %0javax.swing.JTextFieldq
 o
- (0!
+# #(3!
 gui.ShowSaleGUI"
 
 fieldTitle"__id*:
@@ -21,44 +21,44 @@ fieldTitle"__id*:
 __unknown_file (
 
 %0javax.swing.JTextFieldB@
-) (3
+$, $(6
 %2javax.swing.JTextField"javax.swing.JTextFieldp
 n
-% (5
+$( $(8
 %3" javax.swing.JTextField#<init>()V*:
 
 __unknown_file (
 
 %2javax.swing.JTextFieldw
 u
- (6'
+$ $(9'
 gui.ShowSaleGUI"
 fieldDescription"__id*:
 
 __unknown_file (
 
 %2javax.swing.JTextField:8
-   ( 
+& &(#
 %4javax.swing.JLabel"javax.swing.JLabelh
 f
-   ("
+& &(%
 %5"javax.swing.JLabel#<init>()V*6
 
 __unknown_file (
 
 %4javax.swing.JLabeln
 l
-   (#"
+& &(&"
 gui.ShowSaleGUI"
 labelStatus"__id*6
 
 __unknown_file (
 
 %4javax.swing.JLabel:8
-"" "((
+(% ((+
 %6javax.swing.JLabel"javax.swing.JLabelŸ
 œ
-" "(n
+(! ((q
 %7".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
 
 __unknown_file (
@@ -68,17 +68,17 @@ l
 __unknown_file (
 ""n
 l
-" "(o"
+( ((r"
 gui.ShowSaleGUI"
 jLabelTitle"__id*6
 
 __unknown_file (
 
 %6javax.swing.JLabel:8
-#( #(.
+)+ )(1
 %8javax.swing.JLabel"javax.swing.JLabelŸ
 œ
-#$ #(|
+)' )(
 %9".javax.swing.JLabel#<init>(Ljava/lang/String;)V*6
 
 __unknown_file (
@@ -86,19 +86,19 @@ l
 %8javax.swing.JLabel*"
 
 __unknown_file (
-""t
-r
-# #(}(
+""u
+s
+	) )(€(
 gui.ShowSaleGUI"
 jLabelDescription"__id*6
 
 __unknown_file (
 
 %8javax.swing.JLabel;9
-$* $(0
+*- *(3
 %10javax.swing.JLabel"javax.swing.JLabel¡
 ž
-$& $(y
+*) *(|
 %11".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -108,17 +108,17 @@ r
 __unknown_file (
 ""w
 u
-$ $(z*
+* *(}*
 gui.ShowSaleGUI"
 jLabelProductStatus"__id*7
 
 __unknown_file (
 
 %10javax.swing.JLabel;9
-%" %((
++% +(+
 %12javax.swing.JLabel"javax.swing.JLabel¡
 ž
-% %(p
++! +(s
 %13".javax.swing.JLabel#<init>(Ljava/lang/String;)V*7
 
 __unknown_file (
@@ -128,24 +128,24 @@ u
 __unknown_file (
 ""o
 m
-% %(q"
++ +(t"
 gui.ShowSaleGUI"
 jLabelPrice"__id*7
 
 __unknown_file (
 
 %12javax.swing.JLabelCA
-&% &(/
+,( ,(2
 %14javax.swing.JTextField"javax.swing.JTextFieldr
 p
-&! &(1
+,$ ,(4
 %15" javax.swing.JTextField#<init>()V*;
 
 __unknown_file (
 
 %14javax.swing.JTextFieldr
 p
-& &(2!
+, ,(5!
 gui.ShowSaleGUI"
 
 fieldPrice"__id*;
@@ -153,44 +153,44 @@ fieldPrice"__id*;
 __unknown_file (
 
 %14javax.swing.JTextFieldEC
-*, *(7
+0/ 0(:
 %16javax.swing.JScrollPane"javax.swing.JScrollPanet
 r
-*( *(9
+0+ 0(<
 %17"!javax.swing.JScrollPane#<init>()V*<
 
 __unknown_file ( 
 
 %16javax.swing.JScrollPaney
 w
-* *(:'
+0 0(='
 gui.ShowSaleGUI"
 scrollPaneEvents"__id*<
 
 __unknown_file ( 
 
 %16javax.swing.JScrollPaneWU
-+2 +(N'
+1- 1(A'
 %18 javax.swing.DefaultComboBoxModel" javax.swing.DefaultComboBoxModel‡
 „
-+. +(P
+1) 1(C
 %19"*javax.swing.DefaultComboBoxModel#<init>()V*E
 
 __unknown_file ()
 '
 %18 javax.swing.DefaultComboBoxModel
 }
-+ +(Q$
+1 1(D$
 gui.ShowSaleGUI"
 statusOptions"__id*E
 
 __unknown_file ()
 '
 %18 javax.swing.DefaultComboBoxModel=;
-,$ ,(+
+2' 2(.
 %20javax.swing.JButton"javax.swing.JButton£
  
-,  ,(e
+2# 2(h
 %21"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
 __unknown_file (
@@ -200,68 +200,68 @@ w
 __unknown_file (
 ""q
 o
-, ,(f#
+2 2(i#
 gui.ShowSaleGUI"
 jButtonClose"__id*8
 
 __unknown_file (
 
 %20javax.swing.JButton;9
--  -(&
+3# 3()
 %22javax.swing.JLabel"javax.swing.JLabelj
 h
-- -((
+3 3(+
 %23"javax.swing.JLabel#<init>()V*7
 
 __unknown_file (
 
 %22javax.swing.JLabelm
 k
-- -() 
+3 3(, 
 gui.ShowSaleGUI"
 	jLabelMsg"__id*7
 
 __unknown_file (
 
 %22javax.swing.JLabel;9
-." .((
+4% 4(+
 %24javax.swing.JLabel"javax.swing.JLabelj
 h
-. .(*
+4! 4(-
 %25"javax.swing.JLabel#<init>()V*7
 
 __unknown_file (
 
 %24javax.swing.JLabelo
 m
-. .(+"
+4 4(."
 gui.ShowSaleGUI"
 jLabelError"__id*7
 
 __unknown_file (
 
 %24javax.swing.JLabel;9
-/  /(&
+5# 5()
 %26javax.swing.JLabel"javax.swing.JLabelj
 h
-/ /((
+5 5(+
 %27"javax.swing.JLabel#<init>()V*7
 
 __unknown_file (
 
 %26javax.swing.JLabelo
 m
-/ /()"
+5 5(,"
 gui.ShowSaleGUI"
 statusField"__id*7
 
 __unknown_file (
 
 %26javax.swing.JLabel=;
-1+ 1(2
+7. 7(5
 %28javax.swing.JButton"javax.swing.JButton­
 ª
-1' 1(A
+7* 7(D
 %29"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
 __unknown_file (
@@ -271,17 +271,17 @@ m
 __unknown_file (
 Ver ReseÃ±asr
 p
-1 1(B$
+7 7(E$
 gui.ShowSaleGUI"
 btnVerResenas"__id*8
 
 __unknown_file (
 
 %28javax.swing.JButton=;
-2- 2(4
+80 8(7
 %30javax.swing.JButton"javax.swing.JButtonº
 ·
-2) 2(P
+8, 8(S
 %31"/javax.swing.JButton#<init>(Ljava/lang/String;)V*8
 
 __unknown_file (
@@ -291,13 +291,13 @@ p
 __unknown_file (
 Ver ReseÃ±as del Vendedort
 r
-2 2(Q&
+8 8(T&
 gui.ShowSaleGUI"
 btnVerReseasDel"__id*8
 
 __unknown_file (
 
 %30javax.swing.JButton"
- ¡(
+ ª(
 implicit returnB
 gui.ShowSaleGUI
