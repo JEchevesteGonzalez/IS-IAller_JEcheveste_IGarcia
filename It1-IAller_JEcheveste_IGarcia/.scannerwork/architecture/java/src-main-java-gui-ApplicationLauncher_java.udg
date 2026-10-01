@@ -1,5 +1,5 @@
 
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790840298882*java2.Bã
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790862933712*java2.Bí
 /
 *src/main/java/gui/ApplicationLauncher.java2
 	
@@ -85,40 +85,51 @@ $businessLogic.BLFacadeImplementation54
 java.net.URL56
 
 javax.xml.namespace.QName58
+
+http://businessLogic/59
+
+ARG_160
+#
+BLFacadeImplementationService61
 %
-Recovered#typeBindingLService;060
+Recovered#typeBindingLService;063
 >
-8gui.MainGUI#setBussinessLogic(LbusinessLogic/BLFacade;)V62
+8gui.MainGUI#setBussinessLogic(LbusinessLogic/BLFacade;)V65
 
-java.lang.Exception64
+java.lang.Exception67
 
-javax.swing.JLabel66
+javax.swing.JLabel69
 5
-/javax.swing.JLabel#setText(Ljava/lang/String;)V68
+/javax.swing.JLabel#setText(Ljava/lang/String;)V71
+
 
-returns69
+Error: ï¿¿72
+
+returns73
 7
-1gui.MainGUI#getTextoErrores()Ljavax/swing/JLabel;71
+1gui.MainGUI#getTextoErrores()Ljavax/swing/JLabel;75
 
-java.lang.Throwable73
+java.lang.Throwable77
 6
-0java.lang.Throwable#toString()Ljava/lang/String;75
+0java.lang.Throwable#toString()Ljava/lang/String;79
 
-javax.swing.JComponent77
+javax.swing.JComponent81
 =
-7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V79
+7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V83
 
-java.awt.Color81
+java.awt.Color85
 
-java.awt.Color.RED83
+java.awt.Color.RED87
 
-java.io.PrintStream85
+java.io.PrintStream89
 6
-0java.io.PrintStream#println(Ljava/lang/String;)V87
+0java.io.PrintStream#println(Ljava/lang/String;)V91
+'
+!Error in ApplicationLauncher: ï¿¿92
 
-java.lang.System89
+java.lang.System94
 
-java.lang.System.out91J
+java.lang.System.out96J
 
 1
 12
@@ -130,11 +141,11 @@ $businessLogic.BLFacadeImplementation54
 5
 5768jð
 
-72
-727324
+76
+767724
 
-80
-808124
+84
+848524
 
 46
 464724
@@ -143,16 +154,16 @@ $businessLogic.BLFacadeImplementation54
 282924
 
 55
-555624
+555610
 
-88
-888924
+93
+939424
 
-74
-747519
+78
+787919
 
-90
-909124
+95
+959624
 M
 17G
 171819 *
@@ -174,10 +185,10 @@ M
 444524
 
 30
-303124
+303110
 
-78
-787919
+82
+828319
 
 22
 222324
@@ -186,55 +197,55 @@ M
 404119
 
 53
-535424
+535410
 
-76
-767724
+80
+808124
 
-84
-848524
+88
+888924
 
 33
 333419
 
-61
-616219
+64
+646519
 
-86
-868719
+90
+909119
 
 38
 383924
 
-59
-596024
+62
+626324
+
+74
+747519
+
+66
+666724
+
+36
+363710
 
 70
 707119
 
-63
-636424
+86
+868724
 
-36
-363724
-
-67
-676819
-
-82
-828324
-
-65
-656624
+68
+686924
 
 48
 484919
 
 51
-515224
+515210
 
 57
-575824
+575810
 G
 8B
 8910 *
@@ -250,7 +261,7 @@ G
 
 
 15
-16rÁ
+16r÷
 
 172225*
 1 ("
@@ -352,14 +363,22 @@ G
 
 175727*
 1/ /(
-
+3
 175735*
-1/ /("
+1/ /("2
+
+
+42
+59
+
+
+60
+61
 
-175926*
+176226*
 11 1(
 
-175927*
+176227*
 11 1(
 
 174427*
@@ -368,87 +387,95 @@ G
 173632*
 15 5(
 
-176135*
+176435*
 15 5(
 
 173627*
 15 5(
 
-176326*
+176626*
 19 9(
 
-176327*
+176627*
 19 9(
 
-176532*
+176832*
 1: :(
+'
+177035*
+1: :(2
+
+
+42
+72
 
-176735*
-1: :(
-
-176569*
+176873*
 1: :(
 
 173632*
 1: :(
-
-177035*
-1: :(
-
-172269*
-1:* :(4
-
-177232*
-1:* :(4
 
 177435*
-1:, :(4
+1: :(
+
+172273*
+1:* :(4
 
 177632*
-1; ;(%
+1:* :(4
 
 177835*
+1:, :(4
+
+178032*
+1; ;(%
+
+178235*
 1; ;(%
 
-176569*
+176873*
 1; ;(
 
 173632*
 1; ;(
 
-177035*
+177435*
 1; ;(
 
-178027*
+178427*
 1;& ;(+
 
-178027*
+178427*
 1;, ;(/
 
-178232*
+178632*
 1;, ;(/
 
-178432*
+178832*
 1= =(
+'
+179035*
+1= =(2
+
+
+42
+92
 
-178635*
-1= =(
-
-178827*
+179327*
 1= =(
 
 
-178427*
+178827*
 1= =(
 
-179032*
+179532*
 1= =(
 
-172269*
+172273*
 1=8 =(B
 
-177232*
+177632*
 1=8 =(B
 
-177435*
+177835*
 1=: =(B
