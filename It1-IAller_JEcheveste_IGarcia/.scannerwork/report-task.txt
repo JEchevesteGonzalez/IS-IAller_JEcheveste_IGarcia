@@ -3,5 +3,5 @@ projectKey=pruebasisjag_market26-itfinal
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.109249
 dashboardUrl=https://sonarcloud.io/dashboard?id=pruebasisjag_market26-itfinal
-ceTaskId=AaD0EzD8kj6CGoBn7rA6
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaD0EzD8kj6CGoBn7rA6
+ceTaskId=AaD0K6xTlYM0-fElM7yl
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaD0K6xTlYM0-fElM7yl

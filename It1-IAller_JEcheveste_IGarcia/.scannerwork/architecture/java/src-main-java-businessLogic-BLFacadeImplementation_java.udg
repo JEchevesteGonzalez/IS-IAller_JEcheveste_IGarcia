@@ -1,5 +1,5 @@
 
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790801257072*java2.BàC
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790802873774*java2.BâC
 <
 7src/main/java/businessLogic/BLFacadeImplementation.java2
 	
@@ -44,16 +44,16 @@ WebService22
 
 
 uses26
-3
--businessLogic.BLFacadeImplementation.baseSize28
+4
+.businessLogic.BLFacadeImplementation.BASE_SIZE28
 
 field29
 
 private30
 
-(32:3)-(32:43)31
-
-baseSize32
+(32:3)-(32:44)31
+
+	BASE_SIZE32
 3
 -businessLogic.BLFacadeImplementation.basePath34
 
@@ -573,6 +573,22 @@ R
 15
 160
 M
+27G
+272829 *
+1   (%28:5B$
+
+
+11
+30
+
+
+13
+31
+
+
+15
+32
+M
 47G
 474849 *
 1%	 %(28:5B$
@@ -719,22 +735,6 @@ T
 
 231
 23123249
-M
-27G
-272829 *
-1   ($28:5B$
-
-
-11
-30
-
-
-13
-31
-
-
-15
-32
 R
 121K
 12112249 *
