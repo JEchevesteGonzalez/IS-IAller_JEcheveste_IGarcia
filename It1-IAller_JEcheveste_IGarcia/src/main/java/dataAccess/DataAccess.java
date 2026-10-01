@@ -37,6 +37,8 @@ import exceptions.MustBeLaterThanTodayException;
 import exceptions.ResenaAlreadyExistsException;
 import exceptions.SaleAlreadyExistException;
 
+import java.util.logging.Logger;
+
 /**
  * It implements the data access to the objectdb database
  */
@@ -47,6 +49,8 @@ public class DataAccess  {
   
 	private static final String basePath="src/main/resources/images/";
 	private static final String dbServerDir = "src/main/resources/db/";
+	
+	private static final Logger LOGGER = Logger.getLogger(DataAccess.class.getName());
 
 	ConfigXML c=ConfigXML.getInstance();
 
@@ -178,7 +182,7 @@ public class DataAccess  {
 	public Sale createSale(String title, String description, int status, float price,  Date pubDate, String usuario, File file, int tVenta) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
 		
 
-		System.out.println(">> DataAccess: createProduct=> title= "+title+" usuario="+usuario);
+		LOGGER.info(">> DataAccess: createProduct=> title= " + title + " usuario=" + usuario);
 		try {
 		
 
@@ -196,6 +200,10 @@ public class DataAccess  {
 				throw new SaleAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SaleAlreadyExist"));
 			}
 
+			
+			
+			
+			
 			Sale sale = seller.addSale(title, description, status, price, pubDate, file, tVenta);
 			//next instruction can be obviated
 
@@ -452,7 +460,7 @@ public void open(){
 		s.setHabilitado(hab);
 		db.persist(s);
 		//db.persist(sale.getSeller());
-		db.getTransaction().comSmit();
+		db.getTransaction().commit();
 		close(); 
     }
     

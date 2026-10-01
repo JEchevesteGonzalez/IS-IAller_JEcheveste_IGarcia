@@ -1,18 +1,18 @@
 
->configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;6
-*src\main\java\configuration\ConfigXML.javaè è($"1*Ω
+@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;6
+*src\main\java\configuration\ConfigXML.javaó ó(#"1*µ
 1
-ê	 ê(}
-{
+ò	 ò(|
+z
 
-ê	 ê(
-%0configuration.ConfigXML"__id*H
+ò	 ò(
+%0java.lang.String"__id*N
 
-__unknown_file (,**
-configuration.ConfigXML"
-theInstance"-
+__unknown_file (2*0
+configuration.ConfigXML"
+businessLogicPort"&
 
-ê ê(
-
-%0configuration.ConfigXMLB"
+ò ò(
+
+%0java.lang.StringB
 configuration.ConfigXMLH

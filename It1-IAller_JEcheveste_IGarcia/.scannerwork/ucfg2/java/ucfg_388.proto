@@ -1,18 +1,19 @@
 
-@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.java— —(#"1*µ
+9configuration.ConfigXML#getDbFilename()Ljava/lang/String;6
+*src\main\java\configuration\ConfigXML.javaŸ Ÿ("1*®
 1
-˜	 ˜(|
-z
+ 	  (u
+s
 
-˜	 ˜(
-%0java.lang.String"__id*N
+ 	  (
+%0java.lang.String"__id*G
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicPort"&
+__unknown_file (+*)
+configuration.ConfigXML"
 
-˜ ˜(
+dbFilename"&
+
+   (
 
 %0java.lang.StringB
 configuration.ConfigXMLH

@@ -1,15 +1,15 @@
 
-3configuration.ConfigXML#getUser()Ljava/lang/String;4
-*src\main\java\configuration\ConfigXML.java9 9("1*¢
-1:	 :(m
+*configuration.ConfigXML#isDatabaseLocal()Z4
+*src\main\java\configuration\ConfigXML.javaA A("1*™
+1B	 B(m
 k
-:	 :(
-%0java.lang.String"__id*A
+B	 B(
+%0boolean"__id*J
 
-__unknown_file (%*#
-configuration.ConfigXML"
-user"$
-: :(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+__unknown_file (.*,
+configuration.ConfigXML"
+databaseLocal"
+B B(
+
+%0booleanB
+configuration.ConfigXMLHX

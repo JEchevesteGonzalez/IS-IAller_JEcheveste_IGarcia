@@ -1,19 +1,18 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.javaŸ Ÿ("1*®
+;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;6
+*src\main\java\configuration\ConfigXML.java§ §("1*°
 1
- 	  (u
-s
+¨	 ¨(w
+u
 
- 	  (
-%0java.lang.String"__id*G
+¨	 ¨(
+%0java.lang.String"__id*I
 
-__unknown_file (+*)
-configuration.ConfigXML"
+__unknown_file (-*+
+configuration.ConfigXML"
+databaseNode"&
 
-dbFilename"&
-
-   (
+¨ ¨(
 
 %0java.lang.StringB
 configuration.ConfigXMLH

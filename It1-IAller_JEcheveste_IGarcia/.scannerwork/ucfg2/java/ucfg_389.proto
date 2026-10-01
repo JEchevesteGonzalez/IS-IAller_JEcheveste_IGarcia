@@ -1,18 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.java› ›(#"1*µ
+0configuration.ConfigXML#isDatabaseInitialized()Z6
+*src\main\java\configuration\ConfigXML.java£ £(%"1*§
 1
-œ	 œ(|
-z
+¤	 ¤(w
+u
 
-œ	 œ(
-%0java.lang.String"__id*N
+¤	 ¤(
+%0boolean"__id*R
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicName"&
+__unknown_file (6*4
+configuration.ConfigXML"
+isDatabaseInitialized"
 
-œ œ(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+¤ ¤(
+
+%0booleanB
+configuration.ConfigXMLHX
