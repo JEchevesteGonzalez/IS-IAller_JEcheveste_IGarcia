@@ -71,65 +71,61 @@ public class ConfigXML {
 	}
 	private static ConfigXML theInstance = new ConfigXML();
 
-	private ConfigXML(){
-		
-		  try {
-			  DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			  DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			  Document doc = dBuilder.parse(new File(configFile));
-			  doc.getDocumentElement().normalize();
+private ConfigXML(){
+        
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            
+            dbFactory.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, true);
+            dbFactory.setExpandEntityReferences(false);
 
-			  NodeList list = doc.getElementsByTagName("config");
-			  Element config = (Element) list.item(0); // list.item(0) is a Node that is an Element
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(new File(configFile));
+            doc.getDocumentElement().normalize();
 
-			  
-				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
-			  String value= ((Element)config.getElementsByTagName("businessLogic").item(0)).getAttribute("local");
-			  businessLogicLocal=value.equals("true");
+            NodeList list = doc.getElementsByTagName("config");
+            Element config = (Element) list.item(0); 
 
-			  businessLogicNode = getTagValue("businessLogicNode", config);
+            
+            String value= ((Element)config.getElementsByTagName("businessLogic").item(0)).getAttribute("local");
+            businessLogicLocal=value.equals("true");
 
-			  businessLogicPort = getTagValue("businessLogicPort", config);
+            businessLogicNode = getTagValue("businessLogicNode", config);
 
-			  businessLogicName = getTagValue("businessLogicName", config);
-			  
-			  locale = getTagValue("locale", config);
+            businessLogicPort = getTagValue("businessLogicPort", config);
 
-			  
-			  
-				
+            businessLogicName = getTagValue("businessLogicName", config);
+            
+            locale = getTagValue("locale", config);
 
-			  dbFilename = getTagValue("dbFilename", config);
+            dbFilename = getTagValue("dbFilename", config);
 
-				//Two possible values: true (no instance of RemoteServer needs to be launched) or false (RemoteServer needs to be run first)
-			  value= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("local");
-			  databaseLocal=value.equals("true");
-			  
-			  
-				//Two possible values: true (if the database must be initialized ) or false (in other case)
-			  String dbOpenValue= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("initialize");
-			  isDatabaseInitialized= dbOpenValue.equals("true");;
+            value= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("local");
+            databaseLocal=value.equals("true");
+            
 
-	
-			  databaseNode = getTagValue("databaseNode", config);
-			  
-			  databasePort=Integer.parseInt(getTagValue("databasePort", config));
-				
-			  user=getTagValue("user", config);
-				
-			  password=getTagValue("password", config);
+            String dbOpenValue= ((Element)config.getElementsByTagName("database").item(0)).getAttribute("initialize");
+            isDatabaseInitialized= dbOpenValue.equals("true");;
 
-			  System.out.print("Read from config.xml: ");
-			  System.out.print("\t businessLogicLocal="+businessLogicLocal);
-			  System.out.print("\t databaseLocal="+databaseLocal);
-			  System.out.println("\t dataBaseInitialized="+isDatabaseInitialized); 
-					  
-		  } catch (Exception e) {
-			System.out.println("Error in ConfigXML.java: problems with "+ configFile);
-		    e.printStackTrace();
-		  }		
-		
-	}
+            databaseNode = getTagValue("databaseNode", config);
+            
+            databasePort=Integer.parseInt(getTagValue("databasePort", config));
+              
+            user=getTagValue("user", config);
+              
+            password=getTagValue("password", config);
+
+            System.out.print("Read from config.xml: ");
+            System.out.print("\t businessLogicLocal="+businessLogicLocal);
+            System.out.print("\t databaseLocal="+databaseLocal);
+            System.out.println("\t dataBaseInitialized="+isDatabaseInitialized); 
+                    
+        } catch (Exception e) {
+          System.out.println("Error in ConfigXML.java: problems with "+ configFile);
+          e.printStackTrace();
+        }        
+      
+  } 
 
 	private static String getTagValue(String sTag, Element eElement)
 	 {

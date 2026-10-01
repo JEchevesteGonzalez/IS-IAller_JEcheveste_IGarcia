@@ -29,6 +29,7 @@ public class MainGUI extends JFrame {
 	
     private String sellerMail;
 	private static final long serialVersionUID = 1L;
+	private static final String FONT_TAHOMA = null;
 
 	private JPanel jContentPane = null;
 	private JTextField usuario;
@@ -65,19 +66,19 @@ public class MainGUI extends JFrame {
 		jContentPane.setLayout(null);
 		
 		JLabel lblLogin = new JLabel("Login");
-		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblLogin.setBounds(204, 13, 84, 51);
-		jContentPane.add(lblLogin);
-		
-		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblUsuario.setBounds(36, 66, 89, 51);
-		jContentPane.add(lblUsuario);
-		
-		JLabel lblContrasea = new JLabel("Contrasena:");
-		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblContrasea.setBounds(36, 110, 136, 51);
-		jContentPane.add(lblContrasea);
+        lblLogin.setFont(new Font(FONT_TAHOMA, Font.BOLD, 25)); 
+        lblLogin.setBounds(204, 13, 84, 51);
+        jContentPane.add(lblLogin);
+        
+        JLabel lblUsuario = new JLabel("Usuario:");
+        lblUsuario.setFont(new Font(FONT_TAHOMA, Font.PLAIN, 18)); 
+        lblUsuario.setBounds(36, 66, 89, 51);
+        jContentPane.add(lblUsuario);
+        
+        JLabel lblContrasea = new JLabel("Contrasena:");
+        lblContrasea.setFont(new Font(FONT_TAHOMA, Font.PLAIN, 18)); 
+        lblContrasea.setBounds(36, 110, 136, 51);
+        jContentPane.add(lblContrasea);
 		
 		usuario = new JTextField();
 		usuario.setText("");
@@ -130,7 +131,7 @@ public class MainGUI extends JFrame {
 				String contrIntro = new String(contrasena.getPassword());
 				Usuario login=appFacadeInterface.buscarPorUser(usuarioIntro);
 				
-				if( login != null && usuarioIntro.equals(login.getUsuario())) {			
+				if( login != null && usuarioIntro.equals(login.getNombreUsuario())) {			
 					if(contrIntro.equals(login.getContrasena())){
 						
 						if(rdbtnComprador.isSelected()) {

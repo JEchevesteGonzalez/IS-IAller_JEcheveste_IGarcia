@@ -3,6 +3,9 @@ package dataAccess;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -60,17 +63,12 @@ public class DataAccess  {
 
 			if (!c.isDatabaseLocal()) fileName=dbServerDir+fileName;
 			
-			
+			Path pathFileName = Paths.get(fileName);
 			try {
-			    Path fileToDelete = Paths.get(fileName);
-			    Files.delete(fileToDelete); 
-			    
-			    Path fileToDeleteTemp = Paths.get(fileName + "$");
-			    Files.deleteIfExists(fileToDeleteTemp); 
-			    
-			    System.out.println("File deleted");
-			} catch (IOException e) {
-			    System.out.println("Operation failed: " + e.getMessage());
+				Files.delete(pathFileName);
+				System.out.println("File deleted");
+			}catch(Exception e) {
+				System.out.println("Operation failed: "+e);
 			}
 		}
 		open();
@@ -102,7 +100,7 @@ public class DataAccess  {
 			anadirCuentasIni("a", "a", cuentas1);
 			anadirCuentasIni("b", "b", cuentas2);
 			anadirCuentasIni("c", "c", cuentas3);
-			String vendedor1 = cuentas1.getComprador().getUsuario();
+			String vendedor1 = cuentas1.getComprador().getNombreUsuario();
 			addSellerIni(vendedor1, "a", "a");
 			Date today = new Date();
 			float price = 100;
@@ -335,7 +333,7 @@ public void open(){
 		open();
 		db.getTransaction().begin();
 		Comprador user=db.find(Comprador.class, usuario);
-		Seller vendedor = new Seller(user.getUsuario(),user.getContrasena(),correo,nombre);
+		Seller vendedor = new Seller(user.getNombreUsuario(),user.getContrasena(),correo,nombre);
 		vendedor.setCuentas(user.getCuentas());
 		vendedor.getCuentas().setComprador(vendedor);
 		vendedor.setHistorialDeCompras(user.getHistorialDeCompras());
@@ -375,9 +373,9 @@ public void open(){
 			
 			
 				if (producto.getSeller() != null) {
-					Seller vendedor = db.find(Seller.class, producto.getSeller().getUsuario());
+					Seller vendedor = db.find(Seller.class, producto.getSeller().getNombreUsuario());
 					if (vendedor != null) {
-						producto.setUsuarioVendedor(vendedor.getUsuario());
+						producto.setUsuarioVendedor(vendedor.getNombreUsuario());
 						vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
 						vendedor.getSales().remove(producto);
 						db.persist(vendedor);
@@ -667,7 +665,7 @@ public void open(){
             }
                 
             if (saleEnBD.getSeller() != null) {
-                Seller vendedor = db.find(Seller.class, saleEnBD.getSeller().getUsuario());
+                Seller vendedor = db.find(Seller.class, saleEnBD.getSeller().getNombreUsuario());
                 if (vendedor != null) {
                     vendedor.getSales().remove(saleEnBD);
                     db.persist(vendedor);
@@ -680,7 +678,7 @@ public void open(){
             List<Comprador> comprador = query.getResultList(); 
             
             if (!comprador.isEmpty()) {
-                Comprador cElim = db.find(Comprador.class, comprador.get(0).getUsuario());
+                Comprador cElim = db.find(Comprador.class, comprador.get(0).getNombreUsuario());
                 cElim.getHistorialDeCompras().remove(saleEnBD);
                 db.persist(cElim);
             }
@@ -717,7 +715,7 @@ public void open(){
 		try {
 			db.getTransaction().begin();
 			Sale s = db.find(Sale.class, sale.getSaleNumber());
-			Seller seller = db.find(Seller.class, sale.getSeller().getUsuario());
+			Seller seller = db.find(Seller.class, sale.getSeller().getNombreUsuario());
 			Resena res = new Resena(valoracion, descripcion, file, s, nUser, seller);
 			seller.getResenas().add(res);
 			s.getResenas().add(res);

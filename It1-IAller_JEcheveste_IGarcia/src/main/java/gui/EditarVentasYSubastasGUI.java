@@ -393,9 +393,6 @@ public  String encodeFileToBase64Binary(File file){
             fileInputStreamReader.read(bytes);
             encodedfile=new String(Base64.getEncoder().encode(bytes));
 
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
