@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 1.0pruebasisjag_market26-itfinalJavaFrontend"1790862925972*java2.B“&
+=======
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790799665844*java2.Bù"
+>>>>>>> refs/remotes/origin/master
 -
 (src/main/java/gui/VerSolicitudesGUI.java2
 	
@@ -40,10 +44,35 @@ full-range13
  
 javax.swing.SwingContainer22
 
+<<<<<<< HEAD
 ARG_delegate23
-
-getContentPane24
+=======
+domain.Sale168
+L
+EbusinessLogic.BLFacade#buscarPorNum(Ljava/lang/Integer;)Ldomain/Sale;170
 
+java.lang.Integer172
+:
+3domain.Solicitud#getSaleNumber()Ljava/lang/Integer;174
+
+gui.ShowSaleGUI176
+
+domain.Comprador178
+9
+2domain.Solicitud#getSupervisor()Ldomain/Comprador;180
+%
+java.awt.Window#setVisible(Z)V182
+
+true183
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
+getContentPane24
+=======
+(74:2)-(99:3)184
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 javax.swing.JFrame26
 
 unknown27
@@ -98,7 +127,21 @@ tableModel48
 
 
 references60
+=======
+cargarSolicitudes185
+
+domain.Friendly187
+
+domain.Usuario189
+O
+HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;191
+#
+javax.swing.DefaultListModel193
+
+java.util.ArrayList195
+>>>>>>> refs/remotes/origin/master
 <
+<<<<<<< HEAD
 6gui.MainGUI#getBusinessLogic()LbusinessLogic/BLFacade;62
 
 method63
@@ -126,7 +169,21 @@ references60
 ARG_079
 
 Mis Solicitudes - ï¿¿80
+=======
+5domain.Friendly#getSolicitudes()Ljava/util/ArrayList;197
+
+java.util.Vector199
+P
+IbusinessLogic.BLFacade#buscarVentaPorId(Ljava/lang/Integer;)Ldomain/Sale;201
+0
+)java.util.Vector#add(Ljava/lang/Object;)Z203
+/
+(domain.Sale#getTitle()Ljava/lang/String;205
+
+Producto no disponible206
+>>>>>>> refs/remotes/origin/master
 5
+<<<<<<< HEAD
 /javax.swing.JFrame#setDefaultCloseOperation(I)V82
 
 283
@@ -168,7 +225,11 @@ D
 0111
 
 javax.swing.JScrollPane113
+=======
+.domain.Solicitud#getEstado()Ljava/lang/String;208
+>>>>>>> refs/remotes/origin/master
 F
+<<<<<<< HEAD
 ?java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V115
 
 Center116
@@ -196,7 +257,11 @@ Njavax.swing.table.TableColumnModel#getColumn(I)Ljavax/swing/table/TableColumn;
 java.awt.Font.PLAIN136
 E
 >javax.swing.JScrollPane#setViewportView(Ljava/awt/Component;)V138
+=======
+?javax.swing.table.DefaultTableModel#addRow(Ljava/util/Vector;)V210
+>>>>>>> refs/remotes/origin/master
 C
+<<<<<<< HEAD
 <gui.VerSolicitudesGUI#cargarSolicitudes(Ljava/lang/String;)V140
 
 java.awt.Component142
@@ -300,6 +365,9 @@ F
 ?javax.swing.table.DefaultTableModel#addRow(Ljava/util/Vector;)V228
 C
 <javax.swing.DefaultListModel#addElement(Ljava/lang/Object;)V230J
+=======
+<javax.swing.DefaultListModel#addElement(Ljava/lang/Object;)V212J
+>>>>>>> refs/remotes/origin/master
 
 1
 12
@@ -309,7 +377,11 @@ C
 4 Z
 
 5
+<<<<<<< HEAD
 5768jï
+=======
+5768j”
+>>>>>>> refs/remotes/origin/master
 ]
 151V
 15115263 *
@@ -330,11 +402,16 @@ C
 158
 15815527
 
+<<<<<<< HEAD
 137
 13713863
 
 196
 19619763
+=======
+124
+12412555
+>>>>>>> refs/remotes/origin/master
 M
 51G
 515232 *
@@ -364,17 +441,35 @@ M
 160
 16016163
 
+<<<<<<< HEAD
 184
 18418527
+=======
+163
+16316419
+
+211
+21121255
+>>>>>>> refs/remotes/origin/master
 
 55
 555627
 
+<<<<<<< HEAD
 114
 11411563
+=======
+198
+19819919
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 166
 16616727
+=======
+177
+17717819
+>>>>>>> refs/remotes/origin/master
 
 176
 17617727
@@ -416,17 +511,32 @@ M
 178
 17817963
 
+<<<<<<< HEAD
 202
 20220363
+=======
+181
+18118255
+>>>>>>> refs/remotes/origin/master
 
 25
 252627
 
+<<<<<<< HEAD
 109
 10911010
+=======
+186
+18618719
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 206
 20620727
+=======
+179
+17918055
+>>>>>>> refs/remotes/origin/master
 
 200
 20020163
@@ -440,8 +550,13 @@ M
 75
 757627
 
+<<<<<<< HEAD
 225
 22522663
+=======
+207
+20720855
+>>>>>>> refs/remotes/origin/master
 
 180
 18018127
@@ -480,8 +595,13 @@ M
 58
 585927
 
+<<<<<<< HEAD
 218
 21821963
+=======
+200
+20020155
+>>>>>>> refs/remotes/origin/master
 
 43
 434410
@@ -495,11 +615,16 @@ M
 36
 363710
 
+<<<<<<< HEAD
 119
 11912027
 
 212
 21221327
+=======
+194
+19419519
+>>>>>>> refs/remotes/origin/master
 R
 139K
 13914063 *
@@ -510,10 +635,18 @@ R
 33
 
 13
+<<<<<<< HEAD
 204
+=======
+184
+>>>>>>> refs/remotes/origin/master
 
 15
+<<<<<<< HEAD
 205
+=======
+185
+>>>>>>> refs/remotes/origin/master
 
 121
 12112263
@@ -521,8 +654,13 @@ R
 186
 18618763
 
+<<<<<<< HEAD
 227
 22722863
+=======
+209
+20921055
+>>>>>>> refs/remotes/origin/master
 
 143
 14314463
@@ -593,8 +731,13 @@ M
 125
 12512627
 
+<<<<<<< HEAD
 222
 22222363
+=======
+204
+20420555
+>>>>>>> refs/remotes/origin/master
 
 86
 868727
@@ -605,20 +748,79 @@ M
 88
 888963
 
+<<<<<<< HEAD
 117
 11711827
+=======
+106
+10610719
 
+188
+18818919
+
+97
+979855
+
+143
+14314419
+
+101
+10110219
+G
+134@
+13413510 *
+18- G(261:5B
+
+11
+136
+
+13
+137
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 194
 19419527
+=======
+192
+19219319
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 107
 10710863
 
 156
 15615727
+=======
+196
+19619755
+>>>>>>> refs/remotes/origin/master
 
 112
+<<<<<<< HEAD
 11211310
+=======
+11211355
+
+202
+20220355
+
+53
+535455
+
+155
+15515655
+
+190
+19019155
+
+151
+15115219
+
+75
+757619
+>>>>>>> refs/remotes/origin/master
 G
 147@
 14714810 *
@@ -671,6 +873,7 @@ G
 
 
 15
+<<<<<<< HEAD
 16R4
 
 17
@@ -688,6 +891,9 @@ G
 
 23
 24r—5
+=======
+16r 3
+>>>>>>> refs/remotes/origin/master
 
 82528*
 1( (.
@@ -1241,6 +1447,7 @@ C
 
 1512529*
 1C C(
+<<<<<<< HEAD
 F
 15118864*
 1C! C(,2)
@@ -1256,7 +1463,13 @@ F
 
 1517257*
 1C6 C(X
+=======
 
+13817556*
+1C! C(,
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 15119460*
 1C6 C(X
 
@@ -1264,28 +1477,54 @@ F
 1CH C(X
 
 15119857*
+=======
+13817749*
+>>>>>>> refs/remotes/origin/master
 1C6 C(E
 
 15117660*
 1C6 C(E
 
+<<<<<<< HEAD
 15120064*
+=======
+13817956*
+>>>>>>> refs/remotes/origin/master
 1C8 C(E
 
+<<<<<<< HEAD
 1512529*
 1C[ C(d
+=======
+1381721*
+1CU C(^
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 1516560*
 1C[ C(d
+=======
+1385752*
+1CU C(^
+>>>>>>> refs/remotes/origin/master
 
 1518660*
 1D D(
 *
+<<<<<<< HEAD
 15120264*
+=======
+13818156*
+>>>>>>> refs/remotes/origin/master
 1D D(2
 
+<<<<<<< HEAD
 79
 190
+=======
+73
+183
+>>>>>>> refs/remotes/origin/master
 
 1397274*
 1J! J('
@@ -1296,22 +1535,42 @@ F
 1397229*
 1J! J('
 
+<<<<<<< HEAD
 13920638*
+=======
+12618630*
+>>>>>>> refs/remotes/origin/master
 1L L(
 
+<<<<<<< HEAD
 13920629*
+=======
+12618621*
+>>>>>>> refs/remotes/origin/master
 1L L(
 
+<<<<<<< HEAD
 13920629*
+=======
+12618621*
+>>>>>>> refs/remotes/origin/master
 1L L( 
 
+<<<<<<< HEAD
 13919457*
+=======
+12618849*
+>>>>>>> refs/remotes/origin/master
 1L" L(6
 
 1395560*
 1L" L(6
 
+<<<<<<< HEAD
 13920864*
+=======
+12619056*
+>>>>>>> refs/remotes/origin/master
 1L) L(6
 
 1395160*
@@ -1323,34 +1582,67 @@ F
 1395160*
 1L" L((
 
+<<<<<<< HEAD
 13921038*
+=======
+12619230*
+>>>>>>> refs/remotes/origin/master
 1M M(%
 
+<<<<<<< HEAD
 13921029*
+=======
+12619221*
+>>>>>>> refs/remotes/origin/master
 1M M(
 
 13917629*
 1M M(
 
+<<<<<<< HEAD
 13921064*
 1M, M(>
+=======
+12619256*
+1M, M(<
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 13921238*
+=======
+12619430*
+>>>>>>> refs/remotes/origin/master
 1O O()
 
+<<<<<<< HEAD
 13921229*
+=======
+12619421*
+>>>>>>> refs/remotes/origin/master
 1O O(
 
 13917629*
 1O O(
 
+<<<<<<< HEAD
 13921257*
+=======
+12619449*
+>>>>>>> refs/remotes/origin/master
 1O, O(C
 
+<<<<<<< HEAD
 13920660*
+=======
+12618652*
+>>>>>>> refs/remotes/origin/master
 1O, O(C
 
+<<<<<<< HEAD
 13921464*
+=======
+12619656*
+>>>>>>> refs/remotes/origin/master
 1O5 O(C
 
 13917638*
@@ -1359,17 +1651,30 @@ F
 13917629*
 1Q	 Q(
 
+<<<<<<< HEAD
 13921638*
+=======
+12619830*
+>>>>>>> refs/remotes/origin/master
 1R R(
 
+<<<<<<< HEAD
 13921629*
+=======
+12619821*
+>>>>>>> refs/remotes/origin/master
 1R R(
 
 13916429*
 1R R(
 
+<<<<<<< HEAD
 13921664*
 1R R(-
+=======
+12619856*
+1R R(%
+>>>>>>> refs/remotes/origin/master
 
 13916429*
 1R& R(,
@@ -1387,7 +1692,11 @@ F
 1395560*
 1T T(,
 
+<<<<<<< HEAD
 13921864*
+=======
+12620056*
+>>>>>>> refs/remotes/origin/master
 1T T(,
 
 1395160*
@@ -1408,10 +1717,18 @@ F
 13918664*
 1T7 T(D
 
+<<<<<<< HEAD
 13921660*
+=======
+12619852*
+>>>>>>> refs/remotes/origin/master
 1W W(
 
+<<<<<<< HEAD
 13922064*
+=======
+12620256*
+>>>>>>> refs/remotes/origin/master
 1W W(
 
 1397257*
@@ -1420,22 +1737,47 @@ F
 13918060*
 1W W( 
 
+<<<<<<< HEAD
 13922264*
+=======
+12620456*
+>>>>>>> refs/remotes/origin/master
 1W W( 
 
+<<<<<<< HEAD
 13921660*
+=======
+12619852*
+>>>>>>> refs/remotes/origin/master
 1Y Y(
 *
+<<<<<<< HEAD
 13922064*
+=======
+12620256*
+>>>>>>> refs/remotes/origin/master
 1Y Y(2
 
+<<<<<<< HEAD
 79
 224
+=======
+73
+206
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 13921660*
+=======
+12619852*
+>>>>>>> refs/remotes/origin/master
 1\ \(
 
+<<<<<<< HEAD
 13922064*
+=======
+12620256*
+>>>>>>> refs/remotes/origin/master
 1\
  \(
 
@@ -1445,20 +1787,36 @@ F
 13917660*
 1\ \(!
 
+<<<<<<< HEAD
 13922564*
+=======
+12620756*
+>>>>>>> refs/remotes/origin/master
 1\ \(!
 
+<<<<<<< HEAD
 13921660*
+=======
+12619852*
+>>>>>>> refs/remotes/origin/master
 1] ](
 
+<<<<<<< HEAD
 13922064*
+=======
+12620256*
+>>>>>>> refs/remotes/origin/master
 1]
  ](
 
 1394960*
 1_ _(
 
+<<<<<<< HEAD
 13922764*
+=======
+12620956*
+>>>>>>> refs/remotes/origin/master
 1_ _(
 
 1394560*
@@ -1470,8 +1828,16 @@ F
 1394560*
 1_ _(
 
+<<<<<<< HEAD
 13921060*
+=======
+12619252*
+>>>>>>> refs/remotes/origin/master
 1` `(
 
+<<<<<<< HEAD
 13922964*
+=======
+12621156*
+>>>>>>> refs/remotes/origin/master
 1` `(

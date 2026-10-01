@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 1.0pruebasisjag_market26-itfinalJavaFrontend"1790862938503*java2.B„
+=======
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790799670036*java2.Bå
+>>>>>>> refs/remotes/origin/master
 /
 *src/main/java/gui/EliminarFriendlyGUI.java2
 	
@@ -34,14 +38,55 @@ full-range13
 
 JMenuBar19
 
+<<<<<<< HEAD
 ARG_description20
 :
 4A toplevel window which can be minimized to an icon.21
+=======
+domain.Usuario114
+O
+HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;116
+
+java.util.List118
+9
+2domain.Comprador#getDependientes()Ljava/util/List;120
  
+java.util.List#isEmpty()Z122
+
+domain.Friendly124
+9
+2javax.swing.JComboBox#addItem(Ljava/lang/Object;)V126
+#
+No tienes usuarios asignados127
++
+$javax.swing.JComboBox#setEnabled(Z)V129
+
+false130
+!
+javax.swing.AbstractButton132
+0
+)javax.swing.AbstractButton#setEnabled(Z)V134
+U
+Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V136
+
+java.lang.Object138
+>>>>>>> refs/remotes/origin/master
+ 
+<<<<<<< HEAD
 javax.swing.SwingContainer22
 
 ARG_delegate23
+=======
+gui.EliminarFriendlyGUI$1140
+
+	protected141
+
+(62:54)-(78:4)142
+O
+Hgui.EliminarFriendlyGUI$1#actionPerformed(Ljava/awt/event/ActionEvent;)V144
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 getContentPane24
 
 javax.swing.JFrame26
@@ -52,7 +97,31 @@ full-range13
 
 
 uses29
+=======
+(63:4)-(77:5)145
+
+actionPerformed146
+!
+java.awt.event.ActionEvent148
+@
+9javax.swing.JComboBox#getSelectedItem()Ljava/lang/Object;150
+
+javax.swing.JOptionPane152
+m
+fjavax.swing.JOptionPane#showConfirmDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I154
+
+Confirmar EliminaciÃ³n155
+
+0156
+
+ARG_4157
+,
+%javax.swing.JOptionPane.YES_NO_OPTION159
+.
+'javax.swing.JOptionPane.WARNING_MESSAGE161
+>>>>>>> refs/remotes/origin/master
 )
+<<<<<<< HEAD
 #gui.EliminarFriendlyGUI.contentPane31
 
 field32
@@ -215,7 +284,17 @@ HbusinessLogic.BLFacade#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;132
 $javax.swing.JComboBox#setEnabled(Z)V147
 
 false148
+=======
+"javax.swing.JOptionPane.YES_OPTION163
+K
+DbusinessLogic.BLFacade#eliminarFriendlyAsignado(Ljava/lang/String;)V165
+Y
+Rjavax.swing.JOptionPane#showMessageDialog(Ljava/awt/Component;Ljava/lang/Object;)V167
+$
+Usuario eliminado con Ã©xito.168
+>>>>>>> refs/remotes/origin/master
 !
+<<<<<<< HEAD
 javax.swing.AbstractButton150
 0
 )javax.swing.AbstractButton#setEnabled(Z)V152
@@ -263,6 +342,9 @@ Rjavax.swing.JOptionPane#showMessageDialog(Ljava/awt/Component;Ljava/lang/Object
 Usuario eliminado con ï¿½xito.186
 !
 java.awt.Window#dispose()V188J
+=======
+java.awt.Window#dispose()V170J
+>>>>>>> refs/remotes/origin/master
 
 1
 12
@@ -272,7 +354,11 @@ Rjavax.swing.JOptionPane#showMessageDialog(Ljava/awt/Component;Ljava/lang/Object
 4 Z
 
 5
+<<<<<<< HEAD
 5768jû
+=======
+5768j¢
+>>>>>>> refs/remotes/origin/master
 
 116
 11611727
@@ -291,6 +377,7 @@ M
 
 
 15
+<<<<<<< HEAD
 42
 
 143
@@ -316,15 +403,49 @@ M
 
 127
 12712827
+=======
+34
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 25
 252627
+=======
+72
+727341
+
+158
+15815919
+
+105
+10510619
+
+162
+16216319
+>>>>>>> refs/remotes/origin/master
 
 43
 434410
 
+<<<<<<< HEAD
 139
 13914027
+=======
+169
+16917041
+
+111
+11111219
+
+17
+171819
+
+35
+353619
+
+123
+12312419
+>>>>>>> refs/remotes/origin/master
 M
 30G
 303132 *
@@ -348,8 +469,13 @@ M
 137
 13713849
 
+<<<<<<< HEAD
 178
 17817927
+=======
+160
+16016119
+>>>>>>> refs/remotes/origin/master
 
 52
 525327
@@ -366,11 +492,27 @@ M
 133
 13313427
 
+<<<<<<< HEAD
 123
 12312427
+=======
+153
+15315441
+
+70
+707119
+
+68
+686941
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 171
 17117249
+=======
+128
+12812941
+>>>>>>> refs/remotes/origin/master
 
 79
 798010
@@ -387,21 +529,37 @@ M
 102
 10210349
 T
+<<<<<<< HEAD
 159M
 15916049 *
 1? ?(2155:5B&
+=======
+143M
+14314441 *
+1? ?(2139:5B&
+>>>>>>> refs/remotes/origin/master
 
 
 11
 12
 
 13
+<<<<<<< HEAD
 161
+=======
+145
+>>>>>>> refs/remotes/origin/master
 
 15
+<<<<<<< HEAD
 162
 }
 8x
+=======
+146
+G
+8B
+>>>>>>> refs/remotes/origin/master
 8910 *
 1 (!:5B$
 
@@ -415,6 +573,7 @@ T
 
 
 15
+<<<<<<< HEAD
 16R4
 
 17
@@ -426,13 +585,83 @@ T
 
 20
 21
+=======
+16
+
+133
+13313441
+
+135
+13513641
+
+164
+16416541
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 22
 
 
 23
 24
+=======
+94
+949541
 
+119
+11912041
+
+37
+373819
+
+74
+747519
+
+131
+13113219
+
+66
+666719
+
+50
+505141
+
+98
+989919
+
+56
+565719
+
+58
+585941
+
+113
+11311419
+
+151
+15115219
+
+125
+12512641
+G
+139@
+13914010 *
+1>6 N(239:5B
+
+11
+141
+
+13
+142
+
+147
+14714819
+
+76
+767741
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 151
 15115249
 
@@ -499,6 +728,10 @@ G
 
 167
 16716849
+=======
+149
+14915041
+>>>>>>> refs/remotes/origin/master
 M
 47G
 474849 *
@@ -525,14 +758,24 @@ M
 131
 13113249
 
+<<<<<<< HEAD
 165
 16516627
+=======
+137
+13713819
+>>>>>>> refs/remotes/origin/master
 
 63
 636427
 
+<<<<<<< HEAD
 184
 18418549rý&
+=======
+166
+16616741r‰%
+>>>>>>> refs/remotes/origin/master
 
 82528*
 1* (0
@@ -996,6 +1239,7 @@ P
 
 473954*
 15 5(
+<<<<<<< HEAD
 
 4745107*
 15 5(/
@@ -1007,13 +1251,22 @@ P
 15 5(/
 
 474354*
+=======
+
+393547*
+>>>>>>> refs/remotes/origin/master
 18 8(
 )
 4714157*
 18 8(2
 
+<<<<<<< HEAD
 58
 145
+=======
+52
+127
+>>>>>>> refs/remotes/origin/master
 
 473954*
 18 8(
@@ -1027,11 +1280,20 @@ P
 474354*
 19 9(
 )
+<<<<<<< HEAD
 4714657*
+=======
+3912844*
+>>>>>>> refs/remotes/origin/master
 19 9(2
 
+<<<<<<< HEAD
 58
 148
+=======
+52
+130
+>>>>>>> refs/remotes/origin/master
 
 473954*
 19 9(
@@ -1042,117 +1304,279 @@ P
 473954*
 19 9(
 
+<<<<<<< HEAD
 4714954*
+=======
+3913147*
+>>>>>>> refs/remotes/origin/master
 1: :(
 )
+<<<<<<< HEAD
 4715157*
+=======
+3913344*
+>>>>>>> refs/remotes/origin/master
 1: :(2
 
+<<<<<<< HEAD
 58
 148
+=======
+52
+130
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 4714954*
+=======
+3913147*
+>>>>>>> refs/remotes/origin/master
 1> >( 
 
+<<<<<<< HEAD
 4715357*
+=======
+3913544*
+>>>>>>> refs/remotes/origin/master
 1> >( 
+<<<<<<< HEAD
+=======
+
+3913744*
+1>% >(3
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 15916351*
+=======
+14314743*
+>>>>>>> refs/remotes/origin/master
 1?  ?(+
 
+<<<<<<< HEAD
 15916338*
+=======
+14314730*
+>>>>>>> refs/remotes/origin/master
 1?, ?(-
 
+<<<<<<< HEAD
 15916329*
+=======
+14314721*
+>>>>>>> refs/remotes/origin/master
 1?  ?(+
 
+<<<<<<< HEAD
 1594538*
+=======
+1433730*
+>>>>>>> refs/remotes/origin/master
 1@ @( 
 
+<<<<<<< HEAD
 1594529*
+=======
+1433721*
+>>>>>>> refs/remotes/origin/master
 1@ @(
 
+<<<<<<< HEAD
 1594529*
+=======
+1433721*
+>>>>>>> refs/remotes/origin/master
 1@$ @(*
+<<<<<<< HEAD
 
 159165107*
+=======
+
+14313793*
+>>>>>>> refs/remotes/origin/master
 1@, @(K
 
+<<<<<<< HEAD
 1594354*
+=======
+1433547*
+>>>>>>> refs/remotes/origin/master
 1@, @(K
 
+<<<<<<< HEAD
 15916757*
+=======
+14314944*
+>>>>>>> refs/remotes/origin/master
 1@< @(K
 
+<<<<<<< HEAD
 1593954*
+=======
+1433147*
+>>>>>>> refs/remotes/origin/master
 1@, @(;
 
+<<<<<<< HEAD
 1594329*
+=======
+1433521*
+>>>>>>> refs/remotes/origin/master
 1@, @(;
 
+<<<<<<< HEAD
 1593954*
+=======
+1433147*
+>>>>>>> refs/remotes/origin/master
 1@, @(;
 
+<<<<<<< HEAD
 15916954*
+=======
+14315147*
+>>>>>>> refs/remotes/origin/master
 1B B(2
+<<<<<<< HEAD
 P
 15917157*
 1B! B(223
+=======
+D
+14315344*
+1B! B(22'
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 70
 173
+=======
+62
+155
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 71
 174
 
 
 73
 96
+=======
+64
+156
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 175
 62
+=======
+157
+53
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 15916929*
+=======
+14315121*
+>>>>>>> refs/remotes/origin/master
 1B B( 
 
+<<<<<<< HEAD
 15916929*
+=======
+14315121*
+>>>>>>> refs/remotes/origin/master
 1D  D(+
 
+<<<<<<< HEAD
 15917654*
+=======
+14315847*
+>>>>>>> refs/remotes/origin/master
 1D, D(9
 
+<<<<<<< HEAD
 15916929*
+=======
+14315121*
+>>>>>>> refs/remotes/origin/master
 1D; D(F
 
+<<<<<<< HEAD
 15917854*
+=======
+14316047*
+>>>>>>> refs/remotes/origin/master
 1DG D(V
 
+<<<<<<< HEAD
 15916929*
+=======
+14315121*
+>>>>>>> refs/remotes/origin/master
 1F F(!
 
+<<<<<<< HEAD
 15918054*
+=======
+14316247*
+>>>>>>> refs/remotes/origin/master
 1F" F(,
 
+<<<<<<< HEAD
 15912154*
+=======
+14310547*
+>>>>>>> refs/remotes/origin/master
 1H H(%
 
+<<<<<<< HEAD
 15918257*
+=======
+14316444*
+>>>>>>> refs/remotes/origin/master
 1H H(%
 
+<<<<<<< HEAD
 15916954*
+=======
+14315147*
+>>>>>>> refs/remotes/origin/master
 1J J(#
 *
+<<<<<<< HEAD
 15918457*
+=======
+14316644*
+>>>>>>> refs/remotes/origin/master
 1J J(#2
 
+<<<<<<< HEAD
 70
 186
+=======
+61
+168
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 15916929*
+=======
+14315121*
+>>>>>>> refs/remotes/origin/master
 1J J(
 
+<<<<<<< HEAD
 1596554*
+=======
+1435647*
+>>>>>>> refs/remotes/origin/master
 1K K(
 
+<<<<<<< HEAD
 15918757*
+=======
+14316944*
+>>>>>>> refs/remotes/origin/master
 1K K(

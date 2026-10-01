@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 1.0pruebasisjag_market26-itfinalJavaFrontend"1790862940800*java2.B›#
+=======
+1.0pruebasisjag_market26-itfinalJavaFrontend"1790799670968*java2.Bì$
+>>>>>>> refs/remotes/origin/master
 9
 4src/main/java/businessLogic/BusinessLogicServer.java2
 	
@@ -42,9 +46,21 @@ full-range13
 
 ARG_delegate23
 
+<<<<<<< HEAD
 getContentPane24
 
 javax.swing.JDialog26
+=======
+(37:2)-(37:18)45
+
+server46
+
+BLFacade48
+/
+)businessLogic.BusinessLogicServer.service50
+
+(38:2)-(38:17)51
+>>>>>>> refs/remotes/origin/master
 
 unknown27
 
@@ -261,12 +277,29 @@ E
 ?
 8javax.swing.JDialog#getRootPane()Ljavax/swing/JRootPane;184
 
+<<<<<<< HEAD
 Cancel185
 (
 !Recovered#typeBindingLConfigXML;0187
+=======
+Cancel176
+
+configuration.ConfigXML178
+E
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;180
+6
+/configuration.ConfigXML#isBusinessLogicLocal()Z182
+>>>>>>> refs/remotes/origin/master
 9
+<<<<<<< HEAD
 2\nERROR, the business logic is configured as local188
+=======
+2\nERROR, the business logic is configured as local183
+1
+*configuration.ConfigXML#isDatabaseLocal()Z185
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 java.io.PrintStream190
 '
  java.io.PrintStream#println([C)V192
@@ -274,7 +307,11 @@ E
 java.lang.System.out194
 +
 $businessLogic.BLFacadeImplementation196
+=======
+java.io.PrintStream187
+>>>>>>> refs/remotes/origin/master
 7
+<<<<<<< HEAD
 0java.io.PrintStream#println(Ljava/lang/String;)V198
 (
 !Error in BusinessLogicServer: Ôøø199
@@ -286,8 +323,33 @@ H
 A\n\nOr maybe there is a BusinessLogicServer already launched...\n203
 !
 Running service at:\n\tÔøø204
+=======
+0java.io.PrintStream#println(Ljava/lang/String;)V189
+
+java.lang.System.out191
+B
+;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;193
+>>>>>>> refs/remotes/origin/master
 1
+<<<<<<< HEAD
 *\n\n\nPress button to exit this server... 205J
+=======
+*configuration.ConfigXML#getDatabasePort()I195
+G
+@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;197
+G
+@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;199
+G
+@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;201
+7
+0java.lang.Throwable#toString()Ljava/lang/String;203
+:
+3\nYou should have not launched DBManagerServer...\n204
+H
+A\n\nOr maybe there is a BusinessLogicServer already launched...\n205
+1
+*\n\n\nPress button to exit this server... 206J
+>>>>>>> refs/remotes/origin/master
 
 1
 12
@@ -297,10 +359,14 @@ A\n\nOr maybe there is a BusinessLogicServer already launched...\n203
 4 Z
 
 5
+<<<<<<< HEAD
 5768jÿ
 
 107
 10710427
+=======
+5768jØ
+>>>>>>> refs/remotes/origin/master
 
 25
 252627
@@ -324,8 +390,13 @@ M
 109
 10911027
 
+<<<<<<< HEAD
 200
 20020165
+=======
+202
+20220357
+>>>>>>> refs/remotes/origin/master
 
 111
 11111265
@@ -333,17 +404,27 @@ M
 153
 15315427
 
+<<<<<<< HEAD
 193
 19319427
 
 55
 555627
+=======
+190
+19019119
+>>>>>>> refs/remotes/origin/master
 
 141
 14114265
 
+<<<<<<< HEAD
 191
 19119265
+=======
+179
+17918057
+>>>>>>> refs/remotes/origin/master
 M
 63G
 636465 *
@@ -432,11 +513,34 @@ M
 105
 10510627
 
+<<<<<<< HEAD
 70
 707165
 U
 87O
 878865 *
+=======
+86
+868719
+
+136
+13613719
+
+73
+737419
+
+96
+969719
+
+62
+626357
+
+198
+19819957
+M
+79G
+798057 *
+>>>>>>> refs/remotes/origin/master
 13	 3(28:5B$
 
 
@@ -463,7 +567,20 @@ U
 13613765
 
 174
+<<<<<<< HEAD
 17417565
+=======
+17417557
+
+177
+17717819
+
+127
+12712857
+
+164
+16416557
+>>>>>>> refs/remotes/origin/master
 
 40
 404110
@@ -487,8 +604,16 @@ U
 
 104
 
+<<<<<<< HEAD
 186
 18618727
+=======
+196
+19619757
+
+194
+19419557
+>>>>>>> refs/remotes/origin/master
 M
 44G
 444532 *
@@ -533,7 +658,26 @@ F
 46
 
 13
+<<<<<<< HEAD
 167
+=======
+157
+
+138
+13813957
+
+181
+18118257
+
+47
+474819
+
+53
+535419
+
+116
+11611719
+>>>>>>> refs/remotes/origin/master
 
 149
 14915065
@@ -544,14 +688,45 @@ F
 125
 12512627
 
+<<<<<<< HEAD
 161
 16116227
+=======
+186
+18618719
+
+140
+14014119
+
+170
+17017119
+
+147
+14714819
+
+192
+19219357
+
+82
+828319
+
+108
+10810957
+>>>>>>> refs/remotes/origin/master
 
 134
 13413527
 
+<<<<<<< HEAD
 189
 18919027
+=======
+184
+18418557
+
+162
+16216319
+>>>>>>> refs/remotes/origin/master
 
 195
 19519610
@@ -610,10 +785,23 @@ T
 15
 171
 
+<<<<<<< HEAD
 156
 15615727
 }
 8x
+=======
+145
+14514619
+
+200
+20020157
+
+153
+15315419
+G
+8B
+>>>>>>> refs/remotes/origin/master
 8910 *
 1 (!:5B$
 
@@ -645,11 +833,16 @@ T
 23
 24
 
+<<<<<<< HEAD
 49
 495010
 
 74
 747527rî-
+=======
+66
+666719r0
+>>>>>>> refs/remotes/origin/master
 
 82528*
 1* (1
@@ -1136,6 +1329,24 @@ S
 
 8718629*
 1^ ^(
+
+79177120*
+1^ ^($
+
+7917761*
+1^ ^($
+
+7917935*
+1^ ^($
+
+7917721*
+1^ ^(
+
+7917761*
+1` `(
+
+7918135*
+1`	 `(
 
 874969*
 1a a(
@@ -1143,8 +1354,13 @@ S
 8717443*
 1a a(2
 
+<<<<<<< HEAD
 72
 188
+=======
+64
+183
+>>>>>>> refs/remotes/origin/master
 
 874469*
 1a a(
@@ -1155,35 +1371,103 @@ S
 874469*
 1a a(
 
+<<<<<<< HEAD
 8718969*
+=======
+7917761*
+1h
+ h(
+
+7918435*
+1h h(
+
+7918661*
+>>>>>>> refs/remotes/origin/master
 1i i(
 
+<<<<<<< HEAD
 8719143*
+=======
+7918835*
+>>>>>>> refs/remotes/origin/master
 1i i(
 
 8710929*
 1i i(
 
+<<<<<<< HEAD
 8718929*
+=======
+7918621*
+>>>>>>> refs/remotes/origin/master
 1i i(
 
+<<<<<<< HEAD
 8719369*
+=======
+7919061*
+>>>>>>> refs/remotes/origin/master
 1i i(
+
+7953120*
+1ip i(Å
+
+7917761*
+1ip i(Å
+
+7919235*
+1ir i(Å
+
+7917761*
+1ié i(ü
+
+7919435*
+1iê i(ü
 
 876129*
 1l l(
 
 875769*
 1l l(
+
+7953120*
+1l l(.
+
+7917761*
+1l l(.
+
+7919635*
+1l l(.
+
+7953120*
+1l7 l(M
+
+7917761*
+1l7 l(M
+
+7919835*
+1l9 l(M
+
+7953120*
+1lW l(m
+
+7917761*
+1lW l(m
+
+7920035*
+1lY l(m
 
 876129*
 1n n(
 
 875769*
 1n n(
+<<<<<<< HEAD
 
 8719543*
 1n# n(9
+=======
+>>>>>>> refs/remotes/origin/master
 
 878142*
 1r r(
@@ -1191,7 +1475,11 @@ S
 878129*
 1r r(
 
+<<<<<<< HEAD
 8718969*
+=======
+7918661*
+>>>>>>> refs/remotes/origin/master
 1s s(
 )
 8719743*
@@ -1203,10 +1491,18 @@ S
 8710929*
 1s s(
 
+<<<<<<< HEAD
 8718929*
+=======
+7918621*
+>>>>>>> refs/remotes/origin/master
 1s s(
 
+<<<<<<< HEAD
 8719369*
+=======
+7919061*
+>>>>>>> refs/remotes/origin/master
 1s s(
 
 8761129*
@@ -1215,7 +1511,11 @@ S
 878369*
 1s9 s(C
 
+<<<<<<< HEAD
 8720043*
+=======
+7920235*
+>>>>>>> refs/remotes/origin/master
 1s; s(C
 
 874969*
@@ -1224,8 +1524,13 @@ S
 8717443*
 1t t(2
 
+<<<<<<< HEAD
 72
 202
+=======
+64
+204
+>>>>>>> refs/remotes/origin/master
 
 874469*
 1t t(
@@ -1242,8 +1547,13 @@ S
 8717443*
 1u u(2
 
+<<<<<<< HEAD
 72
 203
+=======
+64
+205
+>>>>>>> refs/remotes/origin/master
 
 874469*
 1u u(
@@ -1284,8 +1594,13 @@ S
 8717443*
 1z z(2
 
+<<<<<<< HEAD
 72
 205
+=======
+64
+206
+>>>>>>> refs/remotes/origin/master
 
 874469*
 1z z(
@@ -1323,5 +1638,9 @@ S
 878369*
 1} }(
 
+<<<<<<< HEAD
 8720043*
+=======
+7920235*
+>>>>>>> refs/remotes/origin/master
 1} }(
