@@ -50,8 +50,8 @@ public class ResenaGUI extends JFrame {
     private JLabel jLabelDescription = new JLabel("Descripcion:");
 
     private JScrollPane scrollPaneEvents = new JScrollPane();
-    DefaultComboBoxModel statusOptions = new DefaultComboBoxModel();
-    List status;
+    DefaultComboBoxModel<String> statusOptions = new DefaultComboBoxModel<>();
+    private List<String> status;
 
 
     private JButton jButtonCreate = new JButton("Crear Resena");
