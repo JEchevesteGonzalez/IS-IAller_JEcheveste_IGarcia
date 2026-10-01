@@ -1,15 +1,0 @@
-
-3domain.Usuario#getNombreUsuario()Ljava/lang/String;+
-!src\main\java\domain\Usuario.java (""1*¢
-1 (m
-k
- (
-%0java.lang.String"__id*A
-
-__unknown_file (%*#
-domain.Usuario"
-nombreUsuario"$
- (
-
-%0java.lang.StringB
-domain.UsuarioH
