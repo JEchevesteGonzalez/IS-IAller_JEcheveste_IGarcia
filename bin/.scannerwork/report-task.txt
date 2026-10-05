@@ -1,0 +1,24 @@
+organization=pruebasisjag
+projectKey=pruebasisjag_market26-itfinal
+serverUrl=https://sonarcloud.io
+<<<<<<< HEAD
+serverVersion=8.0.0.109249
+dashboardUrl=https://sonarcloud.io/dashboard?id=joxeechevestegonzalez_market26-itfinal
+ceTaskId=AaD0MC16ALKOXMPHu9a3
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaD0MC16ALKOXMPHu9a3
+=======
+serverVersion=8.0.0.109430
+dashboardUrl=https://sonarcloud.io/dashboard?id=pruebasisjag_market26-itfinal
+<<<<<<< HEAD
+ceTaskId=AaD3wFWYytab40QSvWh0
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaD3wFWYytab40QSvWh0
+=======
+<<<<<<< HEAD
+ceTaskId=AaDz-pE_bQNaPUmG7UDD
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaDz-pE_bQNaPUmG7UDD
+=======
+ceTaskId=AaDz_9WclYM0-fElM4yE
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaDz_9WclYM0-fElM4yE
+>>>>>>> refs/remotes/origin/master_J
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master

@@ -22,6 +22,7 @@ public class ComprarGUI extends JFrame {
     public JPanel panel_1;
     private static final int baseSize = 160;
 	private static final String basePath="src/main/resources/images/";
+	private static final String FONT = "Tahoma";
 	
 	private static final long serialVersionUID = 1L;
 
@@ -53,17 +54,17 @@ public class ComprarGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Precio ofertado:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font(FONT, Font.BOLD, 20));
 		lblNewLabel.setBounds(46, 35, 176, 40);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblOferta = new JLabel("Haga su oferta:");
-		lblOferta.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblOferta.setFont(new Font(FONT, Font.PLAIN, 18));
 		lblOferta.setBounds(217, 86, 130, 40);
 		getContentPane().add(lblOferta);
 		
 		JLabel lblSiSuOferta = new JLabel("Si su oferta es exactamente la misma que la ofertada, la comprara automaticamente");
-		lblSiSuOferta.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblSiSuOferta.setFont(new Font(FONT, Font.PLAIN, 14));
 		lblSiSuOferta.setBounds(45, 268, 516, 40);
 		getContentPane().add(lblSiSuOferta);
 		
@@ -82,14 +83,14 @@ public class ComprarGUI extends JFrame {
 		oferta.setColumns(10);
 		
 		JLabel PrecioSale = new JLabel("");
-		PrecioSale.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		PrecioSale.setFont(new Font(FONT, Font.PLAIN, 20));
 		PrecioSale.setBounds(245, 35, 131, 40);
 		getContentPane().add(PrecioSale);
 		PrecioSale.setText(String.valueOf(sale.getPrice()));
 		
 		JLabel textoErrores = new JLabel("");
 		textoErrores.setForeground(Color.RED);
-		textoErrores.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textoErrores.setFont(new Font(FONT, Font.PLAIN, 15));
 		textoErrores.setBounds(62, 213, 471, 30);
 		getContentPane().add(textoErrores);
 		
@@ -151,7 +152,7 @@ public class ComprarGUI extends JFrame {
 		getContentPane().add(btnComprar);
 		
 		JLabel label = new JLabel("€");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		label.setFont(new Font(FONT, Font.PLAIN, 20));
 		label.setBounds(388, 35, 65, 40);
 		getContentPane().add(label);
 		this.setSize(new Dimension(604, 370));
