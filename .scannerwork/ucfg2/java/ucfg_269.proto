@@ -1,0 +1,32 @@
+
+SbusinessLogic.BLFacadeImplementation#buscarPorNum(Ljava/lang/Integer;)Ldomain/Sale;C
+7src\main\java\businessLogic\BLFacadeImplementation.java¹ ¹("1*½
+1
+º	 º(‡
+„
+
+º	 º(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerþû
+
+º	 º($
+%1domain.Sale"DdataAccess.DataAccess#buscarPorNum(Ljava/lang/Integer;)Ldomain/Sale;*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess*6
+
+__unknown_file (
+
+numjava.lang.Integer2!buscarPorNum(Ljava/lang/Integer;)"!
+
+º º(%
+
+%1domain.Sale:&
+
+¹ ¹(%
+numjava.lang.IntegerB(&
+$businessLogic.BLFacadeImplementationH
