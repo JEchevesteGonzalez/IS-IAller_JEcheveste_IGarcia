@@ -1,15 +1,18 @@
 
-/configuration.ConfigXML#isBusinessLogicLocal()Z4
-*src\main\java\configuration\ConfigXML.javaE E($"1*û
-1F	 F(r
-p
-F	 F(
-%0boolean"__id*O
-
-__unknown_file (3*1
-configuration.ConfigXML"
-businessLogicLocal"
-F F(
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;6
+*src\main\java\configuration\ConfigXML.javaè è($"1*Ω
+1
+ê	 ê(}
+{
 
-%0booleanB
-configuration.ConfigXMLHX
+ê	 ê(
+%0configuration.ConfigXML"__id*H
+
+__unknown_file (,**
+configuration.ConfigXML"
+theInstance"-
+
+ê ê(
+
+%0configuration.ConfigXMLB"
+configuration.ConfigXMLH

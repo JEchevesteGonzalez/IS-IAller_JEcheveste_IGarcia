@@ -1,18 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;6
-*src\main\java\configuration\ConfigXML.java“ “(#"1*µ
+0configuration.ConfigXML#isDatabaseInitialized()Z6
+*src\main\java\configuration\ConfigXML.java£ £(%"1*§
 1
-”	 ”(|
-z
+¤	 ¤(w
+u
 
-”	 ”(
-%0java.lang.String"__id*N
+¤	 ¤(
+%0boolean"__id*R
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicPort"&
+__unknown_file (6*4
+configuration.ConfigXML"
+isDatabaseInitialized"
 
-” ”(
-
-%0java.lang.StringB
-configuration.ConfigXMLH
+¤ ¤(
+
+%0booleanB
+configuration.ConfigXMLHX

@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +40,8 @@ import exceptions.MustBeLaterThanTodayException;
 import exceptions.ResenaAlreadyExistsException;
 import exceptions.SaleAlreadyExistException;
 
+import java.util.logging.Logger;
+
 /**
  * It implements the data access to the objectdb database
  */
@@ -47,6 +52,8 @@ public class DataAccess  {
   
 	private static final String basePath="src/main/resources/images/";
 	private static final String dbServerDir = "src/main/resources/db/";
+	
+	private static final Logger LOGGER = Logger.getLogger(DataAccess.class.getName());
 
 	ConfigXML c=ConfigXML.getInstance();
 
@@ -173,7 +180,7 @@ public class DataAccess  {
 	public Sale createSale(String title, String description, int status, float price,  Date pubDate, String usuario, File file, int tVenta) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
 		
 
-		System.out.println(">> DataAccess: createProduct=> title= "+title+" usuario="+usuario);
+		LOGGER.info(">> DataAccess: createProduct=> title= " + title + " usuario=" + usuario);
 		try {
 		
 
@@ -191,6 +198,10 @@ public class DataAccess  {
 				throw new SaleAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SaleAlreadyExist"));
 			}
 
+			
+			
+			
+			
 			Sale sale = seller.addSale(title, description, status, price, pubDate, file, tVenta);
 			//next instruction can be obviated
 
@@ -354,29 +365,29 @@ public void open(){
 		try {
 			Comprador comprador = db.find(Comprador.class, usuario);
 			Sale producto = db.find(Sale.class, pro.getSaleNumber());
-			if (comprador != null && producto !=null && producto.isHabilitado()) {
-				if (comprador.getSaldo() >= producto.getPrice()) {
-					comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
-					comprador.getHistorialDeCompras().add(producto); 
-					producto.setHabilitado(false);
-				
-				
-					if (producto.getSeller() != null) {
-						Seller vendedor = db.find(Seller.class, producto.getSeller().getNombreUsuario());
-						if (vendedor != null) {
-							producto.setUsuarioVendedor(vendedor.getNombreUsuario());
-							vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
-							vendedor.getSales().remove(producto);
-							db.persist(vendedor);
-						}
+			if (comprador != null && producto !=null && producto.isHabilitado() && comprador.getSaldo() >= producto.getPrice()) {
+			
+				comprador.setSaldo(comprador.getSaldo() - producto.getPrice());
+				comprador.getHistorialDeCompras().add(producto); 
+				producto.setHabilitado(false);
+			
+			
+				if (producto.getSeller() != null) {
+					Seller vendedor = db.find(Seller.class, producto.getSeller().getNombreUsuario());
+					if (vendedor != null) {
+						producto.setUsuarioVendedor(vendedor.getNombreUsuario());
+						vendedor.setSaldo(vendedor.getSaldo() + producto.getPrice());
+						vendedor.getSales().remove(producto);
+						db.persist(vendedor);
 					}
-					db.persist(comprador);
-					db.persist(producto);
-					db.getTransaction().commit();
-					close();
-					return true; 
-				}			
-			}
+				}
+				db.persist(comprador);
+				db.persist(producto);
+				db.getTransaction().commit();
+				close();
+				return true; 
+			}			
+			
 			close();
 			return false;
 		}
@@ -437,7 +448,7 @@ public void open(){
 		s.setStatus(numStatus);
 		s.setPrice(price);
 		s.setPublicationDate(trim);
-		if (hab==true) {
+		if (hab) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(s.getPublicationDate());
 			//c.add(Calendar.DAY_OF_MONTH, 7);
@@ -840,6 +851,5 @@ public void open(){
 		}
 		close();
 	}
-	
 	
 }

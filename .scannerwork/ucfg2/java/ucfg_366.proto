@@ -1,25 +1,13 @@
 
-4businessLogic.BusinessLogicServer#%field_initializer>
-4src\main\java\businessLogic\BusinessLogicServer.java ( "1*Á
-1
-__unknown_file (:8
-#) #(/
-%0javax.swing.JPanel"javax.swing.JPanelh
-f
-#% #(1
-%1"javax.swing.JPanel#<init>()V*6
+-businessLogic.BusinessLogicServer$1#<init>()V>
+4src\main\java\businessLogic\BusinessLogicServer.java4( 4()"startingBlock*ª
+startingBlock4( 4()
+}
+4( 4()
+%0"&java.awt.event.WindowAdapter#<init>()V*C
 
-__unknown_file (
-
-%0javax.swing.JPanelÅ
-
-# #(25#
-!businessLogic.BusinessLogicServer"
-contentPanel"__id*6
-
-__unknown_file (
-
-%0javax.swing.JPanel"
- Ç(
-implicit returnB%#
-!businessLogic.BusinessLogicServer
+__unknown_file ('%
+#businessLogic.BusinessLogicServer$1"
+4( 4()
+implicit returnB'%
+#businessLogic.BusinessLogicServer$1
