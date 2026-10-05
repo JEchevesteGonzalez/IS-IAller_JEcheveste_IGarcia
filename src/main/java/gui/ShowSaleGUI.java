@@ -289,11 +289,9 @@ public class ShowSaleGUI extends JFrame {
         
     public BufferedImage rescale(BufferedImage originalImage)
      {
-         // ---> LÍNEAS CORREGIDAS: Uso correcto de las variables en mayúsculas
          BufferedImage resizedImage = new BufferedImage(BASE_SIZE, BASE_SIZE, BufferedImage.TYPE_INT_RGB);
          Graphics2D g = resizedImage.createGraphics();
          g.drawImage(originalImage, 0, 0, BASE_SIZE, BASE_SIZE, null);
-         // ---> FIN CORRECCIÓN
          g.dispose();
          return resizedImage;
      }
