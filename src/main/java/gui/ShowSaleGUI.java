@@ -18,17 +18,14 @@ import domain.Usuario;
 
 public class ShowSaleGUI extends JFrame {
     
-
     private static final Logger logger = Logger.getLogger(ShowSaleGUI.class.getName());
-    
     
     File targetFile;
     BufferedImage targetImg;
     public JPanel panel_1;
     
-
     private static final int BASE_SIZE = 160;
-    private static final String BASE_PATH = "src/main/resources/images/";
+    // La variable BASE_PATH ha sido eliminada por completo para solucionar el issue (java:S1068)
     
     private static final long serialVersionUID = 1L;
 
