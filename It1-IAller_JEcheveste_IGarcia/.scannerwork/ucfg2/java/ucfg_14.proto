@@ -1,10 +1,22 @@
 
 GdataAccess.DataAccess#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;4
+<<<<<<< HEAD
 (src\main\java\dataAccess\DataAccess.javaÔ Ô( "1*Ô
+=======
+(src\main\java\dataAccess\DataAccess.javaÒ Ò( "1*Ô
+>>>>>>> refs/remotes/origin/master
 1
+<<<<<<< HEAD
 Õ Õ(	xv
+=======
+Ó Ó(	xv
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 Õ Õ(
+=======
+Ó Ó(
+>>>>>>> refs/remotes/origin/master
 
 %0void"dataAccess.DataAccess#open()V*5
 
@@ -12,7 +24,11 @@ GdataAccess.DataAccess#buscarPorUser(Ljava/lang/String;)Ldomain/Usuario;4
 dataAccess.DataAccess2open()Y
 W
 
+<<<<<<< HEAD
 Ö Ö(
+=======
+Ô Ô(
+>>>>>>> refs/remotes/origin/master
 %1"__id*=
 
 __unknown_file (!*
@@ -20,23 +36,39 @@ W
 dbM
 K
 
+<<<<<<< HEAD
 Ö Ö(/
+=======
+Ô Ô(/
+>>>>>>> refs/remotes/origin/master
 adomain.Usuario"__id*"
 
 __unknown_file (
 ""zx
 
+<<<<<<< HEAD
 × ×(
+=======
+Õ Õ(
+>>>>>>> refs/remotes/origin/master
 
 %2void"dataAccess.DataAccess#close()V*5
 
 __unknown_file (
 dataAccess.DataAccess2close()"#
 
+<<<<<<< HEAD
 Ø Ø(
+=======
+Ö Ö(
+>>>>>>> refs/remotes/origin/master
 
 adomain.Usuario:)
 
+<<<<<<< HEAD
 Ô! Ô(/
+=======
+Ò! Ò(/
+>>>>>>> refs/remotes/origin/master
 usuariojava.lang.StringB
 dataAccess.DataAccessH

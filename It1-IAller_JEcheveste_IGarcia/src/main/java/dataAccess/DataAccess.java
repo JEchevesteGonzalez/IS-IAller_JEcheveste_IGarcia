@@ -767,32 +767,47 @@ public void open(){
 		return s;
 	}
 	
+	/**
+	 * Método que crea una nueva Solicitud para un usuario Friendly y un número de venta.
+	 * Vincula la solicitud tanto al usuario Friendly como a su Supervisor, si existen.
+	 * 
+	 * @param usuarioFriendly Identificador (username) del usuario Friendly en la base de datos.
+	 * @param saleNumber Número de venta asociado a la solicitud.
+	 */
 	public void crearSolicitud(String usuarioFriendly, Integer saleNumber) {
-		open();
-		db.getTransaction().begin();
+	    open(); // Abre la conexión con la Base de Datos
+	    db.getTransaction().begin(); // Inicia la transacción
 
-		Friendly friendly = db.find(Friendly.class, usuarioFriendly);
-		
-		if (friendly != null) {
-			Comprador supervisor = friendly.getSupervisor();
+	    // Busca al usuario en la base de datos
+	    Friendly friendly = db.find(Friendly.class, usuarioFriendly);
+	    
+	    // Verifica que el usuario exista
+	    if (friendly != null) {
+	        // Obtiene el supervisor asociado al usuario Friendly
+	        Comprador supervisor = friendly.getSupervisor();
 
-			Solicitud nuevaSolicitud = new Solicitud(saleNumber, "En tramite", friendly, supervisor);
-			
-			nuevaSolicitud.setFriendly(friendly);
-			nuevaSolicitud.setSupervisor(supervisor);
-			
-			db.persist(nuevaSolicitud);
+	        // Crea la instancia de la solicitud con estado inicial "En tramite"
+	        Solicitud nuevaSolicitud = new Solicitud(saleNumber, "En tramite", friendly, supervisor);
+	        
+	        // Relaciones bidireccionales de la solicitud
+	        nuevaSolicitud.setFriendly(friendly);
+	        nuevaSolicitud.setSupervisor(supervisor);
+	        
+	        // Persiste la nueva solicitud en la BD
+	        db.persist(nuevaSolicitud);
 
-			if (friendly.getSolicitudes() != null) {
-				friendly.getSolicitudes().add(nuevaSolicitud);
-			}
-			
-			if (supervisor != null && supervisor.getSolicitudes() != null) {
-				supervisor.getSolicitudes().add(nuevaSolicitud);
-			}
-		}
-		db.getTransaction().commit();
-		close();
+	        // Si el usuario tiene una lista de solicitudes inicializada, añade la nueva
+	        if (friendly.getSolicitudes() != null) {
+	            friendly.getSolicitudes().add(nuevaSolicitud);
+	        }
+	        
+	        // Si hay supervisor y tiene su lista inicializada, añade la nueva
+	        if (supervisor != null && supervisor.getSolicitudes() != null) {
+	            supervisor.getSolicitudes().add(nuevaSolicitud);
+	        }
+	    }
+	    db.getTransaction().commit(); // Confirma los cambios
+	    close(); // Cierra la conexión
 	}
 	
 	public void actualizarEstadoSolicitud(Integer solNumber, String nuevoEstado) {

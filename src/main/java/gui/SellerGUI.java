@@ -1,0 +1,93 @@
+package gui;
+
+/**
+ * @author Software Engineering teachers
+ */
+
+
+import javax.swing.*;
+
+import businessLogic.BLFacade;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class SellerGUI extends JFrame {
+		private static final long serialVersionUID = 1L;
+
+	private JPanel jContentPane = null;
+	private JButton jButtonCreateQuery = null;
+	private JButton jButtonQueryQueries = null;
+
+    private static BLFacade appFacadeInterface;
+	
+	public static BLFacade getBusinessLogic(){
+		return appFacadeInterface;
+	}
+	 
+	public static void setBussinessLogic (BLFacade facade){
+		appFacadeInterface=facade;
+	}
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JButton btnNewButton;
+	private JButton btnCrearVenta;
+	
+	/**
+	 * This is the default constructor
+	 */
+	public SellerGUI( String usuario) {
+		super();
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setSize(495, 290);
+		
+		jContentPane = new JPanel();
+		
+		
+		setContentPane(jContentPane);
+		jContentPane.setLayout(null);
+		
+		btnNewButton = new JButton("Visualizar Ventas Y Subastas Activas\r\n");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame verVentasActivas = new VisualizarVentasYSubastasActivasGUI(usuario);
+				verVentasActivas.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(0, 0, 477, 74);
+		jContentPane.add(btnNewButton);
+		
+		btnCrearVenta = new JButton("Crear Venta o Subasta");
+		btnCrearVenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame crear = new CreateSaleGUI(usuario);
+				crear.setVisible(true);
+			}
+		});
+		btnCrearVenta.setBounds(0, 73, 477, 74);
+		jContentPane.add(btnCrearVenta);
+		
+		
+		JButton btnVerResenasRecibidas = new JButton("Ver Reseñas Recibidas");
+		btnVerResenasRecibidas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame resenas = new VerResenasRecibidasGUI(usuario, false, null);
+				resenas.setVisible(true);
+			}
+		});
+		btnVerResenasRecibidas.setBounds(0, 145, 477, 81);
+		jContentPane.add(btnVerResenasRecibidas);
+		
+	}
+	
+	
+} // @jve:decl-index=0:visual-constraint="0,0"
+

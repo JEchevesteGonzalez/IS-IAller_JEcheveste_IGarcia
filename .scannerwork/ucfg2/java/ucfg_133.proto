@@ -1,0 +1,81 @@
+
+(domain.Sale#toString()Ljava/lang/String;*
+src\main\java\domain\Sale.javað ð("1*½
+1
+ñ	 ñ(j
+h
+
+ñ	 ñ(
+%0java.lang.Integer"__id*;
+
+__unknown_file (*
+domain.Sale"
+
+saleNumbern
+l
+
+ñ	 ñ(
+%1java.lang.String"__concat*'
+
+ñ	 ñ(
+
+%0java.lang.Integer*
+
+ñ ñ(
+;d
+b
+
+ñ ñ(
+%2java.lang.String"__id*6
+
+__unknown_file (*
+domain.Sale"
+title€
+~
+
+ñ	 ñ(
+%3java.lang.String"__concat*&
+
+ñ	 ñ(
+
+%1java.lang.String*&
+
+ñ ñ(
+
+%2java.lang.Stringm
+k
+
+ñ	 ñ(!
+%4java.lang.String"__concat*&
+
+ñ	 ñ(
+
+%3java.lang.String*
+
+ñ ñ(!
+;Y
+W
+
+ñ" ñ('
+%5float"__id*6
+
+__unknown_file (*
+domain.Sale"
+priceu
+s
+
+ñ	 ñ('
+%6java.lang.String"__concat*&
+
+ñ	 ñ(!
+
+%4java.lang.String*
+
+ñ" ñ('
+
+%5float"&
+
+ñ ñ((
+
+%6java.lang.StringB
+domain.SaleH
