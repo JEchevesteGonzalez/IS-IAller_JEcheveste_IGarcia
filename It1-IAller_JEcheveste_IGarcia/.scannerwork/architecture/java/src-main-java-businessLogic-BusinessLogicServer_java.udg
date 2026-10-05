@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790862940800*java2.B›#
-=======
-1.0pruebasisjag_market26-itfinalJavaFrontend"1790799670968*java2.Bì$
->>>>>>> refs/remotes/origin/master
+1.0&joxeechevestegonzalez_market26-itfinalJavaFrontend"1790803176193*java2.Bì$
 9
 4src/main/java/businessLogic/BusinessLogicServer.java2
 	
@@ -32,25 +28,49 @@ full-range13
 
 BusinessLogicServer16
 
-java.beans.JavaBean17
-
-ARG_defaultProperty18
-
-JMenuBar19
-
-ARG_description20
-2
-,A toplevel window for creating dialog boxes.21
- 
-javax.swing.SwingContainer22
-
-ARG_delegate23
+javax.swing.JDialog18
+
+unknown19
+
+extends20
+
+
+uses21
+8
+2businessLogic.BusinessLogicServer.serialVersionUID23
+
+field24
+
+private25
 
-<<<<<<< HEAD
-getContentPane24
-
-javax.swing.JDialog26
-=======
+(34:2)-(34:50)26
+
+serialVersionUID27
+4
+.businessLogic.BusinessLogicServer.contentPanel29
+
+(35:2)-(35:51)30
+
+contentPanel31
+
+javax.swing.JPanel33
+
+is type34
+
+calls35
+0
+*businessLogic.BusinessLogicServer.textArea37
+
+	protected38
+
+(36:2)-(36:21)39
+
+textArea40
+
+javax.swing.JTextArea42
+.
+(businessLogic.BusinessLogicServer.server44
+
 (37:2)-(37:18)45
 
 server46
@@ -60,228 +80,167 @@ full-range13
 )businessLogic.BusinessLogicServer.service50
 
 (38:2)-(38:17)51
->>>>>>> refs/remotes/origin/master
 
-unknown27
-
-extends28
-
-
-uses29
-8
-2businessLogic.BusinessLogicServer.serialVersionUID31
-
-field32
-
-private33
-
-(34:2)-(34:50)34
+service52
 
-serialVersionUID35
-4
-.businessLogic.BusinessLogicServer.contentPanel37
-
-(35:2)-(35:51)38
-
-contentPanel39
-
-javax.swing.JPanel41
-
-is type42
-
-calls43
-0
-*businessLogic.BusinessLogicServer.textArea45
-
-	protected46
-
-(36:2)-(36:21)47
-
-textArea48
-
-javax.swing.JTextArea50
-.
-(businessLogic.BusinessLogicServer.server52
-
-(37:2)-(37:18)53
-
-server54
-
-businessLogic.BLFacade56
-/
-)businessLogic.BusinessLogicServer.service58
-
-(38:2)-(38:17)59
-
-service60
-
-java.lang.String62
+java.lang.String54
 B
-<businessLogic.BusinessLogicServer#main([Ljava/lang/String;)V64
+<businessLogic.BusinessLogicServer#main([Ljava/lang/String;)V56
 
-method65
+method57
 
-(40:2)-(48:3)66
+(40:2)-(48:3)58
 
 
-main67
+main59
 
-	has param68
+	has param60
 
 
-references69
+references61
 6
-0javax.swing.JDialog#setDefaultCloseOperation(I)V71
+0javax.swing.JDialog#setDefaultCloseOperation(I)V63
 
-ARG_072
+ARG_064
 
-273
+265
 2
-,javax.swing.WindowConstants.DISPOSE_ON_CLOSE75
+,javax.swing.WindowConstants.DISPOSE_ON_CLOSE67
 
-java.awt.Dialog77
+java.awt.Dialog69
 $
-java.awt.Dialog#setVisible(Z)V79
+java.awt.Dialog#setVisible(Z)V71
 
 
-true80
+true72
 
-java.lang.Exception82
+java.lang.Exception74
 
-java.lang.Throwable84
+java.lang.Throwable76
 ,
-&java.lang.Throwable#printStackTrace()V86
+&java.lang.Throwable#printStackTrace()V78
 1
-+businessLogic.BusinessLogicServer#<init>()V88
++businessLogic.BusinessLogicServer#<init>()V80
 
-(51:2)-(129:3)89
-3
--jdk.internal.vm.annotation.IntrinsicCandidate90
+(51:2)-(129:3)81
 
-java.awt.Window92
+java.awt.Window83
 I
-Cjava.awt.Window#addWindowListener(Ljava/awt/event/WindowListener;)V94
+Cjava.awt.Window#addWindowListener(Ljava/awt/event/WindowListener;)V85
 "
-java.awt.event.WindowAdapter96
+java.awt.event.WindowAdapter87
 )
-#businessLogic.BusinessLogicServer$198
+#businessLogic.BusinessLogicServer$189
 
-(52:41)-(57:4)99
-V
-ObusinessLogic.BusinessLogicServer$1#windowClosed(Ljava/awt/event/WindowEvent;)V101
-
-(53:4)-(56:5)102
-
-windowClosed103
-
-java.lang.Override104
-!
-java.awt.event.WindowEvent106
-
-annotated by108
-
-java.lang.System110
- 
-java.lang.System#exit(I)V112
-
-1113
-4
--java.awt.Dialog#setTitle(Ljava/lang/String;)V115
-6
-/BusinessLogicServer: running the business logic116
-'
- java.awt.Window#setBounds(IIII)V118
-
-
-100119
-
-ARG_1120
-
-ARG_2121
-
-
-486122
-
-ARG_3123
-
-
-209124
-
-java.awt.Container126
->
-7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V128
-
-returns129
-?
-8javax.swing.JDialog#getContentPane()Ljava/awt/Container;131
-
-java.awt.BorderLayout133
-
-javax.swing.JComponent135
-E
->javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V137
-%
-javax.swing.border.EmptyBorder139
-
-5140
-F
-?java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V142
-
-Center143
-#
-java.awt.BorderLayout.CENTER145
-
-0146
-
-java.awt.Component148
-G
-@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;150
-
-java.awt.FlowLayout152
- 
-java.awt.FlowLayout.RIGHT154
-
-South155
-"
-java.awt.BorderLayout.SOUTH157
-
-javax.swing.JButton159
-
-Close160
-!
-javax.swing.AbstractButton162
+(52:41)-(57:4)90
 U
-Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V164
-*
-#businessLogic.BusinessLogicServer$2166
-
-(74:53)-(82:6)167
-Y
-RbusinessLogic.BusinessLogicServer$2#actionPerformed(Ljava/awt/event/ActionEvent;)V169
-
-(75:6)-(81:7)170
-
-actionPerformed171
-!
-java.awt.event.ActionEvent173
-8
-1javax.swing.JTextArea#append(Ljava/lang/String;)V175
-#
-\n\n\nClosing the server... 176
-G
-@javax.swing.AbstractButton#setActionCommand(Ljava/lang/String;)V178
-
-javax.swing.JRootPane180
-E
->javax.swing.JRootPane#setDefaultButton(Ljavax/swing/JButton;)V182
-?
-8javax.swing.JDialog#getRootPane()Ljavax/swing/JRootPane;184
+ObusinessLogic.BusinessLogicServer$1#windowClosed(Ljava/awt/event/WindowEvent;)V92
+
+(53:4)-(56:5)93
+
+windowClosed94
+
+java.lang.Override95
+ 
+java.awt.event.WindowEvent97
+
+annotated by99
+
+java.lang.System101
+ 
+java.lang.System#exit(I)V103
+
+1104
+4
+-java.awt.Dialog#setTitle(Ljava/lang/String;)V106
+6
+/BusinessLogicServer: running the business logic107
+'
+ java.awt.Window#setBounds(IIII)V109
 
-<<<<<<< HEAD
-Cancel185
-(
-!Recovered#typeBindingLConfigXML;0187
-=======
+
+100110
+
+ARG_1111
+
+ARG_2112
+
+
+486113
+
+ARG_3114
+
+
+209115
+
+java.awt.Container117
+>
+7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V119
+
+returns120
+?
+8javax.swing.JDialog#getContentPane()Ljava/awt/Container;122
+
+java.awt.BorderLayout124
+
+javax.swing.JComponent126
+E
+>javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V128
+%
+javax.swing.border.EmptyBorder130
+F
+?java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V132
+
+Center133
+#
+java.awt.BorderLayout.CENTER135
+
+java.awt.Component137
+G
+@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;139
+
+java.awt.FlowLayout141
+ 
+java.awt.FlowLayout.RIGHT143
+
+South144
+"
+java.awt.BorderLayout.SOUTH146
+
+javax.swing.JButton148
+!
+javax.swing.AbstractButton150
+U
+Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V152
+
+java.lang.Object154
+*
+#businessLogic.BusinessLogicServer$2156
+
+(74:53)-(82:6)157
+Y
+RbusinessLogic.BusinessLogicServer$2#actionPerformed(Ljava/awt/event/ActionEvent;)V159
+
+(75:6)-(81:7)160
+
+actionPerformed161
+!
+java.awt.event.ActionEvent163
+8
+1javax.swing.JTextArea#append(Ljava/lang/String;)V165
+#
+\n\n\nClosing the server... 166
+G
+@javax.swing.AbstractButton#setActionCommand(Ljava/lang/String;)V168
+
+Close169
+
+javax.swing.JRootPane171
+E
+>javax.swing.JRootPane#setDefaultButton(Ljavax/swing/JButton;)V173
+?
+8javax.swing.JDialog#getRootPane()Ljavax/swing/JRootPane;175
+
 Cancel176
 
 configuration.ConfigXML178
@@ -289,51 +248,19 @@ E
 >configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;180
 6
 /configuration.ConfigXML#isBusinessLogicLocal()Z182
->>>>>>> refs/remotes/origin/master
 9
-<<<<<<< HEAD
-2\nERROR, the business logic is configured as local188
-=======
 2\nERROR, the business logic is configured as local183
 1
 *configuration.ConfigXML#isDatabaseLocal()Z185
->>>>>>> refs/remotes/origin/master
 
-<<<<<<< HEAD
-java.io.PrintStream190
-'
- java.io.PrintStream#println([C)V192
-
-java.lang.System.out194
-+
-$businessLogic.BLFacadeImplementation196
-=======
 java.io.PrintStream187
->>>>>>> refs/remotes/origin/master
 7
-<<<<<<< HEAD
-0java.io.PrintStream#println(Ljava/lang/String;)V198
-(
-!Error in BusinessLogicServer: Ôøø199
-7
-0java.lang.Throwable#toString()Ljava/lang/String;201
-:
-3\nYou should have not launched DBManagerServer...\n202
-H
-A\n\nOr maybe there is a BusinessLogicServer already launched...\n203
-!
-Running service at:\n\tÔøø204
-=======
 0java.io.PrintStream#println(Ljava/lang/String;)V189
 
 java.lang.System.out191
 B
 ;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;193
->>>>>>> refs/remotes/origin/master
 1
-<<<<<<< HEAD
-*\n\n\nPress button to exit this server... 205J
-=======
 *configuration.ConfigXML#getDatabasePort()I195
 G
 @configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;197
@@ -349,7 +276,6 @@ H
 A\n\nOr maybe there is a BusinessLogicServer already launched...\n205
 1
 *\n\n\nPress button to exit this server... 206J
->>>>>>> refs/remotes/origin/master
 
 1
 12
@@ -359,75 +285,53 @@ A\n\nOr maybe there is a BusinessLogicServer already launched...\n205
 4 Z
 
 5
-<<<<<<< HEAD
-5768jÿ
-
-107
-10710427
-=======
 5768jØ
->>>>>>> refs/remotes/origin/master
 
-25
-252627
+98
+989519
+
+17
+171819
 M
-57G
-575832 *
+49G
+495024 *
 1&	 &(28:5B$
 
 
 11
-46
+38
 
 
 13
-59
+51
 
 
 15
-60
+52
 
-109
-10911027
+100
+10010119
 
-<<<<<<< HEAD
-200
-20020165
-=======
 202
 20220357
->>>>>>> refs/remotes/origin/master
 
-111
-11111265
+102
+10210357
 
-153
-15315427
+142
+14214319
 
-<<<<<<< HEAD
-193
-19319427
-
-55
-555627
-=======
 190
 19019119
->>>>>>> refs/remotes/origin/master
 
-141
-14114265
+131
+13113257
 
-<<<<<<< HEAD
-191
-19119265
-=======
 179
 17918057
->>>>>>> refs/remotes/origin/master
 M
-63G
-636465 *
+55G
+555657 *
 1( ((28:5B$
 
 
@@ -436,90 +340,71 @@ M
 
 
 13
-66
+58
 
 
 15
-67
+59
 
-132
-13213310
+123
+12312419
 
-76
-767727
+68
+686919
 
-181
-18118265
+172
+17217357
 
-93
-939465
+84
+848557
 M
-51G
-515232 *
+43G
+434424 *
 1% %(28:5B$
 
 
 11
-46
+38
 
 
 13
-53
+45
 
 
 15
-54
+46
 
-78
-787965
+70
+707157
 M
-36G
-363732 *
+28G
+282924 *
 1# #(#28:5B$
 
 
 11
-33
+25
 
 
 13
-38
+30
 
 
 15
-39
+31
 
-130
-13013165
-
-114
-11411565
-
-197
-19719865
-
-177
-17717865
-
-95
-959610
-
-147
-14714827
-
-81
-818227
+121
+12112257
 
 105
-10510627
+10510657
+
+188
+18818957
+
+167
+16716857
 
-<<<<<<< HEAD
-70
-707165
-U
-87O
-878865 *
-=======
 86
 868719
 
@@ -540,7 +425,6 @@ U
 M
 79G
 798057 *
->>>>>>> refs/remotes/origin/master
 13	 3(28:5B$
 
 
@@ -549,27 +433,16 @@ M
 
 
 13
-89
+81
 
 
 15
-16R
-
-90
+16
 
-138
-13813910
-
-183
-18318465
-
-136
-13613765
+129
+12913019
 
 174
-<<<<<<< HEAD
-17417565
-=======
 17417557
 
 177
@@ -580,87 +453,80 @@ M
 
 164
 16416557
->>>>>>> refs/remotes/origin/master
 
-40
-404110
+32
+323319
 
-83
-838427
-\
-100U
-10010165 *
-16 6(297:5B&
+75
+757619
+V
+91P
+919257 *
+16 6(288:5B$
 
 
 11
 12
-
-13
-102
-
-15
-103R
-
-104
+
+
+13
+93
+
+
+15
+94R
+
+95
 
-<<<<<<< HEAD
-186
-18618727
-=======
 196
 19619757
 
 194
 19419557
->>>>>>> refs/remotes/origin/master
 M
-44G
-444532 *
+36G
+363724 *
 1$ $(28:5B$
 
 
 11
-46
+38
 
 
 13
-47
+39
 
 
 15
-48
+40
 
-85
-858665
+77
+777857
 B
-97<
-979810 *
-14) 9(287:5B
+88<
+888910 *
+14) 9(279:5B
 
 
 11
-46
+38
 
 
 13
-99
+90
 
-163
-16316465
+151
+15115257
 F
-165?
-16516610 *
-1J5 R(287:5B
+155?
+15515610 *
+1J5 R(279:5B
 
 
 11
-46
+38
 
 13
-<<<<<<< HEAD
-167
-=======
 157
 
 138
@@ -677,21 +543,13 @@ F
 
 116
 11611719
->>>>>>> refs/remotes/origin/master
 
 149
-14915065
-
-61
-616227
+14915019
 
 125
-12512627
+12512619
 
-<<<<<<< HEAD
-161
-16116227
-=======
 186
 18618719
 
@@ -712,85 +570,49 @@ F
 
 108
 10810957
->>>>>>> refs/remotes/origin/master
 
 134
-13413527
+13413519
 
-<<<<<<< HEAD
-189
-18919027
-=======
 184
 18418557
 
 162
 16216319
->>>>>>> refs/remotes/origin/master
 
-195
-19519610
-
-151
-15115210
-
-179
-17918027
-
-158
-15815910
-
-91
-919227
-
-117
-11711865
-
-144
-14414527
-
-172
-17217327
-
-127
-12712865
+118
+11811957
 M
-30G
-303132 *
+22G
+222324 *
 1" "(,28:5B$
 
 
 11
-33
+25
 
 
 13
-34
+26
 
 
 15
-35
+27
 T
-168M
-16816965 *
-1K K(!2165:5B&
+158M
+15815957 *
+1K K(!2155:5B&
 
 
 11
 12
 
 13
-170
+160
 
 15
-171
+161
 
-<<<<<<< HEAD
-156
-15615727
-}
-8x
-=======
 145
 14514619
 
@@ -801,7 +623,6 @@ T
 15315419
 G
 8B
->>>>>>> refs/remotes/origin/master
 8910 *
 1 (!:5B$
 
@@ -815,519 +636,476 @@ G
 
 
 15
-16R4
-
-17
-
-
-18
-19
-
-
-20
-21
+16
 
-22
-
-
-23
-24
+41
+414219
 
-<<<<<<< HEAD
-49
-495010
-
-74
-747527rî-
-=======
 66
 666719r0
->>>>>>> refs/remotes/origin/master
 
-82528*
+81720*
 1* (1
 
-82529*
+81721*
 1* (1
 
-364042*
+283234*
 1# #(
 
-364029*
+283221*
 1# #(
 
-364029*
+283221*
 1# #(#
 
-364043*
+283235*
 1#* #(0
 
-444942*
+364134*
 1$ $(
 
-444929*
+364121*
 1$ $(
 
-444929*
+364121*
 1$ $(
 
-515542*
+434734*
 1% %(
 
 
-515529*
+434721*
 1% %(
 
 
-515529*
+434721*
 1% %(
 
-576142*
+495334*
 1& &(
 
-576129*
+495321*
 1& &(
 
-576129*
+495321*
 1&	 &(
 
-636168*
+555360*
 1( (("
 
-636142*
+555334*
 1(# (('
 
-636129*
+555321*
 1( (( 
 
-63842*
+55834*
 1* *(
 
-63829*
+55821*
 1* *(
 
-63843*
+55835*
 1*% *(8
 
-632569*
+551761*
 1+ +(#
 '
-637043*
+556235*
 1+ +(#2
 
 
-72
-73
+64
+65
 
-632529*
+551721*
 1+$ +(+
 
-637469*
+556661*
 1+, +(<
 
-637669*
+556861*
 1, ,(
 '
-637843*
+557035*
 1, ,(2
 
 
-72
-80
+64
+72
 
-638142*
+557334*
 1- -(
 
-638129*
+557321*
 1- -(
 
-638369*
+557561*
 1. .(
 
-638543*
+557735*
 1. .(
+
+79835*
+13	 3(
 
-879169*
+798261*
 14 4(
 
-879343*
+798435*
 14 4(
 
-879543*
+798635*
 14 4(&
-
-10010568*
+
+919660*
 16 6((
-
-100107108*
+
+919899*
 15 5(
-
-10010729*
+
+919821*
 15 5(
-
-10010542*
+
+919634*
 16) 6(-
-
-10010529*
+
+919621*
 16 6((
-
-10010969*
+
+9110061*
 17 7(
-*
-10011143*
+)
+9110235*
 17 7(2
 
-72
-113
-
-10010929*
+64
+104
+
+9110021*
 17 7(
 
-877669*
+796861*
 1: :(
 )
-8711443*
+7910535*
 1: :(2
 
-72
-116
+64
+107
 
-879169*
+798261*
 1; ;(
 S
-8711743*
+7910835*
 1; ;(27
 
-72
-119
+64
+110
 
-120
-119
+111
+110
 
-121
-122
+112
+113
 
-123
-124
+114
+115
 
-8712569*
+7911661*
 1< <(
 
-8712743*
+7911835*
 1< <(
 
-87125129*
+79116120*
 1< <(
 
-872569*
+791761*
 1< <(
 
-8713043*
+7912135*
 1< <(
 
-8713243*
+7912335*
 1<" <(.
 
-8713469*
+7912561*
 1= =(
 
-8713643*
+7912735*
 1= =(
 
-873669*
+792861*
 1= =(
 
-874029*
+793221*
 1= =(
 
-873669*
+792861*
 1= =(
-S
-8713843*
-1= =()27
-
-72
-140
-
-120
-140
-
-121
-140
-
-123
-140
 
-8712569*
+7912935*
+1= =()
+
+7911661*
 1> >(
 *
-8714143*
+7913135*
 1> >(2
 
-120
-143
+111
+133
 
-87125129*
+79116120*
 1> >(
 
-872569*
+791761*
 1> >(
 
-8713043*
+7912135*
 1> >(
 
-874029*
+793221*
 1> >($
 
-873669*
+792861*
 1> >($
 
-8713229*
+7912321*
 1>& >(2
 
-876129*
+795321*
 1>3 >(9
 
-8714469*
+7913461*
 1>3 >(9
 
-8712569*
+7911661*
 1? ?(
 
-8712743*
+7911835*
 1? ?(
 
-873669*
+792861*
 1? ?(
 
-874029*
+793221*
 1? ?(
 
-873669*
+792861*
 1? ?(
-7
-8713243*
-1? ?(*2
-
-72
-146
-
-120
-146
+
+7912335*
+1? ?(*
 
-874929*
+794121*
 1A A(
 
-874469*
+793661*
 1A A(
 
-874943*
+794135*
 1A A(
 
-87147129*
+79136120*
 1B B(
 
-8712569*
+7911661*
 1B B(
 
-8714943*
+7913835*
 1B B(
 
-873669*
+792861*
 1B B(
 
-874029*
+793221*
 1B B(
 
-873669*
+792861*
 1B B(
 
-874929*
+794121*
 1B B(
 
-874469*
+793661*
 1B B(
 
-874042*
+793234*
 1E E(
 
-874029*
+793221*
 1E E(
 
 
-874043*
+793235*
 1E E("
 
-8712569*
+7911661*
 1F F(
 
-8712743*
+7911835*
 1F F(
-(
-8715143*
-1F F('2
-
-
-72
-73
 
-8715129*
+7914035*
+1F F('
+
+7914021*
 1F( F(2
 
-8715369*
+7914261*
 1F3 F(8
 
-8712569*
+7911661*
 1G G(
 *
-8714143*
+7913135*
 1G G(2
 
-120
-155
+111
+144
 
-87125129*
+79116120*
 1G G(
 
-872569*
+791761*
 1G G(
 
-8713043*
+7912135*
 1G G(
 
-8713229*
+7912321*
 1G% G(1
 
-876129*
+795321*
 1G2 G(7
 
-8715669*
+7914561*
 1G2 G(7
 
-8715842*
+7914734*
 1I I(
 
-8715829*
+7914721*
 1I I(
-)
-8715843*
-1I I(#2
-
-72
-160
 
-8716169*
+7914735*
+1I I(#
+
+7914961*
 1J J(
 
-8716343*
+7915135*
 1J J(
+
+7915335*
+1J$ J(2
 
-16817268*
+15816260*
 1K" K(-
 
-16817242*
+15816234*
 1K. K(/
 
-16817229*
+15816221*
 1K" K(-
 
-1684969*
+1584161*
 1L L(
 *
-16817443*
+15816435*
 1L L(2
 
-72
-176
+64
+166
 
-1684469*
+1583661*
 1L L(
 
-1684929*
+1584121*
 1L L(
 
-1684469*
+1583661*
 1L L(
 
-16810969*
+15810061*
 1P P(
 *
-16811143*
+15810235*
 1P P(2
 
-72
-113
+64
+104
 
-16810929*
+15810021*
 1P P(
 
-8716169*
+7914961*
 1S S(
 )
-8717743*
+7916735*
 1S S(2
 
-72
-160
+64
+169
 
-87147129*
+79136120*
 1T T(
 
-8712569*
+7911661*
 1T T(
 
-8714943*
+7913835*
 1T T(
 
-8717969*
+7917061*
 1U U(#
 
-8718143*
+7917235*
 1U U(#
 
-87179129*
+79170120*
 1U U(
 
-872569*
+791761*
 1U U(
 
-8718343*
+7917435*
 1U U(
 
-8715842*
+7914734*
 1X X(
 
-8715829*
+7914721*
 1X X(
-)
-8715843*
-1X  X('2
-
-72
-185
 
-8716169*
+7914735*
+1X  X('
+
+7914961*
 1Y Y("
 )
-8717743*
+7916735*
 1Y Y("2
 
-72
-185
+64
+176
 
-87147129*
+79136120*
 1Z Z(
 
-8712569*
+7911661*
 1Z Z(
 
-8714943*
+7913835*
 1Z Z(
 
-8718642*
+7917734*
 1^ ^(
 
-8718629*
+7917721*
 1^ ^(
 
 79177120*
@@ -1348,32 +1126,24 @@ S
 7918135*
 1`	 `(
 
-874969*
+794161*
 1a a(
 )
-8717443*
+7916435*
 1a a(2
 
-<<<<<<< HEAD
-72
-188
-=======
 64
 183
->>>>>>> refs/remotes/origin/master
 
-874469*
+793661*
 1a a(
 
-874929*
+794121*
 1a a(
 
-874469*
+793661*
 1a a(
 
-<<<<<<< HEAD
-8718969*
-=======
 7917761*
 1h
  h(
@@ -1382,31 +1152,18 @@ S
 1h h(
 
 7918661*
->>>>>>> refs/remotes/origin/master
 1i i(
 
-<<<<<<< HEAD
-8719143*
-=======
 7918835*
->>>>>>> refs/remotes/origin/master
 1i i(
 
-8710929*
+7910021*
 1i i(
 
-<<<<<<< HEAD
-8718929*
-=======
 7918621*
->>>>>>> refs/remotes/origin/master
 1i i(
 
-<<<<<<< HEAD
-8719369*
-=======
 7919061*
->>>>>>> refs/remotes/origin/master
 1i i(
 
 7953120*
@@ -1424,10 +1181,10 @@ S
 7919435*
 1iê i(ü
 
-876129*
+795321*
 1l l(
 
-875769*
+794961*
 1l l(
 
 7953120*
@@ -1457,190 +1214,143 @@ S
 7920035*
 1lY l(m
 
-876129*
+795321*
 1n n(
 
-875769*
+794961*
 1n n(
-<<<<<<< HEAD
-
-8719543*
-1n# n(9
-=======
->>>>>>> refs/remotes/origin/master
 
-878142*
+797334*
 1r r(
 
-878129*
+797321*
 1r r(
 
-<<<<<<< HEAD
-8718969*
-=======
 7918661*
->>>>>>> refs/remotes/origin/master
 1s s(
-)
-8719743*
-1s s(2
-
-72
-199
 
-8710929*
+7918835*
+1s s(
+
+7910021*
 1s s(
 
-<<<<<<< HEAD
-8718929*
-=======
 7918621*
->>>>>>> refs/remotes/origin/master
 1s s(
 
-<<<<<<< HEAD
-8719369*
-=======
 7919061*
->>>>>>> refs/remotes/origin/master
 1s s(
 
-8761129*
+7953120*
 1s9 s(C
 
-878369*
+797561*
 1s9 s(C
 
-<<<<<<< HEAD
-8720043*
-=======
 7920235*
->>>>>>> refs/remotes/origin/master
 1s; s(C
 
-874969*
+794161*
 1t t(
 )
-8717443*
+7916435*
 1t t(2
 
-<<<<<<< HEAD
-72
-202
-=======
 64
 204
->>>>>>> refs/remotes/origin/master
 
-874469*
+793661*
 1t t(
 
-874929*
+794121*
 1t t(
 
-874469*
+793661*
 1t t(
 
-874969*
+794161*
 1u u(
 )
-8717443*
+7916435*
 1u u(2
 
-<<<<<<< HEAD
-72
-203
-=======
 64
 205
->>>>>>> refs/remotes/origin/master
 
-874469*
+793661*
 1u u(
 
-874929*
+794121*
 1u u(
 
-874469*
+793661*
 1u u(
 
-874969*
+794161*
 1y y(
-)
-8717443*
-1y y(2
-
-72
-204
+
+7916435*
+1y y(
 
-874469*
+793661*
 1y y(
 
-874929*
+794121*
 1y y(
 
-874469*
+793661*
 1y y(
 
-876129*
+795321*
 1y0 y(7
 
-875769*
+794961*
 1y0 y(7
 
-874969*
+794161*
 1z z(
 )
-8717443*
+7916435*
 1z z(2
 
-<<<<<<< HEAD
-72
-205
-=======
 64
 206
->>>>>>> refs/remotes/origin/master
 
-874469*
+793661*
 1z z(
 
-874929*
+794121*
 1z z(
 
-874469*
+793661*
 1z z(
 
-878142*
+797334*
 1| |(
 
-878129*
+797321*
 1| |(
 
-874969*
+794161*
 1} }(
 
-8717443*
+7916435*
 1} }(
 
-874469*
+793661*
 1} }(
 
-874929*
+794121*
 1} }(
 
-874469*
+793661*
 1} }(
 
-8761129*
+7953120*
 1} }(
 
-878369*
+797561*
 1} }(
 
-<<<<<<< HEAD
-8720043*
-=======
 7920235*
->>>>>>> refs/remotes/origin/master
 1} }(
