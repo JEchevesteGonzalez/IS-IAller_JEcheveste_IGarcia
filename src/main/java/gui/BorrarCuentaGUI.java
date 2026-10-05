@@ -23,7 +23,7 @@ public class BorrarCuentaGUI extends JFrame {
 	private JLabel lblUsuario;
 	private JLabel lblContrasena;
 	private JLabel textoErrores;
-	private JPasswordField Contrasena;
+	private JPasswordField contrasena;
 	
 	public BorrarCuentaGUI() {
 		BLFacade facade = MainGUI.getBusinessLogic();

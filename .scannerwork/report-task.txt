@@ -1,7 +1,0 @@
-organization=pruebasisjag
-projectKey=pruebasisjag_market26-itfinal
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.109679
-dashboardUrl=https://sonarcloud.io/dashboard?id=pruebasisjag_market26-itfinal
-ceTaskId=AaEMYwjyzLKi2V2eOw-l
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaEMYwjyzLKi2V2eOw-l
