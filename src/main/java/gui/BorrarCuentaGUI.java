@@ -53,7 +53,7 @@ public class BorrarCuentaGUI extends JFrame {
 		btnBorrarCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String usuarioIntro = usuario.getText();
-				String contrIntro = new String(Contrasena.getPassword());
+				String contrIntro = new String(contrasena.getPassword());
 				
 				if(usuarioIntro.isEmpty() || contrIntro.isEmpty()) {
 					textoErrores.setText("Rellena todos los campos.");
@@ -121,9 +121,9 @@ public class BorrarCuentaGUI extends JFrame {
 		textoErrores.setBounds(49, 226, 371, 14);
 		getContentPane().add(textoErrores);
 		
-		Contrasena = new JPasswordField();
-		Contrasena.setBounds(157, 130, 87, 20);
-		getContentPane().add(Contrasena);
+		contrasena = new JPasswordField();
+		contrasena.setBounds(157, 130, 87, 20);
+		getContentPane().add(contrasena);
 		
 		
 		
