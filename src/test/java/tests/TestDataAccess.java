@@ -9,6 +9,8 @@ import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
 import domain.Comprador;
+import domain.Cuentas;
+import domain.Usuario;
 
 
 public class TestDataAccess {
@@ -48,46 +50,37 @@ public class TestDataAccess {
 		db.close();
 		System.out.println("TestDataAccess closed");
 	}
-
-	public boolean retirarFondos(String usuario, float cantidad) {
-		//Creamos una transaccion de la misma
-		db.getTransaction().begin();
-		try {
-			//Comprobamos si el usuario que nos pasan existe en la base de datos
-			Comprador user = db.find(Comprador.class, usuario);
-			
-			//Si el usuario existe, continua la transaccion
-			if (user != null) {
-				//Se calcula el que sera el nuevo saldo del usuario restandole la cantidad a pagar
-				float nuevoSaldo = user.getSaldo() - cantidad;
-				//Si la cantidad es mayor al saldo que tenia el usuario, se le deja el saldo en 0
-				if (nuevoSaldo<0) {
-					nuevoSaldo=0;
-				}
-				//Se le pone el nuevo saldo al usuario
-				user.setSaldo(nuevoSaldo);
-				//Añadimos los datos a la base de datos
-				db.getTransaction().commit();
-				//La transaccion finaliza correctamente
-				return true;
-			//Si el usuario no existe, no se completa la transaccion
-			} else {
-				return false;
-			}
-		//En el caso de elevarse alguna excepcion, tampoco se completa la transaccion
-		} catch (Exception e) {
-			return false;
-		//Finalmente, cerramos la base de datos independientemente de haberse finalizado la transaccion
-		}
-	}
 	
 	public void crearUsuarioNull(String usuario) {
-    	open();
     	db.getTransaction().begin();
     	Comprador comp = new Comprador(usuario, "prueba");
     	db.persist(comp);
     	db.getTransaction().commit();
-    	close();
+	}
+	
+	public void crearUsuarioCuentas(String usuario, float saldo) {
+		db.getTransaction().begin();
+    	Comprador comp = new Comprador(usuario, "prueba");
+    	db.persist(comp);
+		Comprador user = db.find(Comprador.class, usuario);
+		Cuentas cu = new Cuentas(1234,saldo,"Banco");
+		cu.setComprador(user);
+		user.setCuentas(cu);
+		db.persist(user);
+		db.persist(cu);
+		db.getTransaction().commit();
+	}
+	
+	public void eliminarUsuario(String usuario) {
+		db.getTransaction().begin();
+		
+		Usuario user = db.find(Usuario.class, usuario);
+		
+		if (user != null) {
+			
+			db.remove(user);
+			db.getTransaction().commit(); 
+		}
 	}
 	
 }
