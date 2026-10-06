@@ -10,6 +10,7 @@ public class RetirarFondosBDWhiteTest {
 	static TestDataAccess opTest = new TestDataAccess();
 	
 	@Test
+	//TERMINAR
 	public void test1() {
 		String usuario = "Yo";
 		float cantidadP = 100;
