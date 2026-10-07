@@ -48,7 +48,8 @@ public class RetirarFondosMockWhiteTest {
 	public void tearDown()	{		
 		persistenceMock.close();					
 	}	
-
+	
+	//TERMINAR
 	@Test
 	public void test1() {
 		String usuario = "Yo";
