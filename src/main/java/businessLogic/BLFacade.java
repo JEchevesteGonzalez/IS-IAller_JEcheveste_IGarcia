@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Date;
 import java.util.List;
 
-import domain.Comprador;
 import domain.Cuentas;
 import domain.Oferta;
 import domain.Sale;
