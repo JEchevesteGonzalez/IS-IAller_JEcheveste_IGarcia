@@ -1,0 +1,187 @@
+package mockTest;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+import dataAccess.DataAccess;
+import domain.Comprador;
+import domain.Friendly;
+import domain.Solicitud;
+
+public class CrearSolicitudMockWhiteTest {
+	static DataAccess sut;
+	protected MockedStatic<Persistence> persistenceMock;
+	
+	@Mock protected EntityManagerFactory entityManagerFactory;
+	@Mock protected EntityManager db;
+	@Mock protected EntityTransaction et;
+	
+	@Before
+	public void init() {		
+		MockitoAnnotations.openMocks(this);		
+		persistenceMock = Mockito.mockStatic(Persistence.class);		
+		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
+		Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();		
+		Mockito.doReturn(et).when(db).getTransaction();		
+		sut = new DataAccess(db);					
+	}	
+	
+	@After		
+	public void tearDown() {		
+		persistenceMock.close();					
+	}	
+
+	private Solicitud ejecutarCrearSolicitud(String usuarioFriendly, Integer saleNumber, Friendly friendly,
+			ArrayList<Solicitud> listaFriendly, ArrayList<Solicitud> listaSupervisor) {
+		Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(friendly);
+
+		sut.crearSolicitud(usuarioFriendly, saleNumber);
+
+		if (friendly != null) {
+			ArgumentCaptor<Solicitud> captor = ArgumentCaptor.forClass(Solicitud.class);
+			Mockito.verify(db, Mockito.times(1)).persist(captor.capture());
+			Mockito.verify(et, Mockito.times(1)).begin();
+			Mockito.verify(et, Mockito.times(1)).commit();
+			Mockito.verify(db, Mockito.times(1)).close();
+			return captor.getValue();
+		}
+
+		Mockito.verify(db, Mockito.times(0)).persist(Mockito.any());
+		Mockito.verify(et, Mockito.times(1)).begin();
+		Mockito.verify(et, Mockito.times(1)).commit();
+		Mockito.verify(db, Mockito.times(1)).close();
+		return null;
+	}
+	
+	@Test
+	public void test1() {
+		// CASO 1: friendly != null, friendly.solicitudes != null, supervisor != null, supervisor.solicitudes != null
+		String usuarioFriendly = "Gorka";
+		Integer saleNumber = 99;
+		
+		Comprador supervisor = new Comprador("Supervisor", "1234");
+		ArrayList<Solicitud> listaSupervisor = supervisor.getSolicitudes();
+		Friendly friendly = new Friendly(usuarioFriendly, "1234", supervisor);
+		ArrayList<Solicitud> listaFriendly = friendly.getSolicitudes();
+		
+		try {
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
+					listaFriendly, listaSupervisor);
+			assertEquals(saleNumber, sGuardada.getSaleNumber());
+			assertEquals("En tramite", sGuardada.getEstado());
+			assertSame(friendly, sGuardada.getFriendly());
+			assertSame(supervisor, sGuardada.getSupervisor());
+			assertTrue("La solicitud debe estar en la lista de friendly", listaFriendly.contains(sGuardada));
+			assertTrue("La solicitud debe estar en la lista del supervisor", listaSupervisor.contains(sGuardada));
+			
+		} catch(Exception e) {
+			fail("No se esperaba excepción: " + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void test2() {
+		// CASO 2: friendly != null, friendly.solicitudes != null, supervisor != null, supervisor.solicitudes == null
+		String usuarioFriendly = "Gorka";
+		Integer saleNumber = 100;
+		
+		Comprador supervisor = new Comprador("Supervisor", "1234");
+		supervisor.setSolicitudes(null);
+		Friendly friendly = new Friendly(usuarioFriendly, "1234", supervisor);
+		ArrayList<Solicitud> listaFriendly = friendly.getSolicitudes();
+		
+		try {
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
+					listaFriendly, null);
+			assertEquals(saleNumber, sGuardada.getSaleNumber());
+			assertEquals("En tramite", sGuardada.getEstado());
+			assertSame(friendly, sGuardada.getFriendly());
+			assertSame(supervisor, sGuardada.getSupervisor());
+			assertTrue("La solicitud debe estar en la lista de friendly", listaFriendly.contains(sGuardada));
+			
+		} catch(Exception e) {
+			fail("No se esperaba excepción: " + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void test3() {
+		// CASO 3: friendly != null, friendly.solicitudes != null, supervisor == null
+		String usuarioFriendly = "Gorka";
+		Integer saleNumber = 101;
+		
+		Friendly friendly = new Friendly(usuarioFriendly, "1234", null);
+		ArrayList<Solicitud> listaFriendly = new ArrayList<>();
+		
+		try {	
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
+					listaFriendly, null);
+			assertEquals(saleNumber, sGuardada.getSaleNumber());
+			assertEquals("En tramite", sGuardada.getEstado());
+			assertSame(friendly, sGuardada.getFriendly());
+			assertSame(null, sGuardada.getSupervisor());
+			//assertTrue(listaFriendly.contains(sGuardada));
+			
+		} catch(Exception e) {
+			fail("No se esperaba excepción: " + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void test4() {
+		// CASO 4: friendly != null, friendly.solicitudes == null, supervisor == null
+		String usuarioFriendly = "Gorka";
+		Integer saleNumber = 102;
+		
+		Friendly friendly = new Friendly(usuarioFriendly, "1234", null);
+		friendly.setSolicitudes(null);
+		
+		try {
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly, null, null);
+			assertEquals(saleNumber, sGuardada.getSaleNumber());
+			assertEquals("En tramite", sGuardada.getEstado());
+			assertSame(friendly, sGuardada.getFriendly());
+			assertSame(null, sGuardada.getSupervisor());
+			
+		} catch(Exception e) {
+			fail("No se esperaba excepción: " + e.getMessage());
+		}
+	}
+
+	@Test
+	public void test5() {
+		// CASO 5: friendly == null
+		String usuarioFriendly = "Gorka";
+		Integer saleNumber = 103;
+		
+		// Simulamos que la BD devuelve null (no encuentra al usuario)
+		
+		try {
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, null, null, null);
+			assertSame(null, sGuardada);
+			// Como friendly es null, NUNCA se debe llamar a db.persist()
+			Mockito.verify(db, Mockito.times(0)).persist(Mockito.any());
+			
+		} catch(Exception e) {
+			fail("El flujo no debería lanzar excepción, solo terminar silenciosamente.");
+		}
+	}
+}
