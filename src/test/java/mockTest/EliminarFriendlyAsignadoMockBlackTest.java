@@ -146,7 +146,7 @@ public class EliminarFriendlyAsignadoMockBlackTest {
 	@Test
 	public void test5() {
 		//Usuario con supervisor y lista de solicitudes 
-		String usuarioFriendly = "Jon";
+		String usuarioFriendly = "Jon"; 
 		
 		
 		Friendly f = new Friendly(usuarioFriendly, usuarioFriendly, null);
