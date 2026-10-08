@@ -1,6 +1,7 @@
 package mockTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -27,7 +28,26 @@ import domain.Friendly;
 import domain.Solicitud;
 
 public class CrearSolicitudMockWhiteTest {
-	static DataAccess sut;
+	private static class TestableDataAccess extends DataAccess {
+		int openCalls;
+		int closeCalls;
+
+		TestableDataAccess(EntityManager db) {
+			super(db);
+		}
+
+		@Override
+		public void open() {
+			openCalls++;
+		}
+
+		@Override
+		public void close() {
+			closeCalls++;
+		}
+	}
+
+	TestableDataAccess sut;
 	protected MockedStatic<Persistence> persistenceMock;
 	
 	@Mock protected EntityManagerFactory entityManagerFactory;
@@ -40,8 +60,15 @@ public class CrearSolicitudMockWhiteTest {
 		persistenceMock = Mockito.mockStatic(Persistence.class);		
 		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
 		Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();		
-		Mockito.doReturn(et).when(db).getTransaction();		
-		sut = new DataAccess(db);					
+		Mockito.doReturn(et).when(db).getTransaction();
+		
+		// Mockear los métodos de transacción para que no hagan nada
+		Mockito.doNothing().when(et).begin();
+		Mockito.doNothing().when(et).commit();
+		Mockito.doNothing().when(et).rollback();
+		
+		// Usar una subclase de prueba para evitar inline mocking incompatible con Java 21
+		sut = new TestableDataAccess(db);
 	}	
 	
 	@After		
@@ -49,8 +76,7 @@ public class CrearSolicitudMockWhiteTest {
 		persistenceMock.close();					
 	}	
 
-	private Solicitud ejecutarCrearSolicitud(String usuarioFriendly, Integer saleNumber, Friendly friendly,
-			ArrayList<Solicitud> listaFriendly, ArrayList<Solicitud> listaSupervisor) {
+	private Solicitud ejecutarCrearSolicitud(String usuarioFriendly, Integer saleNumber, Friendly friendly) {
 		Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(friendly);
 
 		sut.crearSolicitud(usuarioFriendly, saleNumber);
@@ -60,14 +86,16 @@ public class CrearSolicitudMockWhiteTest {
 			Mockito.verify(db, Mockito.times(1)).persist(captor.capture());
 			Mockito.verify(et, Mockito.times(1)).begin();
 			Mockito.verify(et, Mockito.times(1)).commit();
-			Mockito.verify(db, Mockito.times(1)).close();
+			assertEquals(1, sut.openCalls);
+			assertEquals(1, sut.closeCalls);
 			return captor.getValue();
 		}
 
 		Mockito.verify(db, Mockito.times(0)).persist(Mockito.any());
 		Mockito.verify(et, Mockito.times(1)).begin();
 		Mockito.verify(et, Mockito.times(1)).commit();
-		Mockito.verify(db, Mockito.times(1)).close();
+		assertEquals(1, sut.openCalls);
+		assertEquals(1, sut.closeCalls);
 		return null;
 	}
 	
@@ -83,8 +111,7 @@ public class CrearSolicitudMockWhiteTest {
 		ArrayList<Solicitud> listaFriendly = friendly.getSolicitudes();
 		
 		try {
-			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
-					listaFriendly, listaSupervisor);
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly);
 			assertEquals(saleNumber, sGuardada.getSaleNumber());
 			assertEquals("En tramite", sGuardada.getEstado());
 			assertSame(friendly, sGuardada.getFriendly());
@@ -109,8 +136,7 @@ public class CrearSolicitudMockWhiteTest {
 		ArrayList<Solicitud> listaFriendly = friendly.getSolicitudes();
 		
 		try {
-			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
-					listaFriendly, null);
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly);
 			assertEquals(saleNumber, sGuardada.getSaleNumber());
 			assertEquals("En tramite", sGuardada.getEstado());
 			assertSame(friendly, sGuardada.getFriendly());
@@ -129,16 +155,15 @@ public class CrearSolicitudMockWhiteTest {
 		Integer saleNumber = 101;
 		
 		Friendly friendly = new Friendly(usuarioFriendly, "1234", null);
-		ArrayList<Solicitud> listaFriendly = new ArrayList<>();
+		ArrayList<Solicitud> listaFriendly = friendly.getSolicitudes();
 		
 		try {	
-			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly,
-					listaFriendly, null);
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly);
 			assertEquals(saleNumber, sGuardada.getSaleNumber());
 			assertEquals("En tramite", sGuardada.getEstado());
 			assertSame(friendly, sGuardada.getFriendly());
-			assertSame(null, sGuardada.getSupervisor());
-			//assertTrue(listaFriendly.contains(sGuardada));
+			assertNull(sGuardada.getSupervisor());
+			assertTrue(listaFriendly.contains(sGuardada));
 			
 		} catch(Exception e) {
 			fail("No se esperaba excepción: " + e.getMessage());
@@ -155,11 +180,11 @@ public class CrearSolicitudMockWhiteTest {
 		friendly.setSolicitudes(null);
 		
 		try {
-			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly, null, null);
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, friendly);
 			assertEquals(saleNumber, sGuardada.getSaleNumber());
 			assertEquals("En tramite", sGuardada.getEstado());
 			assertSame(friendly, sGuardada.getFriendly());
-			assertSame(null, sGuardada.getSupervisor());
+			assertNull(sGuardada.getSupervisor());
 			
 		} catch(Exception e) {
 			fail("No se esperaba excepción: " + e.getMessage());
@@ -175,8 +200,8 @@ public class CrearSolicitudMockWhiteTest {
 		// Simulamos que la BD devuelve null (no encuentra al usuario)
 		
 		try {
-			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, null, null, null);
-			assertSame(null, sGuardada);
+			Solicitud sGuardada = ejecutarCrearSolicitud(usuarioFriendly, saleNumber, null);
+			assertNull(sGuardada);
 			// Como friendly es null, NUNCA se debe llamar a db.persist()
 			Mockito.verify(db, Mockito.times(0)).persist(Mockito.any());
 			
