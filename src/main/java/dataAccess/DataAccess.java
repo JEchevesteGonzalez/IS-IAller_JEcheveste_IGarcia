@@ -832,32 +832,47 @@ public void open(){
 	    close();
 	}
 	
+	/**
+	 * Elimina un usuario de tipo Friendly de la base de datos de forma persistente.
+	 * Si el usuario existe, el método se encarga de mantener la integridad referencial:
+	 * lo desvincula de su supervisor asociado y elimina en cascada todas las solicitudes 
+	 * que le pertenecen antes de borrar al usuario. Si no existe, se deshace la transacción.
+	 * 
+	 * @param usuarioFriendly El identificador (nombre de usuario) del Friendly que se desea eliminar.
+	 */
 	public void eliminarFriendlyAsignado(String usuarioFriendly) {
-		open();
-		db.getTransaction().begin();
+		open(); // Abre la conexión con la base de datos
+		db.getTransaction().begin(); // Inicia una nueva transacción para garantizar que los borrados se apliquen juntos
 		
+		// Busca la entidad Friendly en la base de datos
 		Friendly f = db.find(Friendly.class, usuarioFriendly);
 		
+		// Si el usuario existe en el sistema, procedemos con el borrado en cascada
 		if (f != null) {
 			Comprador supervisor = f.getSupervisor();
 			
-			
+			// Si tiene un supervisor asignado, lo desvinculamos de su lista de dependientes
 			if (supervisor != null) {
 				supervisor.getDependientes().remove(f);
 			}
 			
+			// Si el usuario tiene solicitudes asociadas, las recorremos y las borramos una a una
 			if (f.getSolicitudes() != null) {
 				for (domain.Solicitud s : f.getSolicitudes()) {
 					db.remove(s);
 				}
 			}
 			
+			// Una vez limpias las dependencias, eliminamos el objeto principal
 			db.remove(f);
 			
+			// Confirmamos y guardamos permanentemente todos los cambios en la base de datos
 			db.getTransaction().commit();
 		} else {
+			// Si el usuario no existe, cancelamos la transacción para no alterar la BD
 			db.getTransaction().rollback();
 		}
+		// Liberamos los recursos cerrando la conexión
 		close();
 	}
 	
