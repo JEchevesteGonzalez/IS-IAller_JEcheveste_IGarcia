@@ -75,28 +75,32 @@ public class EliminarFriendlyAsignadoMockBlackTest {
 	}
 	
 	@Test
-	public void test2() {
-		//Usuario null
-		
-	    String usuarioFriendly = null;
+    public void test2() {
+        //Usuario null
+        String usuarioFriendly = null;
         
-	    try {
-			sut.open();
-			sut.eliminarFriendlyAsignado(usuarioFriendly);
-			sut.close();
-			
-			Mockito.verify(et, Mockito.times(1)).begin();
-			Mockito.verify(et, Mockito.times(1)).rollback();
-			Mockito.verify(et, Mockito.never()).commit();
-			Mockito.verify(db, Mockito.never()).remove(Mockito.any());
-		} catch (Exception e) {
-			fail();
-		}
-	}
+        Mockito.when(db.find(Friendly.class, null)).thenThrow(new IllegalArgumentException());
+        
+        try {
+            sut.open();
+            sut.eliminarFriendlyAsignado(usuarioFriendly);
+            
+            fail();
+        } catch (IllegalArgumentException e) {
+            Mockito.verify(et, Mockito.times(1)).begin();       
+            Mockito.verify(et, Mockito.never()).commit();
+            Mockito.verify(et, Mockito.never()).rollback();
+            Mockito.verify(db, Mockito.never()).remove(Mockito.any());
+        } catch (Exception e) {
+            fail();
+        } finally {
+            sut.close();
+        }
+    }
 	
 	@Test
 	public void test3() {
-		//Usuario con supervisor y solicitudes null
+		//Usuario string vacio
 	    String usuarioFriendly = "";
         
 	    try {
@@ -115,7 +119,7 @@ public class EliminarFriendlyAsignadoMockBlackTest {
 	
 	@Test
 	public void test4() {
-		//Usuario con supervisor y lista de solicitudes vacia
+		// Usuario con supervisor null y lista de solicitudes vacia
 		String usuarioFriendly = "Jon";
 		
 		
