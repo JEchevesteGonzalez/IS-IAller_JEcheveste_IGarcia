@@ -143,10 +143,10 @@ public class RetirarFondosMockBlackTest {
 		c1.setCuentas(cu);
 		Mockito.when(db.find(Comprador.class, usuario)).thenReturn(c1);
 		try {
-			if (!(sut.retirarFondos(usuario, cantidadP))){
-				assertTrue(true);
-			}else {
+			if (sut.retirarFondos(usuario, cantidadP)){
 				fail();
+			}else {
+				assertTrue(true);
 			}
 		}catch(Exception e) {
 			fail();
@@ -184,10 +184,10 @@ public class RetirarFondosMockBlackTest {
 		c1.setCuentas(cu);
 		Mockito.when(db.find(Comprador.class, usuario)).thenReturn(c1);
 		try {
-			if (!(sut.retirarFondos(usuario, cantidadP))){
-				assertTrue(true);
-			}else {
+			if (sut.retirarFondos(usuario, cantidadP)){
 				fail();
+			}else {
+				assertTrue(true);
 			}
 		}catch(Exception e) {
 			fail();
@@ -204,10 +204,10 @@ public class RetirarFondosMockBlackTest {
 		c1.setCuentas(cu);
 		Mockito.when(db.find(Comprador.class, usuario)).thenReturn(c1);
 		try {
-			if (!(sut.retirarFondos(usuario, cantidadP))){
-				assertTrue(true);
-			}else {
+			if (sut.retirarFondos(usuario, cantidadP)){
 				fail();
+			}else {
+				assertTrue(true);
 			}
 		}catch(Exception e) {
 			fail();
