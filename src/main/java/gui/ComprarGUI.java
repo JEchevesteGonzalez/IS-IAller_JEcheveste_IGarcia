@@ -103,7 +103,7 @@ public class ComprarGUI extends JFrame {
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(oferta.getText()=="") {
+					if(oferta.getText().equals("")) {
 						textoErrores.setText("Haga una oferta válida");
 					}
 					else {
