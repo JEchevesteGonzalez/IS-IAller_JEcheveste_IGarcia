@@ -9,7 +9,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
+<<<<<<< Updated upstream
 import domain.*;
+=======
+import domain.Comprador;
+import domain.Cuentas;
+import domain.Friendly;
+import domain.Solicitud;
+import domain.Usuario;
+>>>>>>> Stashed changes
 
 
 public class TestDataAccess {
@@ -67,6 +75,62 @@ public class TestDataAccess {
 		user.setCuentas(cu);
 		db.persist(user);
 		db.persist(cu);
+		db.getTransaction().commit();
+	}
+
+	public void crearFriendlyConSupervisor(String usuario, String supervisor, boolean friendlySolicitudes,
+			boolean supervisorSolicitudes) {
+		db.getTransaction().begin();
+
+		Comprador compradorSupervisor = new Comprador(supervisor, "prueba");
+		if (!supervisorSolicitudes) {
+			compradorSupervisor.setSolicitudes(null);
+		}
+		db.persist(compradorSupervisor);
+
+		Friendly friendly = new Friendly(usuario, "prueba", compradorSupervisor);
+		if (!friendlySolicitudes) {
+			friendly.setSolicitudes(null);
+		}
+		db.persist(friendly);
+
+		db.getTransaction().commit();
+	}
+
+	public void crearFriendlySinSupervisor(String usuario, boolean friendlySolicitudes) {
+		db.getTransaction().begin();
+
+		Friendly friendly = new Friendly(usuario, "prueba", null);
+		if (!friendlySolicitudes) {
+			friendly.setSolicitudes(null);
+		}
+		db.persist(friendly);
+
+		db.getTransaction().commit();
+	}
+
+	public void limpiarCajaBlanca(String usuario, String supervisor, Integer saleNumber) {
+		db.getTransaction().begin();
+
+		if (saleNumber != null) {
+			Solicitud solicitud = db.find(Solicitud.class, saleNumber);
+			if (solicitud != null) {
+				db.remove(solicitud);
+			}
+		}
+
+		Friendly friendly = db.find(Friendly.class, usuario);
+		if (friendly != null) {
+			db.remove(friendly);
+		}
+
+		if (supervisor != null) {
+			Comprador comprador = db.find(Comprador.class, supervisor);
+			if (comprador != null) {
+				db.remove(comprador);
+			}
+		}
+
 		db.getTransaction().commit();
 	}
 	

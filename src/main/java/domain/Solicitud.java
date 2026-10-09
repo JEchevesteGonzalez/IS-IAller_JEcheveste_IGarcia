@@ -22,6 +22,9 @@ public class Solicitud {
 	@ManyToOne
 	private Comprador supervisor;
 	
+	// Constructor vacío requerido por JPA
+	public Solicitud() {
+	}
 
 	public Solicitud(Integer saleNumber, String estado, Friendly friendly, Comprador supervisor) {
 		this.saleNumber = saleNumber;
