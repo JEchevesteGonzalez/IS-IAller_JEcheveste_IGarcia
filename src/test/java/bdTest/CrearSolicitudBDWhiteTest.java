@@ -105,8 +105,6 @@ public class CrearSolicitudBDWhiteTest extends TestDataAccess {
     /*
      * TEST 1
      * Camino: if9(true) - if24(true) - 25 - if29.1(true) - if29.2(true) - 30 - 34
-     * Entrada: usuarioFriendly="Gorka", saleNumber = 99
-     * Estado BD: friendly ∈ BD, friendly.solicitudes != null, supervisor != null, supervisor.solicitudes != null
      */
     @Test
     public void test1() {
@@ -141,8 +139,6 @@ public class CrearSolicitudBDWhiteTest extends TestDataAccess {
     /*
      * TEST 2
      * Camino: if9(true) - if24(true) - 25 - if29.1(true) - if29.2(false) - 34
-     * Entrada: usuarioFriendly="Gorka", saleNumber = 100
-     * Estado BD: friendly ∈ BD, friendly.solicitudes != null, supervisor != null, supervisor.solicitudes == null
      */
     @Test
     public void test2() {
@@ -179,8 +175,6 @@ public class CrearSolicitudBDWhiteTest extends TestDataAccess {
     /*
      * TEST 3
      * Camino: if9(true) - if24(true) - 25 - if29.1(false) - 34
-     * Entrada: usuarioFriendly="Gorka", saleNumber = 101
-     * Estado BD: friendly ∈ BD, friendly.solicitudes != null, supervisor == null
      */
     @Test
     public void test3() {
@@ -212,8 +206,6 @@ public class CrearSolicitudBDWhiteTest extends TestDataAccess {
     /*
      * TEST 4
      * Camino: if9(true) - if24(false) - if29.1(false) - 34
-     * Entrada: usuarioFriendly="Gorka", saleNumber = 102
-     * Estado BD: friendly ∈ BD, friendly.solicitudes == null, supervisor == null
      */
     @Test
     public void test4() {
@@ -238,8 +230,6 @@ public class CrearSolicitudBDWhiteTest extends TestDataAccess {
     /*
      * TEST 5
      * Camino: if9(false) - 34
-     * Entrada: usuarioFriendly="Gorka", saleNumber = 103
-     * Estado BD: friendly ∉ BD
      */
     @Test
     public void test5() {
