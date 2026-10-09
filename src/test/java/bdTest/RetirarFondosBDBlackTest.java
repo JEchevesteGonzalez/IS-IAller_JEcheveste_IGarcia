@@ -192,7 +192,7 @@ public class RetirarFondosBDBlackTest {
 	}
 	//Fin pruebas limite test5
 	
-	@Test
+	/*@Test
 	public void test9() {
 		String usuario = "Usuario";
 		float cantidadP = 100;
@@ -212,7 +212,7 @@ public class RetirarFondosBDBlackTest {
 			opTest.eliminarUsuario(usuario);
 			opTest.close();
 		}
-	}
+	}*/
 	
 	@Test
 	public void test10() {

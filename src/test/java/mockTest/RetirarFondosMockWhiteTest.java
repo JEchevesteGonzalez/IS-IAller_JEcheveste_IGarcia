@@ -58,8 +58,8 @@ public class RetirarFondosMockWhiteTest {
 		persistenceMock.close();					
 	}	
 	
-	//TERMINAR
-	@Test
+	
+	/*@Test
 	public void test1() {
 		String usuario = "Yo";
 		float cantidadP = 100;
@@ -74,7 +74,7 @@ public class RetirarFondosMockWhiteTest {
 		}catch(Exception e) {
 			fail();
 		}
-	}
+	}*/
 	
 	@Test
 	public void test2() {

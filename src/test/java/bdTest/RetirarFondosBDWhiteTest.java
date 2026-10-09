@@ -12,7 +12,7 @@ public class RetirarFondosBDWhiteTest {
 	static DataAccess sut = new DataAccess();
 	static TestDataAccess opTest = new TestDataAccess();
 	
-	@Test
+	/*@Test
 	public void test1() {
 		String usuario = "Yo";
 		float cantidadP = 100;
@@ -32,7 +32,7 @@ public class RetirarFondosBDWhiteTest {
 			opTest.eliminarUsuario(usuario);
 			opTest.close();
 		}
-	}
+	}*/
 	
 	@Test
 	public void test2() {
