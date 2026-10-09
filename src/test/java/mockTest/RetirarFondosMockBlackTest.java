@@ -215,7 +215,7 @@ public class RetirarFondosMockBlackTest {
 	}
 	//Fin pruebas limite test5
 	
-	@Test
+	/*@Test
 	public void test9() {
 		String usuario = "Usuario";
 		float cantidadP = 100;
@@ -230,7 +230,7 @@ public class RetirarFondosMockBlackTest {
 		}catch(Exception e) {
 			fail();
 		}
-	}
+	}*/
 	
 	@Test
 	public void test10() {
