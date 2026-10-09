@@ -9,15 +9,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
-<<<<<<< Updated upstream
+
 import domain.*;
-=======
-import domain.Comprador;
-import domain.Cuentas;
-import domain.Friendly;
-import domain.Solicitud;
-import domain.Usuario;
->>>>>>> Stashed changes
+
 
 
 public class TestDataAccess {
