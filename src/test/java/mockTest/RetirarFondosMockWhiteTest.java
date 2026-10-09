@@ -21,7 +21,7 @@ import domain.Comprador;
 import domain.Cuentas;
 
 public class RetirarFondosMockWhiteTest {
-	static DataAccess sut;
+	DataAccess sut;
 	protected MockedStatic<Persistence> persistenceMock;
 	
 	@Mock
@@ -34,14 +34,23 @@ public class RetirarFondosMockWhiteTest {
 	protected EntityTransaction et;
 	
 	@Before
-	public void init()	{		
+	public void init() {		
 		MockitoAnnotations.openMocks(this);		
-		persistenceMock	=	Mockito.mockStatic(Persistence.class);		
-		persistenceMock.when(()	->	
-		Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
+		persistenceMock = Mockito.mockStatic(Persistence.class);		
+		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
 		Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();		
-		Mockito.doReturn(et).when(db).getTransaction();		
-		sut=new	DataAccess(db);					
+		Mockito.doReturn(et).when(db).getTransaction();
+		
+		// Mockear los métodos de transacción para que no hagan nada
+		Mockito.doNothing().when(et).begin();
+		Mockito.doNothing().when(et).commit();
+		Mockito.doNothing().when(et).rollback();
+		
+		// Crear un spy para poder mockear el método open()
+		sut = Mockito.spy(new DataAccess(db));
+		
+		// Mockear el método open() para que no intente acceder a la BD real
+		Mockito.doNothing().when(sut).open();
 	}	
 	
 	@After		

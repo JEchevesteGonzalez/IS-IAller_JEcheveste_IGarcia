@@ -25,7 +25,7 @@ import domain.Friendly;
 import domain.Solicitud;
 
 public class EliminarFriendlyAsignadoMockWhiteTest {
-	static DataAccess sut;
+	DataAccess sut;
 	protected MockedStatic<Persistence> persistenceMock;
 	
 	@Mock
@@ -38,14 +38,23 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 	protected EntityTransaction et;
 	
 	@Before
-	public void init()	{		
+	public void init() {		
 		MockitoAnnotations.openMocks(this);		
-		persistenceMock	=	Mockito.mockStatic(Persistence.class);		
-		persistenceMock.when(()	->	
-		Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
+		persistenceMock = Mockito.mockStatic(Persistence.class);		
+		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any())).thenReturn(entityManagerFactory);		
 		Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();		
-		Mockito.doReturn(et).when(db).getTransaction();		
-		sut=new	DataAccess(db);					
+		Mockito.doReturn(et).when(db).getTransaction();
+		
+		// Mockear los métodos de transacción para que no hagan nada
+		Mockito.doNothing().when(et).begin();
+		Mockito.doNothing().when(et).commit();
+		Mockito.doNothing().when(et).rollback();
+		
+		// Crear un spy para poder mockear el método open()
+		sut = Mockito.spy(new DataAccess(db));
+		
+		// Mockear el método open() para que no intente acceder a la BD real
+		Mockito.doNothing().when(sut).open();
 	}	
 	
 	@After		
@@ -59,9 +68,7 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 		String usuarioFriendly = "Jon";
         Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(null);
 		try {
-			sut.open();
             sut.eliminarFriendlyAsignado(usuarioFriendly);
-            sut.close();
 			
 			Mockito.verify(et, Mockito.times(1)).begin();
 			Mockito.verify(et, Mockito.times(1)).rollback();
@@ -84,11 +91,9 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 	    f.setSolicitudes(null);
 
 	    Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(f);
-        
+         
         try {
-        	sut.open();
             sut.eliminarFriendlyAsignado(usuarioFriendly);
-            sut.close();
             
             Mockito.verify(et, Mockito.times(1)).begin();
             Mockito.verify(db, Mockito.times(1)).remove(f);
@@ -114,11 +119,9 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 	    f.setSolicitudes(null);
 
 	    Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(f);
-        
+         
         try {
-        	sut.open();
             sut.eliminarFriendlyAsignado(usuarioFriendly);
-            sut.close();
             
             Mockito.verify(et, Mockito.times(1)).begin();
             Mockito.verify(db, Mockito.times(1)).remove(f);
@@ -144,11 +147,9 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 	    f.setSolicitudes(new ArrayList<Solicitud>());
 
 	    Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(f);
-        
+         
         try {
-        	sut.open();
             sut.eliminarFriendlyAsignado(usuarioFriendly);
-            sut.close();
             
             Mockito.verify(et, Mockito.times(1)).begin();
             Mockito.verify(db, Mockito.times(1)).remove(f);
@@ -180,11 +181,9 @@ public class EliminarFriendlyAsignadoMockWhiteTest {
 	    f.setSolicitudes(listaSolicitudes);
 
 	    Mockito.when(db.find(Friendly.class, usuarioFriendly)).thenReturn(f);
-        
+         
         try {
-        	sut.open();
             sut.eliminarFriendlyAsignado(usuarioFriendly);
-            sut.close();
             
             Mockito.verify(et, Mockito.times(1)).begin();
             Mockito.verify(db, Mockito.times(1)).remove(f);
